@@ -1,0 +1,31 @@
+:root{
+  --font-color: #685b5b;
+  --light-background: #e6f2f4;
+}
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+html {
+  font-family: Helvetica Neue,Roboto,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.container {
+	max-width: 825px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
