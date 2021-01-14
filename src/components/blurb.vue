@@ -76,18 +76,14 @@ img {
   height: 11rem;
   border-radius: 50%;
 }
+.contact-icon {
+  color: white;
+}
 .desc {
   text-align: left;
   padding: 0 1rem;
   color: white;
   height: 7rem;
-}
-.contact-icon {
-  color: white;
-  margin: 0 0.3rem;
-}
-.contact-icon:first-child {
-  margin-left: 0;
 }
 .contact-me-button {
   margin-left: auto;

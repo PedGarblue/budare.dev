@@ -1,6 +1,7 @@
 :root{
   --font-color: #685b5b;
   --light-background: #e6f2f4;
+  --black: #3e3e3e;
 }
 *, ::after, ::before {
   box-sizing: border-box;
@@ -30,6 +31,18 @@ a:hover {
 .flex {
 	display: flex;
 	align-items: center;
+}
+.flex-column {
+	display: flex;
+	align-items: center;
+  flex-direction: column;
+}
+
+.contact-icon {
+  margin: 0 0.3rem;
+}
+.contact-icon:first-child {
+  margin-left: 0;
 }
 
 .padding-s-right {
