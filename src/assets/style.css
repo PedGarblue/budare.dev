@@ -2,6 +2,7 @@
   --font-color: #685b5b;
   --light-background: #e6f2f4;
   --black: #3e3e3e;
+  --blue: #397e9f;
 }
 *, ::after, ::before {
   box-sizing: border-box;
@@ -14,6 +15,9 @@ html {
 body {
   padding: 0;
   margin: 0;
+}
+section {
+  margin: 2.5rem 0;
 }
 a {
   text-decoration: none;
