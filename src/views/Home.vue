@@ -1,12 +1,16 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    HOLA MUNDO NOJODA
+    <Blurb />
   </div>
 </template>
 
 <script>
+import Blurb from "@/components/blurb.vue";
+
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    Blurb
+  }
 };
 </script>
