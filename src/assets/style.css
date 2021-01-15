@@ -38,6 +38,7 @@ a:hover {
 	max-width: 825px;
 	margin-left: auto;
 	margin-right: auto;
+  padding: 0 0.7rem;
 }
 .flex {
 	display: flex;
@@ -57,10 +58,7 @@ a:hover {
 }
 
 .contact-icon {
-  margin: 0 0.3rem;
-}
-.contact-icon:first-child {
-  margin-left: 0;
+  margin: auto;
 }
 
 .padding-s-right {
@@ -126,5 +124,11 @@ a:hover {
 @media screen and (min-width: 800px) {
   .container {
     padding: 0 2rem;
+  }
+  .contact-icon {
+    margin: 0 0.3rem;
+  }
+  .contact-icon:first-child {
+    margin-left: 0;
   }
 }

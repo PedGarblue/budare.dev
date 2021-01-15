@@ -61,7 +61,6 @@ export default {
 <style scoped>
 .blurb {
   background-color: #ccdbff;
-  padding: 2rem 0;
 }
 .container {
   background-color: #397e9f;
@@ -70,6 +69,7 @@ export default {
 }
 .photo {
   display: flex;
+  margin: auto;
 }
 img {
   width: 11rem;
@@ -80,14 +80,32 @@ img {
   color: white;
 }
 .desc {
-  text-align: left;
+  text-align: center;
   padding: 0 1rem;
   color: white;
   height: 7rem;
+  margin: auto;
 }
 .contact-me-button {
-  margin-left: auto;
-  background-color: #fffefe;
-  border-radius: 0.35rem;
+  display: none;
+}
+
+@media screen and (min-width: 800px) {
+  .blurb {
+    padding: 2rem 0;
+  }
+  .photo {
+    margin: unset;
+  }
+  .desc {
+    margin: unset;
+    text-align: left;
+  }
+  .contact-me-button {
+    display: flex;
+    margin-left: auto;
+    background-color: #fffefe;
+    border-radius: 0.35rem;
+  }
 }
 </style>
