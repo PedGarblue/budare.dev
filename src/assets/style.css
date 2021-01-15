@@ -20,6 +20,9 @@ section {
   margin: 2.5rem 0;
   text-align: left;
 }
+section:first-child {
+  margin-top: 0;
+}
 h2 {
   margin: 0;
 }
