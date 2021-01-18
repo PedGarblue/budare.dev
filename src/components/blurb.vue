@@ -112,6 +112,7 @@ img {
     margin-left: auto;
     background-color: #fffefe;
     border-radius: 0.35rem;
+    box-shadow: 0em 0em 0.2em var(--gray);
   }
 }
 </style>
