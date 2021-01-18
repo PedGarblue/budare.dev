@@ -43,8 +43,11 @@ export default {
 .skill {
   text-align: center;
   margin: 0 auto;
+  width: 10em;
+  height: 15em;
   --width: 6em;
   --height: 6em;
+  transition-duration: 0.2s;
 }
 .progress-circle {
   font-size: 20px;
@@ -56,13 +59,14 @@ export default {
   background-color: #f2e9e1;
   border-radius: 50%;
   line-height: 5em;
+  transition-duration: 0.2s;
 }
 
 .progress-circle:after {
   border: none;
   position: absolute;
-  top: 0.35em;
-  left: 0.35em;
+  top: calc(var(--height) * 0.06);
+  left: calc(var(--width) * 0.06);
   text-align: center;
   display: block;
   border-radius: 50%;
@@ -70,6 +74,11 @@ export default {
   height: calc(var(--height) * 0.88);
   background-color: white;
   content: " ";
+  transition-duration: 0.2s;
+}
+.progress-circle:hover {
+  --width: 6.5em;
+  --height: 6.5em;
 }
 /* Text inside the control */
 .progress-circle span {
@@ -82,6 +91,7 @@ export default {
   align-items: center;
   color: #53777a;
   z-index: 2;
+  transition-duration: 0.2s;
 }
 
 .left-half-clipper {
@@ -96,6 +106,7 @@ export default {
     var(--width),
     calc(var(--width) / 2)
   ); /* clips the whole left half*/
+  transition-duration: 0.2s;
 }
 /* when p>50, don't clip left half*/
 .progress-circle.over50 .left-half-clipper {
@@ -113,6 +124,7 @@ export default {
   border: 0.45em solid #53777a; /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/ /* for debug */
   box-sizing: border-box;
+  transition-duration: 0.2s;
 }
 /* Progress bar filling the whole right half for values above 50% */
 .progress-circle.over50 .first50-bar {
@@ -123,6 +135,7 @@ export default {
   border-radius: 50%;
   width: var(--width);
   height: var(--height);
+  transition-duration: 0.2s;
 }
 .progress-circle:not(.over50) .first50-bar {
   display: none;

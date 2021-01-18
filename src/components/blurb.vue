@@ -64,8 +64,9 @@ export default {
 }
 .container {
   background-color: #397e9f;
-  padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  margin-top: 1rem;
 }
 .photo {
   display: flex;
@@ -95,7 +96,9 @@ img {
     padding: 2rem 0;
   }
   .container {
-    padding-top: 1rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow: 0.1em 0.1em 0.3em;
   }
   .photo {
     margin: unset;

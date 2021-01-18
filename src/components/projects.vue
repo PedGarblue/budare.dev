@@ -56,6 +56,7 @@ export default {
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.35rem;
+  box-shadow: 0.01em 0.01em 0.2em var(--black);
 }
 
 @media screen and (min-width: 400px) {
