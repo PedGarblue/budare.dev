@@ -1,6 +1,6 @@
 <template>
   <Nav />
-  <router-view />
+  <router-view class="page"/>
   <Footer />
 </template>
 
@@ -23,5 +23,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.page {
+  padding-top: 3.26rem;
+}
+@media screen and (min-width: 400px) {
+  .page {
+    padding-top: 0;
+  }
 }
 </style>

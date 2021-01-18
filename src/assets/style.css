@@ -1,8 +1,11 @@
 :root{
   --font-color: #685b5b;
+  --font-color-light: #cecece;
   --light-background: #e6f2f4;
+  --gray: #777;
   --black: #3e3e3e;
   --blue: #397e9f;
+  --white: #f4f3f3;
 }
 *, ::after, ::before {
   box-sizing: border-box;
@@ -87,6 +90,9 @@ a:hover {
   padding-bottom: 1rem;
 }
 
+.padding-m-top {
+  padding-top: 1rem;
+}
 .margin-m-top {
   margin-top: 1rem;
 }

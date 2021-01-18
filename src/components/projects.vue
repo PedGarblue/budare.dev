@@ -44,6 +44,11 @@ export default {
 <style scoped>
 .project {
   text-align: left;
+  flex-wrap: nowrap;
+  margin: 0.8rem 0;
+}
+.project-desc {
+  margin: 0 0.3em;
 }
 .project-source {
   margin-left: auto;
@@ -51,5 +56,11 @@ export default {
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 0.35rem;
+}
+
+@media screen and (min-width: 400px) {
+  .project-desc {
+    margin: 0;
+  }
 }
 </style>

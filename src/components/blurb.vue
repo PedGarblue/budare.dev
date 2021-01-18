@@ -64,7 +64,7 @@ export default {
 }
 .container {
   background-color: #397e9f;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 1rem;
 }
 .photo {
@@ -93,6 +93,9 @@ img {
 @media screen and (min-width: 800px) {
   .blurb {
     padding: 2rem 0;
+  }
+  .container {
+    padding-top: 1rem;
   }
   .photo {
     margin: unset;
