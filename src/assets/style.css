@@ -7,6 +7,10 @@
   --blue: #397e9f;
   --white: #f4f3f3;
 }
+@font-face {
+  font-family: "Ubuntu";
+  src: local("Ubuntu"), url(./fonts/Ubuntu/Ubuntu-Regular.ttf) format("truetype");
+}
 *, ::after, ::before {
   box-sizing: border-box;
 }
