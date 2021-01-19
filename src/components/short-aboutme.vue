@@ -1,9 +1,11 @@
 <template>
-  <section class="short-aboutme">
+  <section>
     <div class="container">
-      <p>
-        {{ aboutme.short }}
-      </p>
+      <div class="short-aboutme">
+        <p>
+          {{ aboutme.short }}
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -22,9 +24,8 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+.short-aboutme {
+  padding: 1rem 1.5rem;
   box-shadow: 0.1rem 0.1rem 0.3rem var(--gray);
   border-radius: 0.2rem;
   color: var(--black);
@@ -32,6 +33,6 @@ export default {
 }
 p {
   line-break: normal;
-  white-space: pre;
+  white-space: pre-line;
 }
 </style>

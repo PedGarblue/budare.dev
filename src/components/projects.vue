@@ -6,7 +6,9 @@
       <div v-for="project in projects" :key="project.name" class="flex project">
         <div class="project-desc">
           <div class="text-medium text-bold">
-            {{ project.name }}
+            <a :href="project.demoUrl">
+              {{ project.name }}
+            </a>
           </div>
           <div>
             {{ project.desc }}
