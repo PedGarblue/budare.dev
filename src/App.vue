@@ -1,6 +1,6 @@
 <template>
   <Nav />
-  <router-view class="page"/>
+  <router-view class="page" />
   <Footer />
 </template>
 

@@ -24,8 +24,8 @@ body {
   margin: 0;
 }
 section {
-  margin: 2.5rem 0;
   text-align: left;
+  padding: 2.5rem;
 }
 section:first-child {
   margin-top: 0;
@@ -94,13 +94,18 @@ a:hover {
   padding-bottom: 1rem;
 }
 
-.padding-m-top {
-  padding-top: 1rem;
+.margin-s-right {
+  margin-right: 0.3rem;
 }
+
+.margin-s-horizontal {
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
 .margin-m-top {
   margin-top: 1rem;
 }
-
 .margin-l-top {
   margin-top: 2rem;
 }
@@ -133,7 +138,8 @@ a:hover {
 
 @media screen and (min-width: 800px) {
   .container {
-    padding: 0 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .contact-icon {
     margin: 0 0.3rem;

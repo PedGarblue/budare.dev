@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Blurb />
-    <ShortAboutme />
+    <About />
     <Projects />
     <Skills />
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 import Blurb from "@/components/blurb.vue";
-import ShortAboutme from "@/components/short-aboutme.vue";
+import About from "@/components/about.vue";
 import Projects from "@/components/projects.vue";
 import Skills from "@/components/skills.vue";
 
@@ -17,7 +17,7 @@ export default {
   name: "Home",
   components: {
     Blurb,
-    ShortAboutme,
+    About,
     Projects,
     Skills
   }
