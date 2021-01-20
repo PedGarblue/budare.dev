@@ -18,7 +18,7 @@
             </a>
             <a
               class="contact-icon"
-              href="https://www.linkedin.com/in/pedro-garcia-621a3a145/"
+              href="https://www.linkedin.com/in/pedro-garcia-acosta"
               rel="noreferrer noopener"
             >
               <font-awesome-icon :icon="['fab', 'linkedin']" />
