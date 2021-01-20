@@ -24,7 +24,10 @@
           <span class="margin-s-horizontal"> {{ aboutme.phone }} </span>
         </div>
         <div class="flex">
-          <font-awesome-icon class="text-medium margin-s-right" :icon="['fas', 'envelope']" />
+          <font-awesome-icon
+            class="text-medium margin-s-right"
+            :icon="['fas', 'envelope']"
+          />
           <span class="margin-s-horizontal"> {{ aboutme.email }} </span>
         </div>
       </div>
