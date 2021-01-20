@@ -1,10 +1,6 @@
 <template>
   <footer class="flex-column">
     <section class="flex-column container">
-      <nav class="text-medium">
-        <router-link to="/about">About</router-link>
-        <router-link to="/contact">Contact</router-link>
-      </nav>
       <nav class="flex text-big">
         <a
           class="contact-icon"

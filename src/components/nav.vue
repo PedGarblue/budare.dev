@@ -8,8 +8,9 @@
           </router-link>
         </div>
         <div class="flex">
-          <router-link to="/about">About</router-link>
-          <router-link to="/contact">Contact</router-link>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
         </div>
       </div>
     </div>
@@ -36,9 +37,9 @@ export default {
   justify-content: space-between;
 }
 a {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.5rem;
   border-radius: 0.35rem;
   color: var(--font-color-light);
 }
@@ -68,7 +69,6 @@ a:hover {
     color: var(--font-color);
     font-size: 1.2rem;
     font-weight: normal;
-    margin: 0 0.35rem;
   }
   a:hover {
     background-color: var(--light-background);

@@ -1,5 +1,5 @@
 <template>
-  <section class="blurb">
+  <section id="blurb">
     <div class="container">
       <div class="flex">
         <div class="photo">
@@ -92,7 +92,7 @@ img {
 }
 
 @media screen and (min-width: 800px) {
-  .blurb {
+  #blurb {
     padding: 2rem 0;
   }
   .container {

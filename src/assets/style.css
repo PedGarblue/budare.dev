@@ -18,6 +18,8 @@ html {
   font-family: Ubuntu,sans-serif,Apple Color Emoji,Segoe UI,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-size: 1rem;
   line-height: 1.75;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 body {
   padding: 0;
@@ -25,7 +27,7 @@ body {
 }
 section {
   text-align: left;
-  padding: 2.5rem;
+  padding: 2.5rem 0;
 }
 section:first-child {
   margin-top: 0;
@@ -137,6 +139,9 @@ a:hover {
 }
 
 @media screen and (min-width: 800px) {
+  html {
+    scroll-padding-top: 0;
+  }
   .container {
     padding-left: 2rem;
     padding-right: 2rem;
