@@ -29,11 +29,7 @@
         </div>
       </div>
       <div class="text-center margin-l-top">
-        <a
-          class="button"
-          href="https://github.com/PedGarblue"
-          rel="noreferrer noopener"
-        >
+        <a class="button" :href="contact.github" rel="noreferrer noopener">
           See more in
           <span class="text-medium">
             <font-awesome-icon :icon="['fab', 'github']" />
@@ -46,12 +42,14 @@
 
 <script>
 import projects from '@/data/projects';
+import contact from '@/data/contact';
 
 export default {
   name: 'Projects',
   data() {
     return {
       projects,
+      contact,
     };
   },
 };

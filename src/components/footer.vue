@@ -4,21 +4,21 @@
       <nav class="flex text-big">
         <a
           class="contact-icon"
-          href="https://github.com/PedGarblue"
+          :href="contact.github"
           rel="noreferrer noopener"
         >
           <font-awesome-icon :icon="['fab', 'github']" />
         </a>
         <a
           class="contact-icon"
-          href="https://www.linkedin.com/in/pedro-garcia-acosta"
+          :href="contact.linkedin"
           rel="noreferrer noopener"
         >
           <font-awesome-icon :icon="['fab', 'linkedin']" />
         </a>
         <a
           class="contact-icon"
-          href="https://t.me/pedgarcia"
+          :href="contact.telegram"
           rel="noreferrer noopener"
         >
           <font-awesome-icon :icon="['fab', 'telegram']" />
@@ -32,8 +32,15 @@
 </template>
 
 <script>
+import contact from '@/data/contact';
+
 export default {
   name: 'Footer',
+  data() {
+    return {
+      contact,
+    };
+  },
 };
 </script>
 

@@ -21,14 +21,14 @@
             class="text-medium margin-s-right"
             :icon="['fas', 'phone-square']"
           />
-          <span class="margin-s-horizontal"> {{ aboutme.phone }} </span>
+          <span class="margin-s-horizontal"> {{ contact.phone }} </span>
         </div>
         <div class="flex">
           <font-awesome-icon
             class="text-medium margin-s-right"
             :icon="['fas', 'envelope']"
           />
-          <span class="margin-s-horizontal"> {{ aboutme.email }} </span>
+          <span class="margin-s-horizontal"> {{ contact.email }} </span>
         </div>
       </div>
     </div>
@@ -37,12 +37,14 @@
 
 <script>
 import aboutme from '@/data/aboutme';
+import contact from '@/data/contact';
 
 export default {
   name: 'ShortAboutme',
   data() {
     return {
       aboutme,
+      contact,
     };
   },
 };

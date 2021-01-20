@@ -11,21 +11,21 @@
           <div class="flex text-big">
             <a
               class="contact-icon"
-              href="https://github.com/PedGarblue"
+              :href="contact.github"
               rel="noreferrer noopener"
             >
               <font-awesome-icon :icon="['fab', 'github']" />
             </a>
             <a
               class="contact-icon"
-              href="https://www.linkedin.com/in/pedro-garcia-acosta"
+              :href="contact.linkedin"
               rel="noreferrer noopener"
             >
               <font-awesome-icon :icon="['fab', 'linkedin']" />
             </a>
             <a
               class="contact-icon"
-              href="https://t.me/pedgarcia"
+              :href="contact.telegram"
               rel="noreferrer noopener"
             >
               <font-awesome-icon :icon="['fab', 'telegram']" />
@@ -33,15 +33,15 @@
           </div>
         </div>
         <div class="flex contact-me-button">
-          <router-link
-            to="/contact"
+          <a
+            href="#contact"
             class="contact-link text-medium padding-m-left padding-s-right"
           >
             Contact me
-          </router-link>
+          </a>
           <a
             class="contact-link flex padding-s-right padding-s-left text-medium"
-            href="https://t.me/pedgarcia"
+            :href="contact.telegram"
             rel="noreferrer noopener"
           >
             <font-awesome-icon :icon="['fab', 'telegram']" />
@@ -53,8 +53,15 @@
 </template>
 
 <script>
+import contact from '@/data/contact';
+
 export default {
   name: 'Blurb',
+  data() {
+    return {
+      contact,
+    };
+  },
 };
 </script>
 
