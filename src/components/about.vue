@@ -36,15 +36,15 @@
 </template>
 
 <script>
-import aboutme from "@/data/aboutme";
+import aboutme from '@/data/aboutme';
 
 export default {
-  name: "ShortAboutme",
+  name: 'ShortAboutme',
   data() {
     return {
-      aboutme
+      aboutme,
     };
-  }
+  },
 };
 </script>
 

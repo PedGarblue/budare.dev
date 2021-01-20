@@ -21,21 +21,21 @@
 
 <script>
 export default {
-  name: "Skill",
+  name: 'Skill',
   props: {
     percentage: {
       type: Number,
-      required: true
+      required: true,
     },
     title: {
       type: String,
-      required: true
+      required: true,
     },
     time: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 };
 </script>
 
@@ -73,7 +73,7 @@ export default {
   width: calc(var(--width) * 0.88);
   height: calc(var(--height) * 0.88);
   background-color: white;
-  content: " ";
+  content: ' ';
   transition-duration: 0.2s;
 }
 .progress-circle:hover {

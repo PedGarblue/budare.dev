@@ -4,7 +4,7 @@ export default {
     I'm constantly looking for the takeaway from every project
     I want to have learned something.
   `,
-  localization: "Venezuela, Carabobo",
-  phone: "+58 414 4803943",
-  email: "pedro.alejandro.g@hotmail.com"
+  localization: 'Venezuela, Carabobo',
+  phone: '+58 414 4803943',
+  email: 'pedro.alejandro.g@hotmail.com',
 };

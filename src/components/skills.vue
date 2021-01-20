@@ -60,13 +60,13 @@
 </template>
 
 <script>
-import Skill from "./skill.vue";
+import Skill from './skill.vue';
 
 export default {
-  name: "Skills",
+  name: 'Skills',
   components: {
-    Skill
-  }
+    Skill,
+  },
 };
 </script>
 

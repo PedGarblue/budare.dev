@@ -45,15 +45,15 @@
 </template>
 
 <script>
-import projects from "@/data/projects";
+import projects from '@/data/projects';
 
 export default {
-  name: "Projects",
+  name: 'Projects',
   data() {
     return {
-      projects
+      projects,
     };
-  }
+  },
 };
 </script>
 

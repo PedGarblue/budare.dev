@@ -1,13 +1,13 @@
-import { createApp } from "vue";
-import App from "./App.vue";
-import router from "./router";
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-import { library } from "@fortawesome/fontawesome-svg-core";
+import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faGlobeAmericas,
   faPhoneSquare,
-  faEnvelope
-} from "@fortawesome/free-solid-svg-icons";
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 
 import {
   faGithub,
@@ -20,9 +20,9 @@ import {
   faPhp,
   faGitAlt,
   faVuejs,
-  faReact
-} from "@fortawesome/free-brands-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+  faReact,
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
 library.add([
   faGlobeAmericas,
@@ -38,10 +38,10 @@ library.add([
   faPhp,
   faGitAlt,
   faVuejs,
-  faReact
+  faReact,
 ]);
 
 createApp(App)
   .use(router)
-  .component("font-awesome-icon", FontAwesomeIcon)
-  .mount("#app");
+  .component('font-awesome-icon', FontAwesomeIcon)
+  .mount('#app');

@@ -5,15 +5,15 @@
 </template>
 
 <script>
-import "@/assets/style.css";
-import Nav from "@/components/nav.vue";
-import Footer from "@/components/footer.vue";
+import '@/assets/style.css';
+import Nav from '@/components/nav.vue';
+import Footer from '@/components/footer.vue';
 
 export default {
   components: {
     Nav,
-    Footer
-  }
+    Footer,
+  },
 };
 </script>
 
