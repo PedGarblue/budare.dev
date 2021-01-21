@@ -49,7 +49,7 @@ nav a {
   margin: 0 0.3rem;
 }
 footer section {
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
 .designed-by-me {
