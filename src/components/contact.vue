@@ -3,7 +3,7 @@
     <div class="container">
       <form action="" method="POST">
         <fieldset>
-      <h2>Contact</h2>
+          <h2>Contact</h2>
           <div class="form-field flex">
             <label for="contactName">Name*</label>
             <input type="text" name="contactName" class="form-input" required />
