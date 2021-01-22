@@ -3,56 +3,45 @@
     <div class="container">
       <h2>Skills</h2>
       <hr />
-      <div>
-        <div class="flex skills-list">
-          <Skill percentage="100" title="HTML5" time="3 years">
-            <font-awesome-icon
-              :icon="['fab', 'html5']"
-              class="html5 text-extra-big"
-            />
+      <div class="top-skills">
+        <h3>Top Skills</h3>
+        <div class="flex">
+          <Skill
+            v-for="skill in skills.top"
+            :key="skill.title"
+            :percentage="skill.percentage"
+            :title="skill.title"
+            :time="skill.time"
+            :desc="skill.desc"
+          >
           </Skill>
-          <Skill percentage="90" title="Javascript (ES5, ES6)" time="3 years">
+        </div>
+      </div>
+      <div class="misc-skills">
+        <h3>Basic Skills</h3>
+        <div
+          v-for="skillset in skills.misc"
+          :key="skillset.name"
+          class="flex skillset"
+        >
+          <span
+            v-for="skill in skillset.skills"
+            class="misc-skill flex"
+            :key="skill.title"
+          >
             <font-awesome-icon
-              :icon="['fab', 'js']"
-              class="js text-extra-big"
+              v-if="skill.icon"
+              :icon="skill.icon"
+              class="text-medium"
+              :style="skill.style"
             />
-          </Skill>
-          <Skill percentage="90" title="CSS3" time="3 years">
-            <font-awesome-icon
-              :icon="['fab', 'css3']"
-              class="css3 text-extra-big padding-s-left"
+            <img
+              v-else-if="skill.image"
+              :src="skill.image"
+              :style="skill.style"
             />
-          </Skill>
-          <Skill percentage="100" title="PHP" time="3 years">
-            <font-awesome-icon
-              :icon="['fab', 'php']"
-              class="php text-extra-big"
-            />
-          </Skill>
-          <Skill percentage="90" title="Git" time="3 years">
-            <font-awesome-icon
-              :icon="['fab', 'git-alt']"
-              class="git text-extra-big"
-            />
-          </Skill>
-          <Skill percentage="75" title="NodeJS" time="1 year">
-            <font-awesome-icon
-              :icon="['fab', 'node-js']"
-              class="node text-extra-big"
-            />
-          </Skill>
-          <Skill percentage="50" title="VueJS" time="1 year">
-            <font-awesome-icon
-              :icon="['fab', 'vuejs']"
-              class="vuejs text-extra-big"
-            />
-          </Skill>
-          <Skill percentage="30" title="ReactJS" time="1 year">
-            <font-awesome-icon
-              :icon="['fab', 'react']"
-              class="react text-extra-big"
-            />
-          </Skill>
+            <span>&nbsp;{{ skill.title }}</span>
+          </span>
         </div>
       </div>
     </div>
@@ -60,49 +49,41 @@
 </template>
 
 <script>
-import Skill from './skill.vue';
+import Skill from './lib/skill.vue';
+import skills from '@/data/skills';
 
 export default {
   name: 'Skills',
   components: {
     Skill,
   },
+  data() {
+    return {
+      skills,
+    };
+  },
 };
 </script>
 
 <style scoped>
-.html5,
-.js,
-.css3,
-.php,
-.git,
-.node,
-.vuejs,
-.react {
-  width: 100%;
+.top-skills,
+.misc-skills {
+  text-align: center;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  justify-content: center;
 }
-.html5 {
-  color: #f05525;
+.misc-skills {
+  margin-top: 6em;
 }
-.js {
-  color: #e8e840;
+.skillset {
+  justify-content: center;
 }
-.css3 {
-  color: #4b4bff;
-}
-.php {
-  color: #615e8c;
-}
-.git {
-  color: #f05525;
-}
-.node {
-  color: #7dbb3e;
-}
-.vuejs {
-  color: #43bb43;
-}
-.react {
-  color: #23dfce;
+.misc-skill {
+  width: max-content;
+  margin: 1em;
+  padding: 0.3em 0.8em;
+  box-shadow: 0em 0em 0.3em 0em #d0c4c4;
+  border-radius: 0.3em;
 }
 </style>

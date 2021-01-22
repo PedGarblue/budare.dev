@@ -1,57 +1,36 @@
 <template>
-  <div class="skill flex-column">
-    <div
-      class="progress-circle"
-      :class="[`p${percentage}`, percentage > 50 ? 'over50' : '']"
-    >
-      <span><slot /></span>
-      <div class="left-half-clipper">
-        <div class="first50-bar"></div>
-        <div class="value-bar"></div>
-      </div>
+  <div
+    class="progress-circle"
+    :class="[`p${percentage}`, percentage > 50 ? 'over50' : '']"
+  >
+    <div class="progress-count">
+      <span>{{ percentage }}%</span>
     </div>
-    <div>
-      {{ title }}
-    </div>
-    <div>
-      {{ time }}
+    <div class="left-half-clipper">
+      <div class="first50-bar"></div>
+      <div class="value-bar"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Skill',
+  name: 'ProgressCircle',
   props: {
     percentage: {
       type: Number,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-    },
-    time: {
-      type: String,
       required: true,
     },
   },
 };
 </script>
 
-<style scoped>
-.skill {
-  text-align: center;
-  margin: 0 auto;
-  width: 10em;
-  height: 15em;
+<style>
+.progress-circle {
   --width: 6em;
   --height: 6em;
-  transition-duration: 0.2s;
-}
-.progress-circle {
-  font-size: 20px;
-  margin: 20px;
+  font-size: 1.2em;
+  margin: auto;
   position: relative; /* so that children can be absolutely positioned */
   padding: 0;
   width: var(--width);
@@ -81,7 +60,7 @@ export default {
   --height: 6.5em;
 }
 /* Text inside the control */
-.progress-circle span {
+.progress-count {
   position: absolute;
   line-height: 5em;
   width: var(--width);
@@ -92,6 +71,11 @@ export default {
   color: #53777a;
   z-index: 2;
   transition-duration: 0.2s;
+}
+
+.progress-count span {
+  margin: auto;
+  font-size: 1.2em;
 }
 
 .left-half-clipper {
@@ -121,7 +105,7 @@ export default {
   width: var(--width);
   height: var(--height);
   border-radius: 50%;
-  border: 0.45em solid #53777a; /*The border is 0.35 but making it larger removes visual artifacts */
+  border: 0.45em solid var(--clear-blue); /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/ /* for debug */
   box-sizing: border-box;
   transition-duration: 0.2s;
@@ -131,7 +115,7 @@ export default {
   /*Progress bar for the first 50%, filling the whole right half*/
   position: absolute; /*needed for clipping*/
   clip: rect(0, var(--height), var(--width), calc(var(--width) / 2));
-  background-color: #53777a;
+  background-color: var(--clear-blue);
   border-radius: 50%;
   width: var(--width);
   height: var(--height);
