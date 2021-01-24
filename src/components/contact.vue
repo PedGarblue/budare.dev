@@ -24,7 +24,6 @@
           <div class="form-field flex">
             <label for="contactMessage">Message*</label>
             <textarea
-              type="text"
               name="contactMessage"
               class="form-input"
               rows="10"

@@ -5,4 +5,5 @@ export default {
     I want to have learned something.
   `,
   localization: 'Venezuela, Carabobo',
+  picture: 'https://cdn.filestackcontent.com/3v33cOwdToKkBwPZu5lH',
 };

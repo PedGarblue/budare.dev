@@ -3,7 +3,7 @@
     <div class="container">
       <div class="flex">
         <div class="photo">
-          <img src="../assets/literallyme.png" />
+          <img :src="aboutme.picture" />
         </div>
         <div class="desc">
           <div class="text-big text-bold">Pedro García</div>
@@ -53,6 +53,7 @@
 </template>
 
 <script>
+import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
 
 export default {
@@ -60,6 +61,7 @@ export default {
   data() {
     return {
       contact,
+      aboutme,
     };
   },
 };
