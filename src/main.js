@@ -7,6 +7,7 @@ import {
   faGlobeAmericas,
   faPhoneSquare,
   faEnvelope,
+  faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -28,6 +29,7 @@ library.add([
   faGlobeAmericas,
   faPhoneSquare,
   faEnvelope,
+  faArrowUp,
   faGithub,
   faLinkedin,
   faTelegram,

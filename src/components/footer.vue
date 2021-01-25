@@ -25,6 +25,7 @@
         </a>
       </nav>
     </section>
+    <GoToTopButton />
     <div class="designed-by-me text-small">
       Designed ❤️ by Pedro García.
     </div>
@@ -33,9 +34,13 @@
 
 <script>
 import contact from '@/data/contact';
+import GoToTopButton from './lib/go-top-button.vue';
 
 export default {
   name: 'Footer',
+  components: {
+    GoToTopButton,
+  },
   data() {
     return {
       contact,
