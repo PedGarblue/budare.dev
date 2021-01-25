@@ -9,6 +9,6 @@ export default [
     name: '📕 PGarcía.dev',
     desc: 'Vue3 app for this site.',
     source: 'https://github.com/PedGarBlue/pgarciadev',
-    demoUrl: 'https://localhost:8080',
+    demoUrl: 'https://garciapedro.herokuapp.com',
   },
 ];
