@@ -8,11 +8,11 @@
         <div class="flex">
           <Skill
             v-for="skill in skills.top"
-            :key="skill.title"
+            :key="skill.id"
             :percentage="skill.percentage"
-            :title="skill.title"
-            :time="skill.time"
-            :desc="skill.desc"
+            :title="skill.title[$i18n.locale]"
+            :time="skill.time[$i18n.locale]"
+            :desc="skill.desc[$i18n.locale]"
           >
           </Skill>
         </div>

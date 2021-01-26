@@ -16,7 +16,7 @@
               </a>
             </div>
             <div>
-              {{ project.desc }}
+              {{ project.desc[$i18n.locale] }}
             </div>
           </div>
           <a

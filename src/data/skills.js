@@ -1,11 +1,21 @@
 export default {
   top: [
     {
-      title: 'Full Stack Development',
-      time: 'Intermediate, 2 years',
+      id: 'Fullstack Developer',
+      title: {
+        en: 'Full Stack Development',
+        es: 'Desarrollador Full Stack',
+      },
+      time: {
+        en: 'Intermediate, 2 years',
+        es: 'Intermedio, 2 años',
+      },
       percentage: 60,
-      desc: `Focused with Vue/React in Frontend
+      desc: {
+        en: `Focused with Vue/React in Frontend
       and Node/PHP on Backend`,
+        es: `Enfocado en Vue/React en Frontend y Node/PHP en Backend`,
+      },
     },
   ],
   misc: [
