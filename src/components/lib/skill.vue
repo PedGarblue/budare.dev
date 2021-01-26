@@ -64,5 +64,6 @@ export default {
 }
 .desc {
   font-size: 0.87em;
+  margin-top: 0.5rem;
 }
 </style>
