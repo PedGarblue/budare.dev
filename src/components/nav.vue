@@ -49,7 +49,7 @@ export default {
   justify-content: space-between;
 }
 a {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: bold;
   padding: 0.75rem 0.5rem;
   border-radius: 0.35rem;
@@ -59,7 +59,7 @@ a:hover {
   background-color: var(--gray);
 }
 .brand {
-  font-size: 1rem;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
 }

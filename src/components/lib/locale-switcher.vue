@@ -35,14 +35,20 @@ button {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s;
   border-radius: 0.3rem;
 }
 button:hover {
   background-color: var(--light-background);
 }
 img {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
+}
+@media screen and (min-width: 400px) {
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 </style>
