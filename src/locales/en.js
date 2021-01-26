@@ -12,10 +12,9 @@ export default {
   },
   about_me: {
     title: 'About me',
-    desc: `Over 3 years of practical experience with personal projects and maintaining websites.
-      Passionate about software development, learning by "doing" into something new and challenging.
+    desc: `Passionate about software development, learning by "doing" into something new and challenging.
       I'm constantly looking for the takeaway from every project
-      I want to have learned something.
+      it's a good way for me to have learned something.
     `,
   },
   projects: {

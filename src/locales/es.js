@@ -12,7 +12,9 @@ export default {
   },
   about_me: {
     title: 'Acerca de mí',
-    desc: `Sexo`,
+    desc: `Apasionado por el desarrollo de Software, buscando siempre algo nuevo y desafiante para aprender de ello.
+    Constantemente buscando ver todo lo que se ha concluido de cada proyecto,
+    Es una buena manera de haber aprendido algo de todo lo que has hecho.`,
   },
   projects: {
     title: 'Proyectos',
