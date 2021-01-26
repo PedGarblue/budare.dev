@@ -11,6 +11,7 @@
           <a href="#about">{{ $t('navbar.link.About') }}</a>
           <a href="#projects">{{ $t('navbar.link.Projects') }}</a>
           <a href="#contact">{{ $t('navbar.link.Contact') }}</a>
+          <LocaleSwitcher />
         </div>
       </div>
     </div>
@@ -18,10 +19,14 @@
 </template>
 
 <script>
+import LocaleSwitcher from '@/components/lib/locale-switcher.vue';
 import aboutme from '@/data/aboutme';
 
 export default {
   name: 'Nav',
+  components: {
+    LocaleSwitcher,
+  },
   data() {
     return {
       aboutme,
