@@ -1,7 +1,7 @@
 <template>
   <section id="projects">
     <div class="container">
-      <h2>Projects</h2>
+      <h2>{{ $t('projects.title') }}</h2>
       <hr />
       <div>
         <div
@@ -24,13 +24,13 @@
             :href="project.source"
             rel="noreferrer noopener"
           >
-            Source
+            {{ $t('projects.source') }}
           </a>
         </div>
       </div>
       <div class="text-center margin-l-top">
         <a class="button" :href="contact.github" rel="noreferrer noopener">
-          See more in
+          {{ $t('projects.seemore') }}
           <span class="text-medium">
             <font-awesome-icon :icon="['fab', 'github']" />
           </span>

@@ -4,13 +4,13 @@
       <div class="flex">
         <div>
           <router-link to="/" class="brand">
-            Pedro García
+            {{ aboutme.name }}
           </router-link>
         </div>
         <div class="flex">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
+          <a href="#about">{{ $t('navbar.link.About') }}</a>
+          <a href="#projects">{{ $t('navbar.link.Projects') }}</a>
+          <a href="#contact">{{ $t('navbar.link.Contact') }}</a>
         </div>
       </div>
     </div>
@@ -18,8 +18,15 @@
 </template>
 
 <script>
+import aboutme from '@/data/aboutme';
+
 export default {
   name: 'Nav',
+  data() {
+    return {
+      aboutme,
+    };
+  },
 };
 </script>
 

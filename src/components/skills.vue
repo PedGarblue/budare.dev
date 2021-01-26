@@ -1,10 +1,10 @@
 <template>
   <section id="skills">
     <div class="container">
-      <h2>Skills</h2>
+      <h2>{{ $t('skills.title') }}</h2>
       <hr />
       <div class="top-skills">
-        <h3>Top Skills</h3>
+        <h3>{{ $t('skills.top_skills') }}</h3>
         <div class="flex">
           <Skill
             v-for="skill in skills.top"
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="misc-skills">
-        <h3>Basic Skills</h3>
+        <h3>{{ $t('skills.basic_skills') }}</h3>
         <div
           v-for="skillset in skills.misc"
           :key="skillset.name"

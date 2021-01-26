@@ -27,7 +27,7 @@
     </section>
     <GoToTopButton />
     <div class="designed-by-me text-small">
-      Designed ❤️ by Pedro García.
+      {{ $t('footer.designed_by') }}
     </div>
   </footer>
 </template>

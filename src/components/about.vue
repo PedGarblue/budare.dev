@@ -1,11 +1,11 @@
 <template>
   <section id="about">
     <div class="container">
-      <h2>About me</h2>
+      <h2>{{ $t('about_me.title') }}</h2>
       <hr />
       <div class="card">
         <p>
-          {{ aboutme.short }}
+          {{ $t('about_me.desc') }}
         </p>
       </div>
       <div class="card margin-m-top">

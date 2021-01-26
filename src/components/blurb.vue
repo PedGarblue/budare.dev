@@ -6,8 +6,8 @@
           <img :src="aboutme.picture" />
         </div>
         <div class="desc">
-          <div class="text-big text-bold">Pedro García</div>
-          <div>Web Application Developer</div>
+          <div class="text-big text-bold">{{ aboutme.name }}</div>
+          <div>{{ $t('blurb.workname') }}</div>
           <div class="flex text-big">
             <a
               class="contact-icon"
@@ -37,7 +37,7 @@
             href="#contact"
             class="contact-link text-medium padding-m-left padding-s-right"
           >
-            Contact me
+            {{ $t('blurb.Contact_me') }}
           </a>
           <a
             class="contact-link flex padding-s-right padding-s-left text-medium"

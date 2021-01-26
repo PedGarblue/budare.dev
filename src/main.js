@@ -24,6 +24,7 @@ import {
   faReact,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import locales from './i18n';
 
 library.add([
   faGlobeAmericas,
@@ -45,5 +46,6 @@ library.add([
 
 createApp(App)
   .use(router)
+  .use(locales)
   .component('font-awesome-icon', FontAwesomeIcon)
   .mount('#app');

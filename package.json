@@ -1,10 +1,8 @@
 {
   "name": "PGarcia.dev",
   "version": "0.1.0",
-  "license": "MIT",
-  "repository": "https://github.com/PedGarblue/PGarcia.dev",
-  "author": "PedGarblue",
   "private": true,
+  "author": "PedGarblue",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -17,6 +15,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-3",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
+    "vue-i18n": "^9.0.0-rc.4",
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
@@ -31,5 +30,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-vue": "^7.0.0-0",
     "prettier": "^1.19.1"
-  }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/PedGarblue/PGarcia.dev"
 }

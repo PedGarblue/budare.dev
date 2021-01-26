@@ -3,13 +3,15 @@
     <div class="container">
       <form action="" method="POST">
         <fieldset>
-          <h2>Contact</h2>
+          <h2>{{ $t('contact.title') }}</h2>
           <div class="form-field flex">
-            <label for="contactName">Name*</label>
+            <label for="contactName">{{ $t('contact.form.field.Name') }}</label>
             <input type="text" name="contactName" class="form-input" required />
           </div>
           <div class="form-field flex">
-            <label for="contactEmail">Email*</label>
+            <label for="contactEmail">{{
+              $t('contact.form.field.Email')
+            }}</label>
             <input
               type="text"
               name="contactEmail"
@@ -18,11 +20,15 @@
             />
           </div>
           <div class="form-field flex">
-            <label for="contactSubject">Subject</label>
+            <label for="contactSubject">{{
+              $t('contact.form.field.Subject')
+            }}</label>
             <input type="text" name="contactSubject" class="form-input" />
           </div>
           <div class="form-field flex">
-            <label for="contactMessage">Message*</label>
+            <label for="contactMessage">{{
+              $t('contact.form.field.Message')
+            }}</label>
             <textarea
               name="contactMessage"
               class="form-input"
@@ -31,7 +37,7 @@
             />
           </div>
           <div>
-            <button type="submit">Submit</button>
+            <button type="submit">{{ $t('contact.form.Submit') }}</button>
           </div>
         </fieldset>
       </form>
