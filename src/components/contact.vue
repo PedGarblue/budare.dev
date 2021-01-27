@@ -1,4 +1,6 @@
 <template>
+  /* this is disabled for now meanwhile i find a way to add Mailing service api
+  */
   <section id="contact">
     <div class="container">
       <form action="" method="POST">

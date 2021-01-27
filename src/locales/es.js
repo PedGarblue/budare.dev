@@ -4,6 +4,7 @@ export default {
       About: 'Acerca',
       Projects: 'Proyectos',
       Contact: 'Contacto',
+      Skills: 'Habilidades',
     },
   },
   blurb: {

@@ -34,16 +34,11 @@
         </div>
         <div class="flex contact-me-button">
           <a
-            href="#contact"
-            class="contact-link text-medium padding-m-left padding-s-right"
-          >
-            {{ $t('blurb.Contact_me') }}
-          </a>
-          <a
-            class="contact-link flex padding-s-right padding-s-left text-medium"
+            class="contact-link flex padding-m-right padding-m-left text-medium"
             :href="contact.telegram"
             rel="noreferrer noopener"
           >
+            {{ $t('blurb.Contact_me') }}&nbsp;&nbsp;
             <font-awesome-icon :icon="['fab', 'telegram']" />
           </a>
         </div>
