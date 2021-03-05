@@ -9,6 +9,15 @@ export default [
     demoUrl: 'https://cafechan.herokuapp.com',
   },
   {
+    name: '🛵 Encomiendas',
+    desc: {
+      en: 'Simple delivery app for practice.',
+      es: 'Solo aplicación simple de entregas para práctica.',
+    },
+    source: 'https://github.com/PedGarBlue/encomiendas',
+    demoUrl: 'https://encomiendas.herokuapp.com',
+  },
+  {
     name: '📕 PGarcía.dev',
     desc: {
       en: 'Personal app in Vue 3 for this site.',
