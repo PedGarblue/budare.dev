@@ -8,14 +8,12 @@ export default {
     },
   },
   blurb: {
-    workname: 'Desarrollador Full Stack',
+    workname: 'Desarrollador Web Full Stack',
     Contact_me: 'Contáctame',
   },
   about_me: {
     title: 'Acerca de mí',
-    desc: `Apasionado por el desarrollo de Software, buscando siempre algo nuevo y desafiante para aprender de ello.
-    Constantemente buscando ver todo lo que se ha concluido de cada proyecto,
-    Es una buena manera de haber aprendido algo de todo lo que has hecho.`,
+    desc: `Apasionado por el desarrollo de Software, buscando siempre algo nuevo y desafiante para aprender de ello.`,
   },
   projects: {
     title: 'Proyectos',

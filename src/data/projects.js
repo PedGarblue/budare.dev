@@ -12,7 +12,7 @@ export default [
     name: '🛵 Encomiendas',
     desc: {
       en: 'Simple delivery app for practice.',
-      es: 'Solo aplicación simple de entregas para práctica.',
+      es: 'Aplicación simple de entregas.',
     },
     source: 'https://github.com/PedGarBlue/encomiendas',
     demoUrl: 'https://encomiendas.herokuapp.com',
@@ -20,8 +20,8 @@ export default [
   {
     name: '📕 PGarcía.dev',
     desc: {
-      en: 'Personal app in Vue 3 for this site.',
-      es: 'Portafolio personal en Vue 3 para este sitio.',
+      en: 'Personal app in Vue 3 (this site).',
+      es: 'Portafolio personal en Vue 3 (este sitio).',
     },
     source: 'https://github.com/PedGarBlue/pgarciadev',
     demoUrl: 'https://garciapedro.herokuapp.com',
