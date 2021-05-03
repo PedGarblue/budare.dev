@@ -18,12 +18,34 @@
             <div>
               {{ project.desc[$i18n.locale] }}
             </div>
+            <div class="project-tags">
+              <span
+                v-for="tag in project.tags"
+                :key="tag.title"
+                class="project-tag"
+              >
+                <img
+                  v-if="tag.image"
+                  class="project-tag-image"
+                  :src="tag.image"
+                  :style="tag.style"
+                />
+                <font-awesome-icon
+                  v-if="tag.icon"
+                  class="project-tag-icon"
+                  :icon="tag.icon"
+                  :style="tag.style"
+                />
+                <span class="project-tag-title">{{ tag.title }}</span>
+              </span>
+            </div>
           </div>
           <a
             class="project-source text-bold"
             :href="project.source"
             rel="noreferrer noopener"
           >
+            <font-awesome-icon :icon="['fab', 'github']" />
             {{ $t('projects.source') }}
           </a>
         </div>
@@ -64,11 +86,35 @@ export default {
 .project-desc {
   margin: 0 0.3em;
 }
+.project-tags {
+  display: flex;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+.project-tag {
+  display: flex;
+  margin-right: 0.3rem;
+  padding: 0 0.3rem;
+  border: 0.1rem solid #cac8c8;
+  border-radius: 0.3rem;
+  font-size: 0.8em;
+  align-items: center;
+  cursor: default;
+  transition: all 0.1s ease-in;
+}
+.project-tag:hover {
+  background-color: #397e9f;
+  color: white;
+  border-color: transparent;
+}
+.project-tag-icon {
+  margin-right: 0.2rem;
+}
 .project-source {
   margin-left: auto;
   background-color: var(--blue);
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 1rem;
   border-radius: 0.35rem;
   box-shadow: 0.01em 0.01em 0.2em var(--black);
 }
