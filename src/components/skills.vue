@@ -29,7 +29,7 @@
             class="misc-skill flex"
             :key="skill.title"
           >
-            <font-awesome-icon
+            <custom-icon
               v-if="skill.icon"
               :icon="skill.icon"
               class="text-medium"
@@ -50,12 +50,14 @@
 
 <script>
 import Skill from './lib/skill.vue';
+import CustomIcon from './lib/custom-icon.vue';
 import skills from '@/data/skills';
 
 export default {
   name: 'Skills',
   components: {
     Skill,
+    CustomIcon,
   },
   data() {
     return {

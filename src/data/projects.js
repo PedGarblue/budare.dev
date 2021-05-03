@@ -15,11 +15,7 @@ export default [
       },
       {
         title: 'MongoDB',
-        image: 'https://img.icons8.com/color/48/000000/mongodb.png',
-        style: {
-          width: '1.4em',
-          height: '1.4em',
-        },
+        icon: 'mongodb',
       },
       {
         title: 'Vue.js',
@@ -48,11 +44,7 @@ export default [
       },
       {
         title: 'MongoDB',
-        image: 'https://img.icons8.com/color/48/000000/mongodb.png',
-        style: {
-          width: '1.4em',
-          height: '1.4em',
-        },
+        icon: 'mongodb',
       },
       {
         title: 'Vue.js',

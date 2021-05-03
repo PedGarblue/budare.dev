@@ -58,6 +58,7 @@ export default {
 .progress-circle:hover {
   --width: 6.5em;
   --height: 6.5em;
+  font-size: 1.25em;
 }
 /* Text inside the control */
 .progress-count {

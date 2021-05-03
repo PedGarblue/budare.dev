@@ -30,7 +30,7 @@
                   :src="tag.image"
                   :style="tag.style"
                 />
-                <font-awesome-icon
+                <custom-icon
                   v-if="tag.icon"
                   class="project-tag-icon"
                   :icon="tag.icon"
@@ -63,11 +63,15 @@
 </template>
 
 <script>
+import CustomIcon from './lib/custom-icon.vue';
 import projects from '@/data/projects';
 import contact from '@/data/contact';
 
 export default {
   name: 'Projects',
+  components: {
+    CustomIcon,
+  },
   data() {
     return {
       projects,
@@ -109,6 +113,7 @@ export default {
 }
 .project-tag-icon {
   margin-right: 0.2rem;
+  font-size: 1.2em;
 }
 .project-source {
   margin-left: auto;

@@ -7,7 +7,7 @@
         </div>
         <div class="desc">
           <div class="text-big text-bold">{{ aboutme.name }}</div>
-          <div>{{ $t('blurb.workname') }}</div>
+          <div class="workname">{{ $t('blurb.workname') }}</div>
           <div class="flex text-big">
             <a
               class="contact-icon"
@@ -91,6 +91,9 @@ img {
   height: 7rem;
   margin: auto;
 }
+.workname {
+  font-size: 0.87rem;
+}
 .contact-me-button {
   display: none;
 }
@@ -114,9 +117,13 @@ img {
   .contact-me-button {
     display: flex;
     margin-left: auto;
-    background-color: #fffefe;
+    background-color: #397e9f;
+    border: 0.15rem solid;
     border-radius: 0.35rem;
-    box-shadow: 0em 0em 0.2em var(--gray);
+    color: white;
+  }
+  .contact-link {
+    color: white;
   }
 }
 </style>

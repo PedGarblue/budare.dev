@@ -72,7 +72,7 @@ export default {
         },
         {
           title: 'MySQL',
-          image: 'https://img.icons8.com/ios/50/000000/mysql-logo.png',
+          icon: 'mysql',
           style: {
             width: '1.5em',
             height: '1.5em',
@@ -80,10 +80,10 @@ export default {
         },
         {
           title: 'MongoDB',
-          image: 'https://img.icons8.com/color/48/000000/mongodb.png',
+          icon: 'mongodb',
           style: {
-            width: '1.4em',
-            heigh: '1.4em',
+            width: '1em',
+            height: '1em',
           },
         },
       ],
