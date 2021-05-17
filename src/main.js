@@ -1,51 +1,11 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-
-import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faGlobeAmericas,
-  faPhoneSquare,
-  faEnvelope,
-  faArrowUp,
-} from '@fortawesome/free-solid-svg-icons';
-
-import {
-  faGithub,
-  faLinkedin,
-  faTelegram,
-  faHtml5,
-  faJs,
-  faCss3Alt,
-  faNodeJs,
-  faPhp,
-  faGitAlt,
-  faVuejs,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import locales from './i18n';
-
-library.add([
-  faGlobeAmericas,
-  faPhoneSquare,
-  faEnvelope,
-  faArrowUp,
-  faGithub,
-  faLinkedin,
-  faTelegram,
-  faHtml5,
-  faJs,
-  faCss3Alt,
-  faNodeJs,
-  faPhp,
-  faGitAlt,
-  faVuejs,
-  faReact,
-]);
+import i18n from './plugins/i18n';
+import fontawesome from './plugins/fontawesome';
 
 createApp(App)
   .use(router)
-  .use(locales)
-  .component('font-awesome-icon', FontAwesomeIcon)
+  .use(i18n)
+  .use(fontawesome)
   .mount('#app');
