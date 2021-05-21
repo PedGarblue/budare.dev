@@ -59,7 +59,7 @@ footer section {
 }
 .designed-by-me {
   width: 100%;
-  background-color: var(--black);
-  color: white;
+  background-color: var(--background-secondary);
+  color: var(--text-secondary);
 }
 </style>

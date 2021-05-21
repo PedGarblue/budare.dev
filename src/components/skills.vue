@@ -85,7 +85,7 @@ export default {
   width: max-content;
   margin: 1em;
   padding: 0.3em 0.8em;
-  box-shadow: 0em 0em 0.3em 0em #d0c4c4;
+  box-shadow: 0em 0em 0.3em 0em var(--light-gray);
   border-radius: 0.3em;
 }
 </style>

@@ -99,7 +99,7 @@ export default {
   display: flex;
   margin-right: 0.3rem;
   padding: 0 0.3rem;
-  border: 0.1rem solid #cac8c8;
+  border: 0.1rem solid var(--light-gray);
   border-radius: 0.3rem;
   font-size: 0.8em;
   align-items: center;
@@ -107,8 +107,8 @@ export default {
   transition: all 0.1s ease-in;
 }
 .project-tag:hover {
-  background-color: #397e9f;
-  color: white;
+  background-color: var(--blue);
+  color: var(--text-secondary);
   border-color: transparent;
 }
 .project-tag-icon {
@@ -118,7 +118,7 @@ export default {
 .project-source {
   margin-left: auto;
   background-color: var(--blue);
-  color: white;
+  color: var(--text-secondary);
   padding: 0.2rem 1rem;
   border-radius: 0.35rem;
   box-shadow: 0.01em 0.01em 0.2em var(--black);

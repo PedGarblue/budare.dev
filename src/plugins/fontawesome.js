@@ -1,42 +1,12 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
-import {
-  faGlobeAmericas,
-  faPhoneSquare,
-  faEnvelope,
-  faArrowUp,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-  faGithub,
-  faLinkedin,
-  faTelegram,
-  faHtml5,
-  faJs,
-  faCss3Alt,
-  faNodeJs,
-  faPhp,
-  faGitAlt,
-  faVuejs,
-  faReact,
-} from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { far } from '@fortawesome/free-regular-svg-icons';
+import { fab } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add([
-  faGlobeAmericas,
-  faPhoneSquare,
-  faEnvelope,
-  faArrowUp,
-  faGithub,
-  faLinkedin,
-  faTelegram,
-  faHtml5,
-  faJs,
-  faCss3Alt,
-  faNodeJs,
-  faPhp,
-  faGitAlt,
-  faVuejs,
-  faReact,
-]);
+library.add(fas);
+library.add(far);
+library.add(fab);
 
 export default {
   install(app) {

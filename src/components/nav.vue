@@ -4,12 +4,19 @@
       <div class="flex">
         <div>
           <router-link to="/" class="brand">
-            {{ aboutme.name }}
+            <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
+            <span class="brand__title">
+              {{ aboutme.name }}
+            </span>
           </router-link>
         </div>
         <div class="flex">
-          <a href="#about">{{ $t('navbar.link.About') }}</a>
-          <a href="#projects">{{ $t('navbar.link.Projects') }}</a>
+          <a href="#about" class="navbar__link">
+            {{ $t('navbar.link.About') }}
+          </a>
+          <a href="#projects" class="navbar__link">
+            {{ $t('navbar.link.Projects') }}
+          </a>
           <LocaleSwitcher />
         </div>
       </div>
@@ -39,7 +46,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--black);
+  background-color: var(--background-primary);
   width: 100%;
   z-index: 3;
   padding: 0.1rem 0;
@@ -47,23 +54,25 @@ export default {
 .flex {
   justify-content: space-between;
 }
-a {
+.navbar__link {
   font-size: 0.75rem;
   font-weight: bold;
   padding: 0.75rem 0.5rem;
   border-radius: 0.35rem;
-  color: var(--font-color-light);
+  color: var(--text-primary);
 }
-a:hover {
-  background-color: var(--gray);
+.navbar__link:hover {
+  background-color: var(--text-terciary);
 }
 .brand {
   font-size: 0.95rem;
   display: flex;
   align-items: center;
+  color: var(--text-primary);
 }
-.brand {
-  color: var(--white);
+.brand__icon,
+.brand__title {
+  margin: 0 0.25rem;
 }
 
 @media screen and (min-width: 400px) {
@@ -74,15 +83,18 @@ a:hover {
   }
   .brand {
     font-size: 1.3rem;
-    color: var(--font-color);
+    color: var(--text-primary);
   }
-  a {
-    color: var(--font-color);
+  .navbar__link {
+    color: var(--text-primary);
     font-size: 1.2rem;
     font-weight: normal;
   }
-  a:hover {
-    background-color: var(--light-background);
+  .navbar__link:hover {
+    background-color: var(--background-primary);
+  }
+  #locale-switcher {
+    margin: 0 0.5rem;
   }
 }
 </style>

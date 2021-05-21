@@ -55,7 +55,7 @@ export default {
   padding: 1rem 1.5rem;
   box-shadow: 0.1rem 0.1rem 0.3rem var(--gray);
   border-radius: 0.2rem;
-  color: var(--black);
+  color: var(--text-primary);
 }
 p {
   line-break: normal;

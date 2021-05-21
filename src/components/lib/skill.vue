@@ -61,7 +61,7 @@ export default {
 .time {
   font-size: 0.85em;
   font-weight: lighter;
-  color: #8a8888;
+  color: var(--text-terciary);
 }
 .desc {
   font-size: 0.87em;

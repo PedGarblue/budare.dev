@@ -21,8 +21,9 @@ export default {
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-primary);
   text-align: center;
-  color: var(--font-color);
+  color: var(--text-primary);
 }
 .page {
   padding-top: 3.26rem;
