@@ -20,13 +20,13 @@ export default {
 <style scoped>
 #go-to-top {
   position: fixed;
-  background-color: var(--blue);
+  background-color: var(--background-secondary);
   top: calc(100vh - 7rem);
   left: calc(100vw - 4rem);
   border: solid 0.14em;
   padding: 1rem;
   border-radius: 50%;
-  color: var(--white);
+  color: var(--text-primary);
   cursor: pointer;
 }
 

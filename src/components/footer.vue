@@ -60,6 +60,6 @@ footer section {
 .designed-by-me {
   width: 100%;
   background-color: var(--background-secondary);
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 </style>

@@ -46,7 +46,7 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--background-primary);
+  background-color: var(--background-secondary);
   width: 100%;
   z-index: 3;
   padding: 0.1rem 0;
@@ -79,7 +79,7 @@ export default {
   .navbar {
     padding: 2rem 0;
     position: static;
-    background-color: transparent;
+    background-color: var(--background-secondary);
   }
   .brand {
     font-size: 1.3rem;

@@ -1,7 +1,10 @@
 <template>
   <section id="projects">
     <div class="container">
-      <h2>{{ $t('projects.title') }}</h2>
+      <h2>
+        <font-awesome-icon :icon="['fas', 'project-diagram']" />
+        {{ $t('projects.title') }}
+      </h2>
       <hr />
       <div>
         <div
@@ -46,7 +49,9 @@
             rel="noreferrer noopener"
           >
             <font-awesome-icon :icon="['fab', 'github']" />
-            {{ $t('projects.source') }}
+            <span>
+              {{ $t('projects.source') }}
+            </span>
           </a>
         </div>
       </div>
@@ -87,9 +92,6 @@ export default {
   flex-wrap: nowrap;
   margin: 0.8rem 0;
 }
-.project-desc {
-  margin: 0 0.3em;
-}
 .project-tags {
   display: flex;
   align-items: center;
@@ -99,7 +101,7 @@ export default {
   display: flex;
   margin-right: 0.3rem;
   padding: 0 0.3rem;
-  border: 0.1rem solid var(--light-gray);
+  border: 0.1rem solid var(--text-terciary);
   border-radius: 0.3rem;
   font-size: 0.8em;
   align-items: center;
@@ -107,9 +109,7 @@ export default {
   transition: all 0.1s ease-in;
 }
 .project-tag:hover {
-  background-color: var(--blue);
-  color: var(--text-secondary);
-  border-color: transparent;
+  border-color: var(--background-terciary);
 }
 .project-tag-icon {
   margin-right: 0.2rem;
@@ -117,16 +117,30 @@ export default {
 }
 .project-source {
   margin-left: auto;
-  background-color: var(--blue);
-  color: var(--text-secondary);
-  padding: 0.2rem 1rem;
-  border-radius: 0.35rem;
-  box-shadow: 0.01em 0.01em 0.2em var(--black);
+  color: var(--text-primary);
+  padding: 0 0.5rem;
+  border: 0.1rem solid var(--text-primary);
+  border-radius: 50%;
+  box-shadow: 0.01em 0.01em 0.2em var(--text-terciary);
+  font-size: 1.3em;
 }
 
+.project-source span {
+  display: none;
+}
 @media screen and (min-width: 400px) {
   .project-desc {
     margin: 0;
+  }
+  .project-source {
+    background-color: var(--background-secondary);
+    padding: 0.3rem 1rem;
+    font-size: 1em;
+    border-radius: 0.35rem;
+  }
+  .project-source span {
+    display: inline;
+    margin-left: 0.5rem;
   }
 }
 </style>

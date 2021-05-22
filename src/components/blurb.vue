@@ -131,7 +131,7 @@ img {
   .contact-me-button {
     display: flex;
     margin-left: auto;
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     border: 0.15rem solid;
     border-radius: 0.35rem;
     color: var(--text-primary);

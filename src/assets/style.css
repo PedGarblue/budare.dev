@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 :root{
-  --text-primary: #f4f3f3;
-  --text-secondary: #443d3d;
-  --text-terciary: #8a8888;
-  --background-primary: #3b3b3b;
-  --background-secondary: #1e447c;
-  --background-terciary: #f4f3f3;
+  --text-primary: hsl(0, 4%, 95%);
+  --text-secondary: hsl(0, 5%, 25%);
+  --text-terciary: hsl(0, 1%, 54%);
+  --background-primary: hsl(0, 0%, 23%);
+  --background-secondary: hsl(216, 43%, 42%);
+  --background-terciary: hsl(0, 4%, 95%);
 }
 
 *, ::after, ::before {

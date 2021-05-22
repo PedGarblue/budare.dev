@@ -1,7 +1,10 @@
 <template>
   <section id="skills">
     <div class="container">
-      <h2>{{ $t('skills.title') }}</h2>
+      <h2>
+        <font-awesome-icon :icon="['fas', 'code']" />
+        {{ $t('skills.title') }}
+      </h2>
       <hr />
       <div class="top-skills">
         <h3>{{ $t('skills.top_skills') }}</h3>
@@ -85,7 +88,9 @@ export default {
   width: max-content;
   margin: 1em;
   padding: 0.3em 0.8em;
-  box-shadow: 0em 0em 0.3em 0em var(--light-gray);
+  color: var(--text-secondary);
+  background-color: var(--background-terciary);
+  box-shadow: 0em 0em 0.2em 0em var(--text-terciary);
   border-radius: 0.3em;
 }
 </style>
