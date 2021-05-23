@@ -13,9 +13,8 @@ export default {
   },
   about_me: {
     title: 'About me',
-    desc: `Passionate about software development, learning by "doing" into something new and challenging.
-      I'm constantly looking for the takeaway from every project
-      it's a good way for me to have learned something.
+    desc: `At the age of 14 I made my first script in Visual Basic, since then I have tried different programming languages in search of doing new and interesting things, eventually making code became one of my favorite hobbies.
+    I have explored the software development universe on my own, ended up focusing primarily on web development.
     `,
   },
   projects: {
@@ -27,6 +26,7 @@ export default {
     title: 'Skills',
     top_skills: 'Top Skills',
     basic_skills: 'Basic Skills',
+    languages: 'Languages',
   },
   contact: {
     title: 'Contact',

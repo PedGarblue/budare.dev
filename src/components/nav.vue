@@ -46,10 +46,11 @@ export default {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--background-secondary);
   width: 100%;
-  z-index: 3;
   padding: 0.1rem 0;
+  background-color: var(--background-secondary);
+  z-index: 3;
+  box-shadow: 0.1rem 0 0.3rem hsl(0, 0%, 24.3%);
 }
 .flex {
   justify-content: space-between;
@@ -62,7 +63,7 @@ export default {
   color: var(--text-primary);
 }
 .navbar__link:hover {
-  background-color: var(--text-terciary);
+  background-color: var(--background-primary);
 }
 .brand {
   font-size: 0.95rem;

@@ -13,7 +13,9 @@ export default {
   },
   about_me: {
     title: 'Acerca de mí',
-    desc: `Apasionado por el desarrollo de Software, buscando siempre algo nuevo y desafiante para aprender de ello.`,
+    desc: `A los 14 años hice mi primer script en Visual Basic, desde ese entonces he probado distintos lenguajes de programación en busca de hacer cosas nuevas e interesantes, eventualmente hacer código se convirtió en uno de mis hobbies favoritos.
+    He explorado por mi propia cuenta el universo del desarrollo de software, terminé enfocandome principalmente en el desarrollo web.
+    `,
   },
   projects: {
     title: 'Proyectos',
