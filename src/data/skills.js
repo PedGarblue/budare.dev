@@ -12,15 +12,15 @@ export default {
       },
       percentage: 60,
       desc: {
-        en: `Focused with Vue/React in Frontend
-      and Node/PHP on Backend`,
-        es: `Enfocado en Vue/React en Frontend y Node/PHP en Backend`,
+        en: `Focused with Vue.js in Frontend
+      and Node.js/PHP on Backend`,
+        es: `Enfocado en Vue.js en Frontend y Node.js/PHP en Backend`,
       },
     },
   ],
   misc: [
     {
-      name: 'frontend',
+      name: 'Frontend',
       skills: [
         {
           title: 'HTML5',
@@ -38,24 +38,24 @@ export default {
           },
         },
         {
-          title: 'Javascript (ES5, ES6, ES7)',
+          title: 'Javascript',
           icon: ['fab', 'js'],
           style: {
             color: '#e8e840',
           },
         },
+        {
+          title: 'Vue.js',
+          icon: ['fab', 'vuejs'],
+          style: {
+            color: '#7ebb12',
+          },
+        },
       ],
     },
     {
-      name: 'backend',
+      name: 'Backend',
       skills: [
-        {
-          title: 'Git',
-          icon: ['fab', 'git-alt'],
-          style: {
-            color: '#f05525',
-          },
-        },
         {
           title: 'PHP',
           icon: ['fab', 'php'],
@@ -70,6 +70,11 @@ export default {
             color: '#7dbb3e',
           },
         },
+      ],
+    },
+    {
+      name: 'Databases',
+      skills: [
         {
           title: 'MySQL',
           icon: 'mysql',
@@ -85,6 +90,23 @@ export default {
             width: '1em',
             height: '1em',
           },
+        },
+      ],
+    },
+    {
+      name: 'Misc',
+      skills: [
+        {
+          title: 'SCRUM',
+          icon: ['fas', 'users'],
+        },
+        {
+          title: 'Test Driven Development',
+          icon: ['fas', 'cube'],
+        },
+        {
+          title: 'Clean code',
+          icon: ['fas', 'clipboard-check'],
         },
       ],
     },

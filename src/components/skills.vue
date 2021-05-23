@@ -27,6 +27,7 @@
           :key="skillset.name"
           class="flex skillset"
         >
+          <div class="skillset__name">{{ skillset.name }}</div>
           <span
             v-for="skill in skillset.skills"
             class="misc-skill flex"
@@ -57,7 +58,11 @@
           >
             <custom-icon :icon="language.flag" />
             <span>&nbsp;{{ language.title }} - {{ language.level }}&nbsp;</span>
-            <a v-if="language.certificate" :href="language.certificate">
+            <a
+              v-if="language.certificate"
+              :href="language.certificate"
+              rel="noreferrer noopener"
+            >
               <custom-icon :icon="['fas', 'certificate']" />
             </a>
           </span>
@@ -100,6 +105,11 @@ export default {
 }
 .skillset {
   justify-content: center;
+}
+.skillset__name {
+  flex-basis: 100%;
+  font-weight: lighter;
+  color: var(--text-terciary);
 }
 .misc-skill {
   width: max-content;

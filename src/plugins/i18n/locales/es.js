@@ -25,7 +25,7 @@ export default {
   skills: {
     title: 'Habilidades',
     top_skills: 'Habilidades principales',
-    basic_skills: 'Habilidades básicas',
+    basic_skills: 'Tecnologías',
     languages: 'Idiomas',
   },
   contact: {
