@@ -89,4 +89,17 @@ export default {
       ],
     },
   ],
+  languages: [
+    {
+      title: 'Español',
+      flag: 'es',
+      level: 'Native',
+    },
+    {
+      title: 'English',
+      flag: 'en',
+      level: 'B2 Upper Intermediate',
+      certificate: 'https://www.efset.org/cert/LoX8CD',
+    },
+  ],
 };

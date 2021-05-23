@@ -47,6 +47,22 @@
           </span>
         </div>
       </div>
+      <div class="languages">
+        <h3>{{ $t('skills.languages') }}</h3>
+        <div class="flex skillset">
+          <span
+            v-for="language in skills.languages"
+            :key="language.title"
+            class="flex misc-skill"
+          >
+            <custom-icon :icon="language.flag" />
+            <span>&nbsp;{{ language.title }} - {{ language.level }}&nbsp;</span>
+            <a v-if="language.certificate" :href="language.certificate">
+              <custom-icon :icon="['fas', 'certificate']" />
+            </a>
+          </span>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -72,7 +88,8 @@ export default {
 
 <style scoped>
 .top-skills,
-.misc-skills {
+.misc-skills,
+.languages {
   text-align: center;
   margin-top: 3em;
   margin-bottom: 3em;
