@@ -1,22 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
 :root{
-  --font-color: #443d3d;
-  --font-color-light: #cecece;
-  --light-background: #e6f2f4;
-  --gray: #777;
-  --black: #3e3e3e;
-  --blue: #397e9f;
-  --clear-blue: #24b8ff;
-  --white: #f4f3f3;
+  --text-primary: hsl(0, 4%, 95%);
+  --text-secondary: hsl(0, 5%, 25%);
+  --text-terciary: hsl(0, 1%, 54%);
+  --background-primary: hsl(0, 0%, 23%);
+  --background-secondary: hsl(216, 43%, 42%);
+  --background-terciary: hsl(0, 4%, 95%);
 }
-@font-face {
-  font-family: "Ubuntu";
-  src: local("Ubuntu"), url(./fonts/Ubuntu/Ubuntu-Regular.ttf) format("truetype");
-}
+
 *, ::after, ::before {
   box-sizing: border-box;
 }
+
 html {
-  font-family: Ubuntu,sans-serif,Apple Color Emoji,Segoe UI,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-family: 'Ubuntu',sans-serif,Apple Color Emoji,Segoe UI,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   font-size: 1rem;
   line-height: 1.75;
   scroll-behavior: smooth;

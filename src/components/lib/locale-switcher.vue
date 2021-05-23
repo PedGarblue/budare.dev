@@ -1,21 +1,22 @@
 <template>
   <div id="locale-switcher">
     <button class="flex" @click="changeLocale">
-      <img :src="flags[$i18n.locale]" />
+      <custom-icon :icon="$i18n.locale" />
     </button>
   </div>
 </template>
 
 <script>
+import CustomIcon from './custom-icon.vue';
+
 export default {
   name: 'LocaleSwitcher',
+  components: {
+    CustomIcon,
+  },
   data() {
     return {
       langs: ['es', 'en'],
-      flags: {
-        es: 'https://img.icons8.com/plasticine/100/000000/spain.png',
-        en: 'https://img.icons8.com/plasticine/100/000000/usa.png',
-      },
     };
   },
   methods: {
@@ -32,6 +33,7 @@ export default {
 
 <style scoped>
 button {
+  padding: 0.2rem 0.2rem;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -41,14 +43,8 @@ button {
 button:hover {
   background-color: var(--light-background);
 }
-img {
-  width: 2rem;
-  height: 2rem;
-}
-@media screen and (min-width: 400px) {
-  img {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
+.icon {
+  font-size: 2.5em;
+  border-radius: 0.2rem;
 }
 </style>

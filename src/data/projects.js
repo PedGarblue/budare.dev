@@ -2,9 +2,29 @@ export default [
   {
     name: '☕ Cafechan',
     desc: {
-      en: 'An imageboard developed in Mongo, Express and Vue 2.',
-      es: 'Imageboard desarrollado en Mongo, Express y Vue 2.',
+      en: 'A very simple and modern imageboard.',
+      es: 'Un imageboard sencillo y moderno.',
     },
+    tags: [
+      {
+        title: 'Node',
+        icon: ['fab', 'node-js'],
+        style: {
+          color: '#7dbb3e',
+        },
+      },
+      {
+        title: 'MongoDB',
+        icon: 'mongodb',
+      },
+      {
+        title: 'Vue.js',
+        icon: ['fab', 'vuejs'],
+        style: {
+          color: '#7ebb12',
+        },
+      },
+    ],
     source: 'https://github.com/PedGarBlue/cafechan',
     demoUrl: 'https://cafechan.herokuapp.com',
   },
@@ -14,15 +34,44 @@ export default [
       en: 'Simple delivery app for practice.',
       es: 'Aplicación simple de entregas.',
     },
+    tags: [
+      {
+        title: 'Node',
+        icon: ['fab', 'node-js'],
+        style: {
+          color: '#7dbb3e',
+        },
+      },
+      {
+        title: 'MongoDB',
+        icon: 'mongodb',
+      },
+      {
+        title: 'Vue.js',
+        icon: ['fab', 'vuejs'],
+        style: {
+          color: '#7ebb12',
+        },
+      },
+    ],
     source: 'https://github.com/PedGarBlue/encomiendas',
     demoUrl: 'https://encomiendas.herokuapp.com',
   },
   {
     name: '📕 PGarcía.dev',
     desc: {
-      en: 'Personal app in Vue 3 (this site).',
-      es: 'Portafolio personal en Vue 3 (este sitio).',
+      en: 'Personal portfolio (actually, this site)',
+      es: 'Portafolio personal (este sitio).',
     },
+    tags: [
+      {
+        title: 'Vue.js',
+        icon: ['fab', 'vuejs'],
+        style: {
+          color: '#7ebb12',
+        },
+      },
+    ],
     source: 'https://github.com/PedGarBlue/pgarciadev',
     demoUrl: 'https://garciapedro.herokuapp.com',
   },

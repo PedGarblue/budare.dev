@@ -35,10 +35,11 @@ export default {
   padding: 0;
   width: var(--width);
   height: var(--height);
-  background-color: #f2e9e1;
+  background-color: hsl(28, 40%, 92%);
   border-radius: 50%;
   line-height: 5em;
   transition-duration: 0.2s;
+  cursor: pointer;
 }
 
 .progress-circle:after {
@@ -51,13 +52,14 @@ export default {
   border-radius: 50%;
   width: calc(var(--width) * 0.88);
   height: calc(var(--height) * 0.88);
-  background-color: white;
+  background-color: hsl(0, 0%, 100%);
   content: ' ';
   transition-duration: 0.2s;
 }
 .progress-circle:hover {
   --width: 6.5em;
   --height: 6.5em;
+  font-size: 1.25em;
 }
 /* Text inside the control */
 .progress-count {
@@ -68,7 +70,7 @@ export default {
   text-align: center;
   display: flex;
   align-items: center;
-  color: #53777a;
+  color: hsl(185, 19%, 40%);
   z-index: 2;
   transition-duration: 0.2s;
 }
@@ -76,6 +78,7 @@ export default {
 .progress-count span {
   margin: auto;
   font-size: 1.2em;
+  user-select: none;
 }
 
 .left-half-clipper {
@@ -105,7 +108,7 @@ export default {
   width: var(--width);
   height: var(--height);
   border-radius: 50%;
-  border: 0.45em solid var(--clear-blue); /*The border is 0.35 but making it larger removes visual artifacts */
+  border: 0.45em solid hsl(226, 64%, 63%); /*The border is 0.35 but making it larger removes visual artifacts */
   /*background-color: #4D642D;*/ /* for debug */
   box-sizing: border-box;
   transition-duration: 0.2s;
@@ -115,7 +118,7 @@ export default {
   /*Progress bar for the first 50%, filling the whole right half*/
   position: absolute; /*needed for clipping*/
   clip: rect(0, var(--height), var(--width), calc(var(--width) / 2));
-  background-color: var(--clear-blue);
+  background-color: hsl(226, 64%, 63%);
   border-radius: 50%;
   width: var(--width);
   height: var(--height);

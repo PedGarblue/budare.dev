@@ -1,6 +1,6 @@
 <template>
   <div class="skill flex-column">
-    <div class="progress">
+    <div class="progress flex">
       <ProgressCircle :percentage="percentage" />
     </div>
     <div class="title">
@@ -53,6 +53,7 @@ export default {
 .progress {
   width: 9em;
   height: 9em;
+  margin-bottom: 1rem;
 }
 .title {
   font-weight: bold;
@@ -60,7 +61,7 @@ export default {
 .time {
   font-size: 0.85em;
   font-weight: lighter;
-  color: #8a8888;
+  color: var(--text-terciary);
 }
 .desc {
   font-size: 0.87em;

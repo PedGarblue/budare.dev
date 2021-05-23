@@ -1,7 +1,10 @@
 <template>
   <section id="about">
     <div class="container">
-      <h2>{{ $t('about_me.title') }}</h2>
+      <h2>
+        <font-awesome-icon :icon="['far', 'user']" />
+        {{ $t('about_me.title') }}
+      </h2>
       <hr />
       <div class="card">
         <p>
@@ -53,9 +56,10 @@ export default {
 <style scoped>
 .card {
   padding: 1rem 1.5rem;
-  box-shadow: 0.1rem 0.1rem 0.3rem var(--gray);
+  background-color: var(--background-secondary);
+  color: var(--text-primary);
+  box-shadow: 0.1rem 0.1rem 0.2rem hsl(0, 0%, 35.7%);
   border-radius: 0.2rem;
-  color: var(--black);
 }
 p {
   line-break: normal;

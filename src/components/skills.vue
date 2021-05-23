@@ -1,7 +1,10 @@
 <template>
   <section id="skills">
     <div class="container">
-      <h2>{{ $t('skills.title') }}</h2>
+      <h2>
+        <font-awesome-icon :icon="['fas', 'code']" />
+        {{ $t('skills.title') }}
+      </h2>
       <hr />
       <div class="top-skills">
         <h3>{{ $t('skills.top_skills') }}</h3>
@@ -24,12 +27,13 @@
           :key="skillset.name"
           class="flex skillset"
         >
+          <div class="skillset__name">{{ skillset.name }}</div>
           <span
             v-for="skill in skillset.skills"
             class="misc-skill flex"
             :key="skill.title"
           >
-            <font-awesome-icon
+            <custom-icon
               v-if="skill.icon"
               :icon="skill.icon"
               class="text-medium"
@@ -44,18 +48,40 @@
           </span>
         </div>
       </div>
+      <div class="languages">
+        <h3>{{ $t('skills.languages') }}</h3>
+        <div class="flex skillset">
+          <span
+            v-for="language in skills.languages"
+            :key="language.title"
+            class="flex misc-skill"
+          >
+            <custom-icon :icon="language.flag" />
+            <span>&nbsp;{{ language.title }} - {{ language.level }}&nbsp;</span>
+            <a
+              v-if="language.certificate"
+              :href="language.certificate"
+              rel="noreferrer noopener"
+            >
+              <custom-icon :icon="['fas', 'certificate']" />
+            </a>
+          </span>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Skill from './lib/skill.vue';
+import CustomIcon from './lib/custom-icon.vue';
 import skills from '@/data/skills';
 
 export default {
   name: 'Skills',
   components: {
     Skill,
+    CustomIcon,
   },
   data() {
     return {
@@ -67,7 +93,8 @@ export default {
 
 <style scoped>
 .top-skills,
-.misc-skills {
+.misc-skills,
+.languages {
   text-align: center;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -79,11 +106,18 @@ export default {
 .skillset {
   justify-content: center;
 }
+.skillset__name {
+  flex-basis: 100%;
+  font-weight: lighter;
+  color: var(--text-terciary);
+}
 .misc-skill {
   width: max-content;
   margin: 1em;
   padding: 0.3em 0.8em;
-  box-shadow: 0em 0em 0.3em 0em #d0c4c4;
+  color: var(--text-secondary);
+  background-color: var(--background-terciary);
+  box-shadow: 0em 0em 0.2em 0em var(--text-terciary);
   border-radius: 0.3em;
 }
 </style>
