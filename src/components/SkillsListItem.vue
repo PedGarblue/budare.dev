@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import CustomIcon from './lib/custom-icon';
+import CustomIcon from './lib/CustomIcon';
 
 export default {
   name: 'SkillsListItem',

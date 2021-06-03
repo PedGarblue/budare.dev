@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import LocaleSwitcher from '@/components/lib/locale-switcher.vue';
+import LocaleSwitcher from '@/components/lib/LocaleSwitcher';
 import aboutme from '@/data/aboutme';
 
 export default {

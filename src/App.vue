@@ -6,8 +6,8 @@
 
 <script>
 import '@/assets/style.css';
-import Nav from '@/components/nav.vue';
-import Footer from '@/components/footer.vue';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 export default {
   components: {

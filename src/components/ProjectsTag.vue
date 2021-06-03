@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CustomIcon from './lib/custom-icon.vue';
+import CustomIcon from './lib/CustomIcon';
 
 export default {
   name: 'ProjectsTag',

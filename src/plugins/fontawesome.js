@@ -10,6 +10,6 @@ library.add(fab);
 
 export default {
   install(app) {
-    app.component('font-awesome-icon', FontAwesomeIcon);
+    app.component('FontAwesomeIcon', FontAwesomeIcon);
   },
 };

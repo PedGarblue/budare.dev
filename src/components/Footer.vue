@@ -25,7 +25,7 @@
         </a>
       </nav>
     </section>
-    <GoToTopButton />
+    <button-to-top />
     <div class="designed-by-me text-small">
       {{ $t('footer.designed_by') }}
     </div>
@@ -34,12 +34,12 @@
 
 <script>
 import contact from '@/data/contact';
-import GoToTopButton from './lib/go-top-button.vue';
+import ButtonToTop from './lib/ButtonToTop';
 
 export default {
   name: 'Footer',
   components: {
-    GoToTopButton,
+    ButtonToTop,
   },
   data() {
     return {

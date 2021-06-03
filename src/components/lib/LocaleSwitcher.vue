@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CustomIcon from './custom-icon.vue';
+import CustomIcon from './CustomIcon';
 
 export default {
   name: 'LocaleSwitcher',

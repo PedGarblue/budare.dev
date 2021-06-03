@@ -25,7 +25,12 @@ export default {
       type: Array,
       required: true,
     },
-    title: String,
+    title: {
+      type: String,
+      default() {
+        return '';
+      },
+    },
   },
 };
 </script>

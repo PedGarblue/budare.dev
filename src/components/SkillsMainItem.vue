@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import ProgressCircle from './lib/progress-circle';
+import ProgressCircle from './lib/ProgressCircle';
 
 export default {
   name: 'Skill',

@@ -9,8 +9,8 @@
       <div class="projects__list">
         <projects-item
           v-for="project in projects"
-          :project="project"
           :key="project.name"
+          :project="project"
         />
       </div>
       <div class="text-center margin-l-top">
@@ -28,7 +28,7 @@
 <script>
 import projects from '@/data/projects';
 import contact from '@/data/contact';
-import ProjectsItem from './ProjectsItem.vue';
+import ProjectsItem from './ProjectsItem';
 
 export default {
   name: 'Projects',

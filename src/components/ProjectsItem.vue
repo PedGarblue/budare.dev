@@ -35,10 +35,10 @@
 </template>
 
 <script>
-import ProjectsTag from './ProjectsTag.vue';
+import ProjectsTag from './ProjectsTag';
 export default {
-  components: { ProjectsTag },
   name: 'ProjectsItem',
+  components: { ProjectsTag },
   props: {
     project: {
       type: Object,
