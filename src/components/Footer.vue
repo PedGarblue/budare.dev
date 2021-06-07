@@ -26,13 +26,14 @@
       </nav>
     </section>
     <button-to-top />
-    <div class="designed-by-me text-small">
-      {{ $t('footer.designed_by') }}
+    <div class="created-by text-small">
+      {{ t('created_by') }}
     </div>
   </footer>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 import contact from '@/data/contact';
 import ButtonToTop from './lib/ButtonToTop';
 
@@ -41,8 +42,15 @@ export default {
   components: {
     ButtonToTop,
   },
-  data() {
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: 'local',
+    });
+
     return {
+      t,
+      locale,
       contact,
     };
   },
@@ -57,9 +65,20 @@ footer section {
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
 }
-.designed-by-me {
+.created-by {
   width: 100%;
   background-color: var(--background-secondary);
   color: var(--text-primary);
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "created_by": "Created ❤️ by Pedro García.",
+  },
+  "es": {
+    "created_by": "Creado ❤️ por Pedro García.",
+  }
+}
+</i18n>

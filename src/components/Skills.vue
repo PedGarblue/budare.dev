@@ -3,24 +3,24 @@
     <div class="container">
       <h2>
         <font-awesome-icon :icon="['fas', 'code']" />
-        {{ $t('skills.title') }}
+        {{ t('title') }}
       </h2>
       <hr />
       <div class="top-skills">
-        <h3>{{ $t('skills.top_skills') }}</h3>
+        <h3>{{ t('top_skills') }}</h3>
         <div class="flex">
           <skills-main-item
             v-for="skill in skills.top"
             :key="skill.id"
             :percentage="skill.percentage"
-            :title="skill.title[$i18n.locale]"
-            :time="skill.time[$i18n.locale]"
-            :desc="skill.desc[$i18n.locale]"
+            :title="skill.title[locale]"
+            :time="skill.time[locale]"
+            :desc="skill.desc[locale]"
           />
         </div>
       </div>
-      <skills-list :title="$t('skills.basic_skills')" :items="skills.misc" />
-      <skills-list :title="$t('skills.languages')" :items="skills.languages" />
+      <skills-list :title="t('basic_skills')" :items="skills.misc" />
+      <skills-list :title="t('languages')" :items="skills.languages" />
     </div>
   </section>
 </template>
@@ -29,6 +29,7 @@
 import SkillsMainItem from './SkillsMainItem';
 import SkillsList from './SkillsList';
 import skills from '@/data/skills';
+import { useI18n } from 'vue-i18n';
 
 export default {
   name: 'Skills',
@@ -36,10 +37,17 @@ export default {
     SkillsMainItem,
     SkillsList,
   },
-  computed: {
-    skills() {
-      return skills;
-    },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: 'local',
+    });
+
+    return {
+      t,
+      locale,
+      skills,
+    };
   },
 };
 </script>
@@ -55,3 +63,20 @@ export default {
   margin-top: 6em;
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "title": "Skills",
+    "top_skills": "Top Skills",
+    "basic_skills": "Tecnologies",
+    "languages": "Languages",
+  },
+  "es": {
+    "title": "Habilidades",
+    "top_skills": "Habilidades principales",
+    "basic_skills": "Tecnologías",
+    "languages": "Idiomas",
+  },
+}
+</i18n>

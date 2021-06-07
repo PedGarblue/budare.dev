@@ -11,7 +11,7 @@
         </a>
       </div>
       <div class="project__desc">
-        {{ project.desc[$i18n.locale] }}
+        {{ project.desc[locale] }}
       </div>
       <div class="project__tags">
         <projects-tag
@@ -28,13 +28,14 @@
     >
       <font-awesome-icon :icon="['fab', 'github']" />
       <span>
-        {{ $t('projects.source') }}
+        {{ t('source') }}
       </span>
     </a>
   </div>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 import ProjectsTag from './ProjectsTag';
 export default {
   name: 'ProjectsItem',
@@ -44,6 +45,17 @@ export default {
       type: Object,
       required: true,
     },
+  },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: 'local',
+    });
+
+    return {
+      t,
+      locale,
+    };
   },
 };
 </script>
@@ -85,3 +97,14 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "source": "Source",
+  },
+  "es": {
+    "source": "Source",
+  }
+}
+</i18n>

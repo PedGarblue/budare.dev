@@ -7,7 +7,7 @@
         </div>
         <div class="desc">
           <div class="text-big text-bold">{{ aboutme.name }}</div>
-          <div class="workname">{{ $t('blurb.workname') }}</div>
+          <div class="workname">{{ t('workname') }}</div>
           <div class="social">
             <a
               class="contact-icon"
@@ -38,7 +38,7 @@
             :href="contact.telegram"
             rel="noreferrer noopener"
           >
-            {{ $t('blurb.Contact_me') }}&nbsp;&nbsp;
+            {{ t('contact_me') }}&nbsp;&nbsp;
             <font-awesome-icon :icon="['fab', 'telegram']" />
           </a>
         </div>
@@ -48,13 +48,20 @@
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
 
 export default {
   name: 'Blurb',
-  data() {
+  setup() {
+    const { t } = useI18n({
+      inheritLocale: true,
+      useScope: 'local',
+    });
+
     return {
+      t,
       contact,
       aboutme,
     };
@@ -138,3 +145,16 @@ img {
   }
 }
 </style>
+
+<i18n>
+{
+  "en": {
+    "workname": "Web Application Developer",
+    "contact_me": "Contact me"
+  },
+  "es": {
+    "workname": "Desarrollador Web Full Stack",
+    "contact_me": "Contáctame",
+  }
+}
+</i18n>

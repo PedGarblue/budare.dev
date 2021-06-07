@@ -1,18 +1,27 @@
 <template>
   <div id="locale-switcher">
     <button class="flex" @click="changeLocale">
-      <custom-icon :icon="$i18n.locale" />
+      <custom-icon :icon="locale" />
     </button>
   </div>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 import CustomIcon from './CustomIcon';
 
 export default {
   name: 'LocaleSwitcher',
   components: {
     CustomIcon,
+  },
+  setup() {
+    const { locale } = useI18n({
+      inheritLocale: true,
+      useScope: 'global',
+    });
+
+    return { locale };
   },
   data() {
     return {
@@ -25,7 +34,7 @@ export default {
         es: 'en',
         en: 'es',
       };
-      this.$i18n.locale = inverses[this.$i18n.locale];
+      this.locale = inverses[this.locale];
     },
   },
 };

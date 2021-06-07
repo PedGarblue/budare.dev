@@ -12,10 +12,10 @@
         </div>
         <div class="flex">
           <a href="#about" class="navbar__link">
-            {{ $t('navbar.link.About') }}
+            {{ t('link.about') }}
           </a>
           <a href="#projects" class="navbar__link">
-            {{ $t('navbar.link.Projects') }}
+            {{ t('link.projects') }}
           </a>
           <LocaleSwitcher />
         </div>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n';
 import LocaleSwitcher from '@/components/lib/LocaleSwitcher';
 import aboutme from '@/data/aboutme';
 
@@ -32,6 +33,14 @@ export default {
   name: 'Nav',
   components: {
     LocaleSwitcher,
+  },
+  setup() {
+    const { t, locale } = useI18n({
+      inheritLocale: true,
+      useScope: 'local',
+    });
+
+    return { t, locale };
   },
   data() {
     return {
@@ -99,3 +108,20 @@ export default {
   }
 }
 </style>
+
+<i18n>
+{
+  "en" :{
+    "link": {
+      "about": "About",
+      "projects": "Projects"
+    }
+  },
+  "es" :{
+    "link": {
+      "about": "Acerca",
+      "projects": "Projectos"
+    }
+  }
+}
+</i18n>
