@@ -11,24 +11,24 @@
           {{ t('desc') }}
         </p>
       </div>
-      <div class="card margin-m-top">
+      <div class="card margin-top-l">
         <div class="flex">
           <font-awesome-icon
-            class="text-medium margin-s-right"
+            class="text-medium margin-right-s"
             :icon="['fas', 'globe-americas']"
           />
-          <span class="margin-s-horizontal"> {{ aboutme.localization }} </span>
+          <span class="margin-horizontal-s"> {{ aboutme.localization }} </span>
         </div>
         <div class="flex">
           <font-awesome-icon
-            class="text-medium margin-s-right"
+            class="text-medium margin-right-s"
             :icon="['fas', 'phone-square']"
           />
-          <span class="margin-s-horizontal"> {{ contact.phone }} </span>
+          <span class="margin-horizontal-s"> {{ contact.phone }} </span>
         </div>
         <div class="flex">
           <font-awesome-icon
-            class="text-medium margin-s-right"
+            class="text-medium margin-right-s"
             :icon="['fas', 'envelope']"
           />
           <span class="margin-s-horizontal"> {{ contact.email }} </span>
@@ -60,11 +60,11 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card {
-  padding: 1rem 1.5rem;
-  background-color: var(--background-secondary);
-  color: var(--text-primary);
+  padding: $medium $big;
+  background-color: $background-secondary;
+  color: $text-primary;
   box-shadow: 0.1rem 0.1rem 0.2rem hsl(0, 0%, 35.7%);
   border-radius: 0.2rem;
 }

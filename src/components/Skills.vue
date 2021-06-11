@@ -52,15 +52,15 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .top-skills {
   text-align: center;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: $big;
+  margin-bottom: $big;
   justify-content: center;
 }
 .misc-skills {
-  margin-top: 6em;
+  margin-top: $extra-big;
 }
 </style>
 

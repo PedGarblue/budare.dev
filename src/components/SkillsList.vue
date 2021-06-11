@@ -35,19 +35,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .skillsList {
   text-align: center;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: $big;
+  margin-bottom: $big;
   justify-content: center;
 }
 .skillset {
   justify-content: center;
-}
-.skillset__name {
-  flex-basis: 100%;
-  font-weight: lighter;
-  color: var(--text-terciary);
+
+  &__name {
+    flex-basis: 100%;
+    font-weight: lighter;
+    color: $text-terciary;
+  }
 }
 </style>

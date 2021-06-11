@@ -1,7 +1,7 @@
 <template>
   <div class="flex project">
     <div class="project__info">
-      <div class="text-medium text-bold">
+      <div class="text-bold">
         <a
           :href="project.demoUrl"
           class="project__title"
@@ -60,40 +60,43 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .project {
   margin: 0.8rem 0;
   flex-wrap: nowrap;
   text-align: left;
-}
-.project__tags {
-  display: flex;
-  margin-top: 0.3rem;
-  align-items: center;
-}
-.project__source {
-  margin-left: auto;
-  padding: 0 0.5rem;
-  border: 0.1rem solid var(--text-primary);
-  border-radius: 50%;
-  box-shadow: 0.01em 0.01em 0.2em var(--text-terciary);
-  font-size: 1.3em;
-  color: var(--text-primary);
-}
 
-.project__source span {
-  display: none;
-}
-@media screen and (min-width: 400px) {
-  .project__source {
-    padding: 0.3rem 1rem;
-    border-radius: 0.35rem;
-    background-color: var(--background-secondary);
-    font-size: 1em;
+  &__tags {
+    display: flex;
+    margin-top: $small;
+    align-items: center;
   }
-  .project__source span {
-    display: inline;
-    margin-left: 0.5rem;
+  &__source {
+    margin-left: auto;
+    padding: 0 0.5rem;
+    border: 0.1rem solid $text-primary;
+    border-radius: 50%;
+    box-shadow: 0.01em 0.01em 0.2em $text-terciary;
+    font-size: 1.3em;
+    color: $text-primary;
+
+    & span {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: $breakpoint-small) {
+    &__source {
+      padding: $small $medium;
+      border-radius: $small;
+      background-color: $background-secondary;
+      font-size: $medium;
+
+      & span {
+        display: inline;
+        margin-left: 0.5rem;
+      }
+    }
   }
 }
 </style>

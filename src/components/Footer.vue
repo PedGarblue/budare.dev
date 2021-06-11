@@ -1,7 +1,7 @@
 <template>
   <footer class="flex-column">
     <section class="flex-column container">
-      <nav class="flex text-big">
+      <nav class="flex text-l">
         <a
           class="contact-icon"
           :href="contact.github"
@@ -26,7 +26,7 @@
       </nav>
     </section>
     <button-to-top />
-    <div class="created-by text-small">
+    <div class="created-by">
       {{ t('created_by') }}
     </div>
   </footer>
@@ -57,18 +57,20 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 nav a {
-  margin: 0 0.3rem;
+  margin: 0 $medium;
+  font-size: $medium * 1.5;
 }
 footer section {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-top: $big;
+  margin-bottom: $big;
 }
 .created-by {
   width: 100%;
-  background-color: var(--background-secondary);
-  color: var(--text-primary);
+  background-color: $background-secondary;
+  font-size: $medium;
+  color: $text-primary;
 }
 </style>
 

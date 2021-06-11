@@ -6,7 +6,7 @@
           <img :src="aboutme.picture" />
         </div>
         <div class="desc">
-          <div class="text-big text-bold">{{ aboutme.name }}</div>
+          <div class="text-m text-bold">{{ aboutme.name }}</div>
           <div class="workname">{{ t('workname') }}</div>
           <div class="social">
             <a
@@ -34,7 +34,7 @@
         </div>
         <div class="flex contact-me-button">
           <a
-            class="contact-link flex padding-m-right padding-m-left text-medium"
+            class="contact-link flex padding-right-m padding-left-m text-medium"
             :href="contact.telegram"
             rel="noreferrer noopener"
           >
@@ -69,27 +69,27 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 #blurb {
-  background-color: var(--background-primary);
+  background-color: $background-primary;
   background-image: url(https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?crop=entropy&cs=srgb&dl=pexels-markus-spiske-965345.jpg&fit=crop&fm=jpg&h=835&w=1280);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 4rem 1rem;
+  padding: $extra-big $medium;
 }
 .container {
-  background-color: var(--background-primary);
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-  margin-top: 1rem;
-  border: 0.2rem solid var(--background-terciary);
-  border-radius: 0.3rem;
+  background-color: $background-primary;
+  margin-top: $medium;
+  padding-top: $extra-big;
+  padding-bottom: $big;
+  border: 0.2rem solid $background-terciary;
+  border-radius: $small;
 }
 .photo {
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
+  margin-bottom: $big;
 }
 img {
   width: 11rem;
@@ -97,12 +97,14 @@ img {
   border-radius: 50%;
 }
 .contact-link {
-  color: var(--text-primary);
+  color: $text-primary;
 }
 .desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding: 0 1rem;
-  color: var(--text-primary);
+  color: $text-primary;
   height: 7rem;
   margin: auto;
 }
@@ -112,24 +114,24 @@ img {
 .social {
   display: flex;
   align-items: center;
-  margin-top: 0.5rem;
-  font-size: 1.5rem;
+  margin-top: $small;
+  font-size: $medium;
 }
 .contact-me-button {
   display: none;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: $breakpoint-big) {
   .container {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    box-shadow: 0.1em 0.1em 0.3em var(--text-terciary);
+    padding-top: $medium;
+    padding-bottom: $medium;
+    box-shadow: 0.1em 0.1em $small $text-terciary;
   }
   .photo {
     margin: unset;
   }
   .desc {
-    margin: unset;
+    margin: 0 $medium;
     text-align: left;
   }
   .social {
@@ -138,10 +140,10 @@ img {
   .contact-me-button {
     display: flex;
     margin-left: auto;
-    background-color: var(--background-secondary);
+    background-color: $background-secondary;
     border: 0.15rem solid;
-    border-radius: 0.35rem;
-    color: var(--text-primary);
+    border-radius: $small;
+    color: $text-primary;
   }
 }
 </style>

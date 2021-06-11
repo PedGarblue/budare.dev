@@ -19,4 +19,14 @@ module.exports = {
       },
     },
   },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `
+          @import "~@/assets/__variables.scss";
+          @import "~@/assets/__mixins.scss";
+        `,
+      },
+    },
+  },
 };

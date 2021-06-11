@@ -13,10 +13,10 @@
           :project="project"
         />
       </div>
-      <div class="text-center margin-l-top">
+      <div class="text-center margin-top-l">
         <a class="button" :href="contact.github" rel="noreferrer noopener">
           {{ t('seemore') }}
-          <span class="text-medium">
+          <span>
             <font-awesome-icon :icon="['fab', 'github']" />
           </span>
         </a>
@@ -51,7 +51,7 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style lang="scss" scoped></style>
 
 <i18n>
 {

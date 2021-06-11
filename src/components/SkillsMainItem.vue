@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .skill {
   text-align: center;
   margin: 0 auto;
@@ -53,7 +53,7 @@ export default {
 .progress {
   width: 9em;
   height: 9em;
-  margin-bottom: 1rem;
+  margin-bottom: $medium;
 }
 .title {
   font-weight: bold;
@@ -61,7 +61,7 @@ export default {
 .time {
   font-size: 0.85em;
   font-weight: lighter;
-  color: var(--text-terciary);
+  color: $text-terciary;
 }
 .desc {
   font-size: 0.87em;

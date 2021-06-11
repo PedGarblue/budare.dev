@@ -1,16 +1,16 @@
 <template>
-  <span class="skill flex">
+  <span class="flex skill">
     <custom-icon
       v-if="skill.icon"
       :icon="skill.icon"
-      class="text-medium margin-s-right"
+      class="margin-right-s"
       :style="skill.style"
     />
     <span>{{ formattedTitle }}</span>
     <a
       v-if="skill.certificate"
       :href="skill.certificate"
-      class="margin-s-left"
+      class="margin-left-s"
       rel="noopener noreferrer"
     >
       <custom-icon :icon="['fas', 'certificate']" />
@@ -42,14 +42,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .skill {
   width: max-content;
-  margin: 1em;
-  padding: 0.3em 0.8em;
-  color: var(--text-secondary);
-  background-color: var(--background-terciary);
-  box-shadow: 0em 0em 0.2em 0em var(--text-terciary);
-  border-radius: 0.3em;
+  margin: $medium;
+  padding: $small $medium;
+  color: $text-secondary;
+  background-color: $background-terciary;
+  box-shadow: 0em 0em 0.2em 0em $text-terciary;
+  border-radius: $small;
 }
 </style>

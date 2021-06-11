@@ -33,23 +33,24 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .tag {
   display: flex;
-  margin-right: 0.3rem;
-  padding: 0 0.3rem;
+  margin-right: $small;
+  padding: 0 $small;
   align-items: center;
-  border: 0.1rem solid var(--text-terciary);
-  border-radius: 0.3rem;
+  border: 0.1rem solid $text-terciary;
+  border-radius: $small;
   font-size: 0.8em;
   cursor: default;
   transition: all 0.1s ease-in;
-}
-.tag:hover {
-  border-color: var(--background-terciary);
-}
-.tag__icon {
-  margin-right: 0.2rem;
-  font-size: 1.2em;
+
+  &:hover {
+    border-color: $background-terciary;
+  }
+  &__icon {
+    margin-right: 0.2rem;
+    font-size: 1.2em;
+  }
 }
 </style>

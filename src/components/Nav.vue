@@ -50,58 +50,61 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+.flex {
+  justify-content: space-between;
+}
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   padding: 0.1rem 0;
-  background-color: var(--background-secondary);
+  background-color: $background-secondary;
   z-index: 3;
   box-shadow: 0.1rem 0 0.3rem hsl(0, 0%, 24.3%);
-}
-.flex {
-  justify-content: space-between;
-}
-.navbar__link {
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 0.75rem 0.5rem;
-  border-radius: 0.35rem;
-  color: var(--text-primary);
-}
-.navbar__link:hover {
-  background-color: var(--background-primary);
+
+  &__link {
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.75rem 0.5rem;
+    border-radius: $small;
+    color: $text-primary;
+  }
+  &__link:hover {
+    background-color: $background-primary;
+  }
 }
 .brand {
   font-size: 0.95rem;
   display: flex;
   align-items: center;
-  color: var(--text-primary);
-}
-.brand__icon,
-.brand__title {
-  margin: 0 0.25rem;
+  color: $text-primary;
+
+  &__icon,
+  &__title {
+    margin: 0 0.25rem;
+  }
 }
 
 @media screen and (min-width: 400px) {
   .navbar {
-    padding: 2rem 0;
+    padding: $big 0;
     position: static;
-    background-color: var(--background-secondary);
+    background-color: $background-secondary;
+
+    &__link {
+      color: $text-primary;
+      font-size: 1.2rem;
+      font-weight: normal;
+    }
+    &__link:hover {
+      background-color: $background-primary;
+    }
   }
   .brand {
     font-size: 1.3rem;
-    color: var(--text-primary);
-  }
-  .navbar__link {
-    color: var(--text-primary);
-    font-size: 1.2rem;
-    font-weight: normal;
-  }
-  .navbar__link:hover {
-    background-color: var(--background-primary);
+    color: $text-primary;
   }
   #locale-switcher {
     margin: 0 0.5rem;
