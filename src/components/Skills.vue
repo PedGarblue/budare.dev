@@ -6,19 +6,11 @@
         {{ t('title') }}
       </h2>
       <hr />
-      <div class="top-skills">
-        <h3>{{ t('top_skills') }}</h3>
-        <div class="flex">
-          <skills-main-item
-            v-for="skill in skills.top"
-            :key="skill.id"
-            :percentage="skill.percentage"
-            :title="skill.title[locale]"
-            :time="skill.time[locale]"
-            :desc="skill.desc[locale]"
-          />
-        </div>
-      </div>
+      <skills-list
+        :title="t('top_skills')"
+        :items="skills.top"
+        item-type="card"
+      />
       <skills-list :title="t('basic_skills')" :items="skills.misc" />
       <skills-list :title="t('languages')" :items="skills.languages" />
     </div>
@@ -26,7 +18,6 @@
 </template>
 
 <script>
-import SkillsMainItem from './SkillsMainItem';
 import SkillsList from './SkillsList';
 import skills from '@/data/skills';
 import { useI18n } from 'vue-i18n';
@@ -34,41 +25,29 @@ import { useI18n } from 'vue-i18n';
 export default {
   name: 'Skills',
   components: {
-    SkillsMainItem,
     SkillsList,
   },
   setup() {
-    const { t, locale } = useI18n({
+    const { t } = useI18n({
       inheritLocale: true,
       useScope: 'local',
     });
 
     return {
       t,
-      locale,
       skills,
     };
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.top-skills {
-  text-align: center;
-  margin-top: $big;
-  margin-bottom: $big;
-  justify-content: center;
-}
-.misc-skills {
-  margin-top: $extra-big;
-}
-</style>
+<style lang="scss" scoped></style>
 
 <i18n>
 {
   "en": {
     "title": "Skills",
-    "top_skills": "Top Skills",
+    "top_skills": "Main Skills",
     "basic_skills": "Tecnologies",
     "languages": "Languages",
   },
