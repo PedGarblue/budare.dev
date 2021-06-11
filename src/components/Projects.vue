@@ -13,7 +13,7 @@
           :project="project"
         />
       </div>
-      <div class="text-center margin-top-l">
+      <div class="projects__footer">
         <a class="button" :href="contact.github" rel="noreferrer noopener">
           {{ t('seemore') }}
           <span>
@@ -51,7 +51,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.projects {
+  &__footer {
+    text-align: center;
+    margin-top: $big;
+  }
+}
+</style>
 
 <i18n>
 {

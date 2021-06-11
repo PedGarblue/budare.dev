@@ -35,10 +35,10 @@ export default {
 
 <style lang="scss" scoped>
 .tag {
-  display: flex;
+  @include flex;
+
   margin-right: $small;
   padding: 0 $small;
-  align-items: center;
   border: 0.1rem solid $text-terciary;
   border-radius: $small;
   font-size: 0.8em;

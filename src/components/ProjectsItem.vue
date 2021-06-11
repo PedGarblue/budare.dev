@@ -1,15 +1,13 @@
 <template>
-  <div class="flex project">
+  <div class="project">
     <div class="project__info">
-      <div class="text-bold">
-        <a
-          :href="project.demoUrl"
-          class="project__title"
-          rel="noreferrer noopener"
-        >
-          {{ project.name }}
-        </a>
-      </div>
+      <a
+        :href="project.demoUrl"
+        class="project__title"
+        rel="noreferrer noopener"
+      >
+        {{ project.name }}
+      </a>
       <div class="project__desc">
         {{ project.desc[locale] }}
       </div>
@@ -21,11 +19,7 @@
         />
       </div>
     </div>
-    <a
-      class="project__source text-bold"
-      :href="project.source"
-      rel="noreferrer noopener"
-    >
+    <a class="project__source" :href="project.source" rel="noreferrer noopener">
       <font-awesome-icon :icon="['fab', 'github']" />
       <span>
         {{ t('source') }}
@@ -37,6 +31,7 @@
 <script>
 import { useI18n } from 'vue-i18n';
 import ProjectsTag from './ProjectsTag';
+
 export default {
   name: 'ProjectsItem',
   components: { ProjectsTag },
@@ -62,15 +57,22 @@ export default {
 
 <style lang="scss" scoped>
 .project {
+  @include flex(row, nowrap);
+
   margin: 0.8rem 0;
-  flex-wrap: nowrap;
   text-align: left;
 
+  &__title {
+    font-weight: bold;
+  }
+
   &__tags {
-    display: flex;
+    @include flex;
+
     margin-top: $small;
     align-items: center;
   }
+
   &__source {
     margin-left: auto;
     padding: 0 0.5rem;
@@ -78,6 +80,7 @@ export default {
     border-radius: 50%;
     box-shadow: 0.01em 0.01em 0.2em $text-terciary;
     font-size: 1.3em;
+    font-weight: bold;
     color: $text-primary;
 
     & span {
