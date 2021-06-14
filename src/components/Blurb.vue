@@ -1,47 +1,23 @@
 <template>
   <section id="blurb">
-    <div class="container">
-      <div class="flex">
-        <div class="photo">
-          <img :src="aboutme.picture" />
-        </div>
-        <div class="desc">
-          <div class="text-m text-bold">{{ aboutme.name }}</div>
-          <div class="workname">{{ t('workname') }}</div>
-          <div class="social">
-            <a
-              class="contact-icon"
-              :href="contact.github"
-              rel="noreferrer noopener"
-            >
-              <font-awesome-icon :icon="['fab', 'github']" />
-            </a>
-            <a
-              class="contact-icon"
-              :href="contact.linkedin"
-              rel="noreferrer noopener"
-            >
-              <font-awesome-icon :icon="['fab', 'linkedin']" />
-            </a>
-            <a
-              class="contact-icon"
-              :href="contact.telegram"
-              rel="noreferrer noopener"
-            >
-              <font-awesome-icon :icon="['fab', 'telegram']" />
-            </a>
-          </div>
-        </div>
-        <div class="flex contact-me-button">
-          <a
-            class="contact-link flex padding-right-m padding-left-m text-medium"
-            :href="contact.telegram"
-            rel="noreferrer noopener"
-          >
-            {{ t('contact_me') }}&nbsp;&nbsp;
-            <font-awesome-icon :icon="['fab', 'telegram']" />
-          </a>
-        </div>
+    <div class="blurb">
+      <div class="blurb__photo">
+        <img :src="aboutme.picture" />
+      </div>
+      <div class="blurb__desc desc">
+        <div class="desc__name">{{ aboutme.name }}</div>
+        <div class="desc__workname">{{ t('workname') }}</div>
+        <social-links />
+      </div>
+      <div class="blurb__contact contact">
+        <a
+          :href="contact.telegram"
+          class="contact__link"
+          rel="noreferrer noopener"
+        >
+          {{ t('contact_me') }}
+          <font-awesome-icon :icon="['fab', 'telegram']" />
+        </a>
       </div>
     </div>
   </section>
@@ -49,11 +25,15 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
+import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
 
 export default {
   name: 'Blurb',
+  components: {
+    SocialLinks,
+  },
   setup() {
     const { t } = useI18n({
       inheritLocale: true,
@@ -77,73 +57,82 @@ export default {
   background-size: cover;
   padding: $extra-big $medium;
 }
-.container {
-  background-color: $background-primary;
+.blurb {
+  @include container;
+  @include flex;
+
   margin-top: $medium;
   padding-top: $extra-big;
   padding-bottom: $big;
+  background-color: $background-primary;
   border: 0.2rem solid $background-terciary;
   border-radius: $small;
-}
-.photo {
-  display: flex;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: $big;
-}
-img {
-  width: 11rem;
-  height: 11rem;
-  border-radius: 50%;
-}
-.contact-link {
-  color: $text-primary;
-}
-.desc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  color: $text-primary;
-  height: 7rem;
-  margin: auto;
-}
-.workname {
-  font-size: 0.87rem;
-}
-.social {
-  display: flex;
-  align-items: center;
-  margin-top: $small;
-  font-size: $medium;
-}
-.contact-me-button {
-  display: none;
+
+  &__photo {
+    @include flex;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $medium;
+    justify-content: center;
+
+    img {
+      width: 11rem;
+      height: 11rem;
+      border-radius: 50%;
+    }
+  }
+
+  &__desc,
+  .desc {
+    @include flex(column);
+
+    justify-content: center;
+    text-align: center;
+    color: $text-primary;
+    height: 7rem;
+    margin: auto;
+
+    &__name {
+      font-size: $medium * 1.1;
+      font-weight: bold;
+    }
+
+    &__workname {
+      font-size: $medium * 0.87;
+    }
+  }
+
+  &__contact {
+    display: none;
+  }
 }
 
 @media screen and (min-width: $breakpoint-big) {
-  .container {
-    padding-top: $medium;
-    padding-bottom: $medium;
+  .blurb {
+    padding: $big;
     box-shadow: 0.1em 0.1em $small $text-terciary;
-  }
-  .photo {
-    margin: unset;
-  }
-  .desc {
-    margin: 0 $medium;
-    text-align: left;
-  }
-  .social {
-    margin-top: 0;
-  }
-  .contact-me-button {
-    display: flex;
-    margin-left: auto;
-    background-color: $background-secondary;
-    border: 0.15rem solid;
-    border-radius: $small;
-    color: $text-primary;
+
+    &__photo {
+      margin: unset;
+      justify-content: left;
+    }
+
+    &__desc,
+    .desc {
+      margin: 0 $big;
+      align-items: start;
+    }
+
+    &__contact {
+      display: flex;
+      padding: 0 $medium;
+      margin-left: auto;
+      background-color: $background-secondary;
+      border: 0.15rem solid;
+      border-radius: $small;
+      color: $text-primary;
+    }
   }
 }
 </style>

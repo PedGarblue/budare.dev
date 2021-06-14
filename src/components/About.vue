@@ -1,38 +1,15 @@
 <template>
   <section id="about">
-    <div class="container">
+    <div class="about">
       <h2>
         <font-awesome-icon :icon="['far', 'user']" />
         {{ t('title') }}
       </h2>
       <hr />
-      <div class="card">
-        <p>
+      <div class="about__description">
+        <p class="about__paragraph">
           {{ t('desc') }}
         </p>
-      </div>
-      <div class="card margin-top-l">
-        <div class="flex">
-          <font-awesome-icon
-            class="text-medium margin-right-s"
-            :icon="['fas', 'globe-americas']"
-          />
-          <span class="margin-horizontal-s"> {{ aboutme.localization }} </span>
-        </div>
-        <div class="flex">
-          <font-awesome-icon
-            class="text-medium margin-right-s"
-            :icon="['fas', 'phone-square']"
-          />
-          <span class="margin-horizontal-s"> {{ contact.phone }} </span>
-        </div>
-        <div class="flex">
-          <font-awesome-icon
-            class="text-medium margin-right-s"
-            :icon="['fas', 'envelope']"
-          />
-          <span class="margin-s-horizontal"> {{ contact.email }} </span>
-        </div>
       </div>
     </div>
   </section>
@@ -61,16 +38,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card {
-  padding: $medium $big;
-  background-color: $background-secondary;
-  color: $text-primary;
-  box-shadow: 0.1rem 0.1rem 0.2rem hsl(0, 0%, 35.7%);
-  border-radius: 0.2rem;
-}
-p {
-  line-break: normal;
-  white-space: pre-line;
+.about {
+  @include container;
+
+  &__description {
+    padding: $medium $big;
+    background-color: $background-secondary;
+    color: $text-primary;
+    box-shadow: 0.1rem 0.1rem 0.2rem hsl(0, 0%, 35.7%);
+    border-radius: 0.2rem;
+  }
+
+  &__paragraph {
+    line-break: normal;
+    white-space: pre-line;
+  }
 }
 </style>
 

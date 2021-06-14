@@ -1,28 +1,8 @@
 <template>
-  <footer class="flex-column">
-    <section class="flex-column container">
-      <nav class="flex text-l">
-        <a
-          class="contact-icon"
-          :href="contact.github"
-          rel="noreferrer noopener"
-        >
-          <font-awesome-icon :icon="['fab', 'github']" />
-        </a>
-        <a
-          class="contact-icon"
-          :href="contact.linkedin"
-          rel="noreferrer noopener"
-        >
-          <font-awesome-icon :icon="['fab', 'linkedin']" />
-        </a>
-        <a
-          class="contact-icon"
-          :href="contact.telegram"
-          rel="noreferrer noopener"
-        >
-          <font-awesome-icon :icon="['fab', 'telegram']" />
-        </a>
+  <footer class="footer">
+    <section class="footer__contents">
+      <nav class="footer__social">
+        <social-links />
       </nav>
     </section>
     <button-to-top />
@@ -36,11 +16,13 @@
 import { useI18n } from 'vue-i18n';
 import contact from '@/data/contact';
 import ButtonToTop from './lib/ButtonToTop';
+import SocialLinks from './SocialLinks';
 
 export default {
   name: 'Footer',
   components: {
     ButtonToTop,
+    SocialLinks,
   },
   setup() {
     const { t, locale } = useI18n({
@@ -58,14 +40,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-nav a {
+.contact-icon {
   margin: 0 $medium;
   font-size: $medium * 1.5;
 }
-footer section {
-  margin-top: $big;
-  margin-bottom: $big;
+
+.footer {
+  @include flex(column);
+
+  &__contents {
+    margin-top: $big;
+    margin-bottom: $big;
+  }
 }
+
 .created-by {
   width: 100%;
   background-color: $background-secondary;

@@ -1,16 +1,14 @@
 <template>
   <nav class="navbar">
     <div class="container">
-      <div class="flex">
-        <div>
-          <router-link to="/" class="brand">
-            <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
-            <span class="brand__title">
-              {{ aboutme.name }}
-            </span>
-          </router-link>
-        </div>
-        <div class="flex">
+      <div class="navbar__contents">
+        <router-link to="/" class="navbar__brand brand">
+          <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
+          <span class="brand__title">
+            {{ aboutme.name }}
+          </span>
+        </router-link>
+        <div class="navbar__items">
           <a href="#about" class="navbar__link">
             {{ t('link.about') }}
           </a>
@@ -51,9 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.flex {
-  justify-content: space-between;
-}
 .navbar {
   position: fixed;
   top: 0;
@@ -64,6 +59,13 @@ export default {
   z-index: 3;
   box-shadow: 0.1rem 0 0.3rem hsl(0, 0%, 24.3%);
 
+  &__contents,
+  &__items {
+    @include flex;
+
+    justify-content: space-between;
+  }
+
   &__link {
     font-size: 0.75rem;
     font-weight: bold;
@@ -71,6 +73,7 @@ export default {
     border-radius: $small;
     color: $text-primary;
   }
+
   &__link:hover {
     background-color: $background-primary;
   }
@@ -98,14 +101,17 @@ export default {
       font-size: 1.2rem;
       font-weight: normal;
     }
+
     &__link:hover {
       background-color: $background-primary;
     }
   }
+
   .brand {
     font-size: 1.3rem;
     color: $text-primary;
   }
+
   #locale-switcher {
     margin: 0 0.5rem;
   }
