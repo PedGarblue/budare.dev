@@ -57,7 +57,7 @@ export default {
 .created-by {
   width: 100%;
   background-color: $secondary-color;
-  font-size: $medium-space;
+  font-size: $small-font-size;
   color: $primary-font-color;
 }
 </style>

@@ -60,6 +60,7 @@ export default {
 
   &__certificate {
     margin-left: $extra-small-space;
+    color: hsl(50, 63, 57);
   }
 }
 </style>
