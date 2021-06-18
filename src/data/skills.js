@@ -1,25 +1,31 @@
 export default {
   top: [
     {
-      id: 'Fullstack Developer',
-      title: {
-        en: 'Full Stack Development',
-        es: 'Desarrollador Full Stack',
-      },
-      time: {
-        en: 'Intermediate, 2 years',
-        es: 'Intermedio, 2 años',
-      },
-      percentage: 60,
-      desc: {
-        en: `Focused with Vue.js in Frontend
+      id: 'main',
+      skills: [
+        {
+          id: 'Fullstack Developer',
+          title: {
+            en: 'Full Stack Development',
+            es: 'Desarrollador Full Stack',
+          },
+          time: {
+            en: 'Intermediate, 2 years',
+            es: 'Intermedio, 2 años',
+          },
+          percentage: 60,
+          desc: {
+            en: `Focused with Vue.js in Frontend
       and Node.js/PHP on Backend`,
-        es: `Enfocado en Vue.js en Frontend y Node.js/PHP en Backend`,
-      },
+            es: `Enfocado en Vue.js en Frontend y Node.js/PHP en Backend`,
+          },
+        },
+      ],
     },
   ],
   misc: [
     {
+      id: 'frontend',
       name: 'Frontend',
       skills: [
         {
@@ -54,6 +60,7 @@ export default {
       ],
     },
     {
+      id: 'backend',
       name: 'Backend',
       skills: [
         {
@@ -73,6 +80,7 @@ export default {
       ],
     },
     {
+      id: 'dbs',
       name: 'Databases',
       skills: [
         {
@@ -94,6 +102,7 @@ export default {
       ],
     },
     {
+      id: 'misc',
       name: 'Misc',
       skills: [
         {
@@ -113,15 +122,20 @@ export default {
   ],
   languages: [
     {
-      title: 'Español',
-      flag: 'es',
-      level: 'Native',
-    },
-    {
-      title: 'English',
-      flag: 'en',
-      level: 'B2 Upper Intermediate',
-      certificate: 'https://www.efset.org/cert/LoX8CD',
+      id: 'main',
+      skills: [
+        {
+          title: 'Español',
+          icon: 'es',
+          level: 'Native',
+        },
+        {
+          title: 'English',
+          icon: 'en',
+          level: 'B2 Upper Intermediate',
+          certificate: 'https://www.efset.org/cert/LoX8CD',
+        },
+      ],
     },
   ],
 };

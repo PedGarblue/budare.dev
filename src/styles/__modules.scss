@@ -1,0 +1,26 @@
+@mixin flex($direction: row, $wrapping: wrap) {
+  display: flex;
+  align-items: center;
+  flex-wrap: $wrapping;
+  flex-direction: $direction;
+}
+
+@mixin container() {
+  max-width: $big-viewport;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 $medium-space;
+
+  @media screen and (min-width: $big-viewport) {
+    .container {
+      padding-left: $big-space;
+      padding-right: $big-space;
+    }
+  }
+}
+
+@mixin button($color) {
+  padding: $small-space $medium-space;
+  border: 0.15rem solid $color;
+  border-radius: 0.2rem;
+}

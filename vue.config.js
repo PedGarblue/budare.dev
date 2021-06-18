@@ -1,13 +1,29 @@
 module.exports = {
-  /*
-  // pre render plugin causes a crash in production build depending on the server node version (i think)
-  // uncomment this if you find a way to make this work properly (and also remember the imports)
-  chainWebpack: config => {
-   if (process.env.NODE_ENV === 'production') {
-     config
-       .plugin('prerender')
-       .use(PrerenderSPAPlugin, [path.join(__dirname, 'dist'), ['/']]);
-    }
+  pluginOptions: {
+    i18n: {
+      locale: 'en',
+      fallbackLocale: 'en',
+      localeDir: 'locales',
+      enableLegacy: false,
+      runtimeOnly: false,
+      enableInSFC: true,
+      compositionOnly: false,
+      fullInstall: true,
+    },
   },
-  */
+  configureWebpack: {
+    optimization: {
+      splitChunks: {
+        minSize: 10000,
+        maxSize: 200000,
+      },
+    },
+  },
+  css: {
+    loaderOptions: {
+      scss: {
+        additionalData: `@use "~@/styles/main.scss" as *;`,
+      },
+    },
+  },
 };
