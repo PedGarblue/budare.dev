@@ -18,3 +18,9 @@
     }
   }
 }
+
+@mixin button($color) {
+  padding: $small-space $medium-space;
+  border: 0.15rem solid $color;
+  border-radius: 0.2rem;
+}

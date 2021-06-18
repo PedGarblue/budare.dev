@@ -14,7 +14,11 @@
         />
       </div>
       <div class="projects__footer">
-        <a class="button" :href="contact.github" rel="noreferrer noopener">
+        <a
+          class="projects__button"
+          :href="contact.github"
+          rel="noreferrer noopener"
+        >
           {{ t('seemore') }}
           <span>
             <font-awesome-icon :icon="['fab', 'github']" />
@@ -57,7 +61,11 @@ export default {
 
   &__footer {
     text-align: center;
-    margin-top: $big-space;
+    margin-top: $extra-big-space;
+  }
+
+  &__button {
+    @include button($primary-font-color);
   }
 }
 </style>
