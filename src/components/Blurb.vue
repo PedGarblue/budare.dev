@@ -51,29 +51,29 @@ export default {
 
 <style lang="scss" scoped>
 #blurb {
-  background-color: $background-primary;
+  background-color: $primary-color;
   background-image: url(https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?crop=entropy&cs=srgb&dl=pexels-markus-spiske-965345.jpg&fit=crop&fm=jpg&h=835&w=1280);
   background-repeat: no-repeat;
   background-size: cover;
-  padding: $extra-big $medium;
+  padding: $super-big-space $medium-space;
 }
 .blurb {
   @include container;
   @include flex;
 
   margin-top: $medium;
-  padding-top: $extra-big;
-  padding-bottom: $big;
-  background-color: $background-primary;
-  border: 0.2rem solid $background-terciary;
-  border-radius: $small;
+  padding-top: $extra-big-space;
+  padding-bottom: $big-space;
+  background-color: $primary-color;
+  border: 0.2rem solid $terciary-color;
+  border-radius: $extra-small-space;
 
   &__photo {
     @include flex;
 
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: $medium;
+    margin-bottom: $medium-space;
     justify-content: center;
 
     img {
@@ -89,7 +89,7 @@ export default {
 
     justify-content: center;
     text-align: center;
-    color: $text-primary;
+    color: $primary-font-color;
     height: 7rem;
     margin: auto;
 
@@ -108,10 +108,10 @@ export default {
   }
 }
 
-@media screen and (min-width: $breakpoint-big) {
+@media screen and (min-width: $big-viewport) {
   .blurb {
-    padding: $big;
-    box-shadow: 0.1em 0.1em $small $text-terciary;
+    padding: $big-space;
+    box-shadow: 0.1em 0.1em $small $terciary-font-color;
 
     &__photo {
       margin: unset;
@@ -120,18 +120,18 @@ export default {
 
     &__desc,
     .desc {
-      margin: 0 $big;
+      margin: 0 $big-space;
       align-items: start;
     }
 
     &__contact {
       display: flex;
-      padding: 0 $medium;
+      padding: 0 $medium-space;
       margin-left: auto;
-      background-color: $background-secondary;
+      background-color: $secondary-color;
       border: 0.15rem solid;
-      border-radius: $small;
-      color: $text-primary;
+      border-radius: $small-space;
+      color: $primary-font-color;
     }
   }
 }

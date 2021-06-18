@@ -69,35 +69,35 @@ export default {
   &__tags {
     @include flex;
 
-    margin-top: $small;
+    margin-top: $extra-small-space;
     align-items: center;
   }
 
   &__source {
     margin-left: auto;
-    padding: 0 0.5rem;
-    border: 0.1rem solid $text-primary;
+    padding: 0 $small-space;
+    border: 0.1rem solid $primary-font-color;
     border-radius: 50%;
-    box-shadow: 0.01em 0.01em 0.2em $text-terciary;
+    box-shadow: 0.01em 0.01em 0.2em $terciary-font-color;
     font-size: 1.3em;
     font-weight: bold;
-    color: $text-primary;
+    color: $primary-font-color;
 
     & span {
       display: none;
     }
   }
 
-  @media screen and (min-width: $breakpoint-small) {
+  @media screen and (min-width: $small-viewport) {
     &__source {
-      padding: $small $medium;
-      border-radius: $small;
-      background-color: $background-secondary;
-      font-size: $medium;
+      padding: $extra-small-space $medium;
+      border-radius: $extra-small-space;
+      background-color: $secondary-color;
+      font-size: $medium-font-size;
 
       & span {
         display: inline;
-        margin-left: 0.5rem;
+        margin-left: $small-space;
       }
     }
   }

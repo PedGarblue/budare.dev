@@ -41,24 +41,24 @@ export default {
 
 <style lang="scss" scoped>
 .contact-icon {
-  margin: 0 $medium;
-  font-size: $medium * 1.5;
+  margin: 0 $medium-space;
+  font-size: $medium-space * 1.5;
 }
 
 .footer {
   @include flex(column);
 
   &__contents {
-    margin-top: $big;
-    margin-bottom: $big;
+    margin-top: $big-space;
+    margin-bottom: $big-space;
   }
 }
 
 .created-by {
   width: 100%;
-  background-color: $background-secondary;
-  font-size: $medium;
-  color: $text-primary;
+  background-color: $secondary-color;
+  font-size: $medium-space;
+  color: $primary-font-color;
 }
 </style>
 

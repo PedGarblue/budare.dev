@@ -1,6 +1,6 @@
 <template>
   <section id="skills">
-    <div class="container">
+    <div class="skills">
       <h2>
         <font-awesome-icon :icon="['fas', 'code']" />
         {{ t('title') }}
@@ -41,7 +41,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.skills {
+  @include container;
+}
+</style>
 
 <i18n>
 {

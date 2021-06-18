@@ -1,6 +1,6 @@
 <template>
   <section id="projects">
-    <div class="container">
+    <div class="projects">
       <h2 class="projects__title">
         <font-awesome-icon :icon="['fas', 'project-diagram']" />
         {{ t('title') }}
@@ -53,9 +53,11 @@ export default {
 
 <style lang="scss" scoped>
 .projects {
+  @include container;
+
   &__footer {
     text-align: center;
-    margin-top: $big;
+    margin-top: $big-space;
   }
 }
 </style>

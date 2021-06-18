@@ -71,7 +71,7 @@ export default {
 
     width: 9em;
     height: 9em;
-    margin-bottom: $medium;
+    margin-bottom: $medium-space;
   }
 
   &__title {
@@ -79,14 +79,14 @@ export default {
   }
 
   &__time {
-    font-size: 0.85em;
+    font-size: $small-font-size;
     font-weight: lighter;
-    color: $text-terciary;
+    color: $terciary-font-color;
   }
 
   &__desc {
-    font-size: 0.87em;
-    margin-top: 0.5rem;
+    font-size: $small-font-size;
+    margin-top: $small-space;
   }
 }
 </style>

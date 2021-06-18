@@ -39,9 +39,9 @@ export default {
 
 <style lang="scss" scoped>
 .social-links {
-  display: flex;
-  align-items: center;
-  font-size: $medium * 1.25;
+  @include flex;
+
+  font-size: $big-font-size;
 
   &__item {
     margin: 0 clamp(1rem, 10%, 2rem);

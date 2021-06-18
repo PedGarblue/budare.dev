@@ -47,19 +47,19 @@ export default {
   @include flex;
 
   width: max-content;
-  margin: $medium;
-  padding: $small $medium;
-  color: $text-secondary;
-  background-color: $background-terciary;
-  box-shadow: 0em 0em 0.2em 0em $text-terciary;
-  border-radius: $small;
+  margin: $medium-space;
+  padding: $small-space $medium-space;
+  color: $secondary-font-color;
+  background-color: $terciary-color;
+  box-shadow: 0em 0em 0.2em 0em $terciary-font-color;
+  border-radius: $extra-small-space;
 
   &__icon {
-    margin-right: $small;
+    margin-right: $extra-small-space;
   }
 
   &__certificate {
-    margin-left: $small;
+    margin-left: $extra-small-space;
   }
 }
 </style>

@@ -19,12 +19,7 @@ export default {
 };
 </script>
 
-<style scoped>
-.icon-background {
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
-}
+<style lang="scss" scoped>
 .icon {
   background-size: contain;
   background-position: 50%;
@@ -33,20 +28,25 @@ export default {
   display: inline-block;
   width: 1em;
   line-height: 1em;
-}
-.icon:before {
-  content: '\00a0';
-}
-.icon-en {
-  background-image: url(../../assets/flags/us.svg);
-}
-.icon-es {
-  background-image: url(../../assets/flags/es.svg);
-}
-.icon-mongodb {
-  background-image: url(../../assets/brands/mongodb.svg);
-}
-.icon-mysql {
-  background-image: url(../../assets/brands/mysql.svg);
+
+  &:before {
+    content: '\00a0';
+  }
+
+  &-en {
+    background-image: url(../../assets/flags/us.svg);
+  }
+
+  &-es {
+    background-image: url(../../assets/flags/es.svg);
+  }
+
+  &-mongodb {
+    background-image: url(../../assets/brands/mongodb.svg);
+  }
+
+  &-mysql {
+    background-image: url(../../assets/brands/mysql.svg);
+  }
 }
 </style>

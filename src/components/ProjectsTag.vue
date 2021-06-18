@@ -37,20 +37,21 @@ export default {
 .tag {
   @include flex;
 
-  margin-right: $small;
-  padding: 0 $small;
-  border: 0.1rem solid $text-terciary;
-  border-radius: $small;
-  font-size: 0.8em;
+  margin-right: $extra-small-space;
+  padding: 0 $extra-small-space;
+  border: 0.1rem solid $terciary-font-color;
+  border-radius: $extra-small-space;
+  font-size: $small-font-size;
   cursor: default;
   transition: all 0.1s ease-in;
 
   &:hover {
-    border-color: $background-terciary;
+    border-color: $terciary-color;
   }
+
   &__icon {
-    margin-right: 0.2rem;
-    font-size: 1.2em;
+    margin-right: $extra-small-space;
+    font-size: 1.1em;
   }
 }
 </style>

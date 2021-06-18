@@ -1,9 +1,7 @@
 <template>
-  <div id="locale-switcher">
-    <button class="flex" @click="changeLocale">
-      <custom-icon :icon="locale" />
-    </button>
-  </div>
+  <button id="locale-switcher" @click="changeLocale">
+    <custom-icon :icon="locale" />
+  </button>
 </template>
 
 <script>
@@ -40,20 +38,16 @@ export default {
 };
 </script>
 
-<style scoped>
-button {
+<style lang="scss" scoped>
+#locale-switcher {
+  @include flex;
+
   padding: 0.2rem 0.2rem;
-  border: none;
   background-color: transparent;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 2.5em;
   cursor: pointer;
   transition: all 0.2s;
-  border-radius: 0.3rem;
-}
-button:hover {
-  background-color: var(--light-background);
-}
-.icon {
-  font-size: 2.5em;
-  border-radius: 0.2rem;
 }
 </style>

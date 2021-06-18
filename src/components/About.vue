@@ -42,9 +42,9 @@ export default {
   @include container;
 
   &__description {
-    padding: $medium $big;
-    background-color: $background-secondary;
-    color: $text-primary;
+    padding: $medium-space $big-space;
+    background-color: $secondary-color;
+    color: $primary-font-color;
     box-shadow: 0.1rem 0.1rem 0.2rem hsl(0, 0%, 35.7%);
     border-radius: 0.2rem;
   }

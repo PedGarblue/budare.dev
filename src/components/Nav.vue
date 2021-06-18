@@ -1,22 +1,20 @@
 <template>
   <nav class="navbar">
-    <div class="container">
-      <div class="navbar__contents">
-        <router-link to="/" class="navbar__brand brand">
-          <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
-          <span class="brand__title">
-            {{ aboutme.name }}
-          </span>
-        </router-link>
-        <div class="navbar__items">
-          <a href="#about" class="navbar__link">
-            {{ t('link.about') }}
-          </a>
-          <a href="#projects" class="navbar__link">
-            {{ t('link.projects') }}
-          </a>
-          <LocaleSwitcher />
-        </div>
+    <div class="navbar__contents">
+      <router-link to="/" class="navbar__brand brand">
+        <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
+        <span class="brand__title">
+          {{ aboutme.name }}
+        </span>
+      </router-link>
+      <div class="navbar__items">
+        <a href="#about" class="navbar__link">
+          {{ t('link.about') }}
+        </a>
+        <a href="#projects" class="navbar__link">
+          {{ t('link.projects') }}
+        </a>
+        <LocaleSwitcher />
       </div>
     </div>
   </nav>
@@ -55,7 +53,7 @@ export default {
   left: 0;
   width: 100%;
   padding: 0.1rem 0;
-  background-color: $background-secondary;
+  background-color: $secondary-color;
   z-index: 3;
   box-shadow: 0.1rem 0 0.3rem hsl(0, 0%, 24.3%);
 
@@ -66,54 +64,58 @@ export default {
     justify-content: space-between;
   }
 
+  &__contents {
+    @include container;
+  }
+
   &__link {
     font-size: 0.75rem;
     font-weight: bold;
-    padding: 0.75rem 0.5rem;
-    border-radius: $small;
-    color: $text-primary;
+    padding: $medium-space $small-space;
+    border-radius: $small-space;
+    color: $primary-font-color;
   }
 
   &__link:hover {
-    background-color: $background-primary;
+    background-color: $primary-color;
   }
 }
 .brand {
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  color: $text-primary;
+  @include flex;
+
+  font-size: $medium-space;
+  color: $primary-font-color;
 
   &__icon,
   &__title {
-    margin: 0 0.25rem;
+    margin: 0 $small-space;
   }
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: $small-viewport) {
   .navbar {
-    padding: $big 0;
     position: static;
-    background-color: $background-secondary;
+    padding: $big-space 0;
+    background-color: $secondary-color;
 
     &__link {
-      color: $text-primary;
+      color: $primary-font-color;
       font-size: 1.2rem;
       font-weight: normal;
     }
 
     &__link:hover {
-      background-color: $background-primary;
+      background-color: $primary-color;
     }
   }
 
   .brand {
     font-size: 1.3rem;
-    color: $text-primary;
+    color: $primary-font-color;
   }
 
   #locale-switcher {
-    margin: 0 0.5rem;
+    margin: 0 $small-space;
   }
 }
 </style>

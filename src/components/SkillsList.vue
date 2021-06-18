@@ -59,11 +59,12 @@ export default {
 
 <style lang="scss" scoped>
 .skillsList {
-  margin-top: $extra-big;
-  margin-bottom: $extra-big;
+  margin-top: $extra-big-space;
+  margin-bottom: $extra-big-space;
   text-align: center;
   justify-content: center;
 }
+
 .skillset {
   @include flex;
 
@@ -72,7 +73,7 @@ export default {
   &__name {
     flex-basis: 100%;
     font-weight: lighter;
-    color: $text-terciary;
+    color: $terciary-font-color;
   }
 
   &__items {

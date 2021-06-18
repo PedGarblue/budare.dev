@@ -1,8 +1,6 @@
 <template>
   <div id="go-to-top" @click="toTop">
-    <span class="flex">
-      <font-awesome-icon :icon="['fas', 'arrow-up']" />
-    </span>
+    <font-awesome-icon :icon="['fas', 'arrow-up']" />
   </div>
 </template>
 
@@ -17,20 +15,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 #go-to-top {
+  @include flex;
+
   position: fixed;
-  background-color: var(--background-secondary);
+  padding: $medium-space;
+  background-color: $secondary-color;
   top: calc(100vh - 7rem);
   left: calc(100vw - 4rem);
   border: solid 0.14em;
-  padding: 1rem;
   border-radius: 50%;
-  color: var(--text-primary);
+  color: $primary-font-color;
   cursor: pointer;
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: $small-viewport) {
   #go-to-top {
     left: 90vw;
   }
