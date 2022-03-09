@@ -39,7 +39,7 @@ export default {
 
 <style lang="scss" scoped>
 .social-links {
-  @include flex;
+  @include flex(row, nowrap);
 
   font-size: $big-font-size;
 
