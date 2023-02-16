@@ -59,7 +59,6 @@ export default {
 .project {
   @include flex(row, nowrap);
 
-  margin: 0.8rem 0;
   text-align: left;
 
   &__title {
@@ -92,7 +91,6 @@ export default {
     &__source {
       padding: $extra-small-space $medium;
       border-radius: $extra-small-space;
-      background-color: $secondary-color;
       font-size: $medium-font-size;
 
       & span {

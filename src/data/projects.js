@@ -58,7 +58,7 @@ export default [
     demoUrl: 'https://encomiendas.herokuapp.com',
   },
   {
-    name: '📕 PGarcía.dev',
+    name: '📕 budare.dev',
     desc: {
       en: 'Personal portfolio (actually, this site)',
       es: 'Portafolio personal (este sitio).',
@@ -73,6 +73,6 @@ export default [
       },
     ],
     source: 'https://github.com/PedGarBlue/pgarciadev',
-    demoUrl: 'https://garciapedro.herokuapp.com',
+    demoUrl: 'https://budare.dev',
   },
 ];

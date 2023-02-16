@@ -1,25 +1,22 @@
 <template>
-  <Nav />
   <router-view />
-  <Footer />
 </template>
 
 <script>
-import Nav from '@/components/Nav';
-import Footer from '@/components/Footer';
+import AOS from 'aos';
 
 export default {
-  components: {
-    Nav,
-    Footer,
+  mounted() {
+    AOS.init();
   },
 };
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 #app {
-  background-color: $primary-color;
+  position: relative;
+  @apply text-white;
   text-align: center;
-  color: $primary-font-color;
+  font-family: 'Nunito', sans-serif;
 }
 </style>

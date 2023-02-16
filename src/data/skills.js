@@ -71,6 +71,10 @@ export default {
           },
         },
         {
+          title: 'Laravel',
+          icon: 'laravel',
+        },
+        {
           title: 'Node',
           icon: ['fab', 'node-js'],
           style: {
@@ -89,6 +93,14 @@ export default {
           style: {
             width: '1.5em',
             height: '1.5em',
+          },
+        },
+        {
+          title: 'PostgresSQL',
+          icon: 'postgres',
+          style: {
+            width: '1em',
+            height: '1em',
           },
         },
         {
@@ -132,7 +144,7 @@ export default {
         {
           title: 'English',
           icon: 'en',
-          level: 'B2 Upper Intermediate',
+          level: 'C1 Advanced',
           certificate: 'https://www.efset.org/cert/LoX8CD',
         },
       ],

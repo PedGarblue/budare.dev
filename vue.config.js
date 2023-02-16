@@ -12,6 +12,7 @@ module.exports = {
     },
   },
   configureWebpack: {
+    devtool: 'source-map',
     optimization: {
       splitChunks: {
         minSize: 10000,

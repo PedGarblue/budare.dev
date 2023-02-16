@@ -5,19 +5,9 @@
         <img :src="aboutme.picture" />
       </div>
       <div class="blurb__desc desc">
-        <div class="desc__name">{{ aboutme.name }}</div>
+        <div class="desc__name">{{ t('name') }}</div>
         <div class="desc__workname">{{ t('workname') }}</div>
         <social-links />
-      </div>
-      <div class="blurb__contact contact">
-        <a
-          :href="contact.telegram"
-          class="contact__link"
-          rel="noreferrer noopener"
-        >
-          {{ t('contact_me') }}
-          <font-awesome-icon :icon="['fab', 'telegram']" />
-        </a>
       </div>
     </div>
   </section>
@@ -49,24 +39,61 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss">
 #blurb {
-  background-color: $primary-color;
-  background-image: url(https://images.pexels.com/photos/965345/pexels-photo-965345.jpeg?crop=entropy&cs=srgb&dl=pexels-markus-spiske-965345.jpg&fit=crop&fm=jpg&h=835&w=1280);
+  @apply
+    flex
+    flex-col
+    justify-center
+    items-center
+    pb-0
+    bg-gradient-to-b
+    from-gray-800
+    to-blue-900
+  ;
+
   background-repeat: no-repeat;
   background-size: cover;
-  padding: $super-big-space $medium-space;
+
+  padding-top: 28vh;
 }
+
+.blurb {
+}
+
+.blurb__contact {
+  @apply flex ml-auto;
+}
+
+.desc {
+  @apply
+    flex
+    flex-col
+    justify-center
+    text-center
+    m-auto
+    gap-2
+    xl:items-start
+    xl:mx-16
+  ;
+}
+
+.desc__name {
+  @apply font-bold text-5xl tracking-wide;
+}
+.desc__workname {
+  @apply text-xl;
+}
+
+</style>
+
+<style lang="scss" scoped>
 .blurb {
   @include container;
   @include flex;
 
   margin-top: $medium;
   padding-top: $extra-big-space;
-  padding-bottom: $big-space;
-  background-color: $primary-color;
-  border: 0.2rem solid $terciary-color;
-  border-radius: $extra-small-space;
 
   &__photo {
     @include flex;
@@ -82,56 +109,15 @@ export default {
       border-radius: 50%;
     }
   }
-
-  &__desc,
-  .desc {
-    @include flex(column);
-
-    justify-content: center;
-    text-align: center;
-    color: $primary-font-color;
-    height: 7rem;
-    margin: auto;
-
-    &__name {
-      font-size: $medium * 1.1;
-      font-weight: bold;
-    }
-
-    &__workname {
-      font-size: $medium * 0.87;
-    }
-  }
-
-  &__contact {
-    display: none;
-  }
 }
 
 @media screen and (min-width: $big-viewport) {
   .blurb {
     padding: $big-space;
-    box-shadow: 0.1em 0.1em $small $terciary-font-color;
 
     &__photo {
       margin: unset;
       justify-content: left;
-    }
-
-    &__desc,
-    .desc {
-      margin: 0 $big-space;
-      align-items: start;
-    }
-
-    &__contact {
-      display: flex;
-      padding: 0 $medium-space;
-      margin-left: auto;
-      background-color: $secondary-color;
-      border: 0.15rem solid;
-      border-radius: $small-space;
-      color: $primary-font-color;
     }
   }
 }
@@ -140,10 +126,12 @@ export default {
 <i18n>
 {
   "en": {
+    "name": "Pedro García",
     "workname": "Web Application Developer",
     "contact_me": "Contact me"
   },
   "es": {
+    "name": "Pedro García",
     "workname": "Desarrollador Web Full Stack",
     "contact_me": "Contáctame",
   }

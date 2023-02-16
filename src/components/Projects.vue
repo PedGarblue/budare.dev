@@ -1,32 +1,34 @@
 <template>
-  <section id="projects">
-    <div class="projects">
-      <h2 class="projects__title">
-        <font-awesome-icon :icon="['fas', 'project-diagram']" />
-        {{ t('title') }}
-      </h2>
-      <hr />
-      <div class="projects__list">
+  <page-section
+    name="projects"
+    :title="t('title')"
+    :fa-icon="['fas', 'project-diagram']"
+  >
+    <template #body>
+      <div class="flex flex-col gap-5">
         <projects-item
           v-for="project in projects"
           :key="project.name"
           :project="project"
         />
       </div>
-      <div class="projects__footer">
+    </template>
+
+    <template #footer>
+      <div class="footer">
         <a
           class="projects__button"
           :href="contact.github"
           rel="noreferrer noopener"
         >
           {{ t('seemore') }}
-          <span>
+          <span class="ml-1">
             <font-awesome-icon :icon="['fab', 'github']" />
           </span>
         </a>
       </div>
-    </div>
-  </section>
+    </template>
+  </page-section>
 </template>
 
 <script>
@@ -34,11 +36,13 @@ import { useI18n } from 'vue-i18n';
 import projects from '@/data/projects';
 import contact from '@/data/contact';
 import ProjectsItem from './ProjectsItem';
+import PageSection from './PageSection.vue';
 
 export default {
   name: 'Projects',
   components: {
     ProjectsItem,
+    PageSection,
   },
   setup() {
     const { t } = useI18n({
@@ -55,18 +59,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.projects {
-  @include container;
+<style lang="postcss" scoped>
+.footer {
+  @apply mt-8;
 
-  &__footer {
-    text-align: center;
-    margin-top: $extra-big-space;
-  }
-
-  &__button {
-    @include button($primary-font-color);
-  }
+  text-align: center;
 }
 </style>
 

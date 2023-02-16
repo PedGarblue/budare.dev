@@ -1,27 +1,24 @@
 <template>
-  <section id="about">
-    <div class="about">
-      <h2>
-        <font-awesome-icon :icon="['far', 'user']" />
-        {{ t('title') }}
-      </h2>
-      <hr />
-      <div class="about__description">
-        <p class="about__paragraph">
-          {{ t('desc') }}
-        </p>
-      </div>
-    </div>
-  </section>
+  <page-section name="about" :title="t('title')" :fa-icon="['far', 'user']">
+    <template #body>
+      <p class="about__paragraph">
+        {{ t('desc') }}
+      </p>
+    </template>
+  </page-section>
 </template>
 
 <script>
 import { useI18n } from 'vue-i18n';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
+import PageSection from './PageSection.vue';
 
 export default {
   name: 'ShortAboutme',
+  components: {
+    PageSection,
+  },
   setup() {
     const { t } = useI18n({
       inheritLocale: true,
@@ -37,22 +34,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.about {
-  @include container;
-
-  &__description {
-    padding: $medium-space $big-space;
-    background-color: $secondary-color;
-    color: $primary-font-color;
-    box-shadow: 0.1rem 0.1rem 0.2rem hsl(0, 0%, 35.7%);
-    border-radius: 0.2rem;
-  }
-
-  &__paragraph {
-    line-break: normal;
-    white-space: pre-line;
-  }
+<style lang="postcss">
+.about__paragraph {
+  line-break: normal;
+  white-space: pre-line;
 }
 </style>
 

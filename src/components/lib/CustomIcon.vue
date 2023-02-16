@@ -48,5 +48,13 @@ export default {
   &-mysql {
     background-image: url(../../assets/brands/mysql.svg);
   }
+
+  &-postgres {
+    background-image: url(../../assets/brands/postgres.svg);
+  }
+
+  &-laravel {
+    background-image: url(../../assets/brands/laravel.svg);
+  }
 }
 </style>

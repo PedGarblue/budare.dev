@@ -1,12 +1,12 @@
 <template>
   <nav class="navbar">
     <div class="navbar__contents">
-      <router-link to="/" class="navbar__brand brand">
+      <!-- <router-link to="/" class="navbar__brand brand">
         <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
         <span class="brand__title">
-          {{ aboutme.name }}
+          {{ t('name') }}
         </span>
-      </router-link>
+      </router-link> -->
       <div class="navbar__items">
         <a href="#about" class="navbar__link">
           {{ t('link.about') }}
@@ -14,6 +14,11 @@
         <a href="#projects" class="navbar__link">
           {{ t('link.projects') }}
         </a>
+        <a href="#skills" class="navbar__link">
+          {{ t('link.knowledge') }}
+        </a>
+      </div>
+      <div class="absolute right-0 ml-auto">
         <LocaleSwitcher />
       </div>
     </div>
@@ -46,26 +51,32 @@ export default {
 };
 </script>
 
+<style lang="postcss" scoped>
+.navbar {
+  @apply bg-blue-900;
+}
+
+.navbar__items {
+  @apply relative flex gap-3 justify-center items-center mx-auto text-xl;
+}
+
+.navbar__link {
+  @apply tracking-widest;
+}
+</style>
+
 <style lang="scss" scoped>
 .navbar {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   padding: 0.1rem 0;
-  background-color: $secondary-color;
   z-index: 3;
-  box-shadow: 0.1rem 0 0.3rem hsl(0, 0%, 24.3%);
 
   &__contents,
   &__items {
     @include flex;
-
-    justify-content: space-between;
-  }
-
-  &__contents {
-    @include container;
   }
 
   &__link {
@@ -94,10 +105,6 @@ export default {
 
 @media screen and (min-width: $small-viewport) {
   .navbar {
-    position: static;
-    padding: $big-space 0;
-    background-color: $secondary-color;
-
     &__link {
       color: $primary-font-color;
       font-size: 1.2rem;
@@ -123,15 +130,18 @@ export default {
 <i18n>
 {
   "en" :{
+    "name": "Pedro García",
     "link": {
       "about": "About",
-      "projects": "Projects"
+      "projects": "Projects",
+      "knowledge": "Skills"
     }
   },
   "es" :{
+    "name": "Pedro García",
     "link": {
       "about": "Acerca",
-      "projects": "Projectos"
+      "knowledge": "Habilidades"
     }
   }
 }

@@ -1,11 +1,6 @@
 <template>
-  <section id="skills">
-    <div class="skills">
-      <h2>
-        <font-awesome-icon :icon="['fas', 'code']" />
-        {{ t('title') }}
-      </h2>
-      <hr />
+  <page-section name="skills" :title="t('title')" :fa-icon="['fas', 'code']">
+    <template #body>
       <skills-list
         :title="t('top_skills')"
         :items="skills.top"
@@ -13,19 +8,21 @@
       />
       <skills-list :title="t('basic_skills')" :items="skills.misc" />
       <skills-list :title="t('languages')" :items="skills.languages" />
-    </div>
-  </section>
+    </template>
+  </page-section>
 </template>
 
 <script>
 import SkillsList from './SkillsList';
 import skills from '@/data/skills';
 import { useI18n } from 'vue-i18n';
+import PageSection from './PageSection.vue';
 
 export default {
   name: 'Skills',
   components: {
     SkillsList,
+    PageSection,
   },
   setup() {
     const { t } = useI18n({
@@ -40,12 +37,6 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.skills {
-  @include container;
-}
-</style>
 
 <i18n>
 {

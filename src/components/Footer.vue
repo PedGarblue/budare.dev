@@ -39,6 +39,12 @@ export default {
 };
 </script>
 
+<style lang="postcss" scoped>
+.footer {
+  @apply bg-gray-900;
+}
+</style>
+
 <style lang="scss" scoped>
 .contact-icon {
   margin: 0 $medium-space;
