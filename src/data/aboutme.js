@@ -4,5 +4,5 @@ export default {
     en: "I'm Pedro García",
   },
   localization: 'Venezuela, Carabobo',
-  picture: 'https://cdn.filestackcontent.com/3v33cOwdToKkBwPZu5lH',
+  picture: 'https://cdn.filestackcontent.com/dP2eldQPW6WEUHddJS5w',
 };
