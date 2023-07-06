@@ -42,6 +42,7 @@ export default {
 <style lang="postcss" scoped>
 .footer {
   @apply bg-gray-900;
+  margin-top: 15rem;
 }
 </style>
 

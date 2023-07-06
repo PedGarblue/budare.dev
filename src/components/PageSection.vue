@@ -1,7 +1,7 @@
 <template>
-  <section :id="name">
+  <section :id="name" class="h-screen">
     <div class="section-container">
-      <h2 class="tracking-wider">
+      <h2 class="tracking-wider mt-8">
         <font-awesome-icon :icon="faIcon" class="mr-1" />
         {{ title }}
       </h2>
@@ -39,10 +39,16 @@ export default {
 
 <style lang="postcss" scoped>
 h2 {
-  @apply text-lg;
+  @apply text-2xl;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+section {
+  text-align: left;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .section-container {
-  @apply divide-y-2 divide-gray-200;
+  @apply divide-y-2 divide-gray-200 h-full;
 }
 .section-body {
   margin-top: theme('spacing.2');

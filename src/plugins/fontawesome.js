@@ -22,6 +22,7 @@ import {
   faPhp,
   faTelegram,
   faVuejs,
+  faPython,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
@@ -53,6 +54,7 @@ library.add([
   faCss3Alt,
   faJs,
   faPhp,
+  faPython,
 ]);
 
 export default {

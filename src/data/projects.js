@@ -1,21 +1,21 @@
 export default [
   {
-    name: '☕ Cafechan',
+    name: '💸 Just Another Budget App',
     desc: {
-      en: 'A very simple and modern imageboard.',
-      es: 'Un imageboard sencillo y moderno.',
+      en: 'A application for tracking your daily transactions.',
+      es: 'App para registrar todas tus transaciones personales.',
     },
     tags: [
       {
-        title: 'Node',
-        icon: ['fab', 'node-js'],
+        title: 'Python',
+        icon: ['fab', 'python'],
         style: {
-          color: '#7dbb3e',
+          color: '#c2c6f1',
         },
       },
       {
-        title: 'MongoDB',
-        icon: 'mongodb',
+        title: 'Postgres',
+        icon: 'postgres',
       },
       {
         title: 'Vue.js',
@@ -24,9 +24,16 @@ export default [
           color: '#7ebb12',
         },
       },
+      {
+        title: 'Nuxt 3',
+        icon: ['fab', 'vuejs'],
+        style: {
+          color: '#7ebb12',
+        },
+      },
     ],
-    source: 'https://github.com/PedGarBlue/cafechan',
-    demoUrl: 'https://cafechan.herokuapp.com',
+    source: 'https://github.com/PedGarblue/just-another-personal-budget',
+    demoUrl: '#',
   },
   {
     name: '🛵 Encomiendas',
@@ -58,10 +65,39 @@ export default [
     demoUrl: 'https://encomiendas.herokuapp.com',
   },
   {
+    name: '☕ Cafechan',
+    desc: {
+      en: 'A very simple and modern imageboard.',
+      es: 'Un imageboard sencillo y moderno.',
+    },
+    tags: [
+      {
+        title: 'Node',
+        icon: ['fab', 'node-js'],
+        style: {
+          color: '#7dbb3e',
+        },
+      },
+      {
+        title: 'MongoDB',
+        icon: 'mongodb',
+      },
+      {
+        title: 'Vue.js',
+        icon: ['fab', 'vuejs'],
+        style: {
+          color: '#7ebb12',
+        },
+      },
+    ],
+    source: 'https://github.com/PedGarBlue/cafechan',
+    demoUrl: 'https://cafechan.herokuapp.com',
+  },
+  {
     name: '📕 budare.dev',
     desc: {
-      en: 'Personal portfolio (actually, this site)',
-      es: 'Portafolio personal (este sitio).',
+      en: 'Personal portfolio (this site 💪)',
+      es: 'Portafolio personal (este sitio 💪).',
     },
     tags: [
       {

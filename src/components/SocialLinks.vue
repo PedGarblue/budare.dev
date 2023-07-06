@@ -45,6 +45,7 @@ export default {
 
   &__item {
     margin: 0 clamp(1rem, 10%, 2rem);
+    color: #d5d5d5;
 
     &:first-child {
       margin-left: 0;

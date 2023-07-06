@@ -1,5 +1,5 @@
 <template>
-  <page-section name="about" :title="t('title')" :fa-icon="['far', 'user']">
+  <page-section name="about" :title="t('title')" class="about">
     <template #body>
       <p class="about__paragraph">
         {{ t('desc') }}
@@ -35,7 +35,11 @@ export default {
 </script>
 
 <style lang="postcss">
+.about {
+  padding-top: 21vh !important;
+}
 .about__paragraph {
+  @apply text-lg;
   line-break: normal;
   white-space: pre-line;
 }
@@ -45,7 +49,7 @@ export default {
 {
   "en": {
     "title": "About me",
-    "desc": "At the age of 14 I made my first script in Visual Basic, since then I have tried different programming languages in search of doing new and interesting things, eventually making code became one of my favorite hobbies.\nI have explored the software development universe on my own, ended up focusing primarily on web development.",
+    "desc": "I'm proficient with Vue Framework and it's environment (Nuxt, Pinia, Vuex, etc.), i love styling using pure CSS but i often use TailwindCSS or SCSS/SASS to make everything scalable. \nFor Backend Development i'm seasoned with Laravel Framework by creating API's REST, Business Logic for Fullstack projects and deploying those applications to the World with providers like DigitalOcean and GoDaddy. \nI love learn new things, solve tricky and complex challenges and make myself and others grow 🔥",
   },
   "es": {
     "title": "Acerca de mí",

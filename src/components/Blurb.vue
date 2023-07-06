@@ -41,41 +41,25 @@ export default {
 
 <style lang="postcss">
 #blurb {
-  @apply
-    flex
-    flex-col
-    justify-center
-    items-center
-    pb-0
-    bg-gradient-to-b
-    from-gray-800
-    to-blue-900
-  ;
-
-  background-repeat: no-repeat;
-  background-size: cover;
-
-  padding-top: 28vh;
+  @apply flex flex-col justify-center items-center pb-0;
+  height: calc(100vh - 4rem);
 }
 
-.blurb {
-}
+/* .blurb {} */
 
 .blurb__contact {
   @apply flex ml-auto;
 }
 
 .desc {
-  @apply
-    flex
+  @apply flex
     flex-col
     justify-center
     text-center
     m-auto
     gap-2
     xl:items-start
-    xl:mx-16
-  ;
+    xl:mx-16;
 }
 
 .desc__name {
@@ -84,7 +68,6 @@ export default {
 .desc__workname {
   @apply text-xl;
 }
-
 </style>
 
 <style lang="scss" scoped>
@@ -92,6 +75,7 @@ export default {
   @include container;
   @include flex;
 
+  margin-left: 7vw;
   margin-top: $medium;
   padding-top: $extra-big-space;
 
@@ -104,8 +88,10 @@ export default {
     justify-content: center;
 
     img {
-      width: 11rem;
-      height: 11rem;
+      border: 2px solid #bbbbbb;
+      padding: 0.5rem;
+      width: 12rem;
+      height: 12rem;
       border-radius: 50%;
     }
   }

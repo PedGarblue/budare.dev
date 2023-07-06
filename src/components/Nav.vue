@@ -53,7 +53,7 @@ export default {
 
 <style lang="postcss" scoped>
 .navbar {
-  @apply bg-blue-900;
+  @apply bg-blue-900 bg-opacity-80;
 }
 
 .navbar__items {
@@ -73,6 +73,7 @@ export default {
   width: 100%;
   padding: 0.1rem 0;
   z-index: 3;
+  font-family: 'Montserrat Alternates', sans-serif;
 
   &__contents,
   &__items {
