@@ -1,9 +1,5 @@
 <template>
-  <page-section
-    name="projects"
-    :title="t('title')"
-    :fa-icon="['fas', 'project-diagram']"
-  >
+  <page-section name="projects" class="projects" :title="t('title')">
     <template #body>
       <div class="flex flex-col gap-5">
         <projects-item
@@ -28,6 +24,10 @@
         </a>
       </div>
     </template>
+
+    <template #section-bg>
+      <skew-bg />
+    </template>
   </page-section>
 </template>
 
@@ -37,12 +37,14 @@ import projects from '@/data/projects';
 import contact from '@/data/contact';
 import ProjectsItem from './ProjectsItem';
 import PageSection from './PageSection.vue';
+import SkewBg from './SkewBg.vue';
 
 export default {
   name: 'Projects',
   components: {
     ProjectsItem,
     PageSection,
+    SkewBg,
   },
   setup() {
     const { t } = useI18n({
@@ -59,7 +61,17 @@ export default {
 };
 </script>
 
+<style lang="postcss">
+.projects .section-container {
+  @apply bg-opacity-95 bg-gray-800 rounded-lg pt-2;
+}
+</style>
+
 <style lang="postcss" scoped>
+.projects {
+  @apply pt-20;
+  position: relative;
+}
 .footer {
   @apply mt-8;
 

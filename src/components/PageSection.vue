@@ -1,7 +1,7 @@
 <template>
   <section :id="name" class="h-screen">
     <div class="section-container">
-      <h2 class="tracking-wider mt-8">
+      <h2 class="tracking-wider">
         <font-awesome-icon :icon="faIcon" class="mr-1" />
         {{ title }}
       </h2>
@@ -12,6 +12,7 @@
     <div class="section-footer">
       <slot name="footer"></slot>
     </div>
+    <slot name="section-bg"></slot>
   </section>
 </template>
 

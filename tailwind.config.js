@@ -7,6 +7,9 @@ module.exports = {
         cyan: colors.cyan,
         sky: colors.sky,
       },
+      zIndex: {
+        'negative': '-10',
+      },
     },
   },
   plugins: [],

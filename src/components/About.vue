@@ -1,9 +1,13 @@
 <template>
-  <page-section name="about" :title="t('title')" class="about">
+  <page-section name="about" :title="t('title')" class="about relative">
     <template #body>
       <p class="about__paragraph">
         {{ t('desc') }}
       </p>
+    </template>
+
+    <template #section-bg>
+      <parallel-grids-bg />
     </template>
   </page-section>
 </template>
@@ -13,11 +17,13 @@ import { useI18n } from 'vue-i18n';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
 import PageSection from './PageSection.vue';
+import ParallelGridsBg from './ParallelGridsBg.vue';
 
 export default {
-  name: 'ShortAboutme',
+  name: 'About',
   components: {
     PageSection,
+    ParallelGridsBg,
   },
   setup() {
     const { t } = useI18n({

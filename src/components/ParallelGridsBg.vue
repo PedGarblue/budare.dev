@@ -1,11 +1,9 @@
-<!-- eslint-disable vue/no-ref-as-operand -->
-<!-- eslint-disable vue/no-ref-as-operand -->
 <template>
   <canvas
-    ref="canvasbg"
+    ref="dualgridbg"
     :height="height"
     :width="width"
-    class="absolute z-0 top-0 right-0"
+    class="absolute z-negative top-0 right-0"
   ></canvas>
 </template>
 
@@ -15,14 +13,13 @@ import colormap from 'colormap';
 import { TheGrid } from '../grid/grid';
 
 export default {
-  name: 'CanvasBg',
   setup() {
-    const canvasbg = ref('canvasbg');
-    const context = computed(() => canvasbg.value.getContext('2d'));
+    const dualgridbg = ref('dualgridbg');
+    const context = computed(() => dualgridbg.value.getContext('2d'));
 
     const bgParams = {
-      colourRange: 'inferno',
-      amp: 20,
+      colourRange: 'density',
+      amp: 36,
       bgGradientColorA: 1,
       bgGradientColorB: 10,
     };
@@ -56,28 +53,49 @@ export default {
     };
 
     const grid1 = new TheGrid({
-      width,
-      height,
-      cols: 9,
-      rows: 100,
-      xOffset: 0.4,
-      yOffset: 0.027,
-      gridSize: 0.8,
-      xlastThird: 500,
-      ylastThird: 350,
+      width: 1080,
+      height: 1080,
+      cols: 100,
+      rows: 6,
+      xOffset: 1.3,
+      yOffset: -0.05,
+      gridSize: 1,
+      xlastThird: 250,
+      ylastThird: 500,
       xLastFormula: 'second',
       yLastFormula: 'second',
       freq: 0.0012,
-      amp: 31,
+      amp: 25,
       animSpeed: -1,
-      colourRange: 'magma',
+      colourRange: 'YIOrRd',
+      colourAlpha: 1,
+    });
+
+    const grid2 = new TheGrid({
+      width: 1080,
+      height: 1080,
+      cols: 100,
+      rows: 6,
+      xOffset: -0.53,
+      yOffset: 0.0,
+      gridSize: 1,
+      xlastThird: -250,
+      ylastThird: 500,
+      xLastFormula: 'second',
+      yLastFormula: 'second',
+      freq: 0.0012,
+      amp: 25,
+      animSpeed: -1,
+      colourRange: 'YIOrRd',
       colourAlpha: 1,
     });
 
     grid1.setupCalcs({ name: 'grid1' });
+    grid2.setupCalcs({ name: 'grid2' });
     const init = () => {
       draw();
       grid1.draw({ context: context.value, frame });
+      grid2.draw({ context: context.value, frame });
       frame++;
       window.requestAnimationFrame(init);
     };
@@ -87,7 +105,7 @@ export default {
     });
 
     return {
-      canvasbg,
+      dualgridbg,
       width,
       height,
     };
@@ -95,4 +113,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="postcss" scoped>
+.-z-1 {
+  z-index: -1;
+}
+</style>

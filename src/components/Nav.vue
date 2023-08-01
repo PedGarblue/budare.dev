@@ -53,7 +53,7 @@ export default {
 
 <style lang="postcss" scoped>
 .navbar {
-  @apply bg-blue-900 bg-opacity-80;
+  @apply bg-blue-900 bg-opacity-10;
 }
 
 .navbar__items {
