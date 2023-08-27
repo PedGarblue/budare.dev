@@ -22,6 +22,8 @@ export class TheGrid {
     animSpeed,
     colourRange,
     colourAlpha,
+    shadowOffsetX,
+    shadowOffsetY,
   }) {
     this.params = {
       cols,
@@ -60,6 +62,9 @@ export class TheGrid {
 
     this.colourRange = colourRange;
     this.colourAlpha = colourAlpha;
+
+    this.shadowOffsetX = shadowOffsetX;
+    this.shadowOffsetY = shadowOffsetY;
 
     // private
 
@@ -178,6 +183,7 @@ export class TheGrid {
 
     for (let r = 0; r < this.rows; r++) {
       for (let c = 0; c < this.cols - 1; c++) {
+        let shadowColor;
         const curri = r * this.cols + c + 0;
         const nexti = r * this.cols + c + 1;
         const curr = this.points[curri];
@@ -198,6 +204,13 @@ export class TheGrid {
         context.quadraticCurveTo(curr.x, curr.y, mx, my);
 
         context.stroke();
+
+        shadowColor = curr.color;
+
+        context.shadowColor = shadowColor;
+        context.shadowOffsetX = this.shadowOffsetX;
+        context.shadowOffsetY = this.shadowOffsetY;
+        context.globalCompositeOperation = 'source-over';
 
         lastx = getFormula(this.xLastFormula, {
           a: mx,

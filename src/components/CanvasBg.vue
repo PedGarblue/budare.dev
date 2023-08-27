@@ -72,6 +72,8 @@ export default {
       animSpeed: -1,
       colourRange: 'magma',
       colourAlpha: 1,
+      shadowOffsetX: 20,
+      shadowOffsetY: 30,
     });
 
     grid1.setupCalcs({ name: 'grid1' });

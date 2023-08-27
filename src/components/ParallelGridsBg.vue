@@ -76,6 +76,8 @@ export default {
       animSpeed: -1,
       colourRange: 'YIOrRd',
       colourAlpha: 1,
+      shadowOffsetX: 20,
+      shadowOffsetY: 15,
     });
 
     const grid2 = new TheGrid({
@@ -95,14 +97,16 @@ export default {
       animSpeed: -1,
       colourRange: 'YIOrRd',
       colourAlpha: 1,
+      shadowOffsetX: -20,
+      shadowOffsetY: 15,
     });
 
     grid1.setupCalcs({ name: 'grid1' });
     grid2.setupCalcs({ name: 'grid2' });
     const init = () => {
       draw();
-      grid1.draw({ context: context.value, frame });
-      grid2.draw({ context: context.value, frame });
+      grid1.draw({ context: context.value, frame, colorByRow: true });
+      grid2.draw({ context: context.value, frame, colorByRow: true });
       frame++;
       window.requestAnimationFrame(init);
     };

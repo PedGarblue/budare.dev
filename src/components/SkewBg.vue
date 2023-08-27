@@ -33,7 +33,7 @@ export default {
       });
       const prevSectionBgColors = colormap({
         colormap: 'inferno',
-        nshades: 20,
+        nshades: 100,
         format: 'rgbaString',
         alpha: 1,
       });
