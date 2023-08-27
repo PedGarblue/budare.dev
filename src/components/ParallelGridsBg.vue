@@ -39,10 +39,17 @@ export default {
         format: 'rgbaString',
         alpha: 1,
       });
+      const prevSectionBgColors = colormap({
+        colormap: 'inferno',
+        nshades: 20,
+        format: 'rgbaString',
+        alpha: 1,
+      });
 
       // background gradient
-      const bgGradient = ctx.createLinearGradient(0, 0, width * 0.6, 0);
-      bgGradient.addColorStop(0, colors[bgParams.bgGradientColorA]);
+      const bgGradient = ctx.createLinearGradient(0, 0, width, height);
+      bgGradient.addColorStop(0.0, prevSectionBgColors[1]);
+      bgGradient.addColorStop(0.50, prevSectionBgColors[10]);
       bgGradient.addColorStop(1, colors[bgParams.bgGradientColorB]);
       ctx.fillStyle = bgGradient;
       // main rect
