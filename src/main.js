@@ -5,9 +5,13 @@ import fontawesome from './plugins/fontawesome';
 import i18n from './plugins/i18n';
 import './assets/tailwind.css';
 import 'aos/dist/aos.css';
+import { createPinia } from 'pinia';
+
+const pinia = createPinia();
 
 createApp(App)
   .use(router)
   .use(i18n)
   .use(fontawesome)
+  .use(pinia)
   .mount('#app');

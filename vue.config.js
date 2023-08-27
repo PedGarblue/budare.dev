@@ -19,6 +19,18 @@ module.exports = {
         maxSize: 200000,
       },
     },
+    resolve: {
+      extensions: ['*', '.mjs', '.js', '.json']
+    },
+    module: {
+      rules: [
+        {
+          test: /\.mjs$/,
+          include: /node_modules/,
+          type: 'javascript/auto',
+        },
+      ],
+    },
   },
   css: {
     loaderOptions: {
