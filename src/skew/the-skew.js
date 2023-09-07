@@ -2,8 +2,36 @@ import risoColors from 'riso-colors';
 import { random, color } from 'canvas-sketch-util';
 import { drawSkewedRect } from './draws';
 
+const getConfigsByDirection = direction => {
+  let angle;
+  switch (direction) {
+  case 'from-tr-to-bl':
+    angle = Math.PI / 4; // -45 degrees
+    return {
+      angle,
+      animXDirectionRatio: -Math.cos(angle),
+      animYDirectionRatio: Math.sin(angle),
+      rect: {
+        degrees: -45,
+      },
+      xBoundaryMatcher: (rect) => rect.x < -rect.perimetalLength / 2,
+    };
+  case 'from-tl-to-br':
+    angle = Math.PI / 4; // 45 degrees
+    return {
+      angle,
+      animXDirectionRatio: Math.cos(angle),
+      animYDirectionRatio: Math.sin(angle),
+      rect: {
+        degrees: 45,
+      },
+      xBoundaryMatcher: (rect, width) => rect.x > width + rect.perimetalLength / 2,
+    };
+  }
+};
 export class TheSkew {
-  constructor({ width, height, num = 25 }) {
+  constructor({ width, height, num = 20, direction = 'from-tr-to-bl' }) {
+    const animsConfigs = getConfigsByDirection(direction);
     this.width = width;
     this.height = height;
     this.seed = random.getRandomSeed();
@@ -15,11 +43,15 @@ export class TheSkew {
       random.pick(risoColors),
     ];
     this.rects = Array(this.num);
-    this.animAngle = Math.PI / 4; // 45 degrees
-    this.rectDegrees = -45;
+    this.animAngle = animsConfigs.angle;
+    this.animXDirectionRatio = animsConfigs.animXDirectionRatio;
+    this.animYDirectionRatio = animsConfigs.animYDirectionRatio;
+    this.xBoundaryMatcher = animsConfigs.xBoundaryMatcher;
+    this.rectDegrees = animsConfigs.rect.degrees;
     this.shadowOffsetX = 10;
     this.shadowOffsetY = 20;
-    console.log([this.width, this.height, this.num, this.seed]);
+    this.direction = direction;
+    this.animVelocity = 1;
   }
 
   setupCalcs() {
@@ -31,20 +63,20 @@ export class TheSkew {
       .map(() => {
         const initialX = random.range(0, width);
         const initialY = random.range(0, height);
-        const w = random.range(200, 600);
-        const h = random.range(40, 200);
+        const w = random.range(300, 900);
+        const h = random.range(60, 300);
         const perimetalLength = w / Math.sqrt(2);
         const perimetalHeight = perimetalLength + h;
         // Calculate the distance from the initial point to the canvas boundary along the 45-degree line
         const distance = Math.min(
-          (width + perimetalLength / 2 - initialX) / Math.cos(this.animAngle),
-          (initialY + (perimetalHeight + this.shadowOffsetY + 10) / 2) /
-            Math.sin(this.animAngle)
+          (initialX + width - perimetalLength / 2) / Math.cos(this.animAngle),
+          (initialY + perimetalHeight / 2) / Math.sin(this.animAngle)
         );
 
         // Calculate the originX and originY based on the angle and distance
-        const originX = initialX + distance * Math.cos(this.animAngle);
-        const originY = initialY - distance * Math.sin(this.animAngle);
+        // const originX = initialX + distance * -Math.cos(this.animAngle);
+        const originX = initialX + distance * -this.animXDirectionRatio;
+        const originY = initialY - distance * this.animYDirectionRatio;
 
         return {
           initialX,
@@ -59,7 +91,7 @@ export class TheSkew {
           perimetalHeight,
           fill: random.pick(rectColors).hex,
           stroke: random.pick(rectColors).hex,
-          blend: random.value() > 0.5 ? 'overlay' : 'source-over',
+          blend: 'overlay',
           degrees: this.rectDegrees,
         };
       });
@@ -76,11 +108,7 @@ export class TheSkew {
     this.rects = this.rects.map(rect => {
       // const animInc = 1;
       const { fill, stroke, blend } = rect;
-      let shadowColor;
-
-      // move rect in a 45-degree line pointing to the bottom-left corner
-      let posX = rect.x - Math.cos(this.animAngle);
-      let posY = rect.y + Math.sin(this.animAngle);
+      let shadowColor, posX, posY;
 
       // match rect when it reaches the bottom-left corner
       // take in count the rect's width and height since the rect is skewed
@@ -88,12 +116,15 @@ export class TheSkew {
       // ...
       // Check if the rect has gone out of bounds (width or height)
       if (
-        posX < -rect.perimetalLength / 2 ||
-        posX > width + rect.w / 2 ||
-        posY > height + rect.perimetalHeight / 2
+        this.xBoundaryMatcher(rect, width) ||
+        rect.y > height + rect.perimetalHeight / 2
       ) {
         posX = rect.originX;
         posY = rect.originY;
+      } else {
+        // move rect in a 45-degree line pointing to the bottom-left corner
+        posX = rect.x + this.animXDirectionRatio * this.animVelocity;
+        posY = rect.y + this.animYDirectionRatio * this.animVelocity;
       }
 
       rect.x = posX;
@@ -130,7 +161,7 @@ export class TheSkew {
       // context.restore();
       // context.fillRect(rect.x, rect.y, 5, 5);
       // context.fillStyle = 'black';
-      // context.restore();
+      context.restore();
 
       // context.save();
       // context.beginPath();
@@ -150,14 +181,13 @@ export class TheSkew {
       // context.strokeStyle = 'black';
       // context.lineWidth = 2;
       // context.stroke();
-      context.restore();
+      // context.restore();
+
+      // context.restore();
+
 
       return rect;
     });
-
-    context.restore();
-
-    context.save();
 
     context.restore();
   }

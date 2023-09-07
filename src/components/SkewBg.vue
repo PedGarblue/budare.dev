@@ -13,14 +13,24 @@ import { computed, onMounted, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
 
 export default {
-  setup() {
+  props: {
+    animationDirection: {
+      type: String,
+      default: 'from-tr-to-bl',
+    },
+  },
+  setup(props) {
     const skewbg = ref('skewbg');
     const context = computed(() => skewbg.value.getContext('2d'));
     let frame = 0;
     let width = window.innerWidth;
     let height = window.innerHeight;
 
-    const skew1 = new TheSkew({ height, width });
+    const skew1 = new TheSkew({
+      height,
+      width,
+      direction: props.animationDirection,
+    });
     skew1.setupCalcs();
 
     const init = () => {
@@ -41,7 +51,7 @@ export default {
       // background gradient
       const bgGradient = ctx.createLinearGradient(0, 0, width, height);
       bgGradient.addColorStop(0.0, prevSectionBgColors[1]);
-      bgGradient.addColorStop(0.50, prevSectionBgColors[10]);
+      bgGradient.addColorStop(0.5, prevSectionBgColors[10]);
       bgGradient.addColorStop(1, colors[10]);
       ctx.fillStyle = bgGradient;
 
