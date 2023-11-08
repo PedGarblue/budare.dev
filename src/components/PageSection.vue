@@ -1,7 +1,7 @@
 <template>
   <section :id="name" class="h-screen">
     <div class="section-container">
-      <h2 class="tracking-wider">
+      <h2 v-if="title" class="tracking-wider">
         <font-awesome-icon :icon="faIcon" class="mr-1" />
         {{ title }}
       </h2>

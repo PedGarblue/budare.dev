@@ -6,11 +6,6 @@
     :fa-icon="['fas', 'code']"
   >
     <template #body>
-      <skills-list
-        :title="t('top_skills')"
-        :items="skills.top"
-        item-type="card"
-      />
       <skills-list :title="t('basic_skills')" :items="skills.misc" />
       <skills-list :title="t('languages')" :items="skills.languages" />
     </template>
