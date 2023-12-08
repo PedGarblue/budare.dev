@@ -55,7 +55,7 @@ export default {
 {
   "en": {
     "title": "About me",
-    "desc": "I'm proficient with Vue Framework and it's environment (Nuxt, Pinia, Vuex, etc.), i love styling using pure CSS but i often use TailwindCSS or SCSS/SASS to make everything scalable. \nFor Backend Development i'm seasoned with Laravel Framework by creating API's REST, Business Logic for Fullstack projects and deploying those applications to the World with providers like DigitalOcean and GoDaddy. \nI love learn new things, solve tricky and complex challenges and make myself and others grow 🔥",
+    "desc": "I'm proficient with Vue Framework and it's environment (Nuxt, Pinia, Vuex, etc.), i love styling using pure CSS but i often use TailwindCSS or SCSS/SASS to make everything scalable. \nFor Backend Development, i'm seasoned with Laravel Framework by creating API's REST, Business Logic for Fullstack projects and deploying those applications to the World with providers like DigitalOcean and GoDaddy. \nI love learn new things, solve tricky and complex challenges and make myself and others grow 🔥",
   },
   "es": {
     "title": "Acerca de mí",

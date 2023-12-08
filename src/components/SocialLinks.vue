@@ -4,6 +4,7 @@
       class="social-links__item"
       :href="contact.github"
       rel="noreferrer noopener"
+      target="_blank"
     >
       <font-awesome-icon :icon="['fab', 'github']" />
     </a>
@@ -11,6 +12,7 @@
       class="social-links__item"
       :href="contact.linkedin"
       rel="noreferrer noopener"
+      target="_blank"
     >
       <font-awesome-icon :icon="['fab', 'linkedin']" />
     </a>
@@ -18,8 +20,17 @@
       class="social-links__item"
       :href="contact.telegram"
       rel="noreferrer noopener"
+      target="_blank"
     >
       <font-awesome-icon :icon="['fab', 'telegram']" />
+    </a>
+    <a
+      class="social-links__item"
+      :href="`mailto:${contact.email}`"
+      rel="noreferrer noopener" 
+      target="_blank"
+    >
+      <font-awesome-icon :icon="['fas', 'envelope']" />
     </a>
   </div>
 </template>
@@ -41,7 +52,7 @@ export default {
 .social-links {
   @include flex(row, nowrap);
 
-  font-size: $big-font-size;
+  font-size: 2rem;
 
   &__item {
     margin: 0 clamp(1rem, 10%, 2rem);

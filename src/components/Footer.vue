@@ -1,10 +1,15 @@
 <template>
   <footer class="footer">
-    <section id="footer" class="flex flex-col h-screen">
-      <div class="my-auto">
+    <section id="footer" class="flex flex-col h-screen z-50">
+      <div class="my-auto ">
         <h2 class="footer__title">
           {{ t('want_to_contact_me') }}
         </h2>
+        <!-- of my work status (searching position) -->
+        <div class="footer__work-status">
+          <b>{{ t('my_job_status') }}</b> <br />
+          {{ t('contact_me_through') }}
+        </div>
         <nav class="footer__social">
           <social-links />
         </nav>
@@ -46,7 +51,15 @@ export default {
 
 <style lang="postcss" scoped>
 .footer {
-  @apply bg-gray-900;
+  background: linear-gradient(-45deg, #be2d00, #db6c97, #055b7a, #1b8068);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+.footer__work-status {
+  @apply text-center text-2xl mt-6;
+  font-family: 'Nunito', sans-serif;
+  color: #fff;
 }
 
 .footer__title {
@@ -54,30 +67,40 @@ export default {
   font-family: 'Bungee Shade', cursive;
   text-transform: uppercase;
   background-image: linear-gradient(
-    -225deg,
-    #ffd900 0%,
-    #465ea0 29%,
-    #ff1361 67%,
-    #ffd900 100%
+    -45deg,
+    #ffffff 0%,
+    #d8d8d8 75%,
+    #ffffff 100%
   );
   background-size: auto auto;
   background-clip: border-box;
-  background-size: 900% auto;
-  color: #fff;
+  background-size: 400% 400%;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: textclip 20s linear infinite;
+  animation: textclip 20s ease infinite;
+
   display: inline-block;
 }
 .footer__social {
-  @apply flex justify-center pt-6;
+  @apply flex justify-center pt-6 text-2xl;
 }
 
 @keyframes textclip {
   to {
     background-position: 200% center;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 </style>
@@ -109,6 +132,8 @@ export default {
   "en": {
     "created_by": "Created ❤️ by Pedro García.",
     "want_to_contact_me": "Contact me",
+    "my_job_status": "Want me to work with you? I'm available for hire :)",
+    "contact_me_through": "Contact to one of my social networks or send me an email 🔥",
   },
   "es": {
     "created_by": "Creado ❤️ por Pedro García.",
