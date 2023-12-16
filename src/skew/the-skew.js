@@ -14,7 +14,7 @@ const getConfigsByDirection = direction => {
       rect: {
         degrees: -45,
       },
-      xBoundaryMatcher: (rect) => rect.x < -rect.perimetalLength / 2,
+      xBoundaryMatcher: rect => rect.x < -rect.perimetalLength / 2,
     };
   case 'from-tl-to-br':
     angle = Math.PI / 4; // 45 degrees
@@ -25,7 +25,8 @@ const getConfigsByDirection = direction => {
       rect: {
         degrees: 45,
       },
-      xBoundaryMatcher: (rect, width) => rect.x > width + rect.perimetalLength / 2,
+      xBoundaryMatcher: (rect, width) =>
+        rect.x > width + rect.perimetalLength / 2,
     };
   }
 };
@@ -184,7 +185,6 @@ export class TheSkew {
       // context.restore();
 
       // context.restore();
-
 
       return rect;
     });

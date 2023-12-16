@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <canvas-bg></canvas-bg>
     <div class="relative z-10">
       <Blurb />
       <Nav />
@@ -13,7 +12,6 @@
 </template>
 
 <script>
-import CanvasBg from '@/components/CanvasBg';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import Blurb from '@/components/Blurb';
@@ -25,7 +23,6 @@ import { onMounted, onUnmounted, ref } from 'vue';
 export default {
   name: 'Home',
   components: {
-    CanvasBg,
     Blurb,
     Nav,
     About,
@@ -104,7 +101,7 @@ export default {
 
       let sectionElem = document.getElementsByTagName('section')[id];
 
-      sectionElem.scrollIntoView({ behavior: 'smooth' });
+      sectionElem.scrollIntoView({ behavior: 'smooth', block: 'end' });
 
       setTimeout(() => {
         inMove.value = false;

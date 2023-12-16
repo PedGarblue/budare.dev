@@ -32,12 +32,14 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import projects from '@/data/projects';
 import contact from '@/data/contact';
 import ProjectsItem from './ProjectsItem';
 import PageSection from './PageSection.vue';
-import SkewBg from './SkewBg.vue';
+
+const SkewBg = defineAsyncComponent(() => import('./SkewBg.vue'));
 
 export default {
   name: 'Projects',
@@ -69,7 +71,7 @@ export default {
 
 <style lang="postcss" scoped>
 .projects {
-  @apply pt-20;
+  /* @apply pt-20; */
   position: relative;
 }
 .footer {

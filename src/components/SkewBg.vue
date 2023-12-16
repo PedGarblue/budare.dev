@@ -11,6 +11,7 @@
 import colormap from 'colormap';
 import { computed, onMounted, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
+import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 
 export default {
   props: {
@@ -25,11 +26,15 @@ export default {
     let frame = 0;
     let width = window.innerWidth;
     let height = window.innerHeight;
+    const { isMobileView } = useBackgroundAnimation();
+
+    const num = isMobileView ? 0 : 20;
 
     const skew1 = new TheSkew({
       height,
       width,
       direction: props.animationDirection,
+      num,
     });
     skew1.setupCalcs();
 

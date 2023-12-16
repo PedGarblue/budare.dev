@@ -55,14 +55,21 @@ export default {
       ctx.restore();
     };
 
+    const isMobileView = () => {
+      return window.innerWidth < 768;
+    };
+
+    const cols = isMobileView() ? 5 : 9;
+    const rows = isMobileView() ? 50 : 100;
+
     const grid1 = new TheGrid({
       width,
       height,
-      cols: 9,
-      rows: 100,
-      xOffset: 0.4,
-      yOffset: 0.027,
-      gridSize: 0.8,
+      cols,
+      rows,
+      xOffset: isMobileView ? 0.2 : 0.4,
+      yOffset: isMobileView ? 0.15 : 0.027,
+      gridSize: isMobileView ? 0.8 : 0.8,
       xlastThird: 500,
       ylastThird: 350,
       xLastFormula: 'second',

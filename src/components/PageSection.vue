@@ -1,5 +1,5 @@
 <template>
-  <section :id="name" class="h-screen">
+  <section :id="name">
     <div class="section-container">
       <h2 v-if="title" class="tracking-wider">
         <font-awesome-icon :icon="faIcon" class="mr-1" />
@@ -44,6 +44,7 @@ h2 {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 section {
+  height: calc(100dvh);
   text-align: left;
   padding-top: 4rem;
   padding-bottom: 4rem;

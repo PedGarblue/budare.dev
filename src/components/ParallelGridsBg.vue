@@ -10,10 +10,12 @@
 <script>
 import { computed, onMounted, ref } from 'vue';
 import colormap from 'colormap';
+import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 import { TheGrid } from '../grid/grid';
 
 export default {
   setup() {
+    const { isMobileView } = useBackgroundAnimation();
     const dualgridbg = ref('dualgridbg');
     const context = computed(() => dualgridbg.value.getContext('2d'));
 
@@ -59,11 +61,16 @@ export default {
       ctx.restore();
     };
 
+    const rows = isMobileView ? 3 : 6;
+    const cols = isMobileView ? 50 : 100;
+    const gridWidth = isMobileView ? 400 : 1080;
+    const gridHeight = isMobileView ? 400 : 1080;
+
     const grid1 = new TheGrid({
-      width: 1080,
-      height: 1080,
-      cols: 100,
-      rows: 6,
+      width: gridWidth,
+      height: gridHeight,
+      cols,
+      rows,
       xOffset: 1.3,
       yOffset: -0.05,
       gridSize: 1,
@@ -81,10 +88,10 @@ export default {
     });
 
     const grid2 = new TheGrid({
-      width: 1080,
-      height: 1080,
-      cols: 100,
-      rows: 6,
+      width: gridWidth,
+      height: gridHeight,
+      cols,
+      rows,
       xOffset: -0.53,
       yOffset: 0.0,
       gridSize: 1,
@@ -105,8 +112,10 @@ export default {
     grid2.setupCalcs({ name: 'grid2' });
     const init = () => {
       draw();
-      grid1.draw({ context: context.value, frame, colorByRow: true });
-      grid2.draw({ context: context.value, frame, colorByRow: true });
+      if (!isMobileView) {
+        grid1.draw({ context: context.value, frame, colorByRow: true });
+        grid2.draw({ context: context.value, frame, colorByRow: true });
+      }
       frame++;
       window.requestAnimationFrame(init);
     };

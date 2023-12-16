@@ -13,11 +13,15 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
 import PageSection from './PageSection.vue';
-import ParallelGridsBg from './ParallelGridsBg.vue';
+
+const ParallelGridsBg = defineAsyncComponent(() =>
+  import('./ParallelGridsBg.vue')
+);
 
 export default {
   name: 'About',
@@ -42,7 +46,7 @@ export default {
 
 <style lang="postcss">
 .about {
-  padding-top: 21vh !important;
+  /* padding-top: 21vh !important; */
 }
 .about__paragraph {
   @apply text-lg;

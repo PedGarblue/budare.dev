@@ -10,6 +10,9 @@
         <social-links />
       </div>
     </div>
+    <div class="w-full h-full absolute z-negative">
+      <canvas-bg />
+    </div>
   </section>
 </template>
 
@@ -18,10 +21,12 @@ import { useI18n } from 'vue-i18n';
 import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
+import CanvasBg from '@/components/CanvasBg';
 
 export default {
   name: 'Blurb',
   components: {
+    CanvasBg,
     SocialLinks,
   },
   setup() {
@@ -41,8 +46,8 @@ export default {
 
 <style lang="postcss">
 #blurb {
-  @apply flex flex-col justify-center items-center pb-0;
-  height: calc(100vh - 4rem);
+  @apply flex flex-col justify-center items-center pb-0 relative;
+  height: calc(100dvh - 4rem);
 }
 
 /* .blurb {} */
@@ -67,6 +72,12 @@ export default {
 }
 .desc__workname {
   @apply text-xl;
+}
+
+@media screen and (min-width: 768px) {
+  #blurb {
+    height: calc(100dvh - 4rem);
+  }
 }
 </style>
 

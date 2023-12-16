@@ -53,7 +53,8 @@ export default {
 
 <style lang="postcss" scoped>
 .navbar {
-  @apply bg-blue-900 bg-opacity-10;
+  @apply bg-opacity-10;
+  position: sticky;
 }
 
 .navbar__items {
@@ -67,7 +68,6 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
-  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
