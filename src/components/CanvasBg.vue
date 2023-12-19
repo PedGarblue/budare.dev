@@ -56,6 +56,7 @@ export default {
     };
 
     const isMobileView = () => {
+      console.log('window.innerWidth', window.innerWidth);
       return window.innerWidth < 768;
     };
 
@@ -67,9 +68,9 @@ export default {
       height,
       cols,
       rows,
-      xOffset: isMobileView ? 0.2 : 0.4,
-      yOffset: isMobileView ? 0.15 : 0.027,
-      gridSize: isMobileView ? 0.8 : 0.8,
+      xOffset: isMobileView() ? 0.2 : 0.35,
+      yOffset: isMobileView() ? 0.15 : 0.087,
+      gridSize: isMobileView() ? 0.8 : 0.8,
       xlastThird: 500,
       ylastThird: 350,
       xLastFormula: 'second',
