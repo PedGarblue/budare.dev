@@ -115,19 +115,19 @@ export default {
     },
     {
       id: 'misc',
-      name: 'Misc',
+      name: 'Software Architecture and Methodologies',
       skills: [
         {
           title: 'SCRUM',
           icon: ['fas', 'users'],
         },
         {
-          title: 'Test Driven Development',
-          icon: ['fas', 'cube'],
+          title: 'TDD',
+          icon: ['fas', 'clipboard-check'],
         },
         {
-          title: 'Clean code',
-          icon: ['fas', 'clipboard-check'],
+          title: 'SOLID',
+          icon: ['fas', 'cube'],
         },
       ],
     },

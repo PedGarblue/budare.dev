@@ -57,10 +57,14 @@ export default {
 };
 </script>
 
+<style lang="postcss" scoped>
+.skillset__name {
+  @apply text-gray-400 md:text-gray-200;
+}
+</style>
+
 <style lang="scss" scoped>
 .skillsList {
-  margin-top: $extra-big-space;
-  margin-bottom: $extra-big-space;
   text-align: center;
   justify-content: center;
 }
@@ -73,7 +77,6 @@ export default {
   &__name {
     flex-basis: 100%;
     font-weight: lighter;
-    color: $terciary-font-color;
   }
 
   &__items {

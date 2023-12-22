@@ -42,25 +42,34 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .skill {
-  @include flex;
+  @apply flex
+    flex-col
+    m-4
+    bg-gray-800
+    bg-opacity-20
+    py-1 px-2
+    lg:py-2 lg:px-4 
+    rounded
+    shadow-md
+    text-white
+    border
+    border-gray-900
+    border-opacity-30
+    text-xs
+    md:text-sm
+    font-bold;
 
   width: max-content;
-  margin: $medium-space;
-  padding: $small-space $medium-space;
-  color: $secondary-font-color;
-  background-color: $terciary-color;
-  box-shadow: 0em 0em 0.2em 0em $terciary-font-color;
-  border-radius: $extra-small-space;
-
-  &__icon {
-    margin-right: $extra-small-space;
-  }
-
-  &__certificate {
-    margin-left: $extra-small-space;
-    color: hsl(50, 63, 57);
-  }
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skill__icon {
+  @apply text-xl lg:text-3xl mb-1;
+}
+.skill__certificate {
+  @apply md:ml-2;
+  color: #d6bf4d;
 }
 </style>
