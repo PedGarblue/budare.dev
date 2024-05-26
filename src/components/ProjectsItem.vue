@@ -19,7 +19,15 @@
         />
       </div>
     </div>
-    <a class="project__source" :href="project.source" rel="noreferrer noopener">
+    <a
+      class="
+        project__source
+        w-10 h-10 lg:w-auto lg:h-auto
+        flex items-center justify-center
+      "
+      :href="project.source"
+      rel="noreferrer noopener"
+    >
       <font-awesome-icon :icon="['fab', 'github']" />
       <span>
         {{ t('source') }}
@@ -61,6 +69,10 @@ export default {
 
   text-align: left;
 
+  &__info {
+    max-width: 80%;
+  }
+
   &__title {
     font-weight: bold;
   }
@@ -70,11 +82,11 @@ export default {
 
     margin-top: $extra-small-space;
     align-items: center;
+    row-gap: 0.25rem;
   }
 
   &__source {
     margin-left: auto;
-    padding: 0 $small-space;
     border: 0.1rem solid $primary-font-color;
     border-radius: 50%;
     box-shadow: 0.01em 0.01em 0.2em $terciary-font-color;
@@ -90,7 +102,8 @@ export default {
   @media screen and (min-width: $small-viewport) {
     &__source {
       padding: $extra-small-space $medium;
-      border-radius: $extra-small-space;
+      border: none;
+      border-radius: 3rem;
       font-size: $medium-font-size;
 
       & span {

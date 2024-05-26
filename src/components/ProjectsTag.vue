@@ -39,9 +39,9 @@ export default {
 
   margin-right: $extra-small-space;
   padding: 0 $extra-small-space;
-  border: 0.1rem solid $terciary-font-color;
   border-radius: $extra-small-space;
   font-size: $small-font-size;
+  font-weight: 500;
   cursor: default;
   transition: all 0.1s ease-in;
 

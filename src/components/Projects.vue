@@ -1,6 +1,11 @@
 <template>
   <page-section name="projects" class="projects" :title="t('title')">
     <template #body>
+      <div class="mb-8">
+        <p>
+          {{ t('projects.summary') }}
+        </p>
+      </div>
       <div class="flex flex-col gap-5">
         <projects-item
           v-for="project in projects"
@@ -65,7 +70,7 @@ export default {
 
 <style lang="postcss">
 .projects .section-container {
-  @apply bg-opacity-95 bg-gray-800 rounded-lg pt-2;
+  @apply lg:bg-opacity-95 lg:bg-gray-800 rounded-lg pt-2 lg:py-6 lg:px-8;
 }
 </style>
 
@@ -86,10 +91,16 @@ export default {
   "en": {
     "title": "Projects",
     "seemore": "See more in",
+    "projects": {
+      "summary": "Here are some of the projects I've worked on."
+    }
   },
   "es": {
     "title": "Proyectos",
     "seemore": "Ver más en",
+    "projects": {
+      "summary": "Aquí hay algunos de los proyectos en los que he trabajado."
+    }
   }
 }
 </i18n>
