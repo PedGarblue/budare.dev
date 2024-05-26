@@ -3,22 +3,27 @@
     <div class="relative z-10">
       <Blurb />
       <Nav />
+      <section-separator />
       <About />
+      <section-separator />
       <Projects />
+      <section-separator />
       <Skills />
+      <section-separator />
       <Footer />
     </div>
   </div>
 </template>
 
 <script>
+import { onMounted, onUnmounted, ref } from 'vue';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import Blurb from '@/components/Blurb';
 import About from '@/components/About';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
-import { onMounted, onUnmounted, ref } from 'vue';
+import SectionSeparator from '@/components/SectionSeparator';
 
 export default {
   name: 'Home',
@@ -29,6 +34,7 @@ export default {
     Projects,
     Skills,
     Footer,
+    SectionSeparator
   },
   setup() {
     // props
