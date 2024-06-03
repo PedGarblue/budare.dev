@@ -61,9 +61,11 @@ section {
 
 <style lang="scss">
 .section-container {
-  @include container;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 .section-footer {
-  @include container;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 </style>
