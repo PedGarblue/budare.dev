@@ -60,5 +60,9 @@ export default {
   &-tailwind {
     background-image: url(../../assets/brands/tailwind.svg);
   }
+
+  &-bootstrap {
+    background-image: url(../../assets/brands/bootstrap.svg);
+  }
 }
 </style>
