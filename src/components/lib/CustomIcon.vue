@@ -56,5 +56,9 @@ export default {
   &-laravel {
     background-image: url(../../assets/brands/laravel.svg);
   }
+
+  &-tailwind {
+    background-image: url(../../assets/brands/tailwind.svg);
+  }
 }
 </style>

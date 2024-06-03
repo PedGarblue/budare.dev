@@ -4,7 +4,7 @@
       <Blurb />
       <Nav />
       <section-separator />
-      <About />
+      <Experience />
       <section-separator />
       <Projects />
       <section-separator />
@@ -20,7 +20,7 @@ import { onMounted, onUnmounted, ref } from 'vue';
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import Blurb from '@/components/Blurb';
-import About from '@/components/About';
+import Experience from '@/components/Experience.vue';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import SectionSeparator from '@/components/SectionSeparator';
@@ -30,11 +30,11 @@ export default {
   components: {
     Blurb,
     Nav,
-    About,
+    Experience,
     Projects,
     Skills,
     Footer,
-    SectionSeparator
+    SectionSeparator,
   },
   setup() {
     // props
