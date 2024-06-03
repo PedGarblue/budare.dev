@@ -37,8 +37,7 @@ export default {
 .tag {
   @include flex;
 
-  margin-right: $extra-small-space;
-  padding: 0 $extra-small-space;
+  flex-direction: row;
   border-radius: $extra-small-space;
   font-size: $small-font-size;
   font-weight: 500;
