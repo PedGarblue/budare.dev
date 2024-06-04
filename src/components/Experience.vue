@@ -107,7 +107,7 @@ Ubuntu Virtual Private Server.`,
     class="about relative"
   >
     <template #body>
-      <div class="flex flex-col gap-8">
+      <div class="flex flex-col gap-4 lg:gap-8">
         <ExperienceItem
           v-for="experience in experiences"
           :key="experience.title"

@@ -18,8 +18,12 @@ defineProps({
         -->
       <img class="project_image" alt="" :src="experience.image" />
       <div class="flex flex-col">
-        <h3 class="text-2xl font-bold">{{ experience.title }}</h3>
-        <h3 class="text-xl font-monserrat">{{ experience.employer }}</h3>
+        <div class="flex flex-row gap-4 lg:gap-0 lg:flex-col items-center">
+          <h3 class="text-xl lg:text-2xl font-bold">{{ experience.title }}</h3>
+          <h3 class="text-base lg:text-xl font-monserrat">
+            {{ experience.employer }}
+          </h3>
+        </div>
         <p class="text-base">{{ experience.from }} - {{ experience.to }}</p>
 
         <ol
@@ -34,7 +38,9 @@ defineProps({
             {{ point }}
           </li>
         </ol>
-        <p v-else class="hidden lg:block text-base">{{ experience.description }}</p>
+        <p v-else class="hidden lg:block text-base">
+          {{ experience.description }}
+        </p>
 
         <div v-if="experience.tags" class="flex flex-row flex-wrap gap-2">
           <projects-tag
@@ -54,7 +60,7 @@ defineProps({
   padding-left: 1rem;
 }
 .project_image {
-  @apply rounded-3xl shadow-lg border-none h-60 lg:h-80;
+  @apply rounded-3xl shadow-lg border-none h-56 lg:h-80;
   object-fit: cover;
   aspect-ratio: 16/9;
 }
