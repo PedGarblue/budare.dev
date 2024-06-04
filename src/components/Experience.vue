@@ -15,7 +15,8 @@ const { t } = useI18n({
 
 const experiences = [
   {
-    employer: 'Valocator',
+    image: require('../assets/img/valocator1.png'),
+    employer: 'VALocator',
     title: 'Fullstack Developer',
     description: `I played a key role in the collaborative development of a
 Recruiter Management App. This system signicantly
@@ -52,6 +53,7 @@ Ubuntu Virtual Private Server.`,
     ],
   },
   {
+    image: require('../assets/img/igx1.png'),
     employer: 'Innovative Gx Health',
     title: 'Fullstack Developer',
     description: [
@@ -69,6 +71,31 @@ Ubuntu Virtual Private Server.`,
     ],
     from: 'July 2021',
     to: 'March 2023',
+    tags: [
+      {
+        icon: ['fab', 'vuejs'],
+        title: 'VueJS',
+        style: {
+          color: '#7ebb12',
+        },
+      },
+      {
+        icon: 'tailwind',
+        title: 'TailwindCSS',
+      },
+      {
+        icon: 'bootstrap',
+        title: 'Bootstrap',
+      },
+      {
+        icon: 'laravel',
+        title: 'Laravel',
+      },
+      {
+        icon: 'mysql',
+        title: 'MySQL',
+      },
+    ],
   },
 ];
 </script>

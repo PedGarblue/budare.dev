@@ -12,28 +12,19 @@ defineProps({
 
 <template>
   <div>
-    <div class="flex flex-row items-center gap-4">
-      <div>
-        <!--
+    <div class="flex flex-col lg:flex-row items-center gap-4">
+      <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
         -->
-        <div
-          class="project_image"
-          alt=""
-          :style="{
-            backgroundImage: `url(https://cdn.filestackcontent.com/dP2eldQPW6WEUHddJS5w)`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }"
-        />
-      </div>
+      <img class="project_image" alt="" :src="experience.image" />
       <div class="flex flex-col">
         <h3 class="text-2xl font-bold">{{ experience.title }}</h3>
-        <p class="text-lg">{{ experience.from }} - {{ experience.to }}</p>
+        <h3 class="text-xl font-monserrat">{{ experience.employer }}</h3>
+        <p class="text-base">{{ experience.from }} - {{ experience.to }}</p>
 
         <ol
           v-if="experience.description instanceof Array"
-          class="experience-description-list"
+          class="experience-description-list hidden lg:block"
         >
           <li
             v-for="point in experience.description"
@@ -43,9 +34,9 @@ defineProps({
             {{ point }}
           </li>
         </ol>
-        <p v-else class="text-base">{{ experience.description }}</p>
+        <p v-else class="hidden lg:block text-base">{{ experience.description }}</p>
 
-        <div v-if="experience.tags" class="flex flex-row gap-2">
+        <div v-if="experience.tags" class="flex flex-row flex-wrap gap-2">
           <projects-tag
             v-for="tag in experience.tags"
             :key="tag.title"
@@ -63,7 +54,8 @@ defineProps({
   padding-left: 1rem;
 }
 .project_image {
-  @apply h-52 rounded-3xl shadow-lg border-none;
+  @apply rounded-3xl shadow-lg border-none h-60 lg:h-80;
+  object-fit: cover;
   aspect-ratio: 16/9;
 }
 </style>

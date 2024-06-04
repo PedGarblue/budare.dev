@@ -8,7 +8,10 @@ module.exports = {
         sky: colors.sky,
       },
       zIndex: {
-        'negative': '-10',
+        negative: '-10',
+      },
+      fontFamily: {
+        monserrat: ['Montserrat Alternates', 'sans-serif'],
       },
     },
   },
