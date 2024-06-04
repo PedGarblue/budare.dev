@@ -8,14 +8,14 @@
         </span>
       </router-link> -->
       <div class="navbar__items">
-        <a href="#about" class="navbar__link">
-          {{ t('link.about') }}
-        </a>
-        <a href="#projects" class="navbar__link">
-          {{ t('link.projects') }}
+        <a href="#experience" class="navbar__link">
+          {{ t('link.experience') }}
         </a>
         <a href="#skills" class="navbar__link">
           {{ t('link.knowledge') }}
+        </a>
+        <a href="#contact" class="navbar__link">
+          {{ t('link.contact') }}
         </a>
       </div>
       <div class="absolute right-0 ml-auto">
@@ -62,7 +62,7 @@ export default {
 }
 
 .navbar__link {
-  @apply tracking-widest;
+  @apply tracking-widest text-sm lg:text-xl;
 }
 </style>
 
@@ -71,6 +71,7 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
+  height: 4rem;
   padding: 0.1rem 0;
   z-index: 3;
   font-family: 'Montserrat Alternates', sans-serif;
@@ -81,7 +82,6 @@ export default {
   }
 
   &__link {
-    font-size: 0.75rem;
     font-weight: bold;
     padding: $medium-space $small-space;
     border-radius: $small-space;
@@ -108,7 +108,6 @@ export default {
   .navbar {
     &__link {
       color: $primary-font-color;
-      font-size: 1.2rem;
       font-weight: normal;
     }
 
@@ -134,15 +133,20 @@ export default {
     "name": "Pedro García",
     "link": {
       "about": "About",
+      "experience": "Experience",
       "projects": "Projects",
-      "knowledge": "Skills"
+      "knowledge": "Skills",
+      "contact": "Contact"
     }
   },
   "es" :{
     "name": "Pedro García",
     "link": {
       "about": "Acerca",
-      "knowledge": "Habilidades"
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "knowledge": "Habilidades",
+      "contact": "Contacto"
     }
   }
 }

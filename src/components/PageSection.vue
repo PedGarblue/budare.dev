@@ -44,6 +44,7 @@ h2 {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 section {
+  @apply px-3 md:px-0;
   height: calc(100dvh);
   text-align: left;
   padding-top: 4rem;

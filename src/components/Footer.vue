@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <section id="footer" class="flex flex-col h-screen z-50">
+    <section id="contact" class="flex flex-col h-screen z-50">
       <div class="my-auto ">
         <h2 class="footer__title">
           {{ t('want_to_contact_me') }}
