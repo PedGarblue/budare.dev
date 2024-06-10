@@ -18,15 +18,15 @@
 
 <script>
 import { defineAsyncComponent } from 'vue';
-import SkillsList from './SkillsList';
-import skills from '@/data/skills';
 import { useI18n } from 'vue-i18n';
+import skills from '@/data/skills';
+import SkillsList from './SkillsList.vue';
 import PageSection from './PageSection.vue';
 
 const SkewBg = defineAsyncComponent(() => import('./SkewBg.vue'));
 
 export default {
-  name: 'Skills',
+  name: 'SectionSkills',
   components: {
     SkillsList,
     PageSection,

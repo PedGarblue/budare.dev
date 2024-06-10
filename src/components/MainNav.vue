@@ -27,11 +27,11 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
-import LocaleSwitcher from '@/components/lib/LocaleSwitcher';
+import LocaleSwitcher from '@/components/lib/LocaleSwitcher.vue';
 import aboutme from '@/data/aboutme';
 
 export default {
-  name: 'Nav',
+  name: 'MainNav',
   components: {
     LocaleSwitcher,
   },
@@ -55,19 +55,6 @@ export default {
 .navbar {
   @apply bg-opacity-10;
   position: sticky;
-}
-
-.navbar__items {
-  @apply relative flex gap-3 justify-center items-center mx-auto text-xl;
-}
-
-.navbar__link {
-  @apply tracking-widest text-sm lg:text-xl;
-}
-</style>
-
-<style lang="scss" scoped>
-.navbar {
   top: 0;
   left: 0;
   width: 100%;
@@ -75,54 +62,46 @@ export default {
   padding: 0.1rem 0;
   z-index: 3;
   font-family: 'Montserrat Alternates', sans-serif;
-
-  &__contents,
-  &__items {
-    @include flex;
-  }
-
-  &__link {
-    font-weight: bold;
-    padding: $medium-space $small-space;
-    border-radius: $small-space;
-    color: $primary-font-color;
-  }
-
-  &__link:hover {
-    background-color: $primary-color;
-  }
 }
+
+.navbar__contents {
+  @apply flex;
+}
+
+.navbar__items {
+  @apply relative flex gap-3 justify-center items-center mx-auto text-xl;
+}
+
+.navbar__link {
+  @apply
+    tracking-widest text-sm font-bold pt-4 px-2 text-gray-100 rounded lg:text-xl;
+}
+
 .brand {
-  @include flex;
-
-  font-size: $medium-space;
-  color: $primary-font-color;
-
-  &__icon,
-  &__title {
-    margin: 0 $small-space;
-  }
+  @apply flex text-base text-gray-100;
 }
 
-@media screen and (min-width: $small-viewport) {
-  .navbar {
-    &__link {
-      color: $primary-font-color;
-      font-weight: normal;
-    }
+.brand__icon, .brand__title {
+  @apply my-0 mx-2;
+}
 
-    &__link:hover {
-      background-color: $primary-color;
-    }
+@media (min-width: 400px) {
+  .navbar__link {
+    @apply font-normal;
+    color: hsl(0,4%,95%);
+  }
+
+  .navbar__link:hover {
+    background-color: #3b3b3b
   }
 
   .brand {
+    color: hsl(0,4%,95%);
     font-size: 1.3rem;
-    color: $primary-font-color;
   }
 
   #locale-switcher {
-    margin: 0 $small-space;
+    margin: 0 0.5rem; /* Equivalent of $small-space */
   }
 }
 </style>

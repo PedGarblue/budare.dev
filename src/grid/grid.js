@@ -1,6 +1,6 @@
-const createColormap = require('colormap');
-const random = require('canvas-sketch-util/random');
-const math = require('canvas-sketch-util/math');
+import createColormap from 'colormap';
+import random from 'canvas-sketch-util/random';
+import math from 'canvas-sketch-util/math';
 import { getFormula } from '@/grid/formulas';
 import Point from './point';
 

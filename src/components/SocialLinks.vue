@@ -48,23 +48,23 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .social-links {
-  @include flex(row, nowrap);
+  @apply flex items-center;
 
   font-size: 2rem;
+}
 
-  &__item {
-    margin: 0 clamp(1rem, 10%, 2rem);
-    color: #d5d5d5;
+.social-links__item {
+  margin: 0 clamp(1rem, 10%, 2rem);
+  color: #d5d5d5;
+}
 
-    &:first-child {
-      margin-left: 0;
-    }
+.social-links__item:first-child {
+  margin-left: 0;
+}
 
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+.social-links__item:last-child {
+  margin-right: 0;
 }
 </style>

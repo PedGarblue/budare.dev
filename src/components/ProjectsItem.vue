@@ -38,7 +38,7 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
-import ProjectsTag from './ProjectsTag';
+import ProjectsTag from './ProjectsTag.vue';
 
 export default {
   name: 'ProjectsItem',
@@ -63,53 +63,51 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .project {
-  @include flex(row, nowrap);
+  @apply flex items-start;
 
   text-align: left;
+}
 
-  &__info {
-    max-width: 80%;
-  }
+.project__info {
+  max-width: 80%;
+}
 
-  &__title {
-    font-weight: bold;
-  }
+.project__title {
+  font-weight: bold;
+}
 
-  &__tags {
-    @include flex;
+.project__tags {
+  @apply flex items-center gap-1;
 
-    margin-top: $extra-small-space;
-    align-items: center;
-    row-gap: 0.25rem;
-  }
+  margin-top: 0.3rem; /* Equivalent to $extra-small-space */
+}
 
-  &__source {
-    margin-left: auto;
-    border: 0.1rem solid $primary-font-color;
-    border-radius: 50%;
-    box-shadow: 0.01em 0.01em 0.2em $terciary-font-color;
-    font-size: 1.3em;
-    font-weight: bold;
-    color: $primary-font-color;
+.project__source {
+  margin-left: auto;
+  border: 0.1rem solid hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
+  border-radius: 50%;
+  box-shadow: 0.01em 0.01em 0.2em hsl(0, 1%, 54%); /* Equivalent to $terciary-font-color */
+  font-size: 1.3rem; /* Equivalent to 1.3em */
+  font-weight: bold;
+  color: hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
+}
 
-    & span {
-      display: none;
-    }
-  }
+.project__source span {
+  display: none;
+}
 
-  @media screen and (min-width: $small-viewport) {
-    &__source {
-      padding: $extra-small-space $medium;
-      border: none;
-      border-radius: 3rem;
-      font-size: $medium-font-size;
+@media (min-width: 400px) { /* Equivalent to $small-viewport */
+  .project__source {
+    padding: 0.3rem 1rem; /* Equivalent to $extra-small-space $medium */
+    border: none;
+    border-radius: 3rem;
+    font-size: 1rem; /* Equivalent to $medium-font-size */
 
-      & span {
-        display: inline;
-        margin-left: $small-space;
-      }
+    span {
+      display: inline;
+      margin-left: 0.5rem; /* Equivalent to $small-space */
     }
   }
 }

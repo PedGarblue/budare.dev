@@ -33,32 +33,27 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-@use 'sass:math';
-
+<style lang="postcss" scoped>
 .progress-circle {
-  $width: 6em;
-  $height: 6em;
-
   position: relative; /* so that children can be absolutely positioned */
   margin: auto;
   padding: 0;
-  width: $width;
-  height: $height;
+  width: 6rem; /* Equivalent to $width */
+  height: 6rem; /* Equivalent to $height */
   background-color: hsl(28, 40%, 92%);
   border-radius: 50%;
-  font-size: 1.2em;
-  line-height: 5em;
+  font-size: 1.2rem; /* Equivalent to 1.2em */
+  line-height: 5rem; /* Equivalent to 5em */
   transition-duration: 0.2s;
   cursor: pointer;
 
   &:after {
     position: absolute;
-    top: $height * 0.06;
-    left: $width * 0.06;
+    top: 6%; /* Equivalent to $height * 0.06 */
+    left: 6%; /* Equivalent to $width * 0.06 */
     display: block;
-    width: $width * 0.88;
-    height: $height * 0.88;
+    width: 88%; /* Equivalent to $width * 0.88 */
+    height: 88%; /* Equivalent to $height * 0.88 */
     border: none;
     border-radius: 50%;
     background-color: hsl(0, 0%, 100%);
@@ -69,16 +64,16 @@ export default {
 
   &:hover {
     transform: scale(1.05);
-    font-size: 1.25em;
+    font-size: 1.25rem; /* Equivalent to 1.25em */
   }
+
   /* Text inside the control */
   &__count {
-    @include flex;
-
+    @apply flex;
     position: absolute;
-    width: $width;
-    height: $height;
-    line-height: 5em;
+    width: 6rem; /* Equivalent to $width */
+    height: 6rem; /* Equivalent to $height */
+    line-height: 5rem; /* Equivalent to 5em */
     text-align: center;
     color: hsl(185, 19%, 40%);
     z-index: 2;
@@ -87,22 +82,17 @@ export default {
 
   &__count span {
     margin: auto;
-    font-size: 1.2em;
+    font-size: 1.2rem; /* Equivalent to 1.2em */
     user-select: none;
   }
 
   &__clipper {
     /* a round circle */
     position: absolute; /* needed for clipping */
-    width: $width;
-    height: $height;
+    width: 6rem; /* Equivalent to $width */
+    height: 6rem; /* Equivalent to $height */
     border-radius: 50%;
-    clip: rect(
-      0,
-      $height,
-      $width,
-      math.div($width, 2)
-    ); /* clips the whole left half*/
+    clip: rect(0, 6rem, 6rem, 3rem); /* clips the whole left half*/
     transition-duration: 0.2s;
   }
 
@@ -121,11 +111,11 @@ export default {
        then it is cut to display only the left half, then rotated clockwise
        to escape the outer clipping path.*/
       position: absolute; /*needed for clipping*/
-      width: $width;
-      height: $height;
+      width: 6rem; /* Equivalent to $width */
+      height: 6rem; /* Equivalent to $height */
       border-radius: 50%;
-      border: 0.45em solid hsl(226, 64%, 63%); /*The border is 0.35 but making it larger removes visual artifacts */
-      clip: rect(0, math.div($height, 2), $width, 0);
+      border: 0.45rem solid hsl(226, 64%, 63%); /*The border is 0.35 but making it larger removes visual artifacts */
+      clip: rect(0, 3rem, 6rem, 0);
       box-sizing: border-box;
       transition-duration: 0.2s;
     }
@@ -136,11 +126,11 @@ export default {
       /*Progress bar for the first 50%, filling the whole right half*/
       display: block;
       position: absolute; /*needed for clipping*/
-      clip: rect(0, $height, $width, math.div($width, 2));
+      clip: rect(0, 6rem, 6rem, 3rem);
       background-color: hsl(226, 64%, 63%);
       border-radius: 50%;
-      width: $width;
-      height: $height;
+      width: 6rem; /* Equivalent to $width */
+      height: 6rem; /* Equivalent to $height */
       transition-duration: 0.2s;
     }
   }

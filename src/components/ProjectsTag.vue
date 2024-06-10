@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import CustomIcon from './lib/CustomIcon';
+import CustomIcon from './lib/CustomIcon.vue';
 
 export default {
   name: 'ProjectsTag',
@@ -33,24 +33,23 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .tag {
-  @include flex;
-
+  @apply flex items-center;
   flex-direction: row;
-  border-radius: $extra-small-space;
-  font-size: $small-font-size;
+  border-radius: 0.3rem; /* Equivalent to $extra-small-space */
+  font-size: 0.85rem; /* Equivalent to $small-font-size */
   font-weight: 500;
   cursor: default;
   transition: all 0.1s ease-in;
+}
 
-  &:hover {
-    border-color: $terciary-color;
-  }
+.tag:hover {
+  border-color: #f2f2f2; /* Equivalent to $terciary-color */
+}
 
-  &__icon {
-    margin-right: $extra-small-space;
-    font-size: 1.1em;
-  }
+.tag__icon {
+  margin-right: 0.3rem; /* Equivalent to $extra-small-space */
+  font-size: 1.1em;
 }
 </style>

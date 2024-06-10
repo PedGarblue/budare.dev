@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import CustomIcon from './lib/CustomIcon';
+import CustomIcon from './lib/CustomIcon.vue';
 
 export default {
   name: 'SkillsListItem',

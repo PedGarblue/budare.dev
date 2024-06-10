@@ -21,10 +21,10 @@ import { useI18n } from 'vue-i18n';
 import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
-import CanvasBg from '@/components/CanvasBg';
+import CanvasBg from '@/components/CanvasBg.vue';
 
 export default {
-  name: 'Blurb',
+  name: 'SectionBlurb',
   components: {
     CanvasBg,
     SocialLinks,
@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 #blurb {
   @apply flex flex-col justify-center items-center pb-0 relative;
   height: calc(100dvh - 4rem);
@@ -79,43 +79,37 @@ export default {
     height: calc(100dvh - 4rem);
   }
 }
-</style>
-
-<style lang="scss" scoped>
 .blurb {
-  @include container;
-  @include flex;
-
-  margin-left: 7vw;
-  margin-top: $medium;
-  padding-top: $extra-big-space;
-
-  &__photo {
-    @include flex;
-
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: $medium-space;
-    justify-content: center;
-
-    img {
-      border: 2px solid #bbbbbb;
-      padding: 0.5rem;
-      width: 12rem;
-      height: 12rem;
-      border-radius: 50%;
-    }
-  }
+  @apply mx-auto flex items-center flex-col lg:flex-col;
+  padding: 0 1rem;
+  margin-left: 14vw;
+  margin-top: 1rem; /* Equivalent to $medium */
+  padding-top: 4rem; /* Equivalent to $extra-big-space */
+  margin-right: auto
 }
 
-@media screen and (min-width: $big-viewport) {
-  .blurb {
-    padding: $big-space;
+.blurb__photo {
+  @apply flex justify-center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem; /* Equivalent to $medium-space */
+}
 
-    &__photo {
-      margin: unset;
-      justify-content: left;
-    }
+.blurb__photo img {
+  border: 2px solid #bbbbbb;
+  padding: 0.5rem;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+}
+
+@media (min-width: 800px) {
+  .blurb {
+  }
+
+  .blurb__photo {
+    margin: unset;
+    justify-content: flex-start;
   }
 }
 </style>

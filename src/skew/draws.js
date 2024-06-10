@@ -1,4 +1,4 @@
-const { math } = require('canvas-sketch-util');
+import { math } from 'canvas-sketch-util';
 
 export const drawSkewedRect = ({
   context,

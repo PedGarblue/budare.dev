@@ -6,7 +6,7 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
-import CustomIcon from './CustomIcon';
+import CustomIcon from './CustomIcon.vue';
 
 export default {
   name: 'LocaleSwitcher',
@@ -40,8 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 #locale-switcher {
-  @include flex;
-
+  display: flex;
   padding: 0.2rem 0.2rem;
   background-color: transparent;
   border: none;

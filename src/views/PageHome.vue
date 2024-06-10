@@ -1,39 +1,39 @@
 <template>
   <div class="home">
     <div class="relative z-10">
-      <Blurb />
-      <Nav />
+      <SectionBlurb />
+      <MainNav />
       <section-separator />
-      <Experience />
+      <SectionExperience />
       <section-separator />
-      <Projects />
+      <SectionProjects />
       <section-separator />
-      <Skills />
+      <SectionSkills />
       <section-separator />
-      <Footer />
+      <MainFooter />
     </div>
   </div>
 </template>
 
 <script>
 import { onMounted, onUnmounted, ref } from 'vue';
-import Footer from '@/components/Footer';
-import Nav from '@/components/Nav';
-import Blurb from '@/components/Blurb';
-import Experience from '@/components/Experience.vue';
-import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import SectionSeparator from '@/components/SectionSeparator';
+import MainFooter from '@/components/MainFooter.vue';
+import MainNav from '@/components/MainNav.vue';
+import SectionBlurb from '@/components/SectionBlurb.vue';
+import SectionExperience from '@/components/SectionExperience.vue';
+import SectionProjects from '@/components/SectionProjects.vue';
+import SectionSkills from '@/components/SectionSkills.vue';
+import SectionSeparator from '@/components/SectionSeparator.vue';
 
 export default {
-  name: 'Home',
+  name: 'PageHome',
   components: {
-    Blurb,
-    Nav,
-    Experience,
-    Projects,
-    Skills,
-    Footer,
+    MainNav,
+    MainFooter,
+    SectionBlurb,
+    SectionExperience,
+    SectionProjects,
+    SectionSkills,
     SectionSeparator,
   },
   setup() {

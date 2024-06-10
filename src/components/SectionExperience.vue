@@ -3,6 +3,10 @@ import { defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ExperienceItem from './ExperienceItem.vue';
 import PageSection from './PageSection.vue';
+import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
+
+import experience1 from '@/assets/img/valocator1.png'
+import experience2 from '@/assets/img/igx1.png'
 
 const ParallelGridsBg = defineAsyncComponent(() =>
   import('./ParallelGridsBg.vue')
@@ -15,7 +19,7 @@ const { t } = useI18n({
 
 const experiences = [
   {
-    image: require('../assets/img/valocator1.png'),
+    image: experience1,
     employer: 'VALocator',
     title: 'Fullstack Developer',
     description: `I played a key role in the collaborative development of a
@@ -53,7 +57,7 @@ Ubuntu Virtual Private Server.`,
     ],
   },
   {
-    image: require('../assets/img/igx1.png'),
+    image: experience2,
     employer: 'Innovative Gx Health',
     title: 'Fullstack Developer',
     description: [
@@ -107,12 +111,23 @@ Ubuntu Virtual Private Server.`,
     class="about relative"
   >
     <template #body>
-      <div class="flex flex-col gap-4 lg:gap-8">
-        <ExperienceItem
-          v-for="experience in experiences"
-          :key="experience.title"
-          :experience="experience"
-        ></ExperienceItem>
+      <div>
+        <div class="hidden lg:flex flex-col gap-4 lg:gap-8">
+          <ExperienceItem
+            v-for="experience in experiences"
+            :key="experience.title"
+            :experience="experience"
+          ></ExperienceItem>
+        </div>
+        <div class="lg:hidden">
+          <ComponentCarousel>
+            <ExperienceItem
+              v-for="experience in experiences"
+              :key="experience.title"
+              :experience="experience"
+            />
+          </ComponentCarousel>
+        </div>
       </div>
     </template>
 

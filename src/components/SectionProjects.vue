@@ -41,13 +41,13 @@ import { defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import projects from '@/data/projects';
 import contact from '@/data/contact';
-import ProjectsItem from './ProjectsItem';
+import ProjectsItem from './ProjectsItem.vue';
 import PageSection from './PageSection.vue';
 
 const SkewBg = defineAsyncComponent(() => import('./SkewBg.vue'));
 
 export default {
-  name: 'Projects',
+  name: 'SectionProjects',
   components: {
     ProjectsItem,
     PageSection,

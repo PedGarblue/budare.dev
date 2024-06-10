@@ -15,22 +15,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 #go-to-top {
-  @include flex;
-
-  position: fixed;
-  padding: $medium-space;
-  background-color: $secondary-color;
+  @apply flex fixed p-4 bg-blue-700 border rounded-full text-white cursor-pointer;
   top: calc(100vh - 7rem);
   left: calc(100vw - 4rem);
-  border: solid 0.14em;
-  border-radius: 50%;
-  color: $primary-font-color;
-  cursor: pointer;
 }
 
-@media screen and (min-width: $small-viewport) {
+@media (min-width: 400px) {
   #go-to-top {
     left: 90vw;
   }

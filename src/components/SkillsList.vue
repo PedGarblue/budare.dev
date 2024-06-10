@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import SkillsListItemBasic from './SkillsListItemBasic';
-import SkillsListItemCard from './SkillsListItemCard';
+import SkillsListItemBasic from './SkillsListItemBasic.vue';
+import SkillsListItemCard from './SkillsListItemCard.vue';
 
 const CARD_ITEM = 'card';
 const BASIC_ITEM = 'basic';
@@ -58,31 +58,22 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.skillset__name {
-  @apply text-gray-400 md:text-gray-200;
-}
-</style>
-
-<style lang="scss" scoped>
 .skillsList {
   text-align: center;
   justify-content: center;
 }
 
 .skillset {
-  @include flex;
-
-  justify-content: center;
-
-  &__name {
-    flex-basis: 100%;
-    font-weight: lighter;
-  }
-
-  &__items {
-    @include flex;
-
-    justify-content: center;
-  }
+  @apply flex items-center justify-center flex-col;
+}
+.skillset__name {
+  flex-basis: 100%;
+  font-weight: lighter;
+}
+.skillset__items {
+  @apply flex items-center justify-center flex-row;
+}
+.skillset__name {
+  @apply text-gray-400 md:text-gray-200;
 }
 </style>

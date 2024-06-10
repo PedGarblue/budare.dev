@@ -17,10 +17,10 @@
 
 <script>
 import { useI18n } from 'vue-i18n';
-import ProgressCircle from './lib/ProgressCircle';
+import ProgressCircle from './lib/ProgressCircle.vue';
 
 export default {
-  name: 'Skill',
+  name: 'SkillListItemCard',
   components: {
     ProgressCircle,
   },
@@ -58,35 +58,34 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.skill {
-  @include flex(column);
+<style lang="postcss" scoped>
 
+.skill {
+  @apply flex flex-col;
   text-align: center;
   margin: 0 auto;
-  width: 20em;
+  width: 20rem; /* Equivalent to 20em */
+}
 
-  &__progress {
-    @include flex;
+.skill__progress {
+  @apply flex;
+  width: 9rem; /* Equivalent to 9em */
+  height: 9rem; /* Equivalent to 9em */
+  margin-bottom: 0.5rem; /* Equivalent to $medium-space */
+}
 
-    width: 9em;
-    height: 9em;
-    margin-bottom: $medium-space;
-  }
+.skill__title {
+  font-weight: bold;
+}
 
-  &__title {
-    font-weight: bold;
-  }
+.skill__time {
+  font-size: 0.85rem; /* Equivalent to $small-font-size */
+  font-weight: lighter;
+  color: hsl(0, 1%, 54%); /* Equivalent to $terciary-font-color */
+}
 
-  &__time {
-    font-size: $small-font-size;
-    font-weight: lighter;
-    color: $terciary-font-color;
-  }
-
-  &__desc {
-    font-size: $small-font-size;
-    margin-top: $small-space;
-  }
+.skill__desc {
+  font-size: 0.85rem; /* Equivalent to $small-font-size */
+  margin-top: 0.5rem; /* Equivalent to $small-space */
 }
 </style>

@@ -25,11 +25,11 @@
 <script>
 import { useI18n } from 'vue-i18n';
 import contact from '@/data/contact';
-import ButtonToTop from './lib/ButtonToTop';
-import SocialLinks from './SocialLinks';
+import ButtonToTop from './lib/ButtonToTop.vue';
+import SocialLinks from './SocialLinks.vue';
 
 export default {
-  name: 'Footer',
+  name: 'MainFooter',
   components: {
     ButtonToTop,
     SocialLinks,
@@ -103,27 +103,25 @@ export default {
     background-position: 0% 50%;
   }
 }
-</style>
 
-<style lang="scss" scoped>
 .contact-icon {
-  margin: 0 $medium-space;
-  font-size: $medium-space * 1.5;
+  margin: 0 1rem; /* Equivalent to $medium-space */
+  font-size: 1.5rem; /* Equivalent to $medium-space * 1.5 */
 }
 
 .footer {
-  @include flex(column);
+  @apply flex flex-col;
+}
 
-  &__contents {
-    margin-top: $big-space;
-    margin-bottom: $big-space;
-  }
+.footer__contents {
+  margin-top: 2rem; /* Equivalent to $big-space */
+  margin-bottom: 2rem; /* Equivalent to $big-space */
 }
 
 .created-by {
   width: 100%;
-  font-size: $small-font-size;
-  color: $primary-font-color;
+  font-size: 0.85rem; /* Equivalent to $small-font-size */
+  color: hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
 }
 </style>
 
