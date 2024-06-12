@@ -54,6 +54,7 @@ export default {
 }
 
 .tag__title {
-  @apply font-semibold lg:font-normal;
+  @apply text-xs font-semibold lg:font-normal lg:text-base;
+
 }
 </style>

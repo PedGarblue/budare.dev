@@ -12,7 +12,7 @@ defineProps({
 
 <template>
   <div>
-    <div class="w-max max-w-full lg:w-auto flex flex-col lg:flex-row items-center gap-4">
+    <div class="w-max max-w-full lg:w-auto flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
         -->
@@ -21,12 +21,12 @@ defineProps({
         <div
           class="flex flex-row gap-4 lg:gap-0 lg:flex-col items-center lg:items-start"
         >
-          <h3 class="text-xl lg:text-2xl font-bold">{{ experience.title }}</h3>
+          <h3 class="text-lg lg:text-2xl font-bold">{{ experience.title }}</h3>
           <h3 class="text-sm lg:text-xl font-monserrat">
             {{ experience.employer }}
           </h3>
         </div>
-        <p class="text-base">{{ experience.from }} - {{ experience.to }}</p>
+        <p class="text-sm lg:text-base">{{ experience.from }} - {{ experience.to }}</p>
         <div class="flex flex-col-reverse lg:flex-col ">
           <ol
             v-if="experience.description instanceof Array"
