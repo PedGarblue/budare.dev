@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home relative">
     <div class="relative z-10">
       <SectionBlurb />
       <MainNav />
@@ -56,6 +56,8 @@ export default {
 
       offsets.value = _offsets;
     };
+
+    const touchWhitelist = ['BUTTON', 'A'];
 
     const handleMouseWheel = e => {
       if (e.wheelDelta < 30 && !inMove.value) {
@@ -114,13 +116,20 @@ export default {
       }, 400);
     };
 
+    const shouldScroll = e => {
+      return touchWhitelist.includes(e.target.tagName);
+    };
+
     const touchStart = e => {
+      // if is touching a button or link, cancel process
+      if (shouldScroll(e)) return false;
       e.preventDefault();
 
       touchStartY.value = e.touches[0].clientY;
     };
 
     const touchMove = e => {
+      if (shouldScroll(e)) return false;
       if (inMove.value) return false;
       e.preventDefault();
 
@@ -137,7 +146,6 @@ export default {
     };
 
     // hooks
-
     onMounted(() => {
       calculateSectionOffsets();
 
