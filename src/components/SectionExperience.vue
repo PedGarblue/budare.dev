@@ -1,5 +1,5 @@
 <script setup>
-import { defineAsyncComponent } from 'vue';
+import { ref, defineAsyncComponent, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ExperienceItem from './ExperienceItem.vue';
 import PageSection from './PageSection.vue';
@@ -11,6 +11,8 @@ import experience2 from '@/assets/img/igx1.png'
 const ParallelGridsBg = defineAsyncComponent(() =>
   import('./ParallelGridsBg.vue')
 );
+
+const carousel = ref(null);
 
 const { t } = useI18n({
   inheritLocale: true,
@@ -102,6 +104,10 @@ Ubuntu Virtual Private Server.`,
     ],
   },
 ];
+
+onMounted(() => {
+  carousel.value.updateTotalItems(experiences.length)
+})
 </script>
 
 <template>
@@ -120,11 +126,12 @@ Ubuntu Virtual Private Server.`,
           ></ExperienceItem>
         </div>
         <div class="lg:hidden">
-          <ComponentCarousel>
+          <ComponentCarousel ref="carousel" class="w-full">
             <ExperienceItem
               v-for="experience in experiences"
               :key="experience.title"
               :experience="experience"
+              class="max-w-full"
             />
           </ComponentCarousel>
         </div>

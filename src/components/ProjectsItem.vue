@@ -95,7 +95,7 @@ export default {
 }
 
 .project__source span {
-  display: none;
+  @apply hidden lg:inline;
 }
 
 @media (min-width: 400px) { /* Equivalent to $small-viewport */
@@ -106,7 +106,6 @@ export default {
     font-size: 1rem; /* Equivalent to $medium-font-size */
 
     span {
-      display: inline;
       margin-left: 0.5rem; /* Equivalent to $small-space */
     }
   }

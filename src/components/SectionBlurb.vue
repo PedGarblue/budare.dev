@@ -80,7 +80,7 @@ export default {
   }
 }
 .blurb {
-  @apply mx-auto flex items-center flex-col lg:flex-col;
+  @apply mx-auto flex items-center flex-col lg:flex-row;
   padding: 0 1rem;
   margin-left: 14vw;
   margin-top: 1rem; /* Equivalent to $medium */

@@ -12,7 +12,7 @@ defineProps({
 
 <template>
   <div>
-    <div class="flex flex-col lg:flex-row items-center gap-4">
+    <div class="w-max max-w-full lg:w-auto flex flex-col lg:flex-row items-center gap-4">
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
         -->
@@ -27,29 +27,30 @@ defineProps({
           </h3>
         </div>
         <p class="text-base">{{ experience.from }} - {{ experience.to }}</p>
-
-        <ol
-          v-if="experience.description instanceof Array"
-          class="experience-description-list hidden lg:block"
-        >
-          <li
-            v-for="point in experience.description"
-            :key="point"
-            class="text-base"
+        <div class="flex flex-col-reverse lg:flex-col ">
+          <ol
+            v-if="experience.description instanceof Array"
+            class="experience-description-list"
           >
-            {{ point }}
-          </li>
-        </ol>
-        <p v-else class="hidden lg:block text-base">
-          {{ experience.description }}
-        </p>
+            <li
+              v-for="point in experience.description"
+              :key="point"
+              class="text-sm lg:text-base"
+            >
+              {{ point }}
+            </li>
+          </ol>
+          <p v-else class="text-sm lg:text-base">
+            {{ experience.description }}
+          </p>
 
-        <div v-if="experience.tags" class="flex flex-row flex-wrap gap-2">
-          <projects-tag
-            v-for="tag in experience.tags"
-            :key="tag.title"
-            :data="tag"
-          />
+          <div v-if="experience.tags" class="flex flex-row flex-wrap gap-2 mb-2 lg:mb-0">
+            <projects-tag
+              v-for="tag in experience.tags"
+              :key="tag.title"
+              :data="tag"
+            />
+          </div>
         </div>
       </div>
     </div>

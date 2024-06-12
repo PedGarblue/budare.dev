@@ -52,4 +52,8 @@ export default {
   margin-right: 0.3rem; /* Equivalent to $extra-small-space */
   font-size: 1.1em;
 }
+
+.tag__title {
+  @apply font-semibold lg:font-normal;
+}
 </style>
