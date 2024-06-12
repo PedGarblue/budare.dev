@@ -22,7 +22,7 @@ defineProps({
           class="flex flex-row gap-4 lg:gap-0 lg:flex-col items-center lg:items-start"
         >
           <h3 class="text-xl lg:text-2xl font-bold">{{ experience.title }}</h3>
-          <h3 class="text-base lg:text-xl font-monserrat">
+          <h3 class="text-sm lg:text-xl font-monserrat">
             {{ experience.employer }}
           </h3>
         </div>
