@@ -28,11 +28,7 @@
       </div>
     </div>
     <a
-      class="
-        project__source
-        w-10 h-10
-        flex items-center justify-center
-      "
+      class="project__source"
       :href="project.source"
       rel="noreferrer noopener"
     >
@@ -92,10 +88,10 @@ export default {
 }
 
 .project__source {
-  @apply hidden lg:inline;
+  @apply hidden lg:flex items-center justify-center w-10 h-10;
 
   margin-left: auto;
-  border: 0.1rem solid hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
+  border: 0.1rem solid hsl(0, 1%, 45%); /* Equivalent to $primary-font-color */
   border-radius: 50%;
   box-shadow: 0.01em 0.01em 0.2em hsl(0, 1%, 54%); /* Equivalent to $terciary-font-color */
   font-size: 1.3rem; /* Equivalent to 1.3em */

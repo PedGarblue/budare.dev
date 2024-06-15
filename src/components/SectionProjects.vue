@@ -12,7 +12,7 @@
           :key="project.name"
           :project="project"
           :class="{
-            'w-1/2 px-5': project.type === 'minor',
+            'w-1/2 pl-5': project.type === 'minor',
             'w-full': project.type === 'major',
           }"
         />
