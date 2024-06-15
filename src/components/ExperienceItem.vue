@@ -12,7 +12,7 @@ defineProps({
 
 <template>
   <div>
-    <div class="w-max max-w-full lg:w-auto flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
+    <div class="flex flex-col lg:flex-row items-center gap-2 lg:gap-4">
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
         -->
@@ -63,7 +63,7 @@ defineProps({
   padding-left: 1rem;
 }
 .project_image {
-  @apply rounded-3xl shadow-lg border-none h-56 lg:h-80;
+  @apply mx-auto rounded-3xl shadow-lg border-none lg:h-80;
   object-fit: cover;
   aspect-ratio: 16/9;
 }

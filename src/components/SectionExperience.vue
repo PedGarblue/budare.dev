@@ -131,7 +131,6 @@ onMounted(() => {
               v-for="experience in experiences"
               :key="experience.title"
               :experience="experience"
-              class="max-w-full"
             />
           </ComponentCarousel>
         </div>

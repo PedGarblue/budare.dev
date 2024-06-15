@@ -1,22 +1,23 @@
 <script setup>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const currentIndex = ref(0);
-const padding = ref('0');
 
 const prevComponent = () => {
   if (currentIndex.value > 0) {
     currentIndex.value -= 1;
-    padding.value = currentIndex.value === 0 ? '0' : '-0.5';
   }
 };
 
 const nextComponent = () => {
   if (currentIndex.value < totalItems.value - 1) {
     currentIndex.value += 1;
-    padding.value = '0.5'
   }
 };
+
+const padding = computed(() => {
+  return 0.5 * currentIndex.value;
+});
 
 const totalItems = ref(0);
 const updateTotalItems = count => {
@@ -29,8 +30,13 @@ defineExpose({ updateTotalItems });
 <template>
   <div class="relative overflow-hidden">
     <div
-      class="flex flex-row transition-transform duration-500 ease-in-out gap-2"
-      :style="{ transform: `translateX(calc(-${currentIndex * 100}% - ${padding}rem))` }"
+      class="grid transition-transform duration-500 ease-in-out gap-2"
+      :style="{
+        transform: `translateX(calc(-${currentIndex * 100}% - ${padding}rem)`,
+        gridTemplateColumns: `repeat(${totalItems}, 100%)`,
+        gridTemplateRows: '1fr',
+      }"
+
     >
       <slot></slot>
     </div>
