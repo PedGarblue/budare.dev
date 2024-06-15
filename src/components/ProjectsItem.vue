@@ -1,37 +1,39 @@
 <template>
-  <div class="project">
+  <div
+    class="flex flex-row items-center gap-2 lg:gap-4"
+  >
     <div class="project__info">
-      <a
-        :href="project.demoUrl"
-        class="project__title"
-        rel="noreferrer noopener"
-      >
-        {{ project.name }}
-      </a>
-      <div class="project__desc">
-        {{ project.desc[locale] }}
-      </div>
-      <div class="project__tags">
-        <projects-tag
-          v-for="tag in project.tags"
-          :key="tag.title"
-          :data="tag"
-        />
+      <img v-if="project.image" :src="project.image" class="project_image" alt=""/>
+      <div class="">
+        <a
+          :href="project.demoUrl"
+          class="project__title"
+          rel="noreferrer noopener"
+        >
+          {{ project.name }}
+        </a>
+        <div class="project__tags mt-auto">
+          <projects-tag
+            v-for="tag in project.tags"
+            :key="tag.title"
+            :data="tag"
+          />
+        </div>
+        <div class="project__desc">
+          {{ project.desc[locale] }}
+        </div>
       </div>
     </div>
     <a
       class="
         project__source
-        w-10 h-10 lg:w-auto lg:h-auto
+        w-10 h-10
         flex items-center justify-center
       "
       :href="project.source"
       rel="noreferrer noopener"
     >
-      <font-awesome-icon :icon="['fab', 'github']" />
-      <span>
-        {{ t('source') }}
-      </span>
+      <font-awesome-icon class="w-6 h-6" :icon="['fab', 'github']" />
     </a>
   </div>
 </template>
@@ -64,24 +66,27 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.project {
-  @apply flex items-start;
-
-  text-align: left;
-}
 
 .project__info {
+  @apply flex flex-row gap-4;
   max-width: 80%;
 }
 
 .project__title {
+  @apply text-xl;
   font-weight: bold;
 }
 
 .project__tags {
-  @apply flex items-center gap-1;
+  @apply flex items-center gap-3;
 
   margin-top: 0.3rem; /* Equivalent to $extra-small-space */
+}
+
+.project_image {
+  @apply rounded-3xl shadow-lg border-none h-52;
+  object-fit: cover;
+  aspect-ratio: 16/9;
 }
 
 .project__source {
@@ -96,19 +101,6 @@ export default {
 
 .project__source span {
   @apply hidden lg:inline;
-}
-
-@media (min-width: 400px) { /* Equivalent to $small-viewport */
-  .project__source {
-    padding: 0.3rem 1rem; /* Equivalent to $extra-small-space $medium */
-    border: none;
-    border-radius: 3rem;
-    font-size: 1rem; /* Equivalent to $medium-font-size */
-
-    span {
-      margin-left: 0.5rem; /* Equivalent to $small-space */
-    }
-  }
 }
 </style>
 

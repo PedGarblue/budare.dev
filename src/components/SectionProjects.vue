@@ -6,11 +6,15 @@
           {{ t('projects.summary') }}
         </p>
       </div>
-      <div class="flex flex-col gap-5">
+      <div class="flex flex-wrap gap-y-5">
         <projects-item
           v-for="project in projects"
           :key="project.name"
           :project="project"
+          :class="{
+            'w-1/2 px-5': project.type === 'minor',
+            'w-full': project.type === 'major',
+          }"
         />
       </div>
     </template>

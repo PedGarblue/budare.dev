@@ -32,11 +32,4 @@ module.exports = {
       ],
     },
   },
-  css: {
-    loaderOptions: {
-      scss: {
-        additionalData: `@use "~@/styles/main.scss" as *;`,
-      },
-    },
-  },
 };

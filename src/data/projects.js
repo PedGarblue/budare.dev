@@ -1,8 +1,13 @@
+import JapbPreviewImage from '@/assets/img/japb_preview.png';
+import BudaredevPreviewImage from '@/assets/img/budaredev_preview.png';
+
 export default [
   {
+    type: 'major',
+    image: JapbPreviewImage,
     name: '💸 Just Another Budget App',
     desc: {
-      en: 'A application for tracking your daily transactions.',
+      'en-US': 'A application for tracking your daily transactions.',
       es: 'App para registrar todas tus transaciones personales.',
     },
     tags: [
@@ -36,9 +41,34 @@ export default [
     demoUrl: '#',
   },
   {
+    image: BudaredevPreviewImage,
+    type: 'major',
+    name: '📕 budare.dev',
+    desc: {
+      'en-US': 'Personal portfolio (this site 💪)',
+      es: 'Portafolio personal (este sitio 💪).',
+    },
+    tags: [
+      {
+        title: 'Vue.js',
+        icon: ['fab', 'vuejs'],
+        style: {
+          color: '#7ebb12',
+        },
+      },
+      {
+        title: 'Tailwind CSS',
+        icon: 'tailwind',
+      }
+    ],
+    source: 'https://github.com/PedGarBlue/pgarciadev',
+    demoUrl: 'https://budare.dev',
+  },
+  {
+    type: 'minor',
     name: '🛵 Encomiendas',
     desc: {
-      en: 'Simple delivery app for practice.',
+      'en-US': 'Simple delivery app for practice.',
       es: 'Aplicación simple de entregas.',
     },
     tags: [
@@ -65,9 +95,10 @@ export default [
     demoUrl: 'https://encomiendas.herokuapp.com',
   },
   {
+    type: 'minor',
     name: '☕ Cafechan',
     desc: {
-      en: 'A very simple and modern imageboard.',
+      'en-US': 'A very simple and modern imageboard.',
       es: 'Un imageboard sencillo y moderno.',
     },
     tags: [
@@ -92,23 +123,5 @@ export default [
     ],
     source: 'https://github.com/PedGarBlue/cafechan',
     demoUrl: 'https://cafechan.herokuapp.com',
-  },
-  {
-    name: '📕 budare.dev',
-    desc: {
-      en: 'Personal portfolio (this site 💪)',
-      es: 'Portafolio personal (este sitio 💪).',
-    },
-    tags: [
-      {
-        title: 'Vue.js',
-        icon: ['fab', 'vuejs'],
-        style: {
-          color: '#7ebb12',
-        },
-      },
-    ],
-    source: 'https://github.com/PedGarBlue/pgarciadev',
-    demoUrl: 'https://budare.dev',
   },
 ];
