@@ -6,7 +6,7 @@
           {{ t('projects.summary') }}
         </p>
       </div>
-      <div class="flex flex-wrap gap-y-5">
+      <div class="hidden lg:flex flex-wrap gap-y-5">
         <projects-item
           v-for="project in projects"
           :key="project.name"
@@ -16,6 +16,16 @@
             'w-full': project.type === 'major',
           }"
         />
+      </div>
+      <div class="lg:hidden">
+        <component-carousel ref="carousel" class="w-full">
+          <projects-item
+            v-for="project in projects"
+            :key="project.name"
+            :project="project"
+            class="w-full"
+          />
+        </component-carousel>
       </div>
     </template>
 
@@ -40,36 +50,28 @@
   </page-section>
 </template>
 
-<script>
-import { defineAsyncComponent } from 'vue';
+<script setup>
+import { defineAsyncComponent, onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import projects from '@/data/projects';
 import contact from '@/data/contact';
 import ProjectsItem from './ProjectsItem.vue';
 import PageSection from './PageSection.vue';
+import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
 
 const SkewBg = defineAsyncComponent(() => import('./SkewBg.vue'));
 
-export default {
-  name: 'SectionProjects',
-  components: {
-    ProjectsItem,
-    PageSection,
-    SkewBg,
-  },
-  setup() {
-    const { t } = useI18n({
-      inheritLocale: true,
-      useScope: 'local',
-    });
+const { t } = useI18n({
+  inheritLocale: true,
+  useScope: 'local',
+});
 
-    return {
-      t,
-      projects,
-      contact,
-    };
-  },
-};
+const carousel = ref(null);
+
+onMounted(() => {
+  console.log(carousel.value)
+  carousel.value.updateTotalItems(projects.length);
+});
 </script>
 
 <style lang="postcss">

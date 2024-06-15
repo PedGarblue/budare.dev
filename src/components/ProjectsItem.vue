@@ -4,6 +4,9 @@
   >
     <div class="project__info">
       <img v-if="project.image" :src="project.image" class="project_image" alt=""/>
+      <div v-else>
+        <div class="project_image bg-gray-900 opacity-50 w-full lg:hidden"></div>
+      </div>
       <div class="">
         <a
           :href="project.demoUrl"
@@ -68,8 +71,7 @@ export default {
 <style lang="postcss" scoped>
 
 .project__info {
-  @apply flex flex-row gap-4;
-  max-width: 80%;
+  @apply w-full flex flex-col lg:flex-row gap-4;
 }
 
 .project__title {
@@ -90,6 +92,8 @@ export default {
 }
 
 .project__source {
+  @apply hidden lg:inline;
+
   margin-left: auto;
   border: 0.1rem solid hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
   border-radius: 50%;
@@ -101,6 +105,12 @@ export default {
 
 .project__source span {
   @apply hidden lg:inline;
+}
+
+@media (min-width: 1024px) {
+  .project__info {
+    max-width: 80%;
+  }
 }
 </style>
 
