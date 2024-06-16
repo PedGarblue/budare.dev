@@ -22,12 +22,14 @@ import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
 import contact from '@/data/contact';
 import CanvasBg from '@/components/CanvasBg.vue';
+import EmailCopy from '@/components/EmailCopy.vue';
 
 export default {
   name: 'SectionBlurb',
   components: {
     CanvasBg,
     SocialLinks,
+    EmailCopy,
   },
   setup() {
     const { t } = useI18n({
@@ -64,7 +66,7 @@ export default {
     m-auto
     gap-2
     xl:items-start
-    xl:mx-16;
+    xl:mx-12;
 }
 
 .desc__name {
@@ -96,10 +98,10 @@ export default {
 }
 
 .blurb__photo img {
-  border: 2px solid #bbbbbb;
+  @apply border-2 border-white border-opacity-30;
   padding: 0.5rem;
-  width: 12rem;
-  height: 12rem;
+  width: 13rem;
+  height: 13rem;
   border-radius: 50%;
 }
 

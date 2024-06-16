@@ -10,6 +10,7 @@ import {
   faPhoneSquare,
   faProjectDiagram,
   faUsers,
+  faCopy,
 } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -38,10 +39,11 @@ library.add([
   faUsers,
   faCube,
   faClipboardCheck,
+  faCopy,
 ]);
 
 // Regular Icons
-library.add([faUser]);
+library.add([faUser,]);
 
 // Brands Icons
 library.add([

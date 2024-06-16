@@ -10,6 +10,9 @@
           <b>{{ t('my_job_status') }}</b> <br />
           {{ t('contact_me_through') }}
         </div>
+        <div class="mb-0 mt-5">
+          <email-copy class="mx-auto"/>
+        </div>
         <nav class="footer__social">
           <social-links />
         </nav>
@@ -27,12 +30,14 @@ import { useI18n } from 'vue-i18n';
 import contact from '@/data/contact';
 import ButtonToTop from './lib/ButtonToTop.vue';
 import SocialLinks from './SocialLinks.vue';
+import EmailCopy from './EmailCopy.vue';
 
 export default {
   name: 'MainFooter',
   components: {
     ButtonToTop,
     SocialLinks,
+    EmailCopy,
   },
   setup() {
     const { t, locale } = useI18n({

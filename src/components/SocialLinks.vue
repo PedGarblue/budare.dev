@@ -24,39 +24,23 @@
     >
       <font-awesome-icon :icon="['fab', 'telegram']" />
     </a>
-    <a
-      class="social-links__item"
-      :href="`mailto:${contact.email}`"
-      rel="noreferrer noopener" 
-      target="_blank"
-    >
-      <font-awesome-icon :icon="['fas', 'envelope']" />
-    </a>
+    <email-copy layoutType="icon" class="social-links__item"/>
   </div>
 </template>
 
-<script>
+<script setup>
 import contact from '@/data/contact';
-
-export default {
-  name: 'SocialLinks',
-  setup() {
-    return {
-      contact,
-    };
-  },
-};
+import EmailCopy from './EmailCopy.vue';
 </script>
 
 <style lang="postcss" scoped>
 .social-links {
-  @apply flex items-center;
+  @apply flex items-center justify-center gap-8;
 
   font-size: 2rem;
 }
 
 .social-links__item {
-  margin: 0 clamp(1rem, 10%, 2rem);
   color: #d5d5d5;
 }
 
