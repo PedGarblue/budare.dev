@@ -69,7 +69,6 @@ const { t } = useI18n({
 const carousel = ref(null);
 
 onMounted(() => {
-  console.log(carousel.value)
   carousel.value.updateTotalItems(projects.length);
 });
 </script>
