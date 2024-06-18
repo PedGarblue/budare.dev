@@ -74,7 +74,7 @@ export default {
 
 .navbar__link {
   @apply
-    tracking-widest text-sm font-bold pt-4 px-2 text-gray-100 rounded lg:text-xl;
+    tracking-widest text-sm font-bold py-2 px-4 text-gray-100 rounded lg:text-xl;
 }
 
 .brand {
@@ -92,7 +92,7 @@ export default {
   }
 
   .navbar__link:hover {
-    background-color: #3b3b3b
+    @apply bg-gray-800 bg-opacity-30;
   }
 
   .brand {
