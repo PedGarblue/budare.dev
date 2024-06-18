@@ -112,7 +112,7 @@ onMounted(() => {
 
 <template>
   <page-section
-    name="Work Experience"
+    name="experience"
     :title="t('title')"
     class="about relative"
   >
