@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed, inject, onMounted, ref } from 'vue';
 import colormap from 'colormap';
 import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 import { TheGrid } from '../grid/grid';
@@ -17,7 +17,7 @@ export default {
   setup() {
     const { isMobileView } = useBackgroundAnimation();
     const dualgridbg = ref('dualgridbg');
-    const context = computed(() => dualgridbg.value.getContext('2d'));
+    const context = computed(() => dualgridbg.value.getContext('2d', { alpha: false }));
 
     const bgParams = {
       colourRange: 'density',
@@ -110,18 +110,26 @@ export default {
 
     grid1.setupCalcs({ name: 'grid1' });
     grid2.setupCalcs({ name: 'grid2' });
+
+    const backgroundsIntersect = inject('backgroundsIntersect');
+    const backgroundIsIntersecting = inject('backgroundIsIntersecting');
+
     const init = () => {
+      if (!backgroundIsIntersecting(dualgridbg.value)) {
+        return;
+      }
       draw();
       if (!isMobileView) {
         grid1.draw({ context: context.value, frame, colorByRow: true });
         grid2.draw({ context: context.value, frame, colorByRow: true });
       }
       frame++;
-      window.requestAnimationFrame(init);
+      return window.requestAnimationFrame(init);
     };
 
+
     onMounted(() => {
-      init();
+      backgroundsIntersect(dualgridbg.value, init)
     });
 
     return {

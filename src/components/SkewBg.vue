@@ -9,7 +9,7 @@
 
 <script>
 import colormap from 'colormap';
-import { computed, onMounted, ref } from 'vue';
+import { computed, inject, onMounted, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
 import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 
@@ -22,7 +22,7 @@ export default {
   },
   setup(props) {
     const skewbg = ref('skewbg');
-    const context = computed(() => skewbg.value.getContext('2d'));
+    const context = computed(() => skewbg.value.getContext('2d', { alpha: false }));
     let frame = 0;
     let width = window.innerWidth;
     let height = window.innerHeight;
@@ -38,7 +38,13 @@ export default {
     });
     skew1.setupCalcs();
 
+    const backgroundsIntersect = inject('backgroundsIntersect');
+    const backgroundIsIntersecting = inject('backgroundIsIntersecting');
+
     const init = () => {
+      if (!backgroundIsIntersecting(skewbg.value)) {
+        return
+      }
       const ctx = context.value;
       const colors = colormap({
         colormap: 'density',
@@ -64,11 +70,12 @@ export default {
 
       frame++;
 
-      window.requestAnimationFrame(init);
+      return window.requestAnimationFrame(init);
     };
 
+
     onMounted(() => {
-      init();
+      backgroundsIntersect(skewbg.value, init)
     });
 
     return {

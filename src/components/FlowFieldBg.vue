@@ -33,7 +33,7 @@ export default {
 
     const context = computed(() => {
       if (flowbg.value) {
-        return flowbg.value.getContext('2d');
+        return flowbg.value.getContext('2d', { alpha: false });
       }
       return null;
     });

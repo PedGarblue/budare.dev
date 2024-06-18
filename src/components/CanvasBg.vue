@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, inject } from 'vue';
 import colormap from 'colormap';
 import { TheGrid } from '../grid/grid';
 
@@ -18,7 +18,7 @@ export default {
   name: 'CanvasBg',
   setup() {
     const canvasbg = ref('canvasbg');
-    const context = computed(() => canvasbg.value.getContext('2d'));
+    const context = computed(() => canvasbg.value.getContext('2d', { alpha: false }));
 
     const bgParams = {
       colourRange: 'inferno',
@@ -85,15 +85,23 @@ export default {
     });
 
     grid1.setupCalcs({ name: 'grid1' });
+
+    const backgroundsIntersect = inject('backgroundsIntersect');
+    const backgroundIsIntersecting = inject('backgroundIsIntersecting');
+
     const init = () => {
+      if (!backgroundIsIntersecting(canvasbg.value)) {
+        return;
+      }
       draw();
       grid1.draw({ context: context.value, frame });
       frame++;
-      window.requestAnimationFrame(init);
+      return window.requestAnimationFrame(init);
     };
 
+
     onMounted(() => {
-      init();
+      backgroundsIntersect(canvasbg.value, init)
     });
 
     return {
