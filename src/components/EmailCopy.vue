@@ -6,7 +6,7 @@
                 title="Click to Copy"
                 class="hover:opacity-70 transition-opacity"
             >
-                <font-awesome-icon :icon="['fas', 'envelope']" />
+                <font-awesome-icon :icon="['far', 'envelope']" />
             </button>
         </template>
         <template v-else>

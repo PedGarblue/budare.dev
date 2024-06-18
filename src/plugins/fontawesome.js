@@ -5,14 +5,13 @@ import {
   faClipboardCheck,
   faCode,
   faCube,
-  faEnvelope,
   faGlobeAmericas,
   faPhoneSquare,
   faProjectDiagram,
   faUsers,
   faCopy,
 } from '@fortawesome/free-solid-svg-icons';
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUser, faFilePdf, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
   faCss3Alt,
   faGithub,
@@ -22,6 +21,7 @@ import {
   faNodeJs,
   faPhp,
   faTelegram,
+  faTelegramPlane,
   faVuejs,
   faPython,
 } from '@fortawesome/free-brands-svg-icons';
@@ -32,7 +32,6 @@ library.add([
   faArrowUp,
   faGlobeAmericas,
   faPhoneSquare,
-  faEnvelope,
   faCode,
   faProjectDiagram,
   faCertificate,
@@ -43,13 +42,18 @@ library.add([
 ]);
 
 // Regular Icons
-library.add([faUser,]);
+library.add([
+  faUser,
+  faFilePdf,
+  faEnvelope,
+]);
 
 // Brands Icons
 library.add([
   faGithub,
   faLinkedin,
   faTelegram,
+  faTelegramPlane,
   faVuejs,
   faNodeJs,
   faHtml5,
