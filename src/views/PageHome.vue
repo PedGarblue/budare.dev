@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, provide, ref } from 'vue';
 import MainFooter from '@/components/MainFooter.vue';
 import MainNav from '@/components/MainNav.vue';
 import SectionBlurb from '@/components/SectionBlurb.vue';
@@ -44,6 +44,8 @@ export default {
     const touchStartY = ref(0);
     const started = ref(true);
 
+    const touchWhitelist = ['BUTTON', 'A'];
+
     const calculateSectionOffsets = () => {
       let sections = document.getElementsByTagName('section');
       let length = sections.length;
@@ -56,8 +58,6 @@ export default {
 
       offsets.value = _offsets;
     };
-
-    const touchWhitelist = ['BUTTON', 'A'];
 
     const handleMouseWheel = e => {
       if (e.wheelDelta < 30 && !inMove.value) {
@@ -158,6 +158,16 @@ export default {
         passive: false,
       }); // mobile devices
       window.addEventListener('touchmove', touchMove, { passive: false }); // mobile devices
+
+      // if url has hash, scroll to that section
+      if (window.location.hash) {
+        let hash = window.location.hash.replace('#', '');
+        let sectionIndex = offsets.value.indexOf(document.getElementById(hash).offsetTop);
+
+        if (sectionIndex > -1) {
+          scrollToSection(sectionIndex, true);
+        }
+      }
     });
 
     onUnmounted(() => {
@@ -169,6 +179,8 @@ export default {
       window.removeEventListener('touchstart', touchStart); // mobile devices
       window.removeEventListener('touchmove', touchMove); // mobile devices
     });
+  
+    provide('scrollToSection', scrollToSection);
   },
 };
 </script>

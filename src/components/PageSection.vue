@@ -57,6 +57,8 @@ section {
   text-align: left;
   padding-top: 4rem;
   padding-bottom: 4rem;
+
+  scroll-margin-top: 0;
 }
 .section-container {
   @apply h-full;

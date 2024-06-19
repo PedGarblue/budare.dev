@@ -8,13 +8,25 @@
         </span>
       </router-link> -->
       <div class="navbar__items">
-        <a href="#experience" class="navbar__link">
+        <a
+          href="#experience"
+          class="navbar__link"
+          @click.prevent="scrollToSection('experience')"
+        >
           {{ t('link.experience') }}
         </a>
-        <a href="#skills" class="navbar__link">
+        <a
+          href="#skills"
+          class="navbar__link"
+          @click.prevent="scrollToSection('skills')"
+        >
           {{ t('link.knowledge') }}
         </a>
-        <a href="#contact" class="navbar__link">
+        <a
+          href="#contact"
+          class="navbar__link"
+          @click.prevent="scrollToSection('contact')"
+        >
           {{ t('link.contact') }}
         </a>
       </div>
@@ -29,6 +41,7 @@
 import { useI18n } from 'vue-i18n';
 import LocaleSwitcher from '@/components/lib/LocaleSwitcher.vue';
 import aboutme from '@/data/aboutme';
+import { inject } from 'vue';
 
 export default {
   name: 'MainNav',
@@ -41,7 +54,10 @@ export default {
       useScope: 'local',
     });
 
-    return { t, locale };
+    // sections are defined in the PageHome component
+    const scrollToSection = inject('scrollToSection')
+
+    return { t, locale, scrollToSection };
   },
   data() {
     return {
