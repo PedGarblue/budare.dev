@@ -57,6 +57,10 @@ export default {
             color: '#7ebb12',
           },
         },
+        {
+          title: 'TailwindCSS',
+          icon: 'tailwind',
+        }
       ],
     },
     {
