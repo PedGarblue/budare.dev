@@ -64,6 +64,7 @@ export default {
   width: max-content;
   align-items: center;
   flex-wrap: wrap;
+  backdrop-filter: blur(10px);
 }
 .skill__icon {
   @apply text-xl lg:text-3xl mb-1;

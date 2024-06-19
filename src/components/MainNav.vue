@@ -93,6 +93,7 @@ export default {
 
   .navbar__link:hover {
     @apply bg-gray-800 bg-opacity-30;
+    backdrop-filter: blur(5px);
   }
 
   .brand {

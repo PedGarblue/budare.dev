@@ -1,11 +1,6 @@
 <template>
   <page-section name="projects" class="projects" :title="t('title')">
     <template #body>
-      <div class="mb-8">
-        <p>
-          {{ t('projects.summary') }}
-        </p>
-      </div>
       <div class="hidden lg:flex flex-wrap gap-y-5">
         <projects-item
           v-for="project in projects"
@@ -75,7 +70,8 @@ onMounted(() => {
 
 <style lang="postcss">
 .projects .section-container {
-  @apply lg:bg-opacity-95 lg:bg-gray-800 rounded-lg pt-2 lg:py-6 lg:px-8;
+  @apply lg:bg-opacity-30 lg:bg-gray-800 rounded-lg pt-2 lg:py-6 lg:px-8;
+  backdrop-filter: blur(10px);
 }
 </style>
 
@@ -97,7 +93,7 @@ onMounted(() => {
     "title": "Projects",
     "seemore": "See more in",
     "projects": {
-      "summary": "Here are some of the projects I've worked on."
+      "summary": "My focus on creating a personal project is that can be useful for me and for others."
     }
   },
   "es": {

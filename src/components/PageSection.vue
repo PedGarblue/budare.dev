@@ -51,7 +51,7 @@ section {
   padding-bottom: 4rem;
 }
 .section-container {
-  @apply divide-y-2 divide-gray-200 h-full;
+  @apply h-full;
 }
 .section-body {
   margin-top: theme('spacing.2');
