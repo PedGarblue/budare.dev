@@ -18,6 +18,7 @@ export default {
 <style lang="postcss" scoped>
 #go-to-top {
   @apply flex fixed w-12 h-12 p-4 bg-gray-900 bg-opacity-40 border rounded-full text-white cursor-pointer;
+  backdrop-filter: blur(5px);
   top: calc(100vh - 7rem);
   left: calc(100vw - 4rem);
 }

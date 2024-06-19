@@ -3,7 +3,6 @@
     name="skills"
     class="skills-section"
     :title="t('title')"
-    :fa-icon="['fas', 'code']"
   >
     <template #body>
       <skills-list :title="t('basic_skills')" :items="skills.misc" />

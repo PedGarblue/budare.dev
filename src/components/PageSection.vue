@@ -1,8 +1,9 @@
 <template>
   <section :id="name">
     <div class="section-container">
-      <h2 v-if="title" class="tracking-wider">
-        <font-awesome-icon :icon="faIcon" class="mr-1" />
+      <h2 v-if="title" class="tracking-wider text-center">
+        <font-awesome-icon v-if="faIcon" :icon="faIcon" class="mr-1" />
+        <custom-icon v-else-if="icon" :icon="icon" class="mr-1" />
         {{ title }}
       </h2>
       <div class="section-body">
@@ -17,7 +18,12 @@
 </template>
 
 <script>
+import CustomIcon from './lib/CustomIcon.vue'
+
 export default {
+  components: {
+    CustomIcon,
+  },
   props: {
     name: {
       type: String,
@@ -30,9 +36,11 @@ export default {
     faIcon: {
       type: Array,
       required: false,
-      default() {
-        return [];
-      },
+    },
+    icon: {
+      type: String,
+      required: false,
+      default: '',
     },
   },
 };
