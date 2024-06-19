@@ -84,7 +84,6 @@ export default {
 .blurb {
   @apply mx-auto flex items-center flex-col lg:flex-row;
   padding: 0 1rem;
-  margin-left: 14vw;
   margin-top: 1rem; /* Equivalent to $medium */
   padding-top: 4rem; /* Equivalent to $extra-big-space */
   margin-right: auto
@@ -107,6 +106,7 @@ export default {
 
 @media (min-width: 800px) {
   .blurb {
+    margin-left: 13vw;
   }
 
   .blurb__photo {
