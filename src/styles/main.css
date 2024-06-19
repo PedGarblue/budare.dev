@@ -22,7 +22,7 @@ html {
   font-size: 1rem;
   line-height: 1.75;
   scroll-behavior: smooth;
-  scroll-padding-top: 2rem;
+  scrollbar-color: rgb(113 113 113) #333333;
 }
 
 h2 {
