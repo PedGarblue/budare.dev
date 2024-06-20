@@ -180,6 +180,7 @@ export default {
       window.removeEventListener('touchmove', touchMove); // mobile devices
     });
   
+    provide('activeSection', activeSection);
     provide('scrollToSection', scrollToSection);
   },
 };
