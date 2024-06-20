@@ -8,16 +8,16 @@ Personal website and Porfolio built with Vue.js and TailwindCSS
 # Roadmap
 
 ## Features and improvements
-- [] Add About me section
-- [] Rework Skills section
+- [ ] Add About me section
+- [ ] Rework Skills section
 
 # Code changes / refactors
-- [] move to a component the tooltip code in /src/components/CopyEmail.vue
-- [] make a composable the scroll section navigation in /src/views/PageHome.vue
-- [] **BIG** migrate all the canvas animations to WebGl, 2D rendering makes the page slow
+- [ ] move to a component the tooltip code in /src/components/CopyEmail.vue
+- [ ] make a composable the scroll section navigation in /src/views/PageHome.vue
+- [ ] **BIG** migrate all the canvas animations to WebGl, 2D rendering makes the page slow
 
 # Bugs
-- [] apparently there are some issues with the scroll section navigation in mobile could not reproduce it in my device.
+- [ ] apparently there are some issues with the scroll section navigation in mobile could not reproduce it in my device.
 
 # Notes
 
