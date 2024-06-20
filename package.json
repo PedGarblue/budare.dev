@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "budare.dev",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "private": true,
   "author": "Pedro Garcia",
   "scripts": {
