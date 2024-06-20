@@ -22,4 +22,4 @@ Personal website and Porfolio built with Vue.js and TailwindCSS
 # Notes
 
 - Why not use a UI Library?
-    because i'm bored enough to do it myself, alse i don't think should be necessary for the size of this project.
+    because i'm bored enough to do it myself and i don't think should be necessary for the size of this project.
