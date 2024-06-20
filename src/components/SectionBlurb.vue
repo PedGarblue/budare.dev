@@ -70,10 +70,10 @@ export default {
 }
 
 .desc__name {
-  @apply font-bold text-5xl tracking-wide;
+  @apply font-medium text-4xl lg:text-5xl tracking-wide font-monserrat;
 }
 .desc__workname {
-  @apply text-xl;
+  @apply text-xl font-monserrat;
 }
 
 @media screen and (min-width: 768px) {
@@ -106,7 +106,7 @@ export default {
 
 @media (min-width: 800px) {
   .blurb {
-    margin-left: 13vw;
+    margin-left: 12vw;
   }
 
   .blurb__photo {

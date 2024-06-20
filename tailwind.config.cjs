@@ -12,6 +12,9 @@ module.exports = {
       },
       fontFamily: {
         monserrat: ['Montserrat Alternates', 'sans-serif'],
+        nunito: ['Nunito', 'sans-serif'],
+        ubuntu: ['Ubuntu', 'sans-serif'],
+        bungee: ['Bungee', 'cursive'],
       },
     },
   },
