@@ -28,19 +28,18 @@ export default {
       id: 'frontend',
       name: 'Frontend',
       skills: [
+        // {
+        //   title: 'HTML5',
+        //   icon: ['fab', 'html5'],
+        //   style: {
+        //     color: '#f05525',
+        //   },
+        // },
         {
-          title: 'HTML5',
-          // from font awesome icons
+          title: 'HTML & CSS3',
           icon: ['fab', 'html5'],
           style: {
             color: '#f05525',
-          },
-        },
-        {
-          title: 'CSS3',
-          icon: ['fab', 'css3-alt'],
-          style: {
-            color: '#4b4bff',
           },
         },
         {
@@ -94,26 +93,14 @@ export default {
         {
           title: 'MySQL',
           icon: 'mysql',
-          style: {
-            width: '1.5em',
-            height: '1.5em',
-          },
         },
         {
           title: 'PostgresSQL',
           icon: 'postgres',
-          style: {
-            width: '1em',
-            height: '1em',
-          },
         },
         {
           title: 'MongoDB',
           icon: 'mongodb',
-          style: {
-            width: '1em',
-            height: '1em',
-          },
         },
       ],
     },
@@ -139,6 +126,7 @@ export default {
   languages: [
     {
       id: 'main',
+      name: 'Languages',
       skills: [
         {
           title: 'Español',

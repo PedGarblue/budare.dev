@@ -1,45 +1,53 @@
 <template>
-  <span class="skill">
+  <component :is="type" class="skill" v-bind="linkAttributes" >
     <custom-icon
       v-if="skill.icon"
       :icon="skill.icon"
       :style="skill.style"
       class="skill__icon"
     />
-    <span class="skill__title">{{ title }}</span>
-    <a
-      v-if="skill.certificate"
-      :href="skill.certificate"
-      class="skill__certificate"
-      rel="noopener noreferrer"
-    >
-      <custom-icon :icon="['fas', 'certificate']" />
-    </a>
-  </span>
+    <span class="skill__title">{{ title }}
+      <a
+        v-if="skill.certificate"
+        :href="skill.certificate"
+        class="skill__certificate"
+      >
+        <custom-icon :icon="['fas', 'certificate']" />
+      </a>
+    </span>
+  </component>
 </template>
 
-<script>
+<script setup>
+import { defineProps, computed } from 'vue';
 import CustomIcon from './lib/CustomIcon.vue';
 
-export default {
-  name: 'SkillsListItem',
-  components: {
-    CustomIcon,
+const props = defineProps({
+  skill: {
+    type: Object,
+    required: true,
   },
-  props: {
-    skill: {
-      type: Object,
-      required: true,
-    },
-  },
-  computed: {
-    title() {
-      let title = this.skill.title;
-      if (this.skill.level) title = `${title} - ${this.skill.level}`;
-      return title;
-    },
-  },
-};
+});
+
+
+const type = computed(() => props.skill.certificate ? 'a' : 'span')
+const linkAttributes = computed(() => {
+  if (props.skill.certificate) {
+    return {
+      href: props.skill.certificate,
+      target: '_blank',
+      rel: 'noopener noreferrer',
+    };
+  }
+  return {}
+})
+
+const title = computed(() => {
+  let title = props.skill.title;
+  if (props.skill.level) title = `${title} - ${props.skill.level}`;
+  return title;
+
+})
 </script>
 
 <style lang="postcss" scoped>
@@ -47,27 +55,31 @@ export default {
   @apply flex
     flex-col
     m-4
-    bg-gray-800
-    bg-opacity-20
-    py-1 px-2
-    lg:py-2 lg:px-4 
+    py-1
     rounded
-    shadow-md
     text-white
-    border
-    border-gray-900
-    border-opacity-30
     text-xs
+    font-bold
     md:text-sm
-    font-bold;
+    lg:w-max
+    lg:py-2 lg:px-4 
+    lg:bg-gray-800
+    lg:border
+    lg:border-gray-900
+    lg:border-opacity-30
+    lg:bg-opacity-20
+    lg:shadow-md
+    ;
 
-  width: max-content;
   align-items: center;
   flex-wrap: wrap;
   backdrop-filter: blur(10px);
 }
 .skill__icon {
-  @apply text-xl lg:text-3xl mb-1;
+  @apply text-xl lg:text-3xl mb-1 h-5 lg:h-7;
+}
+.skill__title {
+  @apply h-4;
 }
 .skill__certificate {
   @apply md:ml-2;

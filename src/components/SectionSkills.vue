@@ -5,8 +5,8 @@
     :title="t('title')"
   >
     <template #body>
-      <skills-list :title="t('basic_skills')" :items="skills.misc" />
-      <skills-list :title="t('languages')" :items="skills.languages" />
+      <skills-list :items="skills.misc" />
+      <skills-list :items="skills.languages" />
     </template>
 
     <template #section-bg>

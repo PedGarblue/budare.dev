@@ -67,8 +67,8 @@ export default {
   @apply flex items-center justify-center flex-col;
 }
 .skillset__name {
+  @apply font-light lg:font-normal;
   flex-basis: 100%;
-  font-weight: lighter;
 }
 .skillset__items {
   @apply flex items-center justify-center flex-row flex-wrap;
