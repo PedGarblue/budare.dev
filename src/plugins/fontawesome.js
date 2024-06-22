@@ -10,6 +10,7 @@ import {
   faProjectDiagram,
   faUsers,
   faCopy,
+  faLink,
 } from '@fortawesome/free-solid-svg-icons';
 import { faUser, faFilePdf, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -39,6 +40,7 @@ library.add([
   faCube,
   faClipboardCheck,
   faCopy,
+  faLink,
 ]);
 
 // Regular Icons

@@ -67,7 +67,7 @@ export default {
 <style lang="postcss" scoped>
 
 .project__info {
-  @apply w-full flex flex-col lg:flex-row gap-4;
+  @apply w-full flex flex-col gap-4 lg:flex-row;
 }
 
 .project__title {
