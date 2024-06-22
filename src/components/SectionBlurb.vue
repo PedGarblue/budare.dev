@@ -73,7 +73,7 @@ export default {
   @apply font-medium text-4xl lg:text-5xl tracking-wide font-monserrat;
 }
 .desc__workname {
-  @apply text-xl font-monserrat;
+  @apply text-xl font-monserrat text-gray-300;
 }
 
 @media screen and (min-width: 768px) {
