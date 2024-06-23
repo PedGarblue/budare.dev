@@ -136,8 +136,8 @@ export default {
         {
           title: 'English',
           icon: 'en',
-          level: 'C1 Advanced',
-          certificate: 'https://www.efset.org/cert/LoX8CD',
+          level: 'C2 Proficient',
+          certificate: 'https://cert.efset.org/kEJX6E',
         },
       ],
     },
