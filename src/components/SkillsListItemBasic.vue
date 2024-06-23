@@ -6,14 +6,14 @@
       :style="skill.style"
       class="skill__icon"
     />
-    <span class="skill__title">{{ title }}
-      <a
+    <span class="skill__title">
+      {{ title }}
+      <span
         v-if="skill.certificate"
-        :href="skill.certificate"
         class="skill__certificate"
       >
         <custom-icon :icon="['fas', 'certificate']" />
-      </a>
+      </span>
     </span>
   </component>
 </template>
