@@ -64,6 +64,9 @@ section {
   @apply h-full;
 }
 .section-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin-top: theme('spacing.2');
   padding: theme('spacing.4') 0;
   color: white;

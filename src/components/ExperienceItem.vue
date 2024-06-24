@@ -47,7 +47,7 @@ defineProps({
             <li
               v-for="point in experience.description"
               :key="point"
-              class="text-xs lg:text-sm"
+              class="text-xs my-1 lg:text-sm"
             >
               {{ point }}
             </li>

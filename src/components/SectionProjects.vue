@@ -22,12 +22,9 @@
           />
         </component-carousel>
       </div>
-    </template>
-
-    <template #footer>
-      <div class="footer">
+      <div class="flex w-full pb-8 mt-auto">
         <a
-          class="projects__button"
+          class="mx-auto font-bold text-sm md:text-xl"
           :href="contact.github"
           rel="noreferrer noopener"
         >
