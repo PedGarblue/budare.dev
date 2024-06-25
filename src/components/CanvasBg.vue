@@ -10,9 +10,10 @@
 </template>
 
 <script>
-import { computed, onMounted, ref, inject } from 'vue';
+import { computed, ref } from 'vue';
 import colormap from 'colormap';
 import { TheGrid } from '../grid/grid';
+import { useAnimation } from '../composables/useAnimation';
 
 export default {
   name: 'CanvasBg',
@@ -85,22 +86,17 @@ export default {
 
     grid1.setupCalcs({ name: 'grid1' });
 
-    const backgroundsIntersect = inject('backgroundsIntersect');
-    const backgroundIsIntersecting = inject('backgroundIsIntersecting');
-
-    const init = () => {
-      if (!backgroundIsIntersecting(canvasbg.value)) {
-        return;
-      }
+    const animationCallback = () => {
       draw();
       grid1.draw({ context: context.value, frame });
       frame++;
       return window.requestAnimationFrame(init);
     };
 
-
-    onMounted(() => {
-      backgroundsIntersect(canvasbg.value, init)
+    const { init } = useAnimation({
+      animationElement: canvasbg,
+      animationCallback,
+      framerate: 60,
     });
 
     return {

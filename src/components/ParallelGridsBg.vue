@@ -10,8 +10,9 @@
 <script>
 import { computed, inject, onMounted, ref } from 'vue';
 import colormap from 'colormap';
-import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 import { TheGrid } from '../grid/grid';
+import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
+import { useAnimation } from '../composables/useAnimation';
 
 export default {
   setup() {
@@ -111,25 +112,19 @@ export default {
     grid1.setupCalcs({ name: 'grid1' });
     grid2.setupCalcs({ name: 'grid2' });
 
-    const backgroundsIntersect = inject('backgroundsIntersect');
-    const backgroundIsIntersecting = inject('backgroundIsIntersecting');
-
-    const init = () => {
-      if (!backgroundIsIntersecting(dualgridbg.value)) {
-        return;
-      }
+    const animationCallback = () => {
       draw();
       if (!isMobileView) {
         grid1.draw({ context: context.value, frame, colorByRow: true });
         grid2.draw({ context: context.value, frame, colorByRow: true });
       }
       frame++;
-      return window.requestAnimationFrame(init);
     };
 
-
-    onMounted(() => {
-      backgroundsIntersect(dualgridbg.value, init)
+    useAnimation({
+      animationElement: dualgridbg,
+      animationCallback,
+      framerate: 60,
     });
 
     return {

@@ -9,9 +9,10 @@
 
 <script>
 import colormap from 'colormap';
-import { computed, inject, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
 import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
+import { useAnimation } from '../composables/useAnimation';
 
 export default {
   props: {
@@ -36,47 +37,41 @@ export default {
       direction: props.animationDirection,
       num,
     });
+
     skew1.setupCalcs();
 
-    const backgroundsIntersect = inject('backgroundsIntersect');
-    const backgroundIsIntersecting = inject('backgroundIsIntersecting');
+    function animationCallback() {
+        const ctx = context.value;
+        const colors = colormap({
+          colormap: 'density',
+          nshades: 36,
+          format: 'rgbaString',
+          alpha: 1,
+        });
+        const prevSectionBgColors = colormap({
+          colormap: 'inferno',
+          nshades: 100,
+          format: 'rgbaString',
+          alpha: 1,
+        });
 
-    const init = () => {
-      if (!backgroundIsIntersecting(skewbg.value)) {
-        return
-      }
-      const ctx = context.value;
-      const colors = colormap({
-        colormap: 'density',
-        nshades: 36,
-        format: 'rgbaString',
-        alpha: 1,
-      });
-      const prevSectionBgColors = colormap({
-        colormap: 'inferno',
-        nshades: 100,
-        format: 'rgbaString',
-        alpha: 1,
-      });
+        // background gradient
+        const bgGradient = ctx.createLinearGradient(0, 0, width, height);
+        bgGradient.addColorStop(0.0, prevSectionBgColors[1]);
+        bgGradient.addColorStop(0.5, prevSectionBgColors[10]);
+        bgGradient.addColorStop(1, colors[10]);
+        ctx.fillStyle = bgGradient;
 
-      // background gradient
-      const bgGradient = ctx.createLinearGradient(0, 0, width, height);
-      bgGradient.addColorStop(0.0, prevSectionBgColors[1]);
-      bgGradient.addColorStop(0.5, prevSectionBgColors[10]);
-      bgGradient.addColorStop(1, colors[10]);
-      ctx.fillStyle = bgGradient;
+        skew1.draw({ context: context.value, frame });
 
-      skew1.draw({ context: context.value, frame });
+        frame++;
+    }
 
-      frame++;
-
-      return window.requestAnimationFrame(init);
-    };
-
-
-    onMounted(() => {
-      backgroundsIntersect(skewbg.value, init)
-    });
+    const { init } = useAnimation({
+      animationElement: skewbg,
+      animationCallback,
+      framerate: 21,
+    })
 
     return {
       skewbg,
