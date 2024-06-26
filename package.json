@@ -27,6 +27,8 @@
     "riso-colors": "^1.0.1",
     "tailwind": "^4.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "v-viewer": "^3.0.13",
+    "viewerjs": "^1.11.6",
     "vite": "^5.2.12",
     "vue": "^3.2.0",
     "vue-i18n": "^9.1.0",
