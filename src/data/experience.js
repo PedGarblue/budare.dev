@@ -1,9 +1,17 @@
-import experience1 from '@/assets/img/valocator1.png'
-import experience2 from '@/assets/img/igx1.png'
+import valocator1 from '@/assets/img/valocator1.png'
+import valocator2 from '@/assets/img/valocator_2.png'
+import valocator3 from '@/assets/img/valocator_3.png'
+import valocator4 from '@/assets/img/valocator_4.png'
+import valocator5 from '@/assets/img/valocator_5.png'
+import igx1 from '@/assets/img/igx1.png'
+import igx2 from '@/assets/img/igx_2.png'
+import igx3 from '@/assets/img/igx_3.png'
+import igx4 from '@/assets/img/igx_4.png'
+import igx5 from '@/assets/img/igx_5.png'
 
 export const experiences = [
   {
-    image: experience1,
+    images: [valocator1, valocator2, valocator3, valocator4, valocator5],
     employer: 'VALocator',
     employer_link: 'https://www.valocator.com',
     title: 'Fullstack Developer',
@@ -37,7 +45,7 @@ export const experiences = [
     ],
   },
   {
-    image: experience2,
+    images: [igx1, igx2, igx3, igx4, igx5],
     employer: 'Innovative Gx Health',
     employer_link: 'https://www.instagram.com/innovativegx/',
     title: 'Fullstack Developer',

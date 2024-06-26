@@ -2679,6 +2679,11 @@ locate-path@^6.0.0:
   dependencies:
     p-locate "^5.0.0"
 
+lodash-es@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
+
 lodash.debounce@^4.0.8:
   version "4.0.8"
   resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
@@ -4070,6 +4075,13 @@ uuidv4@3.0.1:
   dependencies:
     uuid "3.3.2"
 
+v-viewer@^3.0.13:
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/v-viewer/-/v-viewer-3.0.13.tgz#de08227a01915f80275bc45875d1420f6ac44bc6"
+  integrity sha512-T8pgGzlF0ZCHVpD/32OKsD8MlpI6tqYP3n1XLcSjvGQMc0ABn8nJ4AumxvzAKVQrLRWtDTG6qRGAyCPCmi7ceA==
+  dependencies:
+    lodash-es "^4.17.21"
+
 varname@2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/varname/-/varname-2.0.3.tgz#05e8dc64fbb6e59170de44aad4ddeab8ab87b68e"
@@ -4084,6 +4096,11 @@ vec2-copy@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/vec2-copy/-/vec2-copy-1.0.0.tgz#c6eec1d8dad54625194e5f71f8433b62d2f20a7a"
   integrity sha512-jeitylCmqqyM4Z2blr4vLpScsROaiJfhN2dFOjn1VK01cM4fi5GNt60L0Zxhm0OT1vYYiv7BKDOZch0YfPA8qw==
+
+viewerjs@^1.11.6:
+  version "1.11.6"
+  resolved "https://registry.yarnpkg.com/viewerjs/-/viewerjs-1.11.6.tgz#19a1e78c15eba5a9fbbf34ebc5ab312d6e8932ed"
+  integrity sha512-TlhdSp2oEOLFXvEp4psKaeTjR5zBjTRcM/sHUN8PkV1UWuY8HKC8n7GaVdW5Xqnwdr/F1OmzLik1QwDjI4w/nw==
 
 vite@^5.2.12:
   version "5.2.12"

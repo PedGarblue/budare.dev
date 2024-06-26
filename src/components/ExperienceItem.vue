@@ -17,7 +17,19 @@ defineProps({
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
         -->
-      <img class="project_image" alt="" :src="experience.image" />
+      <div class="images flex flex-row overflow-auto" v-viewer>
+        <img
+          v-for="(image, i) in experience.images"
+          class="project_image"
+          alt=""
+          :src="image"
+          loading="lazy"
+          :key="i"
+          :class="{
+            'hidden': i > 0,
+          }"
+        />
+      </div>
       <div class="project_contents">
         <div
           class="flex flex-row gap-x-4 flex-wrap items-center lg:gap-0 lg:flex-col lg:items-start mb-1"
