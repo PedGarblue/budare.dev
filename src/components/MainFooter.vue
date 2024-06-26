@@ -8,13 +8,10 @@
         <!-- of my work status (searching position) -->
         <div class="footer__work-status">
           <b>{{ t('my_job_status') }}</b> <br />
-          {{ t('contact_me_through') }}
         </div>
         <div class="mb-0 mt-5">
-          <email-copy class="mx-auto"/>
         </div>
         <nav class="footer__social">
-          <social-links />
         </nav>
       </div>
       <div class="created-by">
@@ -134,7 +131,7 @@ export default {
 {
   "en": {
     "created_by": "Created ❤️ by Pedro García.",
-    "want_to_contact_me": "Contact me",
+    "want_to_contact_me": "Thanks for visiting my portfolio!",
     "my_job_status": "Want me to work with you? I'm available for hire :)",
     "contact_me_through": "Contact to one of my social networks or send me an email 🔥",
   },

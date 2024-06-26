@@ -22,13 +22,6 @@
         >
           {{ t('link.knowledge') }}
         </a>
-        <a
-          href="#contact"
-          class="navbar__link"
-          @click.prevent="scrollToSection('contact')"
-        >
-          {{ t('link.contact') }}
-        </a>
       </div>
       <div class="absolute right-0 ml-auto">
         <LocaleSwitcher />

@@ -7,7 +7,6 @@
       <div class="blurb__desc desc">
         <div class="desc__name">{{ t('name') }}</div>
         <div class="desc__workname">{{ t('workname') }}</div>
-        <social-links />
       </div>
     </div>
     <div class="w-full h-full absolute z-negative">

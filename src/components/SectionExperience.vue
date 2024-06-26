@@ -48,33 +48,6 @@ onMounted(() => {
             />
           </ComponentCarousel>
         </div>
-        <div class="w-full flex flex-col mt-auto justify-center text-center">
-          <div>
-            <a
-              class="mx-auto font-semibold text-sm md:text-xl"
-              :href="contact.resume"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              {{ t('download_cv') }}
-              <font-awesome-icon :icon="['far', 'file-pdf']" />
-            </a>
-          </div>
-          <div>
-            <p>{{ t('or') }}</p>
-          </div>
-          <div>
-            <a
-              class="mx-auto font-semibold text-sm md:text-xl"
-              :href="contact.linkedin"
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              {{ t('contact_me_at_linkedin') }}
-              <font-awesome-icon :icon="['fab', 'linkedin']" />
-            </a>
-          </div>
-        </div>
       </div>
 
     </template>

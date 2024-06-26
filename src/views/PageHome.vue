@@ -6,8 +6,6 @@
       <section-separator />
       <SectionExperience />
       <section-separator />
-      <SectionProjects />
-      <section-separator />
       <SectionSkills />
       <section-separator />
       <MainFooter />
