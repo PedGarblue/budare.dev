@@ -17,7 +17,7 @@ defineProps({
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
         -->
-      <div class="images flex flex-row overflow-auto" v-viewer>
+      <div class="images flex flex-row overflow-auto cursor-pointer hover:opacity-90 transition-opacity" v-viewer>
         <img
           v-for="(image, i) in experience.images"
           class="project_image"
