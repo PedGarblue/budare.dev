@@ -10,6 +10,8 @@
       <section-separator />
       <SectionSkills />
       <section-separator />
+      <SectionAbout />
+      <section-separator />
       <MainFooter />
     </div>
   </div>
@@ -24,6 +26,7 @@ import SectionExperience from '@/components/SectionExperience.vue';
 import SectionProjects from '@/components/SectionProjects.vue';
 import SectionSkills from '@/components/SectionSkills.vue';
 import SectionSeparator from '@/components/SectionSeparator.vue';
+import SectionAbout from '@/components/SectionAbout.vue';
 
 export default {
   name: 'PageHome',
@@ -35,6 +38,7 @@ export default {
     SectionProjects,
     SectionSkills,
     SectionSeparator,
+    SectionAbout,
   },
   setup() {
     // props
