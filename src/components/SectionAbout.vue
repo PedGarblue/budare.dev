@@ -2,17 +2,18 @@
     <PageSection
         class="about"
         name="about"
+        title=""
     >
         <template #body>
             <div class="h-full flex justify-center items-center">
-                <div class="flex flex-row gap-10">
+                <div class="flex flex-col lg:flex-row gap-10">
                     <div class="about__photo">
                         <img :src="aboutme.picture" />
                     </div>
-                    <div class="py-5">
-                      <h2 class="font-monserrat text-3xl">{{ t('aboutme') }}</h2>
-                      <div class="max-w-prose">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur maxime, quibusdam blanditiis facilis corporis incidunt. Velit, possimus consequatur molestiae laborum nisi itaque explicabo perferendis animi ea quisquam sequi, autem vero.</p>
+                    <div class="py-0">
+                      <h2 class="font-monserrat text-2xl lg:text-4xl mb-4 text-center lg:text-left">{{ t('aboutme') }}</h2>
+                      <div class="max-w-prose font-nunito font-semibold">
+                        <p>{{ t('contents') }}</p>
                       </div>
                     </div>
                 </div>
@@ -52,8 +53,6 @@ const colors = colormap({
   alpha: 1,
 });
 
-console.log(colors)
-
 </script>
 
 <style lang="postcss" scoped>
@@ -83,28 +82,30 @@ console.log(colors)
 }
 .clip1 {
   @apply clip absolute bottom-0 left-0;
-  background-color: rgba(119,123,217,0.7);
-  width: 70%;
-  height: 95%;
+  background: rgb(45,15,44);
+  background: linear-gradient(218deg, rgba(45,15,44,1) 0%, rgba(119,123,217,1) 79%);
+  width: 65%;
+  height: 99%;
   clip-path: polygon(0 0, 0 100%, 100% 100%);
-  z-index: -10;
+  z-index: -9;
   backdrop-filter: blur(10px);
 }
 .clip2 {
   @apply absolute bg-gray-400 bg-opacity-95 bottom-0 left-0;
-  background-color: rgba(113,53,144,1);
+  background: rgb(45,15,44);
+  background: linear-gradient(218deg, rgba(45,15,44,1) 0%, rgba(129,177,227,1) 79%);
   width: 60%;
   height: 75%;
   clip-path: polygon(0 0, 0 100%, 100% 100%);
-  z-index: -10;
+  z-index: -7;
 }
 .clip3 {
   @apply absolute bottom-0 right-0;
   background-color: rgba(75,19,62,1);
-  width: 60%;
-  height: 65%;
+  width: 75%;
+  height: 75%;
   clip-path: polygon(100% 0, 0 100%, 100% 100%); 
-  z-index: -11;
+  z-index: -8;
     color: rgba(61,16,45,1);
     color: rgba(68,18,54,1);  
     color: rgba(75,19,62,1);  
@@ -141,16 +142,26 @@ console.log(colors)
     color: rgba(217,234,238,1);  
     color: rgba(230,241,241,1); 
 }
+.clip4 {
+  @apply absolute bottom-0 right-0;
+  background: rgb(45,15,44);
+  background: linear-gradient(130deg, rgba(45,15,44,1) 0%, rgba(105,40,119,1) 79%);
+  width: 65%;
+  height: 60%;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%); 
+  z-index: -6;
+}
 
 </style>
 
 <i18n>
 {
   "en": {
-    "aboutme": "About me"
+    "aboutme": "About me",
+    "contents": "I graduated with an Associate Degree in informational technologies. I acquired my knowledge in Software Development mainly in a self-taught manner, making use of books for Code and Systems architecture like the Robert C. Martin Collection and O'Reilly Software Architecture Collection, software documentation (MDN, php.net, etc), online educational platforms, and of course, a lot of focus, discipline, and practice with personal projects."
   },
   "es": {
-    "aboutme": "Sobre mi"
-  }
+    "aboutme": "Sobre mi",
+    "contents": "Me gradué como Técnico Medio en Tecnologías de la Información. Adquirí mis conocimientos en Desarrollo de Software principalmente de forma autodidacta, haciendo uso de libros de Código y Arquitectura de Sistemas como Robert C. Martin Collection y O'Reilly Software Architecture Collection, documentación de software (MDN, php.net, etc), plataformas educativas online, y por supuesto, mucha concentración, disciplina y práctica con proyectos personales." }
 }
 </i18n>

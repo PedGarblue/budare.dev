@@ -70,7 +70,7 @@ export default {
     const { init } = useAnimation({
       animationElement: skewbg,
       animationCallback,
-      framerate: 21,
+      framerate: 20,
     })
 
     return {
