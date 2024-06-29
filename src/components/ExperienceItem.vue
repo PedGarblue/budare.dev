@@ -34,8 +34,8 @@ defineProps({
         <div
           class="flex flex-row gap-x-4 flex-wrap items-center lg:gap-0 lg:flex-col lg:items-start mb-1"
         >
-          <h2 class="text-lg lg:text-2xl font-bold">{{ experience.title }}</h2>
-          <h3 class="text-sm lg:text-xl font-monserrat">
+          <h2 class="text-lg xl:text-xl 2xl:text-2xl font-bold">{{ experience.title }}</h2>
+          <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat">
             {{ experience.employer }}
             <a
               v-if="experience.employer_link"
@@ -49,7 +49,7 @@ defineProps({
               />
             </a>
           </h3>
-          <p class="text-sm lg:text-base">{{ experience.from }} - {{ experience.to }}</p>
+          <p class="text-sm 2xl:text-base">{{ experience.from }} - {{ experience.to }}</p>
         </div>
         <div class="h-full flex flex-col-reverse gap-y-2">
           <ol
@@ -59,12 +59,12 @@ defineProps({
             <li
               v-for="point in experience.description"
               :key="point"
-              class="text-xs my-1 lg:text-sm"
+              class="text-xs my-1 2xl:text-sm"
             >
               {{ point }}
             </li>
           </ol>
-          <p v-else class="text-xs lg:text-sm">
+          <p v-else class="text-xs 2xl:text-sm">
             {{ experience.description }}
           </p>
 
@@ -83,7 +83,7 @@ defineProps({
 
 <style lang="postcss" scoped>
 .experience-item-container {
-  @apply grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 items-start gap-2 lg:gap-4;
+  @apply grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 items-start gap-2 2xl:gap-4;
 }
 
 .experience-description-list {
@@ -92,7 +92,7 @@ defineProps({
 }
 
 .project_image {
-  @apply mx-auto rounded-3xl shadow-lg border-none lg:h-60;
+  @apply mx-auto rounded-3xl shadow-lg border-none xl:h-52 2xl:h-60;
   object-fit: cover;
   aspect-ratio: 16/9;
 }

@@ -51,7 +51,7 @@ onMounted(() => {
         <div class="w-full flex flex-col mt-auto justify-center text-center">
           <div>
             <a
-              class="mx-auto font-semibold text-sm md:text-xl"
+              class="mx-auto font-semibold text-sm xl:text-base 2xl:text-xl"
               :href="contact.resume"
               rel="noreferrer noopener"
               target="_blank"
@@ -65,7 +65,7 @@ onMounted(() => {
           </div>
           <div>
             <a
-              class="mx-auto font-semibold text-sm md:text-xl"
+              class="mx-auto font-semibold text-sm xl:text-base 2xl:text-xl"
               :href="contact.linkedin"
               rel="noreferrer noopener"
               target="_blank"
