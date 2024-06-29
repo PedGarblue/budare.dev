@@ -1,7 +1,7 @@
 <template>
   <button id="go-to-top" @click="toTop" :style="{
     opacity: showButton ? 1 : 0,
-    pointerEvents: showButton.value ? 'auto' : 'none'
+    pointerEvents: showButton ? 'auto' : 'none'
   }">
     <font-awesome-icon :icon="['fas', 'arrow-up']" />
   </button>
@@ -28,6 +28,7 @@
   left: calc(100vw - 4rem);
   cursor: pointer;
   transition: opacity 0.3s;
+  z-index: 99999;
 }
 
 @media (min-width: 1024px) {
