@@ -11,8 +11,8 @@
 import colormap from 'colormap';
 import { computed, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
-import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 import { useAnimation } from '../composables/useAnimation';
+import { useScreenData } from '../composables/useScreenData';
 
 export default {
   props: {
@@ -27,9 +27,15 @@ export default {
     let frame = 0;
     let width = window.innerWidth;
     let height = window.innerHeight;
-    const { isMobileView } = useBackgroundAnimation();
+    const { getViewType } = useScreenData();
 
-    const num = isMobileView ? 0 : 20;
+    const squareCountByView = {
+      mobile: 0,
+      lg: 7,
+      xl: 10,
+      '2xl': 20,
+    }
+    const num = squareCountByView[getViewType()];
 
     const skew1 = new TheSkew({
       height,
