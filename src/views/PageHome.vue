@@ -27,6 +27,7 @@ import SectionProjects from '@/components/SectionProjects.vue';
 import SectionSkills from '@/components/SectionSkills.vue';
 import SectionSeparator from '@/components/SectionSeparator.vue';
 import SectionAbout from '@/components/SectionAbout.vue';
+import { useScreenData } from '../composables/useScreenData';
 
 export default {
   name: 'PageHome',
@@ -41,12 +42,21 @@ export default {
     SectionAbout,
   },
   setup() {
+    const { getViewType } = useScreenData();
     // props
     const inMove = ref(false);
     const activeSection = ref(0);
     const offsets = ref([]);
     const touchStartY = ref(0);
     const started = ref(true);
+    const scrollDelayByView = {
+      mobile: 400,
+      // touchpads create a lot of scroll events, so we need to delay the scroll
+      lg: 900, // laptop small
+      xl: 900, // laptop large
+      '2xl': 400, // desktop
+    };
+    const scrollDelay = scrollDelayByView[getViewType()];
 
     const touchWhitelist = ['BUTTON', 'A'];
 
@@ -64,9 +74,9 @@ export default {
     };
 
     const handleMouseWheel = e => {
-      if (e.wheelDelta < 30 && !inMove.value) {
+      if (e.wheelDelta < 0 && !inMove.value) {
         moveUp();
-      } else if (e.wheelDelta > 30 && !inMove.value) {
+      } else if (e.wheelDelta > 0 && !inMove.value) {
         moveDown();
       }
 
@@ -117,7 +127,7 @@ export default {
 
       setTimeout(() => {
         inMove.value = false;
-      }, 400);
+      }, scrollDelay);
     };
 
     const shouldScroll = e => {
