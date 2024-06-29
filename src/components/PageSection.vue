@@ -53,7 +53,7 @@ h2 {
 }
 section {
   @apply px-3 md:px-0;
-  height: calc(100dvh);
+  height: calc(100vh);
   text-align: left;
   padding-top: 4rem;
   padding-bottom: 4rem;

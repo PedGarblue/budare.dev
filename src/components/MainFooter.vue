@@ -68,7 +68,7 @@ export default {
 }
 
 .footer__title {
-  @apply text-7xl;
+  @apply text-5xl lg:text-7xl;
   font-family: 'Bungee Shade', cursive;
   text-transform: uppercase;
   background-image: linear-gradient(

@@ -60,7 +60,6 @@ const title = computed(() => {
     text-white
     text-xs
     font-bold
-    md:text-sm
     lg:w-max
     lg:py-2 lg:px-4 
     lg:bg-gray-800
@@ -69,14 +68,15 @@ const title = computed(() => {
     lg:border-opacity-30
     lg:bg-opacity-20
     lg:shadow-md
-    ;
+    2xl:text-sm
+  ;
 
   align-items: center;
   flex-wrap: wrap;
   backdrop-filter: blur(10px);
 }
 .skill__icon {
-  @apply text-xl lg:text-3xl mb-1 h-5 lg:h-7;
+  @apply text-xl 2xl:text-3xl mb-1 h-5 2xl:h-7;
 }
 .skill__title {
   @apply h-4;

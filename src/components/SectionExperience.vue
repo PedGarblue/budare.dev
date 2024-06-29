@@ -103,13 +103,13 @@ onMounted(() => {
   {
     "en": {
       "title": "Professional Experience",
-      "download_cv": "View my CV",
+      "download_cv": "Download CV",
       "contact_me_at_linkedin": "Contact me at ",
       "or": "Or"
     }, 
     "es": {
       "title": "Experiencia Profesional",
-      "download_cv": "Ver CV",
+      "download_cv": "Descargar CV",
       "contact_me_at_linkedin": "Contáctame en",
       "or": "O"
     }
