@@ -46,8 +46,14 @@ export default {
 </script>
 
 <style lang="postcss">
+  .skills-section .section-container {
+    @apply my-auto;
+  }
+</style>
+
+<style lang="postcss" scoped>
 .skills-section {
-  @apply relative;
+  @apply flex flex-col relative;
 }
 </style>
 

@@ -1,11 +1,7 @@
 <template>
   <section :id="name">
+    <section-title :title="title" :gradient="titleGradient"/>
     <div class="section-container">
-      <h2 v-if="title" class="tracking-wider text-center">
-        <font-awesome-icon v-if="faIcon" :icon="faIcon" class="mr-1" />
-        <custom-icon v-else-if="icon" :icon="icon" class="mr-1" />
-        {{ title }}
-      </h2>
       <div class="section-body">
         <slot name="body"></slot>
       </div>
@@ -19,10 +15,12 @@
 
 <script>
 import CustomIcon from './lib/CustomIcon.vue'
+import SectionTitle from './SectionTitle.vue';
 
 export default {
   components: {
     CustomIcon,
+    SectionTitle,
   },
   props: {
     name: {
@@ -32,6 +30,11 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+    titleGradient: {
+      type: String,
+      required: false,
+      default: '103deg, rgb(20 7 39) 0%, rgb(106 31 63) 35%, rgb(173 51 82) 62%, rgba(75, 18, 35, 1) 100%',
     },
     faIcon: {
       type: Array,
@@ -53,12 +56,9 @@ h2 {
 }
 section {
   @apply px-3 md:px-0;
-  height: calc(100vh);
+  min-height: 100vh;
   text-align: left;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-
-  scroll-margin-top: 0;
+  padding-top: 0rem;
 }
 .section-container {
   @apply h-full;

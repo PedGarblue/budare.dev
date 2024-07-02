@@ -1,16 +1,28 @@
-import { onMounted, inject } from "vue";
+import { onMounted, inject, ref, defineProps } from "vue";
 
 export function useAnimation({
     animationElement,
     animationCallback,
     framerate = 60,
 }) {
+
     const MAX_FRAME_RATE = framerate;
     const FRAME_DIFF = 1000 / MAX_FRAME_RATE;
     let lastDrawTime = 0;
 
     const backgroundIsIntersecting = inject('backgroundIsIntersecting', false);
     const backgroundsIntersect = inject('backgroundsIntersect');
+
+    const getProps = () => ({
+      width: {
+        type: Number,
+        default: 0,
+      },
+      height: {
+        type: Number,
+        default: 0,
+      },
+    });
 
     function init() {
       const now = Date.now();
@@ -31,5 +43,5 @@ export function useAnimation({
       backgroundsIntersect(animationElement.value, init)
     });
 
-    return { init }
+    return { init, getProps }
 }

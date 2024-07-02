@@ -16,6 +16,16 @@ module.exports = {
         ubuntu: ['Ubuntu', 'sans-serif'],
         bungee: ['Bungee', 'cursive'],
       },
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-0.5deg)' },
+          '50%': { transform: 'rotate(0.5deg)' },
+        },
+      },
+      animation: {
+        wiggle: 'wiggle 4s ease-in-out infinite',
+        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      },
     },
   },
   plugins: [],

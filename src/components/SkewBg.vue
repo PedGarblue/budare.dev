@@ -7,26 +7,40 @@
   ></canvas>
 </template>
 
-<script>
+<script setup>
 import colormap from 'colormap';
 import { computed, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
 import { useAnimation } from '../composables/useAnimation';
 import { useScreenData } from '../composables/useScreenData';
 
-export default {
-  props: {
-    animationDirection: {
-      type: String,
-      default: 'from-tr-to-bl',
-    },
-  },
-  setup(props) {
     const skewbg = ref('skewbg');
+
+    const { init, getProps } = useAnimation({
+      animationElement: skewbg,
+      animationCallback,
+      framerate: 20,
+    })
+
+    const props = defineProps({
+      animationDirection: {
+        type: String,
+        default: 'from-tr-to-bl',
+      },
+      width: {
+        type: Number,
+        default: 0,
+      },
+      height: {
+        type: Number,
+        default: 0,
+      },
+    })
+
     const context = computed(() => skewbg.value.getContext('2d', { alpha: false }));
     let frame = 0;
-    let width = window.innerWidth;
-    let height = window.innerHeight;
+    let width = props.width || window.innerWidth;
+    let height = props.height || window.innerHeight;
     const { getViewType } = useScreenData();
 
     const squareCountByView = {
@@ -49,14 +63,14 @@ export default {
     function animationCallback() {
         const ctx = context.value;
         const colors = colormap({
-          colormap: 'density',
-          nshades: 36,
+          colormap: 'inferno',
+          nshades: 20,
           format: 'rgbaString',
           alpha: 1,
         });
         const prevSectionBgColors = colormap({
           colormap: 'inferno',
-          nshades: 100,
+          nshades: 20,
           format: 'rgbaString',
           alpha: 1,
         });
@@ -72,18 +86,4 @@ export default {
 
         frame++;
     }
-
-    const { init } = useAnimation({
-      animationElement: skewbg,
-      animationCallback,
-      framerate: 20,
-    })
-
-    return {
-      skewbg,
-      width,
-      height,
-    };
-  },
-};
 </script>

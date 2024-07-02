@@ -6,21 +6,32 @@ import contact from '@/data/contact';
 import ExperienceItem from './ExperienceItem.vue';
 import PageSection from './PageSection.vue';
 import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
+import AnimatedHeading from './lib/AnimatedHeading.vue';
 
 const ParallelGridsBg = defineAsyncComponent(() =>
   import('./ParallelGridsBg.vue')
 );
 
 const carousel = ref(null);
+const experience = ref(null);
+const canvas = ref(null);
+
+const canvasBgSize = ref({
+  width: 0,
+  height: 0,
+});
 
 const { t } = useI18n({
   inheritLocale: true,
   useScope: 'local',
 });
 
-
-onMounted(() => {
+onMounted(async () => {
   carousel.value.updateTotalItems(experiences.length)
+  canvasBgSize.value = {
+    width: experience.value.$el.offsetWidth,
+    height: experience.value.$el.offsetHeight,
+  }
 })
 </script>
 
@@ -29,10 +40,24 @@ onMounted(() => {
     name="experience"
     :title="t('title')"
     class="about relative"
+    ref="experience"
   >
     <template #body>
       <div class="experience-contents">
-        <div class="hidden lg:flex flex-col gap-4 lg:gap-8">
+        <div class="flex flex-row pb-6">
+          <animated-heading
+            heading-type="h2"
+            text="4+ years"
+            start-color="#3f7cb5"
+            end-color="#ebe3e3"
+            class="font-nunito tracking-wider"
+          />
+          <div class="text-3xl font-bold font-monserrat mt-auto mb-2">
+            Building Web Products
+          </div> 
+
+        </div>
+        <div class="hidden lg:flex flex-col gap-4 lg:gap-8 pb-10">
           <ExperienceItem
             v-for="experience in experiences"
             :key="experience.title"
@@ -63,7 +88,7 @@ onMounted(() => {
           <div>
             <p>{{ t('or') }}</p>
           </div>
-          <div>
+          <div >
             <a
               class="mx-auto font-semibold text-sm xl:text-base 2xl:text-xl"
               :href="contact.linkedin"
@@ -80,14 +105,14 @@ onMounted(() => {
     </template>
 
     <template #section-bg>
-      <parallel-grids-bg />
+      <parallel-grids-bg ref="canvas" :width="canvasBgSize.width" :height="canvasBgSize.height" />
     </template>
   </page-section>
 </template>
 
 <style lang="postcss">
 .experience-contents {
-  @apply flex flex-col h-full lg:bg-opacity-30 lg:rounded-3xl lg:px-8 lg:py-6;
+  @apply flex flex-col h-full lg:bg-opacity-30 lg:rounded-3xl lg:px-8 lg:py-6 gap-5;
 }
 .about {
 }

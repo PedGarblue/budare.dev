@@ -1,5 +1,5 @@
 <template>
-  <section id="blurb">
+  <section id="blurb" ref="section">
     <div class="blurb" data-aos="fade" data-aos-easing="ease-in-sine">
       <div class="blurb__photo">
         <img :src="aboutme.picture" />
@@ -16,34 +16,16 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import { useI18n } from 'vue-i18n';
 import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
-import contact from '@/data/contact';
 import CanvasBg from '@/components/CanvasBg.vue';
-import EmailCopy from '@/components/EmailCopy.vue';
 
-export default {
-  name: 'SectionBlurb',
-  components: {
-    CanvasBg,
-    SocialLinks,
-    EmailCopy,
-  },
-  setup() {
-    const { t } = useI18n({
-      inheritLocale: true,
-      useScope: 'local',
-    });
-
-    return {
-      t,
-      contact,
-      aboutme,
-    };
-  },
-};
+const { t } = useI18n({
+  inheritLocale: true,
+  useScope: 'local',
+});
 </script>
 
 <style lang="postcss" scoped>

@@ -24,8 +24,8 @@
 #go-to-top {
   @apply flex fixed w-12 h-12 p-4 bg-gray-900 bg-opacity-40 border rounded-full text-white;
   backdrop-filter: blur(5px);
-  top: calc(100vh - 7rem);
-  left: calc(100vw - 4rem);
+  top: calc(100dvh - 7rem);
+  left: calc(100dvw - 4rem);
   cursor: pointer;
   transition: opacity 0.3s;
   z-index: 99999;

@@ -1,6 +1,18 @@
 <template>
-  <page-section name="projects" class="projects" :title="t('title')">
+  <page-section
+    name="projects"
+    class="projects"
+    :title="t('title')"
+    ref="section"
+  >
     <template #body>
+      <div class="mb-10">
+        <animated-heading headingType="h2" text="Agile" start-color="#7928CA" end-color="#FF0080"></animated-heading>
+        <animated-heading headingType="h2" text="experimentation" start-color="#007CF0" end-color="#00DFD8"></animated-heading>
+        <div class="max-w-prose border-l-2 border-gray-900 px-5 mt-4 text-gray-200 italic">
+          I treat my projects like products, aiming for solutions that others and myself can use. I focus on long-term projects, thoroughly exploring a framework or language carefully and extensively rather than making many small applications.
+        </div>
+      </div>
       <div class="hidden lg:flex flex-wrap gap-y-5">
         <projects-item
           v-for="project in projects"
@@ -22,7 +34,7 @@
           />
         </component-carousel>
       </div>
-      <div class="flex w-full pb-8 mt-auto">
+      <div class="flex w-full mb-8 mt-20">
         <a
           class="mx-auto font-bold text-sm md:text-xl"
           :href="contact.github"
@@ -37,21 +49,28 @@
     </template>
 
     <template #section-bg>
-      <skew-bg />
+      <skew-bg v-bind="animBackgroundOptions" />
     </template>
   </page-section>
 </template>
 
 <script setup>
-import { defineAsyncComponent, onMounted, ref } from 'vue';
+import { defineAsyncComponent, onMounted, reactive, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import projects from '@/data/projects';
 import contact from '@/data/contact';
 import ProjectsItem from './ProjectsItem.vue';
 import PageSection from './PageSection.vue';
 import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
+import AnimatedHeading from '@/components/lib/AnimatedHeading.vue';
 
 const SkewBg = defineAsyncComponent(() => import('./SkewBg.vue'));
+const section = ref(null);
+const animBackgroundOptions = reactive({
+  width: window.innerWidth,
+  height: window.innerHeight,
+  animationDirection: 'from-tr-to-bl',
+});
 
 const { t } = useI18n({
   inheritLocale: true,
@@ -62,12 +81,14 @@ const carousel = ref(null);
 
 onMounted(() => {
   carousel.value.updateTotalItems(projects.length);
+  animBackgroundOptions.width = section.value.$el.offsetWidth;
+  animBackgroundOptions.height = section.value.$el.offsetHeight;
 });
 </script>
 
 <style lang="postcss">
 .projects .section-container {
-  @apply lg:bg-opacity-30 lg:bg-gray-800 rounded-lg pt-2 lg:py-6 lg:px-8;
+  @apply lg:bg-opacity-30 lg:bg-gray-800 pt-2 lg:py-6 lg:px-8;
   backdrop-filter: blur(10px);
 }
 </style>

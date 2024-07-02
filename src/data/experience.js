@@ -8,6 +8,7 @@ import igx2 from '@/assets/img/igx_2.png'
 import igx3 from '@/assets/img/igx_3.png'
 import igx4 from '@/assets/img/igx_4.png'
 import igx5 from '@/assets/img/igx_5.png'
+import freelancer1 from '@/assets/img/freelancer_img.png'
 
 export const experiences = [
   {
@@ -15,7 +16,7 @@ export const experiences = [
     employer: 'VALocator',
     employer_link: 'https://www.valocator.com',
     title: 'Fullstack Developer',
-    description: `Development of a Recruiter Management App. This system significantly shortened the recruitment process of Virtual Assistants to less than 3 days. Developed with Laravel, Vue, Tailwind, MySQL and deployed it live on an Ubuntu VPS.`,
+    description: `Collaborated in the development of a Recruitment Management App that streamlined the onboarding, tracking, and selection process of Virtual Assistants. Implemented CMS to publish job posts, and algorithmically suggest suitable VAs to Recruiters.`,
     from: 'March 2023',
     to: 'May 2024',
     tags: [
@@ -29,10 +30,6 @@ export const experiences = [
       {
         icon: 'tailwind',
         title: 'TailwindCSS',
-      },
-      {
-        icon: 'bootstrap',
-        title: 'Bootstrap',
       },
       {
         icon: 'laravel',
@@ -50,9 +47,9 @@ export const experiences = [
     employer_link: 'https://www.instagram.com/innovativegx/',
     title: 'Fullstack Developer',
     description: [
-      `Developed a Client Portal for Pharmacological Sample Results using PHP8 Laravel 9, Vue 3, InertiaJS, and TailwindCSS. Successfully deployed live on an Ubuntu VPS.`,
-      `Implemented and maintained a Sales Reporting App using Vue and Bootstrap on the frontend and Laravel on the backend, with MySQL as RDBMS. Successfully deployed it live on an Ubuntu VPS.`,
-      `Provided support on several projects for optimization and debugging, using languages such as JavaScript, PHP and Python.`,
+      `Development and Deployment of a Client Portal for a treatment mapping system to automatically assess possible treatment options based on present pathogens and genes.`,
+      `Development of a data visualization website to review and assess the performance of sales representatives`,
+      `Provided support on internal backend projects for optimization and debugging to store and share data between labs following HIPPA standards.`,
     ],
     from: 'July 2021',
     to: 'March 2023',
@@ -69,12 +66,37 @@ export const experiences = [
         title: 'TailwindCSS',
       },
       {
-        icon: 'bootstrap',
-        title: 'Bootstrap',
-      },
-      {
         icon: 'laravel',
         title: 'Laravel',
+      },
+      {
+        icon: 'mysql',
+        title: 'MySQL',
+      },
+    ],
+  },
+  {
+    images: [freelancer1],
+    employer: 'Freelance',
+    title: 'Fullstack Developer',
+    description: [
+      `Optimized, maintained and improved Legacy Websites, mainly niche
+discussion forums with HTML5, Pure CSS, JavaScript, and PHP.`
+    ],
+    from: 'Oct 2019',
+    to: 'July 2021',
+    tags: [
+      {
+        icon: ['fab', 'html5'],
+        title: 'HTML & CSS3',
+      },
+      {
+        icon: ['fab', 'php'],
+        title: 'PHP',
+      },
+      {
+        icon: ['fab', 'js'],
+        title: 'Javascript',
       },
       {
         icon: 'mysql',

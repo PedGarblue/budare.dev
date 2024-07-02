@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <div>
+  <div class="flex flex-row">
     <div class="experience-item-container">
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
@@ -34,8 +34,7 @@ defineProps({
         <div
           class="flex flex-row gap-x-4 flex-wrap items-center lg:gap-0 lg:flex-col lg:items-start mb-1"
         >
-          <h2 class="text-lg xl:text-xl 2xl:text-2xl font-bold">{{ experience.title }}</h2>
-          <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat">
+          <h2 class="text-lg xl:text-xl 2xl:text-3xl font-semibold font-monserrat">
             {{ experience.employer }}
             <a
               v-if="experience.employer_link"
@@ -48,6 +47,9 @@ defineProps({
                 :icon="['fas', 'link']"
               />
             </a>
+          </h2>
+          <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat">
+            {{ experience.title }}
           </h3>
           <p class="text-sm 2xl:text-base">{{ experience.from }} - {{ experience.to }}</p>
         </div>
@@ -59,12 +61,12 @@ defineProps({
             <li
               v-for="point in experience.description"
               :key="point"
-              class="text-xs my-1 2xl:text-sm"
+              class="text-xs my-1 2xl:text-base font-medium"
             >
               {{ point }}
             </li>
           </ol>
-          <p v-else class="text-xs 2xl:text-sm">
+          <p v-else class="text-xs 2xl:text-base font-medium">
             {{ experience.description }}
           </p>
 
@@ -83,7 +85,7 @@ defineProps({
 
 <style lang="postcss" scoped>
 .experience-item-container {
-  @apply grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 items-start gap-2 2xl:gap-4;
+  @apply grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 items-start gap-2 2xl:gap-4 items-center;
 }
 
 .experience-description-list {

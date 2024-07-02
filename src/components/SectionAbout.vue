@@ -103,7 +103,17 @@ const colors = colormap({
     // color: rgba(230,241,241,1); 
 </script>
 
+<style lang="postcss">
+.about .section-container {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+</style>
+
 <style lang="postcss" scoped>
+.about {
+  @apply flex flex-col;
+}
 .about {
     @apply relative;
 }

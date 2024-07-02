@@ -3,15 +3,11 @@
     <div class="relative z-10">
       <SectionBlurb />
       <MainNav />
-      <section-separator />
       <SectionExperience />
-      <section-separator />
       <SectionProjects />
-      <section-separator />
       <SectionSkills />
-      <section-separator />
       <SectionAbout />
-      <section-separator />
+      <SectionSeparator />
       <MainFooter />
     </div>
   </div>
@@ -161,37 +157,37 @@ export default {
 
     // hooks
     onMounted(() => {
-      calculateSectionOffsets();
+      // calculateSectionOffsets();
 
-      window.addEventListener('DOMMouseScroll', handleMouseWheelDOM); // Mozilla Firefox
-      window.addEventListener('mousewheel', handleMouseWheel, {
-        passive: false,
-      }); // Other browsers
+      // window.addEventListener('DOMMouseScroll', handleMouseWheelDOM); // Mozilla Firefox
+      // window.addEventListener('mousewheel', handleMouseWheel, {
+      //   passive: false,
+      // }); // Other browsers
 
-      window.addEventListener('touchstart', touchStart, {
-        passive: false,
-      }); // mobile devices
-      window.addEventListener('touchmove', touchMove, { passive: false }); // mobile devices
+      // window.addEventListener('touchstart', touchStart, {
+      //   passive: false,
+      // }); // mobile devices
+      // window.addEventListener('touchmove', touchMove, { passive: false }); // mobile devices
 
-      // if url has hash, scroll to that section
-      if (window.location.hash) {
-        let hash = window.location.hash.replace('#', '');
-        let sectionIndex = offsets.value.indexOf(document.getElementById(hash).offsetTop);
+      // // if url has hash, scroll to that section
+      // if (window.location.hash) {
+      //   let hash = window.location.hash.replace('#', '');
+      //   let sectionIndex = offsets.value.indexOf(document.getElementById(hash).offsetTop);
 
-        if (sectionIndex > -1) {
-          scrollToSection(sectionIndex, true);
-        }
-      }
+      //   if (sectionIndex > -1) {
+      //     scrollToSection(sectionIndex, true);
+      //   }
+      // }
     });
 
     onUnmounted(() => {
-      window.removeEventListener('mousewheel', handleMouseWheel, {
-        passive: false,
-      }); // Other browsers
-      window.removeEventListener('DOMMouseScroll', handleMouseWheelDOM); // Mozilla Firefox
+      // window.removeEventListener('mousewheel', handleMouseWheel, {
+      //   passive: false,
+      // }); // Other browsers
+      // window.removeEventListener('DOMMouseScroll', handleMouseWheelDOM); // Mozilla Firefox
 
-      window.removeEventListener('touchstart', touchStart); // mobile devices
-      window.removeEventListener('touchmove', touchMove); // mobile devices
+      // window.removeEventListener('touchstart', touchStart); // mobile devices
+      // window.removeEventListener('touchmove', touchMove); // mobile devices
     });
   
     provide('activeSection', activeSection);
