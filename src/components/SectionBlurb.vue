@@ -31,7 +31,7 @@ const { t } = useI18n({
 <style lang="postcss" scoped>
 #blurb {
   @apply flex flex-col justify-center items-center pb-0 relative;
-  height: calc(100dvh - 4rem);
+  height: calc(100vh - 4rem);
 }
 
 /* .blurb {} */
@@ -60,7 +60,7 @@ const { t } = useI18n({
 
 @media screen and (min-width: 768px) {
   #blurb {
-    height: calc(100dvh - 4rem);
+    height: calc(100vh - 4rem);
   }
 }
 .blurb {

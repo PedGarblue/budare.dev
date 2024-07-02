@@ -4,7 +4,7 @@
             :style="`--content: '${text}'; --start-color: ${
             startColor
             }; --end-color: ${endColor};`"
-            class="animated-text-bg drop-shadow-xl text-5xl xl:text-8xl 2xl:text-8xl block font-black uppercase"
+            class="animated-text-bg drop-shadow-xl text-4xl xl:text-8xl 2xl:text-8xl block font-black uppercase"
         >
             <span class="animated-text-fg ">{{ text }}</span>
         </span>

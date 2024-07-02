@@ -44,7 +44,7 @@ onMounted(async () => {
   >
     <template #body>
       <div class="experience-contents">
-        <div class="flex flex-row pb-6">
+        <div class="flex flex-col md:flex-row pb-6">
           <animated-heading
             heading-type="h2"
             text="4+ years"

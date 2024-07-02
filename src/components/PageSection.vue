@@ -55,13 +55,12 @@ h2 {
   font-family: 'Montserrat Alternates', sans-serif;
 }
 section {
-  @apply px-3 md:px-0;
   min-height: 100vh;
   text-align: left;
   padding-top: 0rem;
 }
 .section-container {
-  @apply h-full;
+  @apply h-full px-3 md:px-0;
 }
 .section-body {
   display: flex;

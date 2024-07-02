@@ -8,7 +8,12 @@
     <template #body>
       <div class="mb-10">
         <animated-heading headingType="h2" text="Agile" start-color="#7928CA" end-color="#FF0080"></animated-heading>
-        <animated-heading headingType="h2" text="experimentation" start-color="#007CF0" end-color="#00DFD8"></animated-heading>
+        <animated-heading
+          headingType="h2"
+          text="experimentation"
+          start-color="#007CF0"
+          end-color="#00DFD8"
+        ></animated-heading>
         <div class="max-w-prose border-l-2 border-gray-900 px-5 mt-4 text-gray-200 italic">
           I treat my projects like products, aiming for solutions that others and myself can use. I focus on long-term projects, thoroughly exploring a framework or language carefully and extensively rather than making many small applications.
         </div>
