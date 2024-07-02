@@ -74,7 +74,6 @@ export default {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4rem;
   padding: 0.1rem 0;
   z-index: 3;
   font-family: 'Montserrat Alternates', sans-serif;

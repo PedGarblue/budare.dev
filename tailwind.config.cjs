@@ -3,6 +3,9 @@ module.exports = {
   content: ['./public/**/*.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      spacing: {
+        '30': '7.5rem',
+      },
       colors: {
         cyan: colors.cyan,
         sky: colors.sky,

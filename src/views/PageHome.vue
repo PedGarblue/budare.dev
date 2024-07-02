@@ -2,7 +2,7 @@
   <div class="home relative">
     <div class="relative z-10">
       <SectionBlurb />
-      <MainNav />
+      <MainNav class="h-16 -mt-30 md:-mt-16" />
       <SectionExperience />
       <SectionProjects />
       <SectionSkills />
