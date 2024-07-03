@@ -458,6 +458,18 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.18.0.tgz#5d694d345ce36b6ecf657349e03eb87297e68da4"
   integrity sha512-UOo5FdvOL0+eIVTgS4tIdbW+TtnBLWg1YBCcU2KWM7nuNwRz9bksDX1bekJJCpu25N1DVWaCwnT39dVQxzqS8g==
 
+"@tabler/icons-vue@^3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-vue/-/icons-vue-3.8.0.tgz#d3f2cc09dbd1eac713d7be2f6bda03db7e4b888c"
+  integrity sha512-5RoQreMCD2SzWTI3iJzYrYbtNeB/A6m0Q87OqAVFJ8GrswhL73xhLZYh52BMjfSA3paNCJ+yH2s+3HiwlEOPOA==
+  dependencies:
+    "@tabler/icons" "3.8.0"
+
+"@tabler/icons@3.8.0":
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/@tabler/icons/-/icons-3.8.0.tgz#99a309d60814368705a648d7d0cef77a7a5ffcc1"
+  integrity sha512-SVZSrb0REaTEu+soj+9RTnPpCqIWFYHJ0lhyk+oo6uXr33Ecx2JBcBGeEo/WbIWZg4UF8NIZSVKQgI2PHBokJA==
+
 "@tailwindcss/postcss7-compat@npm:@tailwindcss/postcss7-compat":
   version "2.2.17"
   resolved "https://registry.yarnpkg.com/@tailwindcss/postcss7-compat/-/postcss7-compat-2.2.17.tgz#dc78f3880a2af84163150ff426a39e42b9ae8922"
