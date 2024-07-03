@@ -11,12 +11,13 @@
       </div>
     </div>
     <div class="w-full h-full absolute z-negative">
-      <canvas-bg />
+      <canvas-bg v-bind="animBackgroundOptions" />
     </div>
   </section>
 </template>
 
 <script setup>
+import { onMounted, reactive, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
@@ -26,12 +27,23 @@ const { t } = useI18n({
   inheritLocale: true,
   useScope: 'local',
 });
+
+const section = ref(null)
+const animBackgroundOptions = reactive({
+  width: window.innerWidth,
+  height: window.innerHeight,
+})
+
+onMounted(() => {
+  animBackgroundOptions.width = section.value.offsetWidth
+  animBackgroundOptions.height = section.value.offsetHeight
+})
 </script>
 
 <style lang="postcss" scoped>
 #blurb {
   @apply flex flex-col justify-center items-center pb-0 relative;
-  height: calc(100vh - 4rem);
+  height: calc(100vh);
 }
 
 /* .blurb {} */
@@ -60,7 +72,7 @@ const { t } = useI18n({
 
 @media screen and (min-width: 768px) {
   #blurb {
-    height: calc(100vh - 4rem);
+    height: calc(100vh);
   }
 }
 .blurb {

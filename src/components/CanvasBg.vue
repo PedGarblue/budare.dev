@@ -15,9 +15,15 @@ import colormap from 'colormap';
 import { TheGrid } from '../grid/grid';
 import { useAnimation } from '../composables/useAnimation';
 
-const props = defineProps({
-  width: Number,
-  height: Number,
+const { width, height } = defineProps({
+  width: {
+    type: Number,
+    default: 0,
+  },
+  height: {
+    type: Number,
+    default: 0,
+  },
 });
 
 const canvasbg = ref('canvasbg');
@@ -30,8 +36,6 @@ const bgParams = {
   bgGradientColorB: 10,
 };
 
-let width = props.width | window.innerWidth;
-let height = props.height | window.innerHeight;
 
 // global params
 let frame = 0;
