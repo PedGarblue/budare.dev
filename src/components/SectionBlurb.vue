@@ -69,17 +69,10 @@ onMounted(() => {
 .desc__workname {
   @apply text-xl font-monserrat text-gray-300;
 }
-
-@media screen and (min-width: 768px) {
-  #blurb {
-    height: calc(100vh);
-  }
-}
 .blurb {
   @apply mx-auto flex items-center flex-col lg:flex-row;
   padding: 0 1rem;
-  margin-top: 1rem; /* Equivalent to $medium */
-  padding-top: 4rem; /* Equivalent to $extra-big-space */
+  padding-top: 0rem;
   margin-right: auto
 }
 
@@ -87,7 +80,7 @@ onMounted(() => {
   @apply flex justify-center;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 1rem; /* Equivalent to $medium-space */
+  margin-bottom: 1rem;
 }
 
 .blurb__photo img {
@@ -98,7 +91,10 @@ onMounted(() => {
   border-radius: 50%;
 }
 
-@media (min-width: 800px) {
+@media (min-width: theme('screens.lg')) {
+  #blurb {
+    height: calc(100vh);
+  }
   .blurb {
     margin-left: 12vw;
   }

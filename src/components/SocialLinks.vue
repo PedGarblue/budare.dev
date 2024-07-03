@@ -43,9 +43,7 @@ import EmailCopy from './EmailCopy.vue';
 
 <style lang="postcss" scoped>
 .social-links {
-  @apply flex items-center justify-center gap-8;
-
-  font-size: 2rem;
+  @apply flex items-center justify-center gap-8 text-3xl;
 }
 
 .social-links__item {

@@ -44,7 +44,7 @@ onMounted(async () => {
   >
     <template #body>
       <div class="experience-contents">
-        <div class="flex flex-col md:flex-row pb-6">
+        <div class="flex flex-col md:flex-row my-10">
           <animated-heading
             heading-type="h2"
             text="4+ years"
@@ -52,7 +52,7 @@ onMounted(async () => {
             end-color="#ebe3e3"
             class="font-nunito tracking-wider"
           />
-          <div class="text-3xl font-bold font-monserrat mt-auto mb-2">
+          <div class="text-3xl font-bold font-monserrat mt-auto mb-2 md:ml-2">
             Building Web Products
           </div> 
 
