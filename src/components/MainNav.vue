@@ -1,33 +1,19 @@
 <template>
   <nav class="navbar">
     <div class="navbar__contents">
-      <!-- <router-link to="/" class="navbar__brand brand">
-        <font-awesome-icon :icon="['fas', 'code']" class="brand__icon" />
-        <span class="brand__title">
-          {{ t('name') }}
-        </span>
-      </router-link> -->
       <div class="navbar__items">
         <a
-          href="#experience"
+          v-for="(link, i) in links"
+          :href="link.href"
           class="navbar__link"
-          @click.prevent="scrollToSection('experience')"
+          :key="i"
         >
-          {{ t('link.experience') }}
-        </a>
-        <a
-          href="#skills"
-          class="navbar__link"
-          @click.prevent="scrollToSection('skills')"
-        >
-          {{ t('link.knowledge') }}
-        </a>
-        <a
-          href="#contact"
-          class="navbar__link"
-          @click.prevent="scrollToSection('contact')"
-        >
-          {{ t('link.contact') }}
+          <span class="md:hidden">
+            <component :is="link.icon" size="26" />
+          </span>
+          <span class="hidden md:inline">
+            {{ link.title }}
+          </span>
         </a>
       </div>
       <div class="absolute right-0 ml-auto">
@@ -37,46 +23,59 @@
   </nav>
 </template>
 
-<script>
+<script setup>
 import { useI18n } from 'vue-i18n';
 import LocaleSwitcher from '@/components/lib/LocaleSwitcher.vue';
-import aboutme from '@/data/aboutme';
-import { inject } from 'vue';
+import { IconHome, IconBriefcase, IconApps, IconBrandGithub, IconUser, IconMessage } from '@tabler/icons-vue';
 
-export default {
-  name: 'MainNav',
-  components: {
-    LocaleSwitcher,
-  },
-  setup() {
-    const { t, locale } = useI18n({
-      inheritLocale: true,
-      useScope: 'local',
-    });
+const { t, locale } = useI18n({
+  inheritLocale: true,
+  useScope: 'local',
+});
 
-    // sections are defined in the PageHome component
-    const scrollToSection = inject('scrollToSection')
-
-    return { t, locale, scrollToSection };
+const links = [
+  {
+    title: t('link.home'),
+    href: '#blurb',
+    icon: IconHome,
   },
-  data() {
-    return {
-      aboutme,
-    };
+  {
+    title: t('link.experience'),
+    href: '#experience',
+    icon: IconBriefcase,
   },
-};
+  {
+    title: t('link.projects'),
+    href: '#projects',
+    icon: IconApps,
+  },
+  {
+    title: t('link.knowledge'),
+    href: '#skills',
+    icon: IconBrandGithub,
+  },
+  {
+    title: t('link.about'),
+    href: '#about',
+    icon: IconUser
+  },
+  {
+    title: t('link.contact'),
+    href: '#contact',
+    icon: IconMessage,
+  },
+]
 </script>
 
 <style lang="postcss" scoped>
 .navbar {
-  @apply bg-opacity-10;
+  @apply bg-opacity-10 font-nunito;
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   padding: 0.1rem 0;
   z-index: 3;
-  font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .navbar__contents {
@@ -84,12 +83,13 @@ export default {
 }
 
 .navbar__items {
-  @apply relative flex gap-3 justify-center items-center mx-auto text-xl;
+  @apply py-2 px-4 rounded-full relative flex gap-3 justify-center items-center mx-auto text-xl bg-gray-900 bg-opacity-20;
+  backdrop-filter: blur(10px);
 }
 
 .navbar__link {
   @apply
-    tracking-widest text-sm font-bold py-2 px-4 text-gray-100 rounded lg:text-xl;
+    tracking-widest text-sm font-bold py-2 px-2 md:px-6 text-gray-100 rounded-full lg:text-xl bg-gray-900 bg-opacity-20;
 }
 
 .brand {
@@ -108,7 +108,6 @@ export default {
 
   .navbar__link:hover {
     @apply bg-gray-800 bg-opacity-30;
-    backdrop-filter: blur(5px);
   }
 
   .brand {
@@ -127,6 +126,7 @@ export default {
   "en" :{
     "name": "Pedro García",
     "link": {
+      "home": "Home",
       "about": "About",
       "experience": "Experience",
       "projects": "Projects",
@@ -137,6 +137,7 @@ export default {
   "es" :{
     "name": "Pedro García",
     "link": {
+      "home": "Inicio",
       "about": "Acerca",
       "experience": "Experiencia",
       "projects": "Proyectos",
