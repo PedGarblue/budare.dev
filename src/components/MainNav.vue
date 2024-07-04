@@ -89,7 +89,7 @@ const links = [
 
 .navbar__link {
   @apply
-    tracking-widest text-sm font-bold py-2 px-2 md:px-6 text-gray-100 rounded-full lg:text-xl bg-gray-900 bg-opacity-20;
+    tracking-wide text-sm font-bold py-2 px-2 md:px-6 text-gray-100 rounded-full lg:text-xl bg-gray-900 bg-opacity-20;
 }
 
 .brand {

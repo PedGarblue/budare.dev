@@ -12,7 +12,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-row md:py-6">
     <div class="experience-item-container">
       <!--
           TODO: for some reason img renders with borders, cant remove with properties (very surreal behavior)
@@ -48,10 +48,10 @@ defineProps({
               />
             </a>
           </h2>
-          <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat">
+          <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat text-gray-300">
             {{ experience.title }}
           </h3>
-          <p class="text-sm 2xl:text-base">{{ experience.from }} - {{ experience.to }}</p>
+          <p class="text-sm font-light">{{ experience.from }} - {{ experience.to }}</p>
         </div>
         <div class="h-full flex flex-col-reverse gap-y-2">
           <ol
