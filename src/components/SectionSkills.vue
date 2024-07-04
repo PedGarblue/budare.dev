@@ -6,7 +6,7 @@
     ref="section"
   >
     <template #body>
-      <skills-list :items="skills.misc" />
+      <skills-list :items="skills.technical" />
       <skills-list :items="skills.languages" />
     </template>
 

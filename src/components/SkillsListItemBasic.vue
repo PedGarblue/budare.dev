@@ -7,14 +7,17 @@
       class="skill__icon"
     />
     <span class="skill__title">
-      {{ title }}
+      {{ skill.title }}
+    </span>
+    <div v-if="skill.level" class="mt-2 text-gray-300">
+      <span>{{ skill.level }}</span>
       <span
         v-if="skill.certificate"
         class="skill__certificate"
       >
         <custom-icon :icon="['fas', 'certificate']" />
       </span>
-    </span>
+    </div>
   </component>
 </template>
 
@@ -41,39 +44,36 @@ const linkAttributes = computed(() => {
   }
   return {}
 })
-
-const title = computed(() => {
-  let title = props.skill.title;
-  if (props.skill.level) title = `${title} - ${props.skill.level}`;
-  return title;
-
-})
 </script>
 
 <style lang="postcss" scoped>
 .skill {
-  @apply flex
+  @apply
+    flex
     flex-col
     m-4
-    py-1
-    rounded
+    py-2
+    rounded-3xl
     text-white
-    text-xs
+    text-sm
     font-bold
+    transform-gpu
+    transition-transform
+    md:hover:scale-105
     lg:w-max
-    lg:py-2 lg:px-4 
+    lg:py-4 lg:px-8 
     lg:bg-gray-800
     lg:border
     lg:border-gray-900
     lg:border-opacity-30
-    lg:bg-opacity-20
+    lg:bg-opacity-40
     lg:shadow-md
-    2xl:text-sm
+    2xl:text-base
   ;
 
   align-items: center;
   flex-wrap: wrap;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
 }
 .skill__icon {
   @apply text-xl 2xl:text-3xl mb-1 h-5 2xl:h-7;
@@ -82,7 +82,7 @@ const title = computed(() => {
   @apply h-4;
 }
 .skill__certificate {
-  @apply md:ml-2;
+  @apply ml-1 md:ml-2;
   color: #d6bf4d;
 }
 </style>
