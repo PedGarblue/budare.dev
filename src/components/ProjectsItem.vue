@@ -22,9 +22,11 @@
             :data="tag"
           />
         </div>
-        <p class="project__desc">
-          {{ project.desc[locale] }}
-        </p>
+        <div class="project__desc">
+          <p v-for="(paragraph, i) in description" :key="i">
+            {{ paragraph }}
+          </p>
+        </div>
       </div>
     </div>
     <a
@@ -37,31 +39,25 @@
   </div>
 </template>
 
-<script>
+<script setup>
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import ProjectsTag from './ProjectsTag.vue';
 
-export default {
-  name: 'ProjectsItem',
-  components: { ProjectsTag },
-  props: {
-    project: {
-      type: Object,
-      required: true,
-    },
+const props = defineProps({
+  project: {
+    type: Object,
+    required: true,
   },
-  setup() {
-    const { t, locale } = useI18n({
-      inheritLocale: true,
-      useScope: 'local',
-    });
+});
+const { t, locale } = useI18n({
+  inheritLocale: true,
+  useScope: 'local',
+});
 
-    return {
-      t,
-      locale,
-    };
-  },
-};
+const description = computed(() => {
+  return props.project.desc[locale.value].split('\n');
+});
 </script>
 
 <style lang="postcss" scoped>
@@ -100,7 +96,11 @@ export default {
 }
 
 .project__desc {
-  @apply mt-2;
+  @apply mt-2 text-sm;
+}
+
+.project__desc p {
+  @apply text-left py-0.5;
 }
 
 .project__source span {

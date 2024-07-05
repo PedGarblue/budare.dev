@@ -117,7 +117,7 @@ onMounted(() => {
     "animated-heading-2": "Engineering",
     "title": "Projects",
     "summary": "I treat my projects like products, aiming for solutions that others and myself can use. I focus on long-term projects, thoroughly exploring a framework or language carefully and extensively.",
-    "seemore": "See more in",
+    "seemore": "More in",
     "projects": {
       "summary": "My focus on creating a personal project is that can be useful for me and for others."
     }
@@ -127,7 +127,7 @@ onMounted(() => {
     "animated-heading-2": "Engineering",
     "title": "Proyectos",
     "summary": "I treat my projects like products, aiming for solutions that others and myself can use. I focus on long-term projects, thoroughly exploring a framework or language carefully and extensively.",
-    "seemore": "Ver más en",
+    "seemore": "Más en",
     "projects": {
       "summary": "Aquí hay algunos de los proyectos en los que he trabajado."
     }

@@ -1,5 +1,5 @@
 import JapbPreviewImage from '@/assets/img/japb_preview.png';
-import BudaredevPreviewImage from '@/assets/img/budaredev_preview.png';
+import JapbApiPreviewImage from '@/assets/img/django_rest_framework.png';
 import {
   IconBrandDjango,
   IconBrandNuxt,
@@ -8,6 +8,7 @@ import {
   IconBrandTailwind,
   IconDatabase,
   IconBrandTypescript,
+  IconBrandDocker,
 } from '@tabler/icons-vue';
 
 export default [
@@ -16,8 +17,12 @@ export default [
     image: JapbPreviewImage,
     name: '💸 Just Another Budget App',
     desc: {
-      'en-US': 'A application for tracking your daily transactions.',
-      es: 'App para registrar todas tus transaciones personales.',
+      'en-US': `Is a Personal Finance App for making budgeting easier, focused in economies with high inflation and mixed circulating currencies.\n
+      JAPB helps you by providing reports of all your expenses and income, easily make a shopping list, and show how your balance evolved through time.\n
+      This project is only for personal use (for now), i expect at the end of 2024 this app be ready to publish.`,
+      es: `Es una aplicación de finanzas personales para hacer el presupuesto más fácil, enfocada en economías con alta inflación y monedas circulantes mixtas.\n
+JAPB te ayuda proporcionando informes de todos tus gastos e ingresos, hacer una lista de compras fácilmente, y mostrar cómo ha evolucionado tu saldo a lo largo del tiempo.\n
+Este proyecto es solo para uso personal (por ahora), espero que a finales de 2024 esta aplicación esté lista para ser publicada.`,
     },
     tags: [
       {
@@ -50,14 +55,16 @@ export default [
       }
     ],
     source: 'https://github.com/PedGarblue/just-another-personal-budget',
-    demoUrl: '#',
+    demoUrl: '#projects',
   },
   {
     type: 'major',
-    image: JapbPreviewImage,
-    name: 'JAPB API',
+    image: JapbApiPreviewImage,
+    name: '🪙 JAPB API',
     desc: {
-      'en-US': 'API for Just Another Budget App.',
+      'en-US': `API for Just Another Budget App. Built with Django REST Framework. following Domain Driven Development, Test Driven Development and Clean Architecture principles.\n
+      This API handles all the business logic and data persistence for the JAPB project, for the web version and a future mobile version.
+      `,
       es: 'API para Just Another Budget App.',
     },
     tags: [
@@ -79,34 +86,16 @@ export default [
         title: 'PostgresSQL',
         icon: IconDatabase,
       },
-    ]
-  },
-  {
-    image: BudaredevPreviewImage,
-    type: 'major',
-    name: '📕 budare.dev',
-    desc: {
-      'en-US': 'Personal portfolio (this site 💪)',
-      es: 'Portafolio personal (este sitio 💪).',
-    },
-    tags: [
       {
-        title: 'Vue.js',
-        icon: IconBrandVue,
+        title: 'Docker',
+        icon: IconBrandDocker,
         style: {
-          color: '#7ebb12',
-        },
-      },
-      {
-        title: 'Tailwind CSS',
-        icon: IconBrandTailwind,
-        style: {
-          color: '#3299f5',
+          color: '#58b6f9',
         },
       }
     ],
-    source: 'https://github.com/PedGarBlue/pgarciadev',
-    demoUrl: 'https://budare.dev',
+    source: 'https://github.com/PedGarblue/japb-api',
+    demoUrl: '#projects',
   },
   // {
   //   type: 'minor',

@@ -39,7 +39,7 @@ export default {
           title: 'CSS3',
           icon: ['fab', 'css3-alt'],
           style: {
-            color: 'blue',
+            color: '#496eff',
           },
         },
         {
