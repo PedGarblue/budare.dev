@@ -22,9 +22,9 @@
             :data="tag"
           />
         </div>
-        <div class="project__desc">
+        <p class="project__desc">
           {{ project.desc[locale] }}
-        </div>
+        </p>
       </div>
     </div>
     <a
@@ -99,14 +99,15 @@ export default {
   color: hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
 }
 
+.project__desc {
+  @apply mt-2;
+}
+
 .project__source span {
   @apply hidden lg:inline;
 }
 
 @media (min-width: 1024px) {
-  .project__info {
-    max-width: 80%;
-  }
 }
 </style>
 

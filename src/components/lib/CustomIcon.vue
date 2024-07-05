@@ -3,20 +3,19 @@
   <span v-else class="icon" :class="`icon-${icon}`"></span>
 </template>
 
-<script>
-export default {
-  props: {
+<script setup lang="ts">
+import { computed } from 'vue';
+
+const props = defineProps({
     icon: {
       type: [String, Array],
       required: true,
     },
-  },
-  computed: {
-    hasFontAwesomeArray() {
-      return this.icon instanceof Array;
-    },
-  },
-};
+})
+
+const hasFontAwesomeArray = computed(() => {
+  return props.icon instanceof Array;
+})
 </script>
 
 <style lang="scss" scoped>

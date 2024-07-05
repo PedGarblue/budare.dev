@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
 import ProjectsTag from './ProjectsTag.vue';
 import CustomIcon from './lib/CustomIcon.vue';
 
@@ -51,7 +50,7 @@ defineProps({
           <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat text-gray-300">
             {{ experience.title }}
           </h3>
-          <p class="text-sm font-light">{{ experience.from }} - {{ experience.to }}</p>
+          <p class="text-sm font-semibold">{{ experience.from }} - {{ experience.to }}</p>
         </div>
         <div class="h-full flex flex-col-reverse gap-y-2">
           <ol
@@ -85,7 +84,7 @@ defineProps({
 
 <style lang="postcss" scoped>
 .experience-item-container {
-  @apply grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 items-start gap-2 2xl:gap-4 items-center;
+  @apply grid grid-rows-2 grid-cols-1 lg:grid-rows-1 lg:grid-cols-2 gap-2 2xl:gap-4 items-center;
 }
 
 .experience-description-list {

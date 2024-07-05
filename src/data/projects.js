@@ -1,5 +1,14 @@
 import JapbPreviewImage from '@/assets/img/japb_preview.png';
 import BudaredevPreviewImage from '@/assets/img/budaredev_preview.png';
+import {
+  IconBrandDjango,
+  IconBrandNuxt,
+  IconBrandPython,
+  IconBrandVue,
+  IconBrandTailwind,
+  IconDatabase,
+  IconBrandTypescript,
+} from '@tabler/icons-vue';
 
 export default [
   {
@@ -12,33 +21,65 @@ export default [
     },
     tags: [
       {
-        title: 'Python',
-        icon: ['fab', 'python'],
-        style: {
-          color: '#c2c6f1',
-        },
-      },
-      {
-        title: 'Postgres',
-        icon: 'postgres',
-      },
-      {
         title: 'Vue.js',
-        icon: ['fab', 'vuejs'],
+        icon: IconBrandVue,
         style: {
           color: '#7ebb12',
         },
       },
       {
         title: 'Nuxt 3',
-        icon: ['fab', 'vuejs'],
+        icon: IconBrandNuxt,
         style: {
           color: '#7ebb12',
         },
       },
+      {
+        title: 'Typescript',
+        icon: IconBrandTypescript,
+        style: {
+          color: '#7381ed',
+        },
+      },
+      {
+        title: 'Tailwind CSS',
+        icon: IconBrandTailwind,
+        style: {
+          color: '#3299f5',
+        },
+      }
     ],
     source: 'https://github.com/PedGarblue/just-another-personal-budget',
     demoUrl: '#',
+  },
+  {
+    type: 'major',
+    image: JapbPreviewImage,
+    name: 'JAPB API',
+    desc: {
+      'en-US': 'API for Just Another Budget App.',
+      es: 'API para Just Another Budget App.',
+    },
+    tags: [
+      {
+        title: 'Python',
+        icon: IconBrandPython,
+        style: {
+          color: '#c2c6f1',
+        },
+      },
+      {
+        title: 'Django REST Framework',
+        icon: IconBrandDjango,
+        style: {
+          color: '#62d18f',
+        },
+      },
+      {
+        title: 'PostgresSQL',
+        icon: IconDatabase,
+      },
+    ]
   },
   {
     image: BudaredevPreviewImage,
@@ -51,14 +92,17 @@ export default [
     tags: [
       {
         title: 'Vue.js',
-        icon: ['fab', 'vuejs'],
+        icon: IconBrandVue,
         style: {
           color: '#7ebb12',
         },
       },
       {
         title: 'Tailwind CSS',
-        icon: 'tailwind',
+        icon: IconBrandTailwind,
+        style: {
+          color: '#3299f5',
+        },
       }
     ],
     source: 'https://github.com/PedGarBlue/pgarciadev',

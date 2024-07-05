@@ -9,6 +9,7 @@ import igx3 from '@/assets/img/igx_3.png'
 import igx4 from '@/assets/img/igx_4.png'
 import igx5 from '@/assets/img/igx_5.png'
 import freelancer1 from '@/assets/img/freelancer_img.png'
+import { IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, IconBrandPhp, IconBrandTailwind, IconBrandVue } from '@tabler/icons-vue'
 
 export const experiences = [
   {
@@ -21,23 +22,29 @@ export const experiences = [
     to: 'May 2024',
     tags: [
       {
-        icon: ['fab', 'vuejs'],
+        icon: IconBrandVue,
         title: 'VueJS',
         style: {
           color: '#7ebb12',
         },
       },
       {
-        icon: 'tailwind',
         title: 'TailwindCSS',
+        icon: IconBrandTailwind,
+        style: {
+          color: '#3299f5',
+        },
       },
       {
-        icon: 'laravel',
         title: 'Laravel',
+        icon: IconBrandLaravel,
+        style: {
+          color: '#ff6363',
+        },
       },
       {
-        icon: 'mysql',
         title: 'MySQL',
+        icon: IconBrandMysql
       },
     ],
   },
@@ -55,23 +62,29 @@ export const experiences = [
     to: 'March 2023',
     tags: [
       {
-        icon: ['fab', 'vuejs'],
+        icon: IconBrandVue,
         title: 'VueJS',
         style: {
           color: '#7ebb12',
         },
       },
       {
-        icon: 'tailwind',
         title: 'TailwindCSS',
+        icon: IconBrandTailwind,
+        style: {
+          color: '#3299f5',
+        },
       },
       {
-        icon: 'laravel',
         title: 'Laravel',
+        icon: IconBrandLaravel,
+        style: {
+          color: '#ff6363',
+        },
       },
       {
-        icon: 'mysql',
         title: 'MySQL',
+        icon: IconBrandMysql
       },
     ],
   },
@@ -87,20 +100,29 @@ discussion forums with HTML5, Pure CSS, JavaScript, and PHP.`
     to: 'July 2021',
     tags: [
       {
-        icon: ['fab', 'html5'],
         title: 'HTML & CSS3',
+        icon: IconBrandHtml5,
+        style: {
+          color: '#ffa563',
+        },
       },
       {
-        icon: ['fab', 'php'],
-        title: 'PHP',
-      },
-      {
-        icon: ['fab', 'js'],
         title: 'Javascript',
+        icon: IconBrandJavascript,
+        style: {
+          color: '#ffe663',
+        },
       },
       {
-        icon: 'mysql',
+        title: 'PHP',
+        icon: IconBrandPhp,
+        style: {
+          color: '#c3c4ff',
+        },
+      },
+      {
         title: 'MySQL',
+        icon: IconBrandMysql
       },
     ],
   },
