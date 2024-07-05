@@ -10,7 +10,7 @@
             </button>
         </template>
         <template v-else>
-            <div class="flex items-center border border-gray-300 pl-4 pr-3 py-1 rounded-xl cursor-pointer gap-2">
+            <div class="flex items-center border border-gray-300 pl-4 pr-3 py-1 rounded-full cursor-pointer gap-2">
                 <div @click="saveToClipboard" class="flex items-center" >
                     <span class="font-semibold mr-2">
                         {{ email }}
