@@ -6,16 +6,16 @@
       target="_blank"
       :href="contact.resume"
     >
-      <font-awesome-icon :icon="['far', 'file-pdf']" />
+      <icon-file-type-pdf size="28" />
     </a>
-    <email-copy layoutType="icon" class="social-links__item"/>
+    <email-copy layoutType="icon" class="social-links__item pt-3"/>
     <a
       class="social-links__item"
       :href="contact.telegram"
       rel="noreferrer noopener"
       target="_blank"
     >
-      <font-awesome-icon :icon="['fab', 'telegram-plane']" />
+      <icon-brand-telegram size="28" />
     </a>
     <a
       class="social-links__item"
@@ -23,7 +23,7 @@
       rel="noreferrer noopener"
       target="_blank"
     >
-      <font-awesome-icon :icon="['fab', 'github']" />
+      <icon-brand-github size="28" />
     </a>
     <a
       class="social-links__item"
@@ -31,7 +31,7 @@
       rel="noreferrer noopener"
       target="_blank"
     >
-      <font-awesome-icon :icon="['fab', 'linkedin']" />
+      <icon-brand-linkedin size="28" />
     </a>
   </div>
 </template>
@@ -39,6 +39,7 @@
 <script setup>
 import contact from '@/data/contact';
 import EmailCopy from './EmailCopy.vue';
+import { IconFileTypePdf, IconBrandTelegram, IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-vue';
 </script>
 
 <style lang="postcss" scoped>

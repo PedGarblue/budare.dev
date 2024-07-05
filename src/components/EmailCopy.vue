@@ -6,17 +6,22 @@
                 title="Click to Copy"
                 class="hover:opacity-70 transition-opacity"
             >
-                <font-awesome-icon :icon="['far', 'envelope']" />
+                <icon-mail size="28" />
             </button>
         </template>
         <template v-else>
-            <div class="border border-gray-300 px-4 py-1 rounded-xl cursor-pointer" @click="saveToClipboard">
-                <span class="font-semibold mr-2">
-                    {{ email }}
-                </span>
-                <button>
-                    <font-awesome-icon :icon="['fas', 'copy']" />
-                </button>
+            <div class="flex items-center border border-gray-300 pl-4 pr-3 py-1 rounded-xl cursor-pointer gap-2">
+                <div @click="saveToClipboard" class="flex items-center" >
+                    <span class="font-semibold mr-2">
+                        {{ email }}
+                    </span>
+                    <button>
+                        <icon-copy size="20" />
+                    </button>
+                </div>
+                <a :href="`mailto:${email}`">
+                    <icon-send size="20" />
+                </a>
             </div>
         </template>
         <!-- TODO: Make this a separate component -->
@@ -48,6 +53,7 @@
 </template>
 
 <script setup>
+import { IconMail, IconCopy, IconSend } from '@tabler/icons-vue';
 import { ref } from 'vue'
 import contact from '@/data/contact'
 
