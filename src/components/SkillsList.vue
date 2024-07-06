@@ -67,7 +67,7 @@ export default {
   @apply flex items-center justify-center flex-col my-8 gap-4;
 }
 .skillset__name {
-  @apply text-base md:text-xl text-gray-100 md:text-gray-200 font-bold font-monserrat;
+  @apply text-base md:text-2xl text-gray-100 md:text-gray-200 font-bold font-monserrat;
 }
 .skillset__items {
   @apply flex items-center justify-center flex-row flex-wrap;

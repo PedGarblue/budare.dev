@@ -59,21 +59,14 @@ const linkAttributes = computed(() => {
     font-bold
     transform-gpu
     transition-transform
+    cursor-default
     md:hover:scale-105
-    lg:w-max
     lg:py-4 lg:px-8 
-    lg:bg-gray-800
-    lg:border
-    lg:border-gray-900
-    lg:border-opacity-30
-    lg:bg-opacity-40
-    lg:shadow-md
     2xl:text-base
   ;
 
   align-items: center;
   flex-wrap: wrap;
-  backdrop-filter: blur(2px);
 }
 .skill__icon {
   @apply text-xl 2xl:text-3xl mb-1 h-5 2xl:h-7;

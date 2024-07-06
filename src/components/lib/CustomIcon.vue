@@ -1,6 +1,7 @@
 <template>
-  <font-awesome-icon v-if="hasFontAwesomeArray" :icon="icon" />
-  <span v-else class="icon" :class="`icon-${icon}`"></span>
+  <font-awesome-icon v-if="hasFontAwesomeArray && isCustomIcon" :icon="icon" />
+  <span v-else-if="isCustomIcon" class="icon" :class="`icon-${icon}`"></span>
+  <component v-else :is="icon" class="icon"></component>
 </template>
 
 <script setup lang="ts">
@@ -8,7 +9,7 @@ import { computed } from 'vue';
 
 const props = defineProps({
     icon: {
-      type: [String, Array],
+      type: [String, Array, Object],
       required: true,
     },
 })
@@ -16,6 +17,7 @@ const props = defineProps({
 const hasFontAwesomeArray = computed(() => {
   return props.icon instanceof Array;
 })
+const isCustomIcon = Array.isArray(props.icon) || typeof props.icon === 'string';
 </script>
 
 <style lang="scss" scoped>

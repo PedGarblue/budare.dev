@@ -1,3 +1,5 @@
+import { IconBrandBootstrap, IconBrandCss3, IconBrandDjango, IconBrandDocker, IconBrandHtml5, IconBrandInertia, IconBrandMysql, IconBrandNuxt, IconBrandPython, IconBrandUbuntu } from "@tabler/icons-vue";
+
 export default {
   technical: [
     {
@@ -15,13 +17,30 @@ export default {
           title: 'Laravel',
           icon: 'laravel',
         },
+        // {
+        //   title: 'Node',
+        //   icon: ['fab', 'node-js'],
+        //   style: {
+        //     color: '#7dbb3e',
+        //   },
+        // },
+        // {
+        //   title: 'Express',
+        // },
         {
-          title: 'Node',
-          icon: ['fab', 'node-js'],
+          title: 'Python',
+          icon: IconBrandPython,
           style: {
-            color: '#7dbb3e',
+            color: '#306998',
           },
         },
+        {
+          title: 'Django',
+          icon: IconBrandDjango,
+          style: {
+            color: '#62d18f',
+          },
+        }
       ],
     },
     {
@@ -30,14 +49,14 @@ export default {
       skills: [
         {
           title: 'HTML5',
-          icon: ['fab', 'html5'],
+          icon: IconBrandHtml5,
           style: {
             color: '#f05525',
           },
         },
         {
           title: 'CSS3',
-          icon: ['fab', 'css3-alt'],
+          icon: IconBrandCss3,
           style: {
             color: '#496eff',
           },
@@ -50,16 +69,37 @@ export default {
           },
         },
         {
-          title: 'Vue.js',
+          title: 'Vue',
           icon: ['fab', 'vuejs'],
           style: {
             color: '#7ebb12',
           },
         },
         {
+          title: 'Nuxt 3',
+          icon: IconBrandNuxt,
+          style: {
+            color: '#7ebb12',
+          },
+        },
+        {
+          title: 'Inertia.js',
+          icon: IconBrandInertia,
+          style: {
+            color: '#c83fff',
+          },
+        },
+        {
           title: 'TailwindCSS',
           icon: 'tailwind',
-        }
+        },
+        {
+          title: 'Bootstrap',
+          icon: IconBrandBootstrap,
+          style: {
+            color: '#ca44ff',
+          },
+        },
       ],
     },
     {
@@ -68,7 +108,10 @@ export default {
       skills: [
         {
           title: 'MySQL',
-          icon: 'mysql',
+          icon: IconBrandMysql,
+          style: {
+            color: '#559fff',
+          },
         },
         {
           title: 'PostgresSQL',
@@ -77,6 +120,26 @@ export default {
         {
           title: 'MongoDB',
           icon: 'mongodb',
+        },
+      ],
+    },
+    {
+      id: 'devops',
+      name: 'DevOps',
+      skills: [
+        {
+          title: 'Linux Virtual Private Servers',
+          icon: IconBrandUbuntu,
+          style: {
+            color: '#ff8e3a',
+          },
+        },
+        {
+          title: 'Docker',
+          icon: IconBrandDocker,
+          style: {
+            color: '#559fff',
+          },
         },
       ],
     },
@@ -105,7 +168,7 @@ export default {
       name: 'Languages',
       skills: [
         {
-          title: 'Español',
+          title: 'Spanish',
           icon: 'es',
           level: 'Native',
           style: {
