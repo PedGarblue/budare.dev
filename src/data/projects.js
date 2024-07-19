@@ -55,7 +55,7 @@ Este proyecto es solo para uso personal (por ahora), espero que a finales de 202
       }
     ],
     source: 'https://github.com/PedGarblue/just-another-personal-budget',
-    demoUrl: '#projects',
+    demoUrl: 'https://japb.budare.dev/',
   },
   {
     type: 'major',
@@ -95,6 +95,6 @@ Este proyecto es solo para uso personal (por ahora), espero que a finales de 202
       }
     ],
     source: 'https://github.com/PedGarblue/japb-api',
-    demoUrl: '#projects',
+    demoUrl: 'https://japb-api.budare.dev/api/v1/',
   },
 ];
