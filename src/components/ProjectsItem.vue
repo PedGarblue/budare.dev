@@ -12,6 +12,7 @@
           :href="project.demoUrl"
           class="project__title"
           rel="noreferrer noopener"
+          target="_blank"
         >
           {{ project.name }}
         </a>
@@ -33,6 +34,7 @@
       class="project__source"
       :href="project.source"
       rel="noreferrer noopener"
+      target="_blank"
     >
       <font-awesome-icon class="w-6 h-6" :icon="['fab', 'github']" />
     </a>
