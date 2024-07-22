@@ -44,7 +44,7 @@ onMounted(() => {
 
 <style lang="postcss">
 .skills-section .section-container {
-  @apply my-auto lg:bg-opacity-30 lg:bg-gray-800 pt-2 lg:py-6 lg:px-8;
+  @apply my-auto lg:bg-opacity-50 lg:bg-gray-800 pt-2 lg:py-6 lg:px-8;
   backdrop-filter: blur(10px);
 }
 </style>

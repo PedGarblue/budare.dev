@@ -36,14 +36,34 @@
         <template #section-bg>
             <div class="about-background"
                 :style="{
-                    background: `linear-gradient(103deg, ${colors[1]} 0%, ${colors[10]} 40%, ${colors[10]} 60%, ${colors[1]} 100%)`
+                    background: `linear-gradient(103deg, ${colors[1]} 0%, ${colors[12]} 40%, ${colors[12]} 60%, ${colors[1]} 100%)`
                 }"
             />
             <div class="clips">
-              <div class="clip1" />
-              <div class="clip2" />
-              <div class="clip3" />
-              <div class="clip4" />
+              <div
+                class="clip1"
+                :style="{
+                  background: `linear-gradient(188deg, ${colors[0]} 0%, ${colors[19]} 79%)`
+                }"
+              />
+              <div
+                class="clip2"
+                :style="{
+                  background: `linear-gradient(351deg, ${colors[0]} 0%, ${colors[14]} 79%)`
+                }"
+              />
+              <div
+                class="clip3"
+                :style="{
+                  background: `linear-gradient(130deg, ${colors[0]} 0%, ${colors[10]} 79%)`
+                }"
+              />
+              <div
+                class="clip4"
+                :style="{
+                  background: `linear-gradient(354deg, ${colors[10]} 0%, ${colors[20]} 79%)`
+                }"
+              />
             </div>
         </template>
     </PageSection>
@@ -61,46 +81,12 @@ const { t } = useI18n({
 });
 
 const colors = colormap({
-  colormap: 'density',
+  colormap: 'cdom',
   nshades: 36,
   format: 'rgbaString',
   alpha: 1,
 });
-    // color: rgba(61,16,45,1);
-    // color: rgba(68,18,54,1);  
-    // color: rgba(75,19,62,1);  
-    // color: rgba(82,21,71,1);  
-    // color: rgba(89,23,80,1);  
-    // color: rgba(94,29,93,1);  
-    // color: rgba(100,34,106,1);  
-    // color: rgba(105,40,119,1);  
-    // color: rgba(110,45,132,1);  
-    // color: rgba(113,53,144,1);  
-    // color: rgba(115,61,155,1);  
-    // color: rgba(118,69,167,1);  
-    // color: rgba(120,77,178,1);  
-    // color: rgba(120,84,185,1);  
-    // color: rgba(120,91,192,1);  
-    // color: rgba(120,99,199,1);  
-    // color: rgba(120,106,206,1);  
-    // color: rgba(120,113,213,1);  
-    // color: rgba(119,123,217,1);  
-    // color: rgba(118,132,221,1);  
-    // color: rgba(116,142,224,1);  
-    // color: rgba(115,151,228,1);  
-    // color: rgba(120,160,228,1);  
-    // color: rgba(125,168,228,1);  
-    // color: rgba(129,177,227,1);  
-    // color: rgba(134,185,227,1);  
-    // color: rgba(143,191,227,1);  
-    // color: rgba(151,197,227,1);  
-    // color: rgba(160,202,227,1);  
-    // color: rgba(168,208,227,1);  
-    // color: rgba(177,214,227,1);  
-    // color: rgba(190,221,231,1);  
-    // color: rgba(204,228,234,1);  
-    // color: rgba(217,234,238,1);  
-    // color: rgba(230,241,241,1); 
+
 </script>
 
 <style lang="postcss">
@@ -113,6 +99,41 @@ const colors = colormap({
 <style lang="postcss" scoped>
 .about {
   @apply flex flex-col;
+  color: rgba(61,16,45,1);
+  color: rgba(68,18,54,1);  
+  color: rgba(75,19,62,1);  
+  color: rgba(82,21,71,1);  
+  color: rgba(89,23,80,1);  
+  color: rgba(94,29,93,1);  
+  color: rgba(100,34,106,1);  
+  color: rgba(105,40,119,1);  
+  color: rgba(110,45,132,1);  
+  color: rgba(113,53,144,1);  
+  color: rgba(115,61,155,1);  
+  color: rgba(118,69,167,1);  
+  color: rgba(120,77,178,1);  
+  color: rgba(120,84,185,1);  
+  color: rgba(120,91,192,1);  
+  color: rgba(120,99,199,1);  
+  color: rgba(120,106,206,1);  
+  color: rgba(120,113,213,1);  
+  color: rgba(119,123,217,1);  
+  color: rgba(118,132,221,1);  
+  color: rgba(116,142,224,1);  
+  color: rgba(115,151,228,1);  
+  color: rgba(120,160,228,1);  
+  color: rgba(125,168,228,1);  
+  color: rgba(129,177,227,1);  
+  color: rgba(134,185,227,1);  
+  color: rgba(143,191,227,1);  
+  color: rgba(151,197,227,1);  
+  color: rgba(160,202,227,1);  
+  color: rgba(168,208,227,1);  
+  color: rgba(177,214,227,1);  
+  color: rgba(190,221,231,1);  
+  color: rgba(204,228,234,1);  
+  color: rgba(217,234,238,1);  
+  color: rgba(230,241,241,1); 
 }
 .about {
     @apply relative;
@@ -139,9 +160,8 @@ const colors = colormap({
   backdrop-filter: blur(10px);
 }
 .clip1 {
-  @apply clip absolute bottom-0 left-0;
+  @apply clip absolute bottom-0 left-0 shadow;
   background: rgb(45,15,44);
-  background: linear-gradient(218deg, rgba(45,15,44,1) 0%, rgba(119,123,217,1) 79%);
   width: 100%;
   height: 99%;
   clip-path: polygon(0 0, 0 100%, 100% 100%);
@@ -149,16 +169,15 @@ const colors = colormap({
   backdrop-filter: blur(10px);
 }
 .clip2 {
-  @apply absolute bg-gray-400 bg-opacity-95 bottom-0 left-0;
+  @apply absolute bg-gray-400 bg-opacity-95 bottom-0 left-0 shadow;
   background: rgb(45,15,44);
-  background: linear-gradient(218deg, rgba(45,15,44,1) 0%, rgba(75,19,62,1) 79%);
   width: 90%;
   height: 90%;
   clip-path: polygon(0 0, 0 100%, 100% 100%);
   z-index: -7;
 }
 .clip3 {
-  @apply absolute bottom-0 right-0;
+  @apply absolute bottom-0 right-0 shadow;
   background-color: rgba(129,177,227,1);
   width: 100%;
   height: 99%;
@@ -166,9 +185,8 @@ const colors = colormap({
   z-index: -8;
 }
 .clip4 {
-  @apply absolute bottom-0 right-0;
+  @apply absolute bottom-0 right-0 shadow;
   background: rgb(45,15,44);
-  background: linear-gradient(130deg, rgba(45,15,44,1) 0%, rgba(105,40,119,1) 79%);
   width: 90%;
   height: 90%;
   clip-path: polygon(100% 0, 0 100%, 100% 100%); 
