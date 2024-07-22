@@ -9,18 +9,12 @@
 
 <script setup>
 import colormap from 'colormap';
-import { computed, ref } from 'vue';
+import { computed, onUnmounted, ref } from 'vue';
 import { TheSkew } from '../skew/the-skew';
 import { useAnimation } from '../composables/useAnimation';
 import { useScreenData } from '../composables/useScreenData';
 
     const skewbg = ref('skewbg');
-
-    const { init, getProps } = useAnimation({
-      animationElement: skewbg,
-      animationCallback,
-      framerate: 20,
-    })
 
     const props = defineProps({
       animationDirection: {
@@ -60,20 +54,21 @@ import { useScreenData } from '../composables/useScreenData';
 
     skew1.setupCalcs();
 
+    const colors = colormap({
+      colormap: 'inferno',
+      nshades: 20,
+      format: 'rgbaString',
+      alpha: 1,
+    });
+    const prevSectionBgColors = colormap({
+      colormap: 'inferno',
+      nshades: 20,
+      format: 'rgbaString',
+      alpha: 1,
+    });
+
     function animationCallback() {
         const ctx = context.value;
-        const colors = colormap({
-          colormap: 'inferno',
-          nshades: 20,
-          format: 'rgbaString',
-          alpha: 1,
-        });
-        const prevSectionBgColors = colormap({
-          colormap: 'inferno',
-          nshades: 20,
-          format: 'rgbaString',
-          alpha: 1,
-        });
 
         // background gradient
         const bgGradient = ctx.createLinearGradient(0, 0, width, height);
@@ -81,9 +76,20 @@ import { useScreenData } from '../composables/useScreenData';
         bgGradient.addColorStop(0.5, prevSectionBgColors[10]);
         bgGradient.addColorStop(1, colors[10]);
         ctx.fillStyle = bgGradient;
+        ctx.fillRect(0, 0, width, height);
 
         skew1.draw({ context: context.value, frame });
 
         frame++;
     }
+
+  const { animationFrameId } = useAnimation({
+    animationElement: skewbg,
+    animationCallback,
+    framerate: 21,
+  })
+
+  onUnmounted(() => {
+    cancelAnimationFrame(animationFrameId.value);
+  })
 </script>

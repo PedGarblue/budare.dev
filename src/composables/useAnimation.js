@@ -9,6 +9,7 @@ export function useAnimation({
     const MAX_FRAME_RATE = framerate;
     const FRAME_DIFF = 1000 / MAX_FRAME_RATE;
     let lastDrawTime = 0;
+    let animationFrameId = null;
 
     const backgroundIsIntersecting = inject('backgroundIsIntersecting', false);
     const backgroundsIntersect = inject('backgroundsIntersect');
@@ -36,12 +37,12 @@ export function useAnimation({
         lastDrawTime = now;
       }
 
-      return window.requestAnimationFrame(init);
+      animationFrameId = window.requestAnimationFrame(init);
     }
 
     onMounted(() => {
       backgroundsIntersect(animationElement.value, init)
     });
 
-    return { init, getProps }
+    return { init, getProps, animationFrameId }
 }

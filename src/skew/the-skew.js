@@ -92,7 +92,8 @@ export class TheSkew {
           perimetalHeight,
           fill: random.pick(rectColors).hex,
           stroke: random.pick(rectColors).hex,
-          blend: 'overlay',
+          // 'color', difference', 'overlay' and 'multiply makes the canvas EXTREMELY slow
+          blend: 'screen',
           degrees: this.rectDegrees,
         };
       });
@@ -106,45 +107,33 @@ export class TheSkew {
 
     context.save();
 
-    this.rects = this.rects.map(rect => {
-      // const animInc = 1;
-      const { fill, stroke, blend } = rect;
-      let shadowColor, posX, posY;
+    for (let i = 0; i < this.rects.length; i++) {
+      const rect = this.rects[i];
+      let posX, posY;
 
-      // match rect when it reaches the bottom-left corner
-      // take in count the rect's width and height since the rect is skewed
-      // and the position is in the center of the rect
-      // ...
-      // Check if the rect has gone out of bounds (width or height)
-      if (
-        this.xBoundaryMatcher(rect, width) ||
-        rect.y > height + rect.perimetalHeight / 2
-      ) {
-        posX = rect.originX;
-        posY = rect.originY;
+      if (this.xBoundaryMatcher(rect, width) || rect.y > height + rect.perimetalHeight / 2) {
+          posX = rect.originX;
+          posY = rect.originY;
       } else {
-        // move rect in a 45-degree line pointing to the bottom-left corner
-        posX = rect.x + this.animXDirectionRatio * this.animVelocity;
-        posY = rect.y + this.animYDirectionRatio * this.animVelocity;
+          posX = rect.x + this.animXDirectionRatio * this.animVelocity;
+          posY = rect.y + this.animYDirectionRatio * this.animVelocity;
       }
 
       rect.x = posX;
       rect.y = posY;
 
       context.save();
-      context.translate(rect.x, rect.y);
-      context.strokeStyle = stroke;
-      context.fillStyle = fill;
+      context.transform(1, 0, 0, 1, rect.x, rect.y); // Use transform instead of translate
+      context.strokeStyle = rect.stroke;
+      context.fillStyle = rect.fill;
       context.lineWidth = 10;
 
-      context.globalCompositeOperation = blend;
+      context.globalCompositeOperation = rect.blend;
 
       drawSkewedRect({ context, ...rect });
 
-      shadowColor = color.offsetHSL(fill, 0, 0, -20);
-      shadowColor.rgba[3] = 0.5;
-
-      context.shadowColor = color.style(shadowColor.rgba);
+      // Simplify shadow
+      context.shadowColor = 'rgba(0, 0, 0, 0.5)';
       context.shadowOffsetX = 10;
       context.shadowOffsetY = 20;
 
@@ -159,35 +148,8 @@ export class TheSkew {
       context.strokeStyle = 'black';
       context.stroke();
 
-      // context.restore();
-      // context.fillRect(rect.x, rect.y, 5, 5);
-      // context.fillStyle = 'black';
-      context.restore();
-
-      // context.save();
-      // context.beginPath();
-      // context.moveTo(rect.x, rect.y);
-      // context.lineTo(rect.originX, rect.originY);
-      // context.closePath();
-      // context.strokeStyle = 'black';
-      // context.lineWidth = 2;
-      // context.stroke();
-      // context.restore();
-
-      // context.save();
-      // context.beginPath();
-      // context.moveTo(rect.x, rect.y);
-      // context.lineTo(rect.x, rect.y - rect.perimetalHeight / 2);
-      // context.closePath();
-      // context.strokeStyle = 'black';
-      // context.lineWidth = 2;
-      // context.stroke();
-      // context.restore();
-
-      // context.restore();
-
-      return rect;
-    });
+      context.restore(); 
+    };
 
     context.restore();
   }
