@@ -59,7 +59,6 @@ const linkAttributes = computed(() => {
     font-bold
     transform-gpu
     transition-transform
-    cursor-default
     md:hover:scale-105
     lg:py-4 lg:px-8 
     2xl:text-base
