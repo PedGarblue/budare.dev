@@ -1,6 +1,7 @@
 <script setup>
 import { ref, defineAsyncComponent, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
+import colormap from 'colormap';
 import { experiences } from '../data/experience';
 import contact from '@/data/contact';
 import ExperienceItem from './ExperienceItem.vue';
@@ -8,30 +9,30 @@ import PageSection from './PageSection.vue';
 import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
 import AnimatedHeading from './lib/AnimatedHeading.vue';
 
-const ParallelGridsBg = defineAsyncComponent(() =>
-  import('./ParallelGridsBg.vue')
-);
-
 const carousel = ref(null);
 const experience = ref(null);
-const canvas = ref(null);
-
-const canvasBgSize = ref({
-  width: 0,
-  height: 0,
-});
 
 const { t } = useI18n({
   inheritLocale: true,
   useScope: 'local',
 });
 
+const colors1 = colormap({
+    colormap: 'density',
+    nshades: 36,
+    format: 'rgbaString',
+    alpha: 1,
+})
+const colors2 = colormap({
+    colormap: 'inferno',
+    nshades: 20,
+    format: 'rgbaString',
+    alpha: 1,
+})
+
+
 onMounted(async () => {
   carousel.value.updateTotalItems(experiences.length)
-  canvasBgSize.value = {
-    width: experience.value.$el.offsetWidth,
-    height: experience.value.$el.offsetHeight,
-  }
 })
 </script>
 
@@ -39,8 +40,11 @@ onMounted(async () => {
   <page-section
     name="experience"
     :title="t('title')"
-    class="about relative"
+    class="relative"
     ref="experience"
+    :style="{
+      background: `linear-gradient(158deg, ${colors1[0]} 0%, ${colors2[10]} 25%, ${colors1[10]} 50%, ${colors2[7]} 75%, ${colors1[0]} 100%)`,
+    }"
   >
     <template #body>
       <div class="experience-contents">
@@ -105,12 +109,15 @@ onMounted(async () => {
     </template>
 
     <template #section-bg>
-      <parallel-grids-bg ref="canvas" :width="canvasBgSize.width" :height="canvasBgSize.height" />
     </template>
   </page-section>
 </template>
 
 <style lang="postcss">
+#experience {
+  background: theme('colors.gray.800');
+  background: linear-gradient(180deg, theme('colors.gray.800') 0%, theme('colors.gray.900') 100%);
+}
 .experience-contents {
   @apply flex flex-col h-full lg:bg-opacity-30 lg:rounded-3xl lg:px-8 lg:py-6 gap-5;
 }

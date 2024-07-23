@@ -8,11 +8,12 @@
 </template>
 
 <script setup>
-import { computed, inject, onMounted, ref } from 'vue';
+import { computed, ref } from 'vue';
 import colormap from 'colormap';
 import { TheGrid } from '../grid/grid';
 import useBackgroundAnimation from '@/composables/useBackgroundAnimation';
 import { useAnimation } from '../composables/useAnimation';
+import { useScreenData } from '../composables/useScreenData';
 
 const props = defineProps({
   width: Number,
@@ -75,7 +76,7 @@ const grid1 = new TheGrid({
   height: gridHeight,
   cols,
   rows,
-  xOffset: 1.3,
+  xOffset: 1.5,
   yOffset: -0.05,
   gridSize: 1,
   xlastThird: 250,
@@ -96,7 +97,7 @@ const grid2 = new TheGrid({
   height: gridHeight,
   cols,
   rows,
-  xOffset: -0.53,
+  xOffset: -0.5,
   yOffset: 0.0,
   gridSize: 1,
   xlastThird: -250,
