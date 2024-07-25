@@ -27,7 +27,9 @@
                           md:text-xl
                         "
                       >
-                        <p>{{ t('contents') }}</p>
+                        <p v-for="(paragraph, i) in t('contents').split('[]')" :key="i">
+                          {{ paragraph }}
+                        </p>
                       </div>
                     </div>
                 </div>
@@ -217,7 +219,7 @@ const colors = colormap({
 {
   "en": {
     "aboutme": "About me",
-    "contents": "I graduated with an Associate Degree in informational technologies. I acquired my knowledge in Software Development mainly in a self-taught manner, making use of books for Code and Systems architecture like the Robert C. Martin Collection and O'Reilly Software Architecture Collection, software documentation (MDN, php.net, etc), online educational platforms, and of course, a lot of focus, discipline, and practice with personal projects."
+    "contents": "The \"budare\" is a traditional Venezuelan cooking utensil, similar to a griddle, that is used to cook arepas.[]I'm dedicated to my hobbies, gaming, fitness, scale models and programming.[]Most of my knowlege in software development was acquired through self-taught methods, devouring books like Robert C. Martin Collection and O'Reilly Software Architecture Collection, searching and reading documentation (MDN, php.net, etc), online educational platforms.[]And of course, a lot of concentration, discipline and practice with personal projects. 💪"
   },
   "es": {
     "aboutme": "Sobre mi",
