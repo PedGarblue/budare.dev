@@ -161,8 +161,6 @@ export default {
         },
       ],
     },
-  ],
-  languages: [
     {
       id: 'main',
       name: 'Languages',

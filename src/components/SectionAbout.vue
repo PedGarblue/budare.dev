@@ -27,7 +27,12 @@
                           md:text-xl
                         "
                       >
-                        <p v-for="(paragraph, i) in t('contents').split('[]')" :key="i">
+                        <div class="border-l-2 pl-4 italic border-gray-900 text-lg mb-4">
+                          <quote>
+                            {{ t('budare_def') }}
+                          </quote>
+                        </div>
+                        <p v-for="(paragraph, i) in t('contents').split('[]')" :key="i" class="my-2">
                           {{ paragraph }}
                         </p>
                       </div>
@@ -144,7 +149,7 @@ const colors = colormap({
     @apply w-full h-full absolute top-0 z-negative;
 }
 .about__photo {
-  @apply flex justify-center;
+  @apply flex justify-center items-center;
 }
 .about__photo img {
   @apply border-2 border-white border-opacity-30;
@@ -218,8 +223,9 @@ const colors = colormap({
 <i18n>
 {
   "en": {
+    "budare_def": "The \"budare\" is a traditional Venezuelan cooking utensil, similar to a griddle, that is used to cook arepas.",
     "aboutme": "About me",
-    "contents": "The \"budare\" is a traditional Venezuelan cooking utensil, similar to a griddle, that is used to cook arepas.[]I'm dedicated to my hobbies, gaming, fitness, scale models and programming.[]Most of my knowlege in software development was acquired through self-taught methods, devouring books like Robert C. Martin Collection and O'Reilly Software Architecture Collection, searching and reading documentation (MDN, php.net, etc), online educational platforms.[]And of course, a lot of concentration, discipline and practice with personal projects. 💪"
+    "contents": "I'm dedicated to my hobbies, gaming, fitness, scale models and programming.[]Most of my knowlege in software development was acquired through self-taught methods, devouring books like Robert C. Martin Collection and O'Reilly Software Architecture Collection, searching and reading documentation (MDN, php.net, etc), online educational platforms.[]And of course, a lot of concentration, discipline and practice with personal projects. 💪"
   },
   "es": {
     "aboutme": "Sobre mi",
