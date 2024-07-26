@@ -28,9 +28,9 @@
                         "
                       >
                         <div class="border-l-2 pl-4 italic border-gray-900 text-lg mb-4">
-                          <quote>
+                          <blockquote>
                             {{ t('budare_def') }}
-                          </quote>
+                          </blockquote>
                         </div>
                         <p v-for="(paragraph, i) in t('contents').split('[]')" :key="i" class="my-2">
                           {{ paragraph }}

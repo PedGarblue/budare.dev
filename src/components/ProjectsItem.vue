@@ -36,7 +36,7 @@
       rel="noreferrer noopener"
       target="_blank"
     >
-      <font-awesome-icon class="w-6 h-6" :icon="['fab', 'github']" />
+      <font-awesome-icon class="w-7 h-7" :icon="['fab', 'github']" />
     </a>
   </div>
 </template>
@@ -86,12 +86,10 @@ const description = computed(() => {
 }
 
 .project__source {
-  @apply hidden lg:flex items-center justify-center w-10 h-10;
+  @apply hidden lg:flex items-center justify-center w-10 h-10 transform hover:scale-105;
 
   margin-left: auto;
-  border: 0.1rem solid hsl(0, 1%, 45%); /* Equivalent to $primary-font-color */
   border-radius: 50%;
-  box-shadow: 0.01em 0.01em 0.2em hsl(0, 1%, 54%); /* Equivalent to $terciary-font-color */
   font-size: 1.3rem; /* Equivalent to 1.3em */
   font-weight: bold;
   color: hsl(0, 4%, 95%); /* Equivalent to $primary-font-color */
