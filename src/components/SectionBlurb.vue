@@ -60,11 +60,12 @@ onMounted(() => {
     m-auto
     gap-2
     xl:items-start
-    xl:mx-12;
+    xl:mx-6
+    2xl:mx-12;
 }
 
 .desc__name {
-  @apply font-medium text-4xl lg:text-5xl tracking-wide font-monserrat;
+  @apply font-medium text-4xl lg:text-4xl 2xl:text-5xl tracking-wide font-monserrat;
 }
 .desc__workname {
   @apply text-xl font-monserrat text-gray-300;
@@ -84,14 +85,18 @@ onMounted(() => {
 }
 
 .blurb__photo img {
-  @apply border-2 border-white border-opacity-30;
+  @apply border-2 border-white border-opacity-30 h-52 w-52 lg:h-44 lg:w-44 2xl:h-52 2xl:w-52;
   padding: 0.5rem;
-  width: 13rem;
-  height: 13rem;
   border-radius: 50%;
 }
 
 @media (min-width: theme('screens.lg')) {
+  .blurb {
+    margin-left: 9vw;
+  }
+}
+
+@media (min-width: theme('screens.2xl')) {
   #blurb {
     height: calc(100vh);
   }
