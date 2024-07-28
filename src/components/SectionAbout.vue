@@ -14,24 +14,12 @@
                       <h2 class="font-monserrat text-2xl lg:text-4xl mb-4 text-center lg:text-left">{{ t('aboutme') }}</h2>
                       <div
                         class="
-                          max-w-prose
-                          font-nunito font-medium
-                          px-2 py-4
-                          rounded
-                          shadow
-                          bg-gray-800
-                          bg-opacity-70
-                          md:p-0
-                          md:shadow-none
-                          md:bg-transparent
-                          md:text-xl
+                          about__content
                         "
                       >
-                        <div class="border-l-2 pl-4 italic border-gray-900 text-lg mb-4">
-                          <blockquote>
-                            {{ t('budare_def') }}
-                          </blockquote>
-                        </div>
+                        <blockquote class="border-l-2 pl-4 italic border-gray-900 text-base md:text-lg mb-4 font-semibold">
+                          {{ t('budare_def') }}
+                        </blockquote>
                         <p v-for="(paragraph, i) in t('contents').split('[]')" :key="i" class="my-2">
                           {{ paragraph }}
                         </p>
@@ -158,6 +146,24 @@ const colors = colormap({
   height: 13rem;
   border-radius: 50%;
 }
+.about__content {
+  @apply
+    max-w-prose
+    font-nunito font-light
+    px-2 py-4
+    rounded
+    shadow
+    bg-gray-800
+    bg-opacity-30
+    md:p-0
+    md:shadow-none
+    md:bg-transparent
+    md:text-lg;
+
+    backdrop-filter: blur(10px);
+}
+
+
 
 .clips {
   @apply absolute bottom-0 left-0 w-full h-full;
@@ -200,7 +206,13 @@ const colors = colormap({
   z-index: -6;
 }
 
-@media (min-width: 768px) {
+@media (min-width: theme('screens.md')) {
+  .about__content {
+    backdrop-filter: none;
+  }
+}
+
+@media (min-width: theme('screens.lg')) {
   .clip1 {
     width: 65%;
     height: 99%;
