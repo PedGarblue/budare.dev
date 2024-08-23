@@ -15,11 +15,11 @@
                     <span class="font-semibold mr-2">
                         {{ email }}
                     </span>
-                    <button>
+                    <button aria-label="Copy Email">
                         <icon-copy size="20" />
                     </button>
                 </div>
-                <a :href="`mailto:${email}`">
+                <a :href="`mailto:${email}`" aria-label="Send mail to Pedro García">
                     <icon-send size="20" />
                 </a>
             </div>

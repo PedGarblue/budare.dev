@@ -1,6 +1,6 @@
 <script setup>
 import ProjectsTag from './ProjectsTag.vue';
-import CustomIcon from './lib/CustomIcon.vue';
+import { IconExternalLink } from '@tabler/icons-vue';
 
 defineProps({
   experience: {
@@ -20,7 +20,7 @@ defineProps({
         <img
           v-for="(image, i) in experience.images"
           class="project_image"
-          alt=""
+          :alt="`${experience.employer} - ${experience.title}`" 
           :src="image"
           loading="lazy"
           :key="i"
@@ -40,11 +40,9 @@ defineProps({
               :href="experience.employer_link"
               rel="noreferrer noopener"
               target="_blank"
+              :aria-label="`Visit ${experience.employer} website`"
             >
-              <CustomIcon
-                class="ml-1 lg:mb-0.5 text-sm text-gray-300"
-                :icon="['fas', 'link']"
-              />
+              <IconExternalLink size="22" class="inline ml-1 lg:mb-0.5 text-sm text-gray-300" />
             </a>
           </h2>
           <h3 class="text-sm xl:text-base 2xl:text-xl font-monserrat text-gray-300">

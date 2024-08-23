@@ -8,7 +8,7 @@
             <div class="h-full flex justify-center items-center">
                 <div class="flex flex-col lg:flex-row gap-10 xl:mb-40">
                     <div class="about__photo">
-                        <img :src="aboutme.picture" />
+                        <img :src="aboutme.picture" alt="Pedro García - Fullstack Developer" />
                     </div>
                     <div class="py-0">
                       <h2 class="font-monserrat text-2xl lg:text-4xl mb-4 text-center lg:text-left">{{ t('aboutme') }}</h2>

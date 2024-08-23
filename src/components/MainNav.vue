@@ -7,6 +7,7 @@
           :href="link.href"
           class="navbar__link"
           :key="i"
+          :arial-label="link.title"
         >
           <span class="md:hidden">
             <component :is="link.icon" size="26" />
