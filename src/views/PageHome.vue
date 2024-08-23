@@ -3,10 +3,10 @@
     <div class="relative z-10">
       <SectionBlurb />
       <MainNav class="h-16 -mt-30 md:-mt-16" />
-      <SectionExperienceAsync />
-      <SectionProjectsAsync />
-      <SectionSkillsAsync />
-      <SectionAboutAsync />
+      <SectionExperience />
+      <SectionProjects />
+      <SectionSkills />
+      <SectionAbout />
       <SectionSeparator />
       <MainFooter />
     </div>
@@ -15,24 +15,26 @@
 
 <script>
 import { defineAsyncComponent, onMounted, onUnmounted, provide, ref } from 'vue';
-import MainFooter from '@/components/MainFooter.vue';
-import MainNav from '@/components/MainNav.vue';
 import SectionBlurb from '@/components/SectionBlurb.vue';
 import SectionSeparator from '@/components/SectionSeparator.vue';
 import { useScreenData } from '../composables/useScreenData';
 
-const SectionExperienceAsync = defineAsyncComponent(() =>
+const MainNav = defineAsyncComponent(() => import('@/components/MainNav.vue'));
+
+const SectionExperience = defineAsyncComponent(() =>
   import('@/components/SectionExperience.vue')
 );
-const SectionProjectsAsync = defineAsyncComponent(() =>
+const SectionProjects = defineAsyncComponent(() =>
   import('@/components/SectionProjects.vue')
 );
-const SectionSkillsAsync = defineAsyncComponent(() =>
+const SectionSkills = defineAsyncComponent(() =>
   import('@/components/SectionSkills.vue')
 );
-const SectionAboutAsync = defineAsyncComponent(() =>
+const SectionAbout = defineAsyncComponent(() =>
   import('@/components/SectionAbout.vue')
 );
+
+const MainFooter = defineAsyncComponent(() => import('@/components/MainFooter.vue'));
 
 export default {
   name: 'PageHome',
@@ -41,10 +43,10 @@ export default {
     MainFooter,
     SectionSeparator,
     SectionBlurb,
-    SectionExperienceAsync,
-    SectionProjectsAsync,
-    SectionSkillsAsync,
-    SectionAboutAsync,
+    SectionExperience,
+    SectionProjects,
+    SectionSkills,
+    SectionAbout,
   },
   setup() {
     const { getViewType } = useScreenData();

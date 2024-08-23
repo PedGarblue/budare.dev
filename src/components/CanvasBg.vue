@@ -40,7 +40,11 @@ const bgParams = {
 // global params
 let frame = 0;
 
+const renderedBg = ref(false);
+
 const draw = () => {
+  if (renderedBg.value) return;
+
   let ctx = context.value;
   // setup colors
   const colors = colormap({
@@ -60,6 +64,8 @@ const draw = () => {
 
   ctx.save();
   ctx.restore();
+  
+  renderedBg.value = true;
 };
 
 const isMobileView = () => {

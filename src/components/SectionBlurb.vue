@@ -1,6 +1,6 @@
 <template>
   <section id="blurb" ref="section">
-    <div class="blurb" data-aos="fade" data-aos-easing="ease-in-sine">
+    <div class="blurb">
       <div class="blurb__photo">
         <img :src="aboutme.picture" alt="Pedro García - Fullstack Developer"/>
       </div>

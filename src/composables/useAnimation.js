@@ -1,4 +1,4 @@
-import { onMounted, inject, ref, defineProps } from "vue";
+import { onMounted, inject } from "vue";
 
 export function useAnimation({
     animationElement,
