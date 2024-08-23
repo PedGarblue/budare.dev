@@ -16,16 +16,12 @@
           </span>
         </a>
       </div>
-      <div class="absolute right-0 ml-auto">
-        <LocaleSwitcher />
-      </div>
     </div>
   </nav>
 </template>
 
 <script setup>
 import { useI18n } from 'vue-i18n';
-import LocaleSwitcher from '@/components/lib/LocaleSwitcher.vue';
 import { IconHome, IconBriefcase, IconApps, IconBrandGithub, IconUser, IconMessage } from '@tabler/icons-vue';
 
 const { t, locale } = useI18n({

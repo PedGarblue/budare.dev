@@ -5,6 +5,7 @@
       rel="noreferrer noopener"
       target="_blank"
       :href="contact.resume"
+      aria-label="Resume Download"
     >
       <icon-file-type-pdf size="28" />
     </a>
@@ -14,6 +15,7 @@
       :href="contact.telegram"
       rel="noreferrer noopener"
       target="_blank"
+      aria-label="Telegram"
     >
       <icon-brand-telegram size="28" />
     </a>
@@ -22,6 +24,7 @@
       :href="contact.github"
       rel="noreferrer noopener"
       target="_blank"
+      aria-label="Github"
     >
       <icon-brand-github size="28" />
     </a>
@@ -30,6 +33,7 @@
       :href="contact.linkedin"
       rel="noreferrer noopener"
       target="_blank"
+      aria-label="linkedin"
     >
       <icon-brand-linkedin size="28" />
     </a>

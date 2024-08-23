@@ -2,7 +2,7 @@
   <section id="blurb" ref="section">
     <div class="blurb" data-aos="fade" data-aos-easing="ease-in-sine">
       <div class="blurb__photo">
-        <img :src="aboutme.picture" />
+        <img :src="aboutme.picture" alt="Pedro García - Fullstack Developer"/>
       </div>
       <div class="blurb__desc desc">
         <div class="desc__name">{{ t('name') }}</div>

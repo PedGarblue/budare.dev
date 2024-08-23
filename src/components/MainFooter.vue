@@ -29,7 +29,6 @@
         {{ t('created_by') }}
       </div>
     </section>
-    <button-to-top />
   </footer>
 </template>
 
@@ -37,7 +36,6 @@
 import { useI18n } from 'vue-i18n';
 import colormap from 'colormap';
 import contact from '@/data/contact';
-import ButtonToTop from './lib/ButtonToTop.vue';
 import SocialLinks from './SocialLinks.vue';
 import EmailCopy from './EmailCopy.vue';
 
