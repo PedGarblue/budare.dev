@@ -1,4 +1,4 @@
-import picture from '@/assets/img/literally_me.jpg'
+import picture from '@/assets/img/literally_me.webp'
 
 export default {
   name: {
