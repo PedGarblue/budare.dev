@@ -205,8 +205,4 @@ export default {
 };
 </script>
 
-<style lang="postcss" scoped>
-.home {
-  @apply bg-gradient-to-b from-gray-800 to-blue-900;
-}
-</style>
+<style lang="postcss" scoped></style>
