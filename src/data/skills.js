@@ -1,4 +1,21 @@
-import { IconBrandBootstrap, IconBrandCss3, IconBrandDjango, IconBrandDocker, IconBrandHtml5, IconBrandInertia, IconBrandMysql, IconBrandNuxt, IconBrandPython, IconBrandUbuntu } from "@tabler/icons-vue";
+import {
+  IconBrandBootstrap,
+  IconBrandCss3,
+  IconBrandDjango,
+  IconBrandDocker,
+  IconBrandHtml5,
+  IconBrandInertia,
+  IconBrandJavascript,
+  IconBrandMysql,
+  IconBrandNuxt,
+  IconBrandPhp,
+  IconBrandPython,
+  IconBrandUbuntu,
+  IconBrandVue,
+  IconChecklist,
+  IconCube,
+  IconUsersGroup
+} from "@tabler/icons-vue";
 
 export default {
   technical: [
@@ -8,7 +25,7 @@ export default {
       skills: [
         {
           title: 'PHP',
-          icon: ['fab', 'php'],
+          icon: IconBrandPhp,
           style: {
             color: '#615e8c',
           },
@@ -63,16 +80,16 @@ export default {
         },
         {
           title: 'Javascript',
-          icon: ['fab', 'js'],
+          icon: IconBrandJavascript,
           style: {
             color: '#e8e840',
           },
         },
         {
           title: 'Vue',
-          icon: ['fab', 'vuejs'],
+          icon: IconBrandVue,
           style: {
-            color: '#7ebb12',
+            color: 'rgb(65 157 43)',
           },
         },
         {
@@ -149,15 +166,15 @@ export default {
       skills: [
         {
           title: 'SCRUM',
-          icon: ['fas', 'users'],
+          icon: IconUsersGroup,
         },
         {
           title: 'TDD',
-          icon: ['fas', 'clipboard-check'],
+          icon: IconChecklist,
         },
         {
           title: 'SOLID',
-          icon: ['fas', 'cube'],
+          icon: IconCube,
         },
       ],
     },

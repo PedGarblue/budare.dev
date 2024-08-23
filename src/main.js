@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import fontawesome from './plugins/fontawesome';
 import i18n from './plugins/i18n';
 import backgroundsIntersect from './plugins/backgroundsIntersect';
 import './assets/tailwind.css';
@@ -14,6 +13,5 @@ createApp(App)
   .use(VueViewer)
   .use(router)
   .use(i18n)
-  .use(fontawesome)
   .use(backgroundsIntersect)
   .mount('#app');

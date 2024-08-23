@@ -8,6 +8,7 @@ import ExperienceItem from './ExperienceItem.vue';
 import PageSection from './PageSection.vue';
 import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
 import AnimatedHeading from './lib/AnimatedHeading.vue';
+import { IconFileTypePdf, IconBrandLinkedin } from '@tabler/icons-vue';
 
 const carousel = ref(null);
 const experience = ref(null);
@@ -86,7 +87,7 @@ onMounted(async () => {
               target="_blank"
             >
               {{ t('download_cv') }}
-              <font-awesome-icon :icon="['far', 'file-pdf']" />
+              <icon-file-type-pdf size="24" class="inline -mt-1"/>
             </a>
           </div>
           <div>
@@ -100,7 +101,7 @@ onMounted(async () => {
               target="_blank"
             >
               {{ t('contact_me_at_linkedin') }}
-              <font-awesome-icon :icon="['fab', 'linkedin']" />
+              <icon-brand-linkedin size="28" class="inline -mt-1"/>
             </a>
           </div>
         </div>
@@ -120,8 +121,6 @@ onMounted(async () => {
 }
 .experience-contents {
   @apply flex flex-col h-full lg:bg-opacity-30 lg:rounded-3xl lg:px-8 lg:py-6 gap-5;
-}
-.about {
 }
 
 .about__paragraph {

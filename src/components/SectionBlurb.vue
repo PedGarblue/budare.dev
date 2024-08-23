@@ -17,11 +17,14 @@
 </template>
 
 <script setup>
-import { onMounted, reactive, ref } from 'vue';
+import { onMounted, reactive, ref, defineAsyncComponent } from 'vue';
 import { useI18n } from 'vue-i18n';
 import SocialLinks from './SocialLinks.vue';
 import aboutme from '@/data/aboutme';
-import CanvasBg from '@/components/CanvasBg.vue';
+
+const CanvasBg = defineAsyncComponent(() =>
+  import('@/components/CanvasBg.vue')
+);
 
 const { t } = useI18n({
   inheritLocale: true,

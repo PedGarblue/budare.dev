@@ -47,7 +47,7 @@
         >
           {{ t('seemore') }}
           <span class="ml-1">
-            <font-awesome-icon :icon="['fab', 'github']" />
+            <icon-brand-github size="28" class="inline -mt-1" />
           </span>
         </a>
       </div>
@@ -68,6 +68,7 @@ import ProjectsItem from './ProjectsItem.vue';
 import PageSection from './PageSection.vue';
 import ComponentCarousel from '@/components/lib/ComponentCarousel.vue';
 import AnimatedHeading from '@/components/lib/AnimatedHeading.vue';
+import { IconBrandGithub } from '@tabler/icons-vue';
 
 const SkewBg = defineAsyncComponent(() => import('./SkewBg.vue'));
 const section = ref(null);

@@ -1,23 +1,17 @@
 <template>
-  <font-awesome-icon v-if="hasFontAwesomeArray && isCustomIcon" :icon="icon" />
-  <span v-else-if="isCustomIcon" class="icon" :class="`icon-${icon}`"></span>
+  <span v-if="isCustomIcon" class="icon" :class="`icon-${icon}`"></span>
   <component v-else :is="icon" class="icon"></component>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
-
 const props = defineProps({
     icon: {
-      type: [String, Array, Object],
+      type: [String, Object],
       required: true,
     },
 })
 
-const hasFontAwesomeArray = computed(() => {
-  return props.icon instanceof Array;
-})
-const isCustomIcon = Array.isArray(props.icon) || typeof props.icon === 'string';
+const isCustomIcon = typeof props.icon === 'string';
 </script>
 
 <style lang="scss" scoped>

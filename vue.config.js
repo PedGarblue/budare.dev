@@ -11,25 +11,4 @@ module.exports = {
       fullInstall: true,
     },
   },
-  configureWebpack: {
-    devtool: 'source-map',
-    optimization: {
-      splitChunks: {
-        minSize: 10000,
-        maxSize: 200000,
-      },
-    },
-    resolve: {
-      extensions: ['*', '.mjs', '.js', '.json']
-    },
-    module: {
-      rules: [
-        {
-          test: /\.mjs$/,
-          include: /node_modules/,
-          type: 'javascript/auto',
-        },
-      ],
-    },
-  },
 };
