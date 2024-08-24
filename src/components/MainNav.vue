@@ -7,7 +7,7 @@
           :href="link.href"
           class="navbar__link"
           :key="i"
-          :arial-label="`Move to section ${link.title}`"
+          :aria-label="`Move to section ${link.title}`"
         >
           <component :is="link.icon" size="26" class="md:hidden" />
           <span class="hidden md:inline">
