@@ -52,7 +52,7 @@ onMounted(async () => {
         <div class="flex flex-col md:flex-row my-10">
           <animated-heading
             heading-type="h2"
-            text="4+ years"
+            text="5+ years"
             start-color="#3f7cb5"
             end-color="#ebe3e3"
             class="font-nunito tracking-wider"

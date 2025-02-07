@@ -1,3 +1,6 @@
+import manyrequests1 from '@/assets/img/manyrequests1.png'
+import manyrequests2 from '@/assets/img/manyrequests2.png'
+import kiwi1 from '@/assets/img/kiwi1.png'
 import valocator1 from '@/assets/img/valocator1.png'
 import valocator2 from '@/assets/img/valocator_2.png'
 import valocator3 from '@/assets/img/valocator_3.png'
@@ -9,9 +12,96 @@ import igx3 from '@/assets/img/igx_3.png'
 import igx4 from '@/assets/img/igx_4.png'
 import igx5 from '@/assets/img/igx_5.png'
 import freelancer1 from '@/assets/img/freelancer_img.png'
-import { IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, IconBrandPhp, IconBrandTailwind, IconBrandVue } from '@tabler/icons-vue'
+import { IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, IconBrandPhp, IconBrandTailwind, IconBrandVue, IconBrandDocker, IconBrandAws } from '@tabler/icons-vue'
 
 export const experiences = [
+  {
+    images: [manyrequests1, manyrequests2],
+    employer: 'ManyRequests',
+    employer_link: 'https://manyrequests.com',
+    title: 'Software Engineer',
+    description: [
+      `Implementation of Web Push Notifications System for both tenants and clients, significantly boosting real-time engagement and system responsiveness.`,
+      `Developed and optimized a free-trial onboarding process that streamlined the user experience, reducing friction and accelerating client adoption.`,
+    ],
+    from: 'December 2024',
+    to: 'February 2025',
+    tags: [
+      {
+        icon: IconBrandVue,
+        title: 'VueJS',
+        style: {
+          color: '#7ebb12',
+        },
+      },
+      {
+        title: 'TailwindCSS',
+        icon: IconBrandTailwind,
+        style: {
+          color: '#3299f5',
+        },
+      },
+      {
+        title: 'Laravel',
+        icon: IconBrandLaravel,
+        style: {
+          color: '#ff6363',
+        },
+      },
+      {
+        title: 'MySQL',
+        icon: IconBrandMysql
+      },
+      {
+        title: 'Docker',
+        icon: IconBrandDocker,
+        style: {
+          color: '#3299f5',
+        },
+      },
+      {
+        title: 'AWS',
+        icon: IconBrandAws,
+        style: {
+          color: '#ff6363',
+        },
+      },
+    ],
+  },
+  {
+    images: [kiwi1],
+    employer: 'Kiwi Company',
+    employer_link: 'https://www.kiwicompany.io',
+    title: 'Fullstack Developer',
+    description: [
+      `Development and deployment of a course platform for law students in Puerto Rico.`,
+    ],
+    from: 'September 2024',
+    to: 'December 2024',
+    tags: [
+      {
+        title: 'Laravel',
+        icon: IconBrandLaravel,
+        style: {
+          color: '#ff6363',
+        },
+      },
+      {
+        title: 'MySQL',
+        icon: IconBrandMysql,
+        style: {
+          color: '#3299f5',
+        },
+      },
+      {
+        title: 'VueJS',
+        icon: IconBrandVue,
+        style: {
+          color: '#7ebb12',
+        },
+      },
+    ]
+  },
   {
     images: [valocator1, valocator2, valocator3, valocator4, valocator5],
     employer: 'VALocator',
