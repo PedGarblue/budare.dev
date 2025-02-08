@@ -12,6 +12,8 @@ import {
   IconBrandPython,
   IconBrandUbuntu,
   IconBrandVue,
+  IconBrandBitbucket,
+  IconBrandAws,
   IconChecklist,
   IconCube,
   IconUsersGroup
@@ -156,6 +158,20 @@ export default {
           icon: IconBrandDocker,
           style: {
             color: '#559fff',
+          },
+        },
+        {
+          title: 'AWS',
+          icon: IconBrandAws,
+          style: {
+            color: '#ff6363',
+          },
+        },
+        {
+          title: 'Bitbucket',
+          icon: IconBrandBitbucket,
+          style: {
+            color: '#0052cc',
           },
         },
       ],
