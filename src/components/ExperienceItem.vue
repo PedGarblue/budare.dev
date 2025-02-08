@@ -91,7 +91,7 @@ defineProps({
 }
 
 .project_image {
-  @apply mx-auto rounded-3xl shadow-lg border-none xl:h-52 2xl:h-60;
+  @apply mx-auto rounded-xl shadow-lg border-none xl:h-52 2xl:h-64;
   object-fit: cover;
   aspect-ratio: 16/9;
 }

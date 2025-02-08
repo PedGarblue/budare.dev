@@ -1,12 +1,12 @@
 <template>
   <section :id="name">
     <section-title :title="title" :gradient="titleGradient"/>
-    <div class="section-container">
+    <div class="section-container max-w-6xl mx-auto">
       <div class="section-body">
         <slot name="body"></slot>
       </div>
     </div>
-    <div class="section-footer">
+    <div class="section-footer max-w-6xl mx-auto">
       <slot name="footer"></slot>
     </div>
     <slot name="section-bg"></slot>
@@ -69,16 +69,5 @@ section {
   margin-top: theme('spacing.2');
   padding: theme('spacing.4') 0;
   color: white;
-}
-</style>
-
-<style lang="scss">
-.section-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.section-footer {
-  max-width: 1000px;
-  margin: 0 auto;
 }
 </style>
