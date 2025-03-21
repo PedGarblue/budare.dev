@@ -4,5 +4,5 @@ export default {
   telegram: 'https://t.me/pedgarcia',
   github: 'https://github.com/PedGarblue',
   phone: '+58 414 4803943',
-  resume: 'https://drive.google.com/file/d/1NfVEpk7z0G-iCZBclp5UhuqZqXGSEhAo/view?usp=sharing',
+  resume: 'https://public-budaredev.s3.us-east-1.amazonaws.com/Pedro+Garcia+Fullstack+Developer.pdf',
 };
