@@ -64,24 +64,28 @@ const prevSectionBgColors = colormap({
 
 const renderedBg = ref(false);
 
-function animationCallback() {
-  const ctx = context.value;
-
-  // background gradient
-  if (!renderedBg.value) {
+// Cache gradient creation
+const createBgGradient = (ctx) => {
     const bgGradient = ctx.createLinearGradient(0, 0, width, height);
     bgGradient.addColorStop(0.0, prevSectionBgColors[1]);
     bgGradient.addColorStop(0.5, prevSectionBgColors[10]);
     bgGradient.addColorStop(1, colors[10]);
-    ctx.fillStyle = bgGradient;
-    renderedBg.value = true;
-  }
-  ctx.fillRect(0, 0, width, height);
+    return bgGradient;
+}
 
-
-  skew1.draw({ context: context.value, frame });
-
-  frame++;
+// Use requestAnimationFrame directly for better control
+let cachedGradient;
+function animationCallback() {
+    const ctx = context.value;
+    
+    if (!cachedGradient) {
+        cachedGradient = createBgGradient(ctx);
+        ctx.fillStyle = cachedGradient;
+    }
+    
+    ctx.fillRect(0, 0, width, height);
+    skew1.draw({ context: ctx, frame });
+    frame++;
 }
 
 const { animationFrameId } = useAnimation({

@@ -106,51 +106,36 @@ export class TheSkew {
     context.fillRect(0, 0, width, height);
 
     context.save();
-
+    context.lineWidth = 10;
+    
     for (let i = 0; i < this.rects.length; i++) {
-      const rect = this.rects[i];
-      let posX, posY;
+        const rect = this.rects[i];
+        
+        // Update position calculations
+        if (this.xBoundaryMatcher(rect, width) || rect.y > height + rect.perimetalHeight / 2) {
+            rect.x = rect.originX;
+            rect.y = rect.originY;
+        } else {
+            rect.x += this.animXDirectionRatio * this.animVelocity;
+            rect.y += this.animYDirectionRatio * this.animVelocity;
+        }
 
-      if (this.xBoundaryMatcher(rect, width) || rect.y > height + rect.perimetalHeight / 2) {
-          posX = rect.originX;
-          posY = rect.originY;
-      } else {
-          posX = rect.x + this.animXDirectionRatio * this.animVelocity;
-          posY = rect.y + this.animYDirectionRatio * this.animVelocity;
-      }
-
-      rect.x = posX;
-      rect.y = posY;
-
-      context.save();
-      context.transform(1, 0, 0, 1, rect.x, rect.y); // Use transform instead of translate
-      context.strokeStyle = rect.stroke;
-      context.fillStyle = rect.fill;
-      context.lineWidth = 10;
-
-      context.globalCompositeOperation = rect.blend;
-
-      drawSkewedRect({ context, ...rect });
-
-      // Simplify shadow
-      context.shadowColor = 'rgba(0, 0, 0, 0.5)';
-      context.shadowOffsetX = 10;
-      context.shadowOffsetY = 20;
-
-      context.fill();
-
-      context.shadowColor = null;
-      context.stroke();
-
-      context.globalCompositeOperation = 'source-over';
-
-      context.lineWidth = 2;
-      context.strokeStyle = 'black';
-      context.stroke();
-
-      context.restore(); 
-    };
-
+        // Minimize state changes
+        context.fillStyle = rect.fill;
+        context.strokeStyle = rect.stroke;
+        context.globalCompositeOperation = rect.blend;
+        
+        // Single transform instead of save/restore for each rect
+        context.setTransform(1, 0, 0, 1, rect.x, rect.y);
+        
+        // Draw main shape
+        drawSkewedRect({ context, ...rect });
+        context.fill();
+        
+        // Single stroke operation instead of multiple
+        context.stroke();
+    }
+    
     context.restore();
   }
 }
