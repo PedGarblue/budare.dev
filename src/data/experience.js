@@ -1,22 +1,11 @@
-import manyrequests1 from '@/assets/img/manyrequests1.png'
-import manyrequests2 from '@/assets/img/manyrequests2.png'
-import kiwi1 from '@/assets/img/kiwi1.png'
-import valocator1 from '@/assets/img/valocator1.png'
-import valocator2 from '@/assets/img/valocator_2.png'
-import valocator3 from '@/assets/img/valocator_3.png'
-import valocator4 from '@/assets/img/valocator_4.png'
-import valocator5 from '@/assets/img/valocator_5.png'
-import igx1 from '@/assets/img/igx1.png'
-import igx2 from '@/assets/img/igx_2.png'
-import igx3 from '@/assets/img/igx_3.png'
-import igx4 from '@/assets/img/igx_4.png'
-import igx5 from '@/assets/img/igx_5.png'
-import freelancer1 from '@/assets/img/freelancer_img.png'
 import { IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, IconBrandPhp, IconBrandTailwind, IconBrandVue, IconBrandDocker, IconBrandAws } from '@tabler/icons-vue'
 
 export const experiences = [
   {
-    images: [manyrequests1, manyrequests2],
+    images: [
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/manyrequests1.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/manyrequests2.png'
+    ],
     employer: 'ManyRequests',
     employer_link: 'https://manyrequests.com',
     title: 'Software Engineer',
@@ -69,7 +58,9 @@ export const experiences = [
     ],
   },
   {
-    images: [kiwi1],
+    images: [
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/kiwi1.png'
+    ],
     employer: 'Kiwi Company',
     employer_link: 'https://www.kiwicompany.io',
     title: 'Fullstack Developer',
@@ -103,7 +94,13 @@ export const experiences = [
     ]
   },
   {
-    images: [valocator1, valocator2, valocator3, valocator4, valocator5],
+    images: [
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/valocator1.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/valocator_2.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/valocator_3.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/valocator_4.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/valocator_5.png'
+    ],
     employer: 'VALocator',
     employer_link: 'https://www.valocator.com',
     title: 'Fullstack Developer',
@@ -139,7 +136,13 @@ export const experiences = [
     ],
   },
   {
-    images: [igx1, igx2, igx3, igx4, igx5],
+    images: [
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/igx1.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/igx_2.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/igx_3.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/igx_4.png',
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/igx_5.png'
+    ],
     employer: 'Innovative Gx Health',
     employer_link: 'https://www.instagram.com/innovativegx/',
     title: 'Fullstack Developer',
@@ -179,7 +182,9 @@ export const experiences = [
     ],
   },
   {
-    images: [freelancer1],
+    images: [
+      'https://public-budaredev.s3.us-east-1.amazonaws.com/freelancer_img.png'
+    ],
     employer: 'Freelance',
     title: 'Fullstack Developer',
     description: [

@@ -1,5 +1,3 @@
-import JapbPreviewImage from '@/assets/img/japb_preview.png';
-import JapbApiPreviewImage from '@/assets/img/django_rest_framework.png';
 import {
   IconBrandDjango,
   IconBrandNuxt,
@@ -14,7 +12,7 @@ import {
 export default [
   {
     type: 'major',
-    image: JapbPreviewImage,
+    image: 'https://public-budaredev.s3.us-east-1.amazonaws.com/japb_preview.png',
     name: '💸 Just Another Budget App',
     desc: {
       'en-US': `Is a Personal Finance App for making budgeting easier, focused in economies with high inflation and mixed circulating currencies.\n
@@ -59,7 +57,7 @@ Este proyecto es solo para uso personal (por ahora), espero que a finales de 202
   },
   {
     type: 'major',
-    image: JapbApiPreviewImage,
+    image: 'https://public-budaredev.s3.us-east-1.amazonaws.com/django_rest_framework.png',
     name: '🪙 JAPB API',
     desc: {
       'en-US': `API for Just Another Budget App. Built with Django REST Framework. following Domain Driven Development, Test Driven Development and Clean Architecture principles.\n
