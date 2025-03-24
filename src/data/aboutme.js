@@ -4,5 +4,5 @@ export default {
     en: "I'm Pedro García",
   },
   localization: 'Venezuela, Carabobo',
-  picture: "https://public-budaredev.s3.us-east-1.amazonaws.com/literally_me.webp",
+  picture: "https://d35dwmqzmoe140.cloudfront.net/literally_me.webp",
 };

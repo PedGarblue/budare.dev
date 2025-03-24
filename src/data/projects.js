@@ -12,7 +12,7 @@ import {
 export default [
   {
     type: 'major',
-    image: 'https://public-budaredev.s3.us-east-1.amazonaws.com/japb_preview.png',
+    image: 'https://d35dwmqzmoe140.cloudfront.net/japb_preview.png',
     name: '💸 Just Another Budget App',
     desc: {
       'en-US': `Is a Personal Finance App for making budgeting easier, focused in economies with high inflation and mixed circulating currencies.\n
@@ -57,7 +57,7 @@ Este proyecto es solo para uso personal (por ahora), espero que a finales de 202
   },
   {
     type: 'major',
-    image: 'https://public-budaredev.s3.us-east-1.amazonaws.com/django_rest_framework.png',
+    image: 'https://d35dwmqzmoe140.cloudfront.net/django_rest_framework.png',
     name: '🪙 JAPB API',
     desc: {
       'en-US': `API for Just Another Budget App. Built with Django REST Framework. following Domain Driven Development, Test Driven Development and Clean Architecture principles.\n
