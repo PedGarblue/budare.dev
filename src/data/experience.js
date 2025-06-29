@@ -3,6 +3,50 @@ import { IconBrandHtml5, IconBrandJavascript, IconBrandLaravel, IconBrandMysql, 
 export const experiences = [
   {
     images: [
+      'https://d35dwmqzmoe140.cloudfront.net/designingit.png',
+    ],
+    employer: 'DesigningIT',
+    employer_link: 'https://designingit.com',
+    title: 'Fullstack Developer',
+    description: [
+      'Development of Telehealth platform for dermatology, weight loss, and mental health products.',
+      'Development of a CRM for managing clients and consultations.',
+    ],
+    from: 'March 2024',
+    to: 'Present',
+    tags: [
+      {
+        icon: IconBrandVue,
+        title: 'VueJS',
+        style: {
+          color: '#7ebb12',
+        },
+      },
+      {
+        icon: IconBrandLaravel,
+        title: 'Laravel',
+        style: {
+          color: '#ff6363',
+        },
+      },
+      {
+        icon: IconBrandMysql,
+        title: 'MySQL',
+        style: {
+          color: '#3299f5',
+        },
+      },
+      {
+        icon: IconBrandAws,
+        title: 'AWS',
+        style: {
+          color: '#ff6363',
+        },
+      },
+    ],
+  },
+  {
+    images: [
       'https://d35dwmqzmoe140.cloudfront.net/manyrequests1.png',
       'https://d35dwmqzmoe140.cloudfront.net/manyrequests2.png'
     ],

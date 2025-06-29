@@ -35,6 +35,7 @@
       :href="project.source"
       rel="noreferrer noopener"
       target="_blank"
+      aria-label="Project Source"
     >
       <font-awesome-icon class="w-7 h-7" :icon="['fab', 'github']" />
     </a>
